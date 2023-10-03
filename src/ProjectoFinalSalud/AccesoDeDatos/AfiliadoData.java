@@ -50,6 +50,8 @@ public class AfiliadoData {
         }
     }
     
+    
+    
     public ArrayList<Afiliado> listarAfiliados(){
         String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono FROM afiliado WHERE estado=1";
         ArrayList<Afiliado> afiliados=new ArrayList<>();
