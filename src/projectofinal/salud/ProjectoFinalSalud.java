@@ -1,26 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package projectofinal.salud;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.AccesoDeDatos.Conexion;
 import ProjectoFinalSalud.Entidades.Afiliado;
+import ProjectoFinalSalud.Vistas.Inicio;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-/**
- *
- * @author simon
- */
+
 public class ProjectoFinalSalud {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
+        
+        new Inicio().setVisible(true);
         
         Connection con=Conexion.getConnection();
         AfiliadoData ad=new AfiliadoData();
