@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +30,7 @@ public class EspecialidadData {
         
         String sql = "insert into Especialidad(IdEspecialidad,Especialidad)"
                 + "values (?,?)";
+        
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, esp.getIdEspecialidad());
@@ -47,6 +49,7 @@ public class EspecialidadData {
         
         String sql = "Update Especialidad set IdEspecialidad=?,Especialidad=?"
                 + "Where IdEspecialidad=?";
+        
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, esp.getIdEspecialidad());
@@ -60,6 +63,7 @@ public class EspecialidadData {
         }
     }
     public void eliminarEspecialidad(int id) {
+        
         String sql = "UPDATE Especialidad SET estado=0 WHERE IdEspecialidad=? AND estado=1";
 
         try {
@@ -75,5 +79,49 @@ public class EspecialidadData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la Especialidad");
         }
+    }
+    public Especialidad buscarEspecialidad(int IdE) {
+
+        String sql = "SELECT IdEspecialidad,Especialidad FROM Especialidad WHERE IdEspecialidad=? AND estado=1";
+        
+        Especialidad esp = null;
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, IdE);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                esp = new Especialidad();
+                esp.setIdEspecialidad(IdE);
+                esp.setEspecialidad(rs.getString("Especialidad"));
+            } else {
+                JOptionPane.showMessageDialog(null, "La Especialidad no existe");
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad");
+        }
+        return esp;
+    }
+    public ArrayList<Especialidad> listarEspecialidad(){
+        
+        String sql = "SELECT IdEspecialidad,Especialidad FROM Especialidad WHERE estado=1";
+        ArrayList<Especialidad> especialidades = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                Especialidad esp = new Especialidad();
+                esp.setIdEspecialidad(rs.getInt("IdEspecialidad"));
+                esp.setEspecialidad(rs.getString("Especialidad"));
+                especialidades.add(esp);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de Prestadores");
+        }
+        return especialidades;
     }
 }
