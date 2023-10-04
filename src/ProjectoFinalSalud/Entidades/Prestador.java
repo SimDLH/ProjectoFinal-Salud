@@ -12,33 +12,33 @@ package ProjectoFinalSalud.Entidades;
 public class Prestador {
     
     private int IdPrestador;
-    private String nombre;
-    private int dni;
-    private String domicilio;
-    private int telefono;
+    private String Nombre;
+    private int Dni;
+    private String Domicilio;
+    private int Telefono;
     private boolean activo;
-    private Especialidad especialidad;
+    private int IdEspecialidad;
 
     public Prestador() {
     }
 
-    public Prestador(int IdPrestador, String nombre, int dni, String domicilio, int telefono, boolean activo, Especialidad especialidad) {
+    public Prestador(int IdPrestador, String Nombre, int Dni, String Domicilio, int Telefono, boolean activo, int IdEspecialidad) {
         this.IdPrestador = IdPrestador;
-        this.nombre = nombre;
-        this.dni = dni;
-        this.domicilio = domicilio;
-        this.telefono = telefono;
+        this.Nombre = Nombre;
+        this.Dni = Dni;
+        this.Domicilio = Domicilio;
+        this.Telefono = Telefono;
         this.activo = activo;
-        this.especialidad = especialidad;
+        this.IdEspecialidad = IdEspecialidad;
     }
 
-    public Prestador(String nombre, int dni, String domicilio, int telefono, boolean activo, Especialidad especialidad) {
-        this.nombre = nombre;
-        this.dni = dni;
-        this.domicilio = domicilio;
-        this.telefono = telefono;
+    public Prestador(String Nombre, int Dni, String Domicilio, int Telefono, boolean activo, int IdEspecialidad) {
+        this.Nombre = Nombre;
+        this.Dni = Dni;
+        this.Domicilio = Domicilio;
+        this.Telefono = Telefono;
         this.activo = activo;
-        this.especialidad = especialidad;
+        this.IdEspecialidad = IdEspecialidad;
     }
 
     public int getIdPrestador() {
@@ -50,35 +50,35 @@ public class Prestador {
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public int getDni() {
-        return dni;
+        return Dni;
     }
 
-    public void setDni(int dni) {
-        this.dni = dni;
+    public void setDni(int Dni) {
+        this.Dni = Dni;
     }
 
     public String getDomicilio() {
-        return domicilio;
+        return Domicilio;
     }
 
-    public void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
+    public void setDomicilio(String Domicilio) {
+        this.Domicilio = Domicilio;
     }
 
     public int getTelefono() {
-        return telefono;
+        return Telefono;
     }
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
+    public void setTelefono(int Telefono) {
+        this.Telefono = Telefono;
     }
 
     public boolean isActivo() {
@@ -89,20 +89,16 @@ public class Prestador {
         this.activo = activo;
     }
 
-    public Especialidad getEspecialidad() {
-        return especialidad;
+    public int getIdEspecialidad() {
+        return IdEspecialidad;
     }
 
-    public void setEspecialidad(Especialidad especialidad) {
-        this.especialidad = especialidad;
+    public void setIdEspecialidad(int IdEspecialidad) {
+        this.IdEspecialidad = IdEspecialidad;
     }
 
     @Override
     public String toString() {
-        return "Prestador{" + "IdPrestador=" + IdPrestador + ", nombre=" + nombre + ", dni=" + dni + ", domicilio=" + domicilio + ", telefono=" + telefono + ", activo=" + activo + ", especialidad=" + especialidad + '}';
+        return "Prestador{" + "IdPrestador=" + IdPrestador + ", Nombre=" + Nombre + ", Dni=" + Dni + ", Domicilio=" + Domicilio + ", Telefono=" + Telefono + ", activo=" + activo + ", IdEspecialidad=" + IdEspecialidad + '}';
     }
-
-    
-    
-    
 }
