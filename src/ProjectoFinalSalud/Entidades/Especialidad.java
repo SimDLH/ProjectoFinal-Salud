@@ -17,6 +17,17 @@ public class Especialidad {
     public Especialidad() {
     }
 
+    public Especialidad(int IdEspecialidad, String Especialidad) {
+        this.IdEspecialidad = IdEspecialidad;
+        this.Especialidad = Especialidad;
+    }
+
+    public Especialidad(String Especialidad) {
+        this.Especialidad = Especialidad;
+    }
+    
+    
+
     public int getIdEspecialidad() {
         return IdEspecialidad;
     }

@@ -64,7 +64,7 @@ public class EspecialidadData {
     }
     public void eliminarEspecialidad(int id) {
         
-        String sql = "UPDATE Especialidad SET estado=0 WHERE IdEspecialidad=? AND estado=1";
+    String sql = "Delete from Especialidad WHERE IdEspecialidad=?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -82,7 +82,7 @@ public class EspecialidadData {
     }
     public Especialidad buscarEspecialidad(int IdE) {
 
-        String sql = "SELECT IdEspecialidad,Especialidad FROM Especialidad WHERE IdEspecialidad=? AND estado=1";
+        String sql = "SELECT IdEspecialidad,Especialidad FROM Especialidad WHERE IdEspecialidad=?";
         
         Especialidad esp = null;
         
@@ -105,7 +105,7 @@ public class EspecialidadData {
     }
     public ArrayList<Especialidad> listarEspecialidad(){
         
-        String sql = "SELECT IdEspecialidad,Especialidad FROM Especialidad WHERE estado=1";
+        String sql = "SELECT * from Especialidad";
         ArrayList<Especialidad> especialidades = new ArrayList<>();
         
         try {

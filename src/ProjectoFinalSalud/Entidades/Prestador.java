@@ -17,28 +17,28 @@ public class Prestador {
     private String Domicilio;
     private int Telefono;
     private boolean activo;
-    private int IdEspecialidad;
+    private Especialidad Especialidad;
 
     public Prestador() {
     }
 
-    public Prestador(int IdPrestador, String Nombre, int Dni, String Domicilio, int Telefono, boolean activo, int IdEspecialidad) {
+    public Prestador(int IdPrestador, String Nombre, int Dni, String Domicilio, int Telefono, boolean activo, Especialidad Especialidad) {
         this.IdPrestador = IdPrestador;
         this.Nombre = Nombre;
         this.Dni = Dni;
         this.Domicilio = Domicilio;
         this.Telefono = Telefono;
         this.activo = activo;
-        this.IdEspecialidad = IdEspecialidad;
+        this.Especialidad = Especialidad;
     }
 
-    public Prestador(String Nombre, int Dni, String Domicilio, int Telefono, boolean activo, int IdEspecialidad) {
+    public Prestador(String Nombre, int Dni, String Domicilio, int Telefono, boolean activo, Especialidad Especialidad) {
         this.Nombre = Nombre;
         this.Dni = Dni;
         this.Domicilio = Domicilio;
         this.Telefono = Telefono;
         this.activo = activo;
-        this.IdEspecialidad = IdEspecialidad;
+        this.Especialidad = Especialidad;
     }
 
     public int getIdPrestador() {
@@ -89,16 +89,21 @@ public class Prestador {
         this.activo = activo;
     }
 
-    public int getIdEspecialidad() {
-        return IdEspecialidad;
+    public Especialidad getEspecialidad() {
+        return Especialidad;
     }
 
-    public void setIdEspecialidad(int IdEspecialidad) {
-        this.IdEspecialidad = IdEspecialidad;
+    public void setEspecialidad(Especialidad Especialidad) {
+        this.Especialidad = Especialidad;
     }
+    
+    
 
+    
+
+   
     @Override
     public String toString() {
-        return "Prestador{" + "IdPrestador=" + IdPrestador + ", Nombre=" + Nombre + ", Dni=" + Dni + ", Domicilio=" + Domicilio + ", Telefono=" + Telefono + ", activo=" + activo + ", IdEspecialidad=" + IdEspecialidad + '}';
+        return "Prestador{" + "IdPrestador=" + IdPrestador + ", Nombre=" + Nombre + ", Dni=" + Dni + ", Domicilio=" + Domicilio + ", Telefono=" + Telefono + ", activo=" + activo + ", IdEspecialidad=" + Especialidad.getIdEspecialidad() + '}';
     }
 }

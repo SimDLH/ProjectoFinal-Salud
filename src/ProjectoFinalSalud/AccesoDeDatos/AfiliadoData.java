@@ -93,8 +93,8 @@ public class AfiliadoData {
     }
     
     public Afiliado buscarAfiliados(int dni){
-        String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono FROM afiliado WHERE dni=?";
-        Afiliado afiliado=null;
+        String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono ,estado  FROM afiliado WHERE dni=?";
+        Afiliado afiliado=new Afiliado();
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setInt(1, dni);

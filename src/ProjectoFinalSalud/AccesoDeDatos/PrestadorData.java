@@ -5,6 +5,7 @@
  */
 package ProjectoFinalSalud.AccesoDeDatos;
 
+import ProjectoFinalSalud.Entidades.Especialidad;
 import ProjectoFinalSalud.Entidades.Prestador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,17 +30,16 @@ public class PrestadorData {
     
     public void guardarPrestador(Prestador pres){
         
-        String sql = "insert into Prestador(IdPrestador,Nombre,Dni,Domicilio,Telefono,activo,IdEspecialidad)"
-                + "values (?,?,?,?,?,?,?,?)";
+        String sql = "insert into Prestador(Nombre,Dni,Domicilio,Telefono,Activo,IdEspecialidad)"
+                + "values (?,?,?,?,?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, pres.getIdPrestador());
-            ps.setString(2, pres.getNombre());
-            ps.setInt(3, pres.getDni());
-            ps.setString(4, pres.getDomicilio());
-            ps.setInt(5, pres.getTelefono());
-            ps.setBoolean(6, pres.isActivo());
-            ps.setInt(7, pres.getIdEspecialidad());
+            ps.setString(1, pres.getNombre());
+            ps.setInt(2, pres.getDni());
+            ps.setString(3, pres.getDomicilio());
+            ps.setInt(4, pres.getTelefono());
+            ps.setBoolean(5, pres.isActivo());
+            ps.setInt(6, pres.getEspecialidad().getIdEspecialidad());
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
@@ -52,17 +52,16 @@ public class PrestadorData {
     }
     public void modificarPrestador(Prestador pres) {
         
-        String sql = "Update Prestador set IdPrestador=?,Nombre=?,Dni=?,Domicilio=?,Telefono=?,IdEspecialidad=?"
+        String sql = "Update prestador set Nombre=?,Dni=?,Domicilio=?,Telefono=?,IdEspecialidad=?"
                 + "Where IdPrestador=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, pres.getIdPrestador());
-            ps.setString(2, pres.getNombre());
-            ps.setInt(3, pres.getDni());
-            ps.setString(4, pres.getDomicilio());
-            ps.setInt(5, pres.getTelefono());
-            ps.setBoolean(6, pres.isActivo());
-            ps.setInt(7, pres.getIdEspecialidad());
+            ps.setString(1, pres.getNombre());
+            ps.setInt(2, pres.getDni());
+            ps.setString(3, pres.getDomicilio());
+            ps.setInt(4, pres.getTelefono());
+            ps.setInt(5, pres.getEspecialidad().getIdEspecialidad());
+            ps.setInt(6, pres.getIdPrestador());
             int ex = ps.executeUpdate();
             if (ex == 1) {
                 JOptionPane.showMessageDialog(null, "Prestador modificado");
@@ -73,7 +72,7 @@ public class PrestadorData {
     }
     public void eliminarPrestador(int id) {
         
-        String sql = "Update Prestador set estado=0 where IdPrestador=?";
+        String sql = "Update Prestador set Activo=0 where IdPrestador=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
@@ -87,12 +86,13 @@ public class PrestadorData {
     }
     public Prestador buscarPrestador(int id) {
 
-        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=? AND estado=1";
+        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=? AND Activo=1";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
+            EspecialidadData ed=new EspecialidadData();
             if (rs.next()) {
                 pres = new Prestador();
                 pres.setIdPrestador(id);
@@ -101,7 +101,8 @@ public class PrestadorData {
                 pres.setTelefono(rs.getInt("Telefono"));
                 pres.setDni(rs.getInt("Dni"));
                 pres.setActivo(true);
-                pres.setIdEspecialidad(rs.getInt("IdEspecialidad"));
+                Especialidad esp=ed.buscarEspecialidad(rs.getInt("IdEspecialidad"));
+                pres.setEspecialidad(esp);
             } else {
                 JOptionPane.showMessageDialog(null, "El Prestador no existe");
             }
@@ -113,13 +114,14 @@ public class PrestadorData {
     }
     public Prestador buscarIdEspecialidad(int IdE) {
 
-        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND estado=1";
+        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, IdE);
 
             ResultSet rs = ps.executeQuery();
+            EspecialidadData ed=new EspecialidadData();
             if (rs.next()) {
                 pres = new Prestador();
                 pres.setIdPrestador(rs.getInt("IdPrestador"));
@@ -128,7 +130,8 @@ public class PrestadorData {
                 pres.setDomicilio(rs.getString("Domicilio"));
                 pres.setTelefono(rs.getInt("Telefono"));
                 pres.setActivo(true);
-                pres.setIdEspecialidad(rs.getInt("IdEspecialidad"));
+                Especialidad esp=ed.buscarEspecialidad(IdE);
+                pres.setEspecialidad(esp);
             } else {
                 JOptionPane.showMessageDialog(null, "El IdE no existe");
             }
@@ -140,12 +143,12 @@ public class PrestadorData {
     }
     public ArrayList<Prestador> listarPrestador(){
         
-        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM afiliado WHERE estado=1";
+        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE Activo=1";
         ArrayList<Prestador> prestadores = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            
+            EspecialidadData ed=new EspecialidadData();
             while (rs.next()) {
                 Prestador pres = new Prestador();
                 pres.setIdPrestador(rs.getInt("IdPrestador"));
@@ -153,7 +156,8 @@ public class PrestadorData {
                 pres.setDni(rs.getInt("Dni"));
                 pres.setDomicilio(rs.getString("Domicilio"));
                 pres.setTelefono(rs.getInt("Telefono"));
-                pres.setIdEspecialidad(rs.getInt("IdEspecialidad"));
+                Especialidad ad=ed.buscarEspecialidad(rs.getInt("IdEspecialidad"));
+                pres.setEspecialidad(ad);
                 pres.setActivo(true);
                 prestadores.add(pres);
             }
