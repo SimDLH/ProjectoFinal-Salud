@@ -96,7 +96,7 @@ public class ProjectoFinalSalud {
            System.out.println("Domicilio "+p.getDomicilio());
            System.out.println("Telefono "+p.getTelefono());
            System.out.println("Especialidad "+p.getEspecialidad().getEspecialidad());
-           System.out.println("-------------------------------------------");
+           System.out.println("-------------------------------------------"); 
        }
    
     }
