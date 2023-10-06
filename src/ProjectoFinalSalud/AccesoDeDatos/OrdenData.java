@@ -59,7 +59,7 @@ public class OrdenData {
 
     public ArrayList<Orden> listarOrdenesPorFecha(LocalDate fecha) {
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
-        String sql = "SELECT idAfiliado, idPrestador, formaPago,importe FROM orden WHERE fecha=?";
+        String sql = "SELECT idOrden,idAfiliado, idPrestador, formaPago,importe FROM orden WHERE fecha=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setDate(1, Date.valueOf(fecha));
@@ -75,7 +75,7 @@ public class OrdenData {
                 orden.setFormaPago(rs.getString("formaPago"));
                 orden.setImporte(rs.getDouble("importe"));
                 Prestador p = pd.buscarPrestador(rs.getInt("idPrestador"));
-                Afiliado a = ad.buscarAfiliados(rs.getInt("idAfiliado"));
+                Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
                 orden.setAfiliado(a);
                 orden.setPrestador(p);
 
@@ -93,16 +93,16 @@ public class OrdenData {
     public ArrayList<Orden> OrdenesPorAfiliado(int dni) {
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
 
-        String sql = "SELECT orden.idOrden ,formaPago ,importe, orden.idPrestador,afiliado.dni "
+       String sql = "SELECT idOrden ,formaPago ,importe,fecha,orden.idPrestador "
                 + " FROM orden JOIN afiliado WHERE orden.idAfiliado=afiliado.idAfiliado"
-                + " AND afiliado.dni=? AND afiliado.activo=1";
+                + " AND afiliado.dni=? AND afiliado.Activo=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, dni);
             ResultSet rs = ps.executeQuery();
             Orden orden;
             AfiliadoData ad = new AfiliadoData();
-            Afiliado a = ad.buscarAfiliados(rs.getInt("dni"));
+            Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
             PrestadorData pd = new PrestadorData();
 
             while (rs.next()) {
@@ -110,6 +110,7 @@ public class OrdenData {
                 orden.setIdOrden(rs.getInt("idOrden"));
                 orden.setFormaPago(rs.getString("formaPago"));
                 orden.setImporte(rs.getDouble("importe"));
+                orden.setFecha(rs.getDate("fecha").toLocalDate());
                 Prestador p = pd.buscarPrestador(rs.getInt("idPrestador"));
                 orden.setPrestador(p);
                 orden.setAfiliado(a);
@@ -124,27 +125,27 @@ public class OrdenData {
 
     }
 
-    public ArrayList<Orden> OrdenesPorPrestador(int dni) {
+    public ArrayList<Orden> OrdenesPorPrestador(int id) {
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
 
         String sql = "SELECT orden.idOrden ,formaPago ,importe, orden.idPrestador,orden.idAfiliado"
-                + " FROM orden JOIN prestador WHERE orden.idPrestador=prestador.idprestador"
-                + " AND prestador.dni=? AND prestador.activo=1";
+                + " FROM orden JOIN prestador WHERE orden.idPrestador=prestador.Idprestador"
+                + " AND prestador.IdPrestador=? AND prestador.Activo=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, dni);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             Orden orden;
             AfiliadoData ad = new AfiliadoData();
             PrestadorData pd = new PrestadorData();
-            Prestador p = pd.buscarPrestador(dni);
+            Prestador p = pd.buscarPrestador(id);
 
             while (rs.next()) {
                 orden = new Orden();
                 orden.setIdOrden(rs.getInt("idOrden"));
                 orden.setFormaPago(rs.getString("formaPago"));
                 orden.setImporte(rs.getDouble("importe"));
-                Afiliado a = ad.buscarAfiliados(rs.getInt("idAfiliado"));
+                Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
                 orden.setPrestador(p);
                 orden.setAfiliado(a);
                 ordenes.add(orden);

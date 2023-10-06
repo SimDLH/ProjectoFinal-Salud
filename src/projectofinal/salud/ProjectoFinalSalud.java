@@ -4,11 +4,15 @@ package projectofinal.salud;
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.AccesoDeDatos.Conexion;
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
+import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Afiliado;
 import ProjectoFinalSalud.Entidades.Especialidad;
+import ProjectoFinalSalud.Entidades.Orden;
 import ProjectoFinalSalud.Entidades.Prestador;
 import java.sql.Connection;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 
 
@@ -22,6 +26,7 @@ public class ProjectoFinalSalud {
         AfiliadoData ad=new AfiliadoData();
         PrestadorData pd=new PrestadorData();
         EspecialidadData ed=new EspecialidadData();
+        OrdenData od=new OrdenData();
       /*  Afiliado a1=new Afiliado("Marcos",222,"San Martin 123",9876478,true);
         Afiliado a2=new Afiliado("Luis",333,"La Rocka 21",2982634,true);
         Afiliado a3=new Afiliado("Vanesa",444,"La Santa 92",1947234,true);
@@ -90,16 +95,41 @@ public class ProjectoFinalSalud {
         System.out.println("Domicilio "+p.getDomicilio());
         System.out.println("Especialidad "+p.getEspecialidad().getEspecialidad());*/
      
-       ArrayList<Prestador>prestadores=pd.listarPrestador();
+ /*      ArrayList<Prestador>prestadores=pd.listarPrestador();
        for (Prestador p:prestadores){
            System.out.println("Nombre "+p.getNombre());
            System.out.println("Domicilio "+p.getDomicilio());
            System.out.println("Telefono "+p.getTelefono());
            System.out.println("Especialidad "+p.getEspecialidad().getEspecialidad());
            System.out.println("-------------------------------------------"); 
-       }
+       }*/
+ 
+    /*  Afiliado a1=ad.buscarAfiliados(444);
+      Prestador p1=pd.buscarPrestador(2);
+ 
+      Orden o1=new Orden(LocalDate.of(2020, 10, 24),"Cheque",299.99,a1,p1);
+      od.guardarOrden(o1);*/
+      
+   /*  LocalDate local=LocalDate.of(2023, 07, 12);
+      ArrayList<Orden>ordenes=new ArrayList<>();
+      ordenes=od.listarOrdenesPorFecha(local);
+        for (Orden or:ordenes){
+            System.out.println("Tipo de paga "+or.getFormaPago());
+            System.out.println("Afiliado "+or.getAfiliado().getNombre());
+            System.out.println("Prestador "+or.getPrestador().getNombre());
+    }*/
+         ArrayList<Orden>ordenes=od.OrdenesPorAfiliado(222);
+         for (Orden or:ordenes){
+             System.out.println("ID "+or.getIdOrden());
+             System.out.println("Tipo de paga "+or.getFormaPago());
+             System.out.println("Prestador "+or.getPrestador().getNombre());
+             System.out.println("-------------------------------------");
+   
+   
+        }
    
     }
+    
     
     
 }

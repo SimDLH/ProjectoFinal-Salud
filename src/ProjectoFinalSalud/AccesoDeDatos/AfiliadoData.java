@@ -93,7 +93,7 @@ public class AfiliadoData {
     }
     
     public Afiliado buscarAfiliados(int dni){
-        String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono ,estado  FROM afiliado WHERE dni=?";
+        String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono ,Activo  FROM afiliado WHERE dni=?";
         Afiliado afiliado=new Afiliado();
         try {
             PreparedStatement ps=con.prepareStatement(sql);
@@ -147,6 +147,28 @@ public class AfiliadoData {
             JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
         }
         
+        
+        
     }
+    public Afiliado buscarAfiliadoID(int id){
+           Afiliado afiliado= new Afiliado();
+           String sql="SELECT nombre ,dni ,domicilio ,telefono FROM afiliado WHERE idAfiliado=? and Activo=1";
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            if (rs.next()){
+                afiliado.setNombre(rs.getString("nombre"));
+                afiliado.setDni(rs.getInt("dni"));
+                afiliado.setDomicilio(rs.getString("domicilio"));
+                afiliado.setTelefono(rs.getInt("telefono"));
+                afiliado.setActivo(true);
+            }
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al ingresar a la tabla de afiliados");
+        }
+        return afiliado;
+        }
     
 }
