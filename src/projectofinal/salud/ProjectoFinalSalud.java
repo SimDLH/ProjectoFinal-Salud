@@ -118,7 +118,7 @@ public class ProjectoFinalSalud {
             System.out.println("Afiliado "+or.getAfiliado().getNombre());
             System.out.println("Prestador "+or.getPrestador().getNombre());
     }*/
-         ArrayList<Orden>ordenes=od.OrdenesPorAfiliado(222);
+         ArrayList<Orden>ordenes=od.OrdenesPorAfiliado(444);
          for (Orden or:ordenes){
              System.out.println("ID "+or.getIdOrden());
              System.out.println("Tipo de paga "+or.getFormaPago());
