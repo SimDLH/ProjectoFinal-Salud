@@ -77,12 +77,22 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         textoApellidoIniSes.setText("Ej: Lopez");
         textoApellidoIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
         textoApellidoIniSes.setPreferredSize(new java.awt.Dimension(60, 20));
+        textoApellidoIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textoApellidoIniSesMouseClicked(evt);
+            }
+        });
 
         textoDireccionEmailIniSes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         textoDireccionEmailIniSes.setForeground(new java.awt.Color(204, 204, 204));
         textoDireccionEmailIniSes.setText("Ej: juanlopes@gmail.com");
         textoDireccionEmailIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
         textoDireccionEmailIniSes.setPreferredSize(new java.awt.Dimension(60, 20));
+        textoDireccionEmailIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textoDireccionEmailIniSesMouseClicked(evt);
+            }
+        });
 
         etiquetaNombreIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaNombreIniSes.setForeground(new java.awt.Color(102, 102, 102));
@@ -259,6 +269,14 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     private void botonAtrasIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasIniSesActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasIniSesActionPerformed
+
+    private void textoApellidoIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoApellidoIniSesMouseClicked
+        textoApellidoIniSes.setText("");
+    }//GEN-LAST:event_textoApellidoIniSesMouseClicked
+
+    private void textoDireccionEmailIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoDireccionEmailIniSesMouseClicked
+        textoDireccionEmailIniSes.setText("");
+    }//GEN-LAST:event_textoDireccionEmailIniSesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

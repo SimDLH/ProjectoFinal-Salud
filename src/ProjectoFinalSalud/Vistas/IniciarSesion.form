@@ -234,6 +234,9 @@
                   <Dimension value="[60, 20]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoApellidoIniSesMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="textoDireccionEmailIniSes">
               <Properties>
@@ -255,6 +258,9 @@
                   <Dimension value="[60, 20]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoDireccionEmailIniSesMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="etiquetaNombreIniSes">
               <Properties>
