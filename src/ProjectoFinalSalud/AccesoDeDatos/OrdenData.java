@@ -93,12 +93,12 @@ public class OrdenData {
     public ArrayList<Orden> OrdenesPorAfiliado(int dni) {
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
 
-     /*  String sql = "SELECT idOrden ,formaPago ,importe,fecha,orden.idPrestador "
+        /*  String sql = "SELECT idOrden ,formaPago ,importe,fecha,orden.idPrestador "
                 + " FROM orden JOIN afiliado WHERE orden.idAfiliado=afiliado.idAfiliado"
                 + " AND afiliado.dni=? AND afiliado.Activo=1";*/
-        String sql="SELECT idOrden ,idPrestador,fecha,formaPago,importe\n" +
-"FROM orden JOIN afiliado\n" +
-"WHERE orden.idAfiliado=afiliado.idAfiliado AND afiliado.dni=? AND afiliado.Activo=1;";
+        String sql = "SELECT idOrden ,idPrestador,fecha,formaPago,importe, orden.idAfiliado\n"
+                + "FROM orden JOIN afiliado\n"
+                + "WHERE orden.idAfiliado=afiliado.idAfiliado AND afiliado.dni=? AND afiliado.Activo=1;";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, dni);
@@ -110,10 +110,13 @@ public class OrdenData {
             while (rs.next()) {
                 orden = new Orden();
                 orden.setIdOrden(rs.getInt("idOrden"));
+
                 Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
                 orden.setAfiliado(a);
+
                 Prestador p = pd.buscarPrestador(rs.getInt("idPrestador"));
                 orden.setPrestador(p);
+
                 orden.setFecha(rs.getDate("fecha").toLocalDate());
                 orden.setFormaPago(rs.getString("formaPago"));
                 orden.setImporte(rs.getDouble("importe"));
@@ -122,6 +125,7 @@ public class OrdenData {
             }
             ps.close();
         } catch (SQLException ex) {
+            System.out.println("error");
             JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de ordenes");
         }
         return ordenes;
