@@ -10,7 +10,7 @@ package ProjectoFinalSalud.Entidades;
  * @author simon
  */
 public class Prestador {
-    
+
     private int IdPrestador;
     private String Nombre;
     private int Dni;
@@ -96,14 +96,9 @@ public class Prestador {
     public void setEspecialidad(Especialidad Especialidad) {
         this.Especialidad = Especialidad;
     }
-    
-    
 
-    
-
-   
     @Override
     public String toString() {
-        return "Prestador{" + "IdPrestador=" + IdPrestador + ", Nombre=" + Nombre + ", Dni=" + Dni + ", Domicilio=" + Domicilio + ", Telefono=" + Telefono + ", activo=" + activo + ", IdEspecialidad=" + Especialidad.getIdEspecialidad() + '}';
+        return " Nombre:" + Nombre + " " + Especialidad.toString();
     }
 }

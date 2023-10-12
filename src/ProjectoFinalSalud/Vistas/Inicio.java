@@ -17,7 +17,6 @@ public class Inicio extends javax.swing.JFrame {
      * Creates new form Inicio
      */
     /*static int contador = 0;*/
-    
     public Inicio() {
         initComponents();
         setExtendedState(this.MAXIMIZED_BOTH);

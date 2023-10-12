@@ -34,6 +34,13 @@ public class Ordenes extends javax.swing.JInternalFrame {
 
         panelGradienteOrdenes = new keeptoo.KGradientPanel();
         botonAtrasOrdenes = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuSacarOrden = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuPorFecha = new javax.swing.JMenuItem();
+        jMenuPorAfiliado = new javax.swing.JMenuItem();
+        jMenuPorPrestador = new javax.swing.JMenuItem();
 
         panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
@@ -65,8 +72,40 @@ public class Ordenes extends javax.swing.JInternalFrame {
             .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(551, Short.MAX_VALUE))
+                .addContainerGap(541, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("Sacar Orden");
+
+        jMenuSacarOrden.setText("Sacar Orden");
+        jMenuSacarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuSacarOrdenActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuSacarOrden);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Ordenes");
+
+        jMenuPorFecha.setText("Ordenes Por Feha");
+        jMenuPorFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuPorFechaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuPorFecha);
+
+        jMenuPorAfiliado.setText("Ordenes Por Afiliado");
+        jMenu2.add(jMenuPorAfiliado);
+
+        jMenuPorPrestador.setText("Ordenes Por Prestador");
+        jMenu2.add(jMenuPorPrestador);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,9 +125,33 @@ public class Ordenes extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasOrdenesActionPerformed
 
+    private void jMenuSacarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSacarOrdenActionPerformed
+        panelGradienteOrdenes.removeAll();
+        panelGradienteOrdenes.repaint();
+        SacarOrden sa = new SacarOrden();
+        sa.setVisible(true);
+        panelGradienteOrdenes.add(sa);
+        panelGradienteOrdenes.setVisible(true);
+    }//GEN-LAST:event_jMenuSacarOrdenActionPerformed
+
+    private void jMenuPorFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPorFechaActionPerformed
+        panelGradienteOrdenes.removeAll();
+        panelGradienteOrdenes.repaint();
+        OrdenPorFecha opf = new OrdenPorFecha();
+        opf.setVisible(true);
+        panelGradienteOrdenes.add(opf);
+        panelGradienteOrdenes.setVisible(true);
+    }//GEN-LAST:event_jMenuPorFechaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrdenes;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuPorAfiliado;
+    private javax.swing.JMenuItem jMenuPorFecha;
+    private javax.swing.JMenuItem jMenuPorPrestador;
+    private javax.swing.JMenuItem jMenuSacarOrden;
     private keeptoo.KGradientPanel panelGradienteOrdenes;
     // End of variables declaration//GEN-END:variables
 }

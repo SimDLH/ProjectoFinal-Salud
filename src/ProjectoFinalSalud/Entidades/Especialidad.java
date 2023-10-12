@@ -10,9 +10,9 @@ package ProjectoFinalSalud.Entidades;
  * @author simon
  */
 public class Especialidad {
-    
-   private int IdEspecialidad;
-   private String Especialidad;
+
+    private int IdEspecialidad;
+    private String Especialidad;
 
     public Especialidad() {
     }
@@ -25,8 +25,6 @@ public class Especialidad {
     public Especialidad(String Especialidad) {
         this.Especialidad = Especialidad;
     }
-    
-    
 
     public int getIdEspecialidad() {
         return IdEspecialidad;
@@ -43,6 +41,10 @@ public class Especialidad {
     public void setEspecialidad(String Especialidad) {
         this.Especialidad = Especialidad;
     }
-   
-   
+
+    @Override
+    public String toString() {
+        return "Codigo:" + IdEspecialidad + ", Especialidad:" + Especialidad;
+    }
+
 }
