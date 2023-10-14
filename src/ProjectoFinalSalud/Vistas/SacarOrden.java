@@ -191,9 +191,20 @@ public class SacarOrden extends javax.swing.JInternalFrame {
     private void jButtonGuardarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarOrdenActionPerformed
 
         int dni = Integer.parseInt(jTextDocumento.getText());
-        LocalDate fecha = jDateFechaOrden.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        double importe = Double.parseDouble(jTextImporte.getText());
         Prestador pSeleccionado = (Prestador) jComboBox1.getSelectedItem();
+        LocalDate fecha = jDateFechaOrden.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        ArrayList<Orden> ordenes = od.listarOrdenesPorFecha(fecha);
+        for (Orden o : ordenes) {
+            if (o.getPrestador().getIdPrestador() == pSeleccionado.getIdPrestador() && o.getAfiliado().getDni() == dni) {
+                JOptionPane.showMessageDialog(null, "Solo se admite 1 Orden por dia para el"
+                        + " mismo prestador por afiliado");
+                limpiarCampos();
+                return;
+            }
+
+        }
+        double importe = Double.parseDouble(jTextImporte.getText());
+
         Orden orden = new Orden(fecha, jTextFomaPago.getText(), importe,
                 ad.buscarAfiliados(dni),
                 pSeleccionado);// arreglado
@@ -225,6 +236,7 @@ public class SacarOrden extends javax.swing.JInternalFrame {
         jTextImporte.setText("");
 
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBuscarOrden;
     private javax.swing.JButton jButtonGuardarOrden;

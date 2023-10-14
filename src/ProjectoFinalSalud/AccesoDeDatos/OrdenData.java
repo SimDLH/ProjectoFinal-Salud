@@ -135,7 +135,7 @@ public class OrdenData {
     public ArrayList<Orden> OrdenesPorPrestador(int id) {
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
 
-        String sql = "SELECT orden.idOrden ,formaPago ,importe, orden.idPrestador,orden.idAfiliado"
+        String sql = "SELECT orden.idOrden ,fecha,formaPago ,importe, orden.idPrestador,orden.idAfiliado"
                 + " FROM orden JOIN prestador WHERE orden.idPrestador=prestador.Idprestador"
                 + " AND prestador.IdPrestador=? AND prestador.Activo=1";
         try {
@@ -152,6 +152,7 @@ public class OrdenData {
                 orden.setIdOrden(rs.getInt("idOrden"));
                 orden.setFormaPago(rs.getString("formaPago"));
                 orden.setImporte(rs.getDouble("importe"));
+                orden.setFecha(rs.getDate("fecha").toLocalDate());
                 Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
                 orden.setPrestador(p);
                 orden.setAfiliado(a);

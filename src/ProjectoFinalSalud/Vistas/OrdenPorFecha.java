@@ -129,6 +129,7 @@ public class OrdenPorFecha extends javax.swing.JInternalFrame {
             for (Orden orden : listaFecha) {
                 modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
                     orden.getPrestador().getNombre(), orden.getFormaPago(), orden.getImporte()});
+
             }
         } catch (NullPointerException np) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una fecha");

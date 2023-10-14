@@ -5,17 +5,30 @@
  */
 package ProjectoFinalSalud.Vistas;
 
+import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
+import ProjectoFinalSalud.Entidades.Orden;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author coki_
  */
 public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form OrdenesPorAfiliado
-     */
+    OrdenData od = new OrdenData();
+
+    DefaultTableModel modelo = new DefaultTableModel() {
+        public boolean isCellEditable(int fila, int columna) {
+            return false;//aca son editables fila y columna si es = false no lo son
+        }
+
+    };
+
     public OrdenesPorAfiliado() {
         initComponents();
+        armarCabecera();
     }
 
     /**
@@ -27,20 +40,116 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTdocumento = new javax.swing.JTextField();
+        jButtonBuscarA = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablaAfiliados = new javax.swing.JTable();
+
+        setPreferredSize(new java.awt.Dimension(800, 600));
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setText("Busqueda por Afiliado");
+
+        jLabel2.setText("DNI Afiliado:");
+
+        jButtonBuscarA.setText("Buscar");
+        jButtonBuscarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarAActionPerformed(evt);
+            }
+        });
+
+        jTablaAfiliados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTablaAfiliados);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(106, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTdocumento))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonBuscarA)
+                        .addGap(119, 119, 119))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(95, 95, 95))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTdocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonBuscarA))
+                    .addComponent(jLabel2))
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonBuscarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarAActionPerformed
+        limpiarTabla();
+        try {
+            int dni = Integer.parseInt(jTdocumento.getText());
+            ArrayList<Orden> listarOrdenes = od.OrdenesPorAfiliado(dni);
+            for (Orden orden : listarOrdenes) {
+                modelo.addRow(new Object[]{orden.getIdOrden(),
+                    orden.getPrestador().getNombre(), orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
+            }
+        } catch (NumberFormatException nf) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar un DNI valido");
+        }
+
+    }//GEN-LAST:event_jButtonBuscarAActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBuscarA;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTablaAfiliados;
+    private javax.swing.JTextField jTdocumento;
     // End of variables declaration//GEN-END:variables
+
+    private void armarCabecera() {
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Prestador");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Pago");
+        modelo.addColumn("Importe");
+        jTablaAfiliados.setModel(modelo);
+    }
+
+    private void limpiarTabla() {
+        int fila = modelo.getRowCount();
+        for (int i = fila - 1; i >= 0; i--) {
+            modelo.removeRow(i);
+        }
+    }
 }

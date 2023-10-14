@@ -98,9 +98,19 @@ public class Ordenes extends javax.swing.JInternalFrame {
         jMenu2.add(jMenuPorFecha);
 
         jMenuPorAfiliado.setText("Ordenes Por Afiliado");
+        jMenuPorAfiliado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuPorAfiliadoActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuPorAfiliado);
 
         jMenuPorPrestador.setText("Ordenes Por Prestador");
+        jMenuPorPrestador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuPorPrestadorActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuPorPrestador);
 
         jMenuBar1.add(jMenu2);
@@ -142,6 +152,24 @@ public class Ordenes extends javax.swing.JInternalFrame {
         panelGradienteOrdenes.add(opf);
         panelGradienteOrdenes.setVisible(true);
     }//GEN-LAST:event_jMenuPorFechaActionPerformed
+
+    private void jMenuPorAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPorAfiliadoActionPerformed
+        panelGradienteOrdenes.removeAll();
+        panelGradienteOrdenes.repaint();
+        OrdenesPorAfiliado opa = new OrdenesPorAfiliado();
+        opa.setVisible(true);
+        panelGradienteOrdenes.add(opa);
+        panelGradienteOrdenes.setVisible(true);
+    }//GEN-LAST:event_jMenuPorAfiliadoActionPerformed
+
+    private void jMenuPorPrestadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPorPrestadorActionPerformed
+        panelGradienteOrdenes.removeAll();
+        panelGradienteOrdenes.repaint();
+        OrdenesPorPrestador opp = new OrdenesPorPrestador();
+        opp.setVisible(true);
+        panelGradienteOrdenes.add(opp);
+        panelGradienteOrdenes.setVisible(true);
+    }//GEN-LAST:event_jMenuPorPrestadorActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrdenes;
