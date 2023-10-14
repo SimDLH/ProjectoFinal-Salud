@@ -32,11 +32,17 @@ public class Afiliados extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradienteOrdenes = new keeptoo.KGradientPanel();
+        AfiliadosOrdenes = new keeptoo.KGradientPanel();
         botonAtrasAfiliados = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
-        panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
+        AfiliadosOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
+        AfiliadosOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
 
         botonAtrasAfiliados.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasAfiliados.setForeground(new java.awt.Color(255, 255, 255));
@@ -51,32 +57,66 @@ public class Afiliados extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout panelGradienteOrdenesLayout = new javax.swing.GroupLayout(panelGradienteOrdenes);
-        panelGradienteOrdenes.setLayout(panelGradienteOrdenesLayout);
-        panelGradienteOrdenesLayout.setHorizontalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteOrdenesLayout.createSequentialGroup()
+        javax.swing.GroupLayout AfiliadosOrdenesLayout = new javax.swing.GroupLayout(AfiliadosOrdenes);
+        AfiliadosOrdenes.setLayout(AfiliadosOrdenesLayout);
+        AfiliadosOrdenesLayout.setHorizontalGroup(
+            AfiliadosOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfiliadosOrdenesLayout.createSequentialGroup()
                 .addContainerGap(1132, Short.MAX_VALUE)
                 .addComponent(botonAtrasAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        panelGradienteOrdenesLayout.setVerticalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
+        AfiliadosOrdenesLayout.setVerticalGroup(
+            AfiliadosOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AfiliadosOrdenesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(551, Short.MAX_VALUE))
+                .addContainerGap(530, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("Control de afiliados");
+
+        jMenuItem1.setText("Abilitar y desabilitar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Modificar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Lista de afiliados");
+
+        jMenuItem3.setText("Lista");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AfiliadosOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AfiliadosOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setBounds(315, 200, 1260, 620);
@@ -86,9 +126,41 @@ public class Afiliados extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasAfiliadosActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+         AfiliadosOrdenes.removeAll();
+         AfiliadosOrdenes.repaint();
+         AfiliadosAgregarYAnular afiAA = new AfiliadosAgregarYAnular();
+         AfiliadosOrdenes.add(afiAA);
+         afiAA.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code
+        AfiliadosOrdenes.removeAll();
+        AfiliadosOrdenes.repaint();
+        AfiliadosMod afimod=new AfiliadosMod();
+        AfiliadosOrdenes.add(afimod);
+        afimod.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        AfiliadosOrdenes.removeAll();
+        AfiliadosOrdenes.repaint();
+        AfiliadosLista afl=new AfiliadosLista();
+        AfiliadosOrdenes.add(afl);
+        afl.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KGradientPanel AfiliadosOrdenes;
     private javax.swing.JButton botonAtrasAfiliados;
-    private keeptoo.KGradientPanel panelGradienteOrdenes;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }

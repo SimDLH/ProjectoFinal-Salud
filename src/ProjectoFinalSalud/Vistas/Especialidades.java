@@ -34,6 +34,11 @@ public class Especialidades extends javax.swing.JInternalFrame {
 
         panelGradienteOrdenes = new keeptoo.KGradientPanel();
         botonAtrasEspecialidades = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
@@ -65,8 +70,33 @@ public class Especialidades extends javax.swing.JInternalFrame {
             .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasEspecialidades, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(551, Short.MAX_VALUE))
+                .addContainerGap(530, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("Control de especialidades");
+
+        jMenuItem1.setText("Agregar una especialidad");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Borrar una especialidad");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Lista de especialidades");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,9 +116,32 @@ public class Especialidades extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasEspecialidadesActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        panelGradienteOrdenes.removeAll();
+        panelGradienteOrdenes.repaint();
+        EspecialidadesAgregar ea=new EspecialidadesAgregar();
+        panelGradienteOrdenes.add(ea);
+        ea.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        panelGradienteOrdenes.removeAll();
+        panelGradienteOrdenes.repaint();
+        EspecialidadBorrar eb=new EspecialidadBorrar();
+        panelGradienteOrdenes.add(eb);
+        eb.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasEspecialidades;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private keeptoo.KGradientPanel panelGradienteOrdenes;
     // End of variables declaration//GEN-END:variables
 }
