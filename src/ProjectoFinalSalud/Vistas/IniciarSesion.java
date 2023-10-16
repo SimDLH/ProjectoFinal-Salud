@@ -40,7 +40,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         etiquetaImagenIniSes = new javax.swing.JLabel();
         botonAtrasIniSes = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(1600, 900));
+        setPreferredSize(new java.awt.Dimension(1300, 700));
 
         gradienteIniSes.setkEndColor(new java.awt.Color(51, 153, 255));
         gradienteIniSes.setkStartColor(new java.awt.Color(153, 0, 153));
@@ -266,7 +266,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1600, 900);
+        setBounds(0, 0, 1300, 700);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasIniSesActionPerformed
