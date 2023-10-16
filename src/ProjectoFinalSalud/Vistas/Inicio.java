@@ -251,9 +251,9 @@ public class Inicio extends javax.swing.JFrame {
         panelGradPrincipalLayout.setHorizontalGroup(
             panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 328, Short.MAX_VALUE)
-                .addComponent(separadorMenuPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(separadorMenuPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradPrincipalLayout.createSequentialGroup()
@@ -270,7 +270,7 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(156, 156, 156)
                         .addComponent(etiquetaPropaganda)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 381, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelGradPrincipalLayout.setVerticalGroup(
@@ -288,7 +288,7 @@ public class Inicio extends javax.swing.JFrame {
                             .addComponent(separadorMenuPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(etiquetaVideoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaPropaganda))

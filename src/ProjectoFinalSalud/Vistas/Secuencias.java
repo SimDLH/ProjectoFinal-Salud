@@ -12,7 +12,7 @@ public class Secuencias {
     
     public static void main(String[] args) {
 
-        int velocidad = 3;
+        int velocidad = 2;
        
         Timer timer;
         TimerTask tarea;

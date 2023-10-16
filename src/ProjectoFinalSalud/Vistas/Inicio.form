@@ -69,9 +69,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="separadorMenuPrincipal1" min="-2" pref="636" max="-2" attributes="0"/>
-                      <EmptySpace pref="328" max="32767" attributes="0"/>
-                      <Component id="separadorMenuPrincipal2" min="-2" pref="636" max="-2" attributes="0"/>
+                      <Component id="separadorMenuPrincipal1" min="-2" pref="446" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="separadorMenuPrincipal2" min="-2" pref="396" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -90,7 +90,7 @@
                               <Component id="panelGradBotPrincipales" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                               <Component id="etiquetaPropaganda" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="381" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -116,7 +116,7 @@
                           </Group>
                           <Component id="etiquetaVideoEmergencia" min="-2" pref="180" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="panelGradBotPrincipales" min="-2" max="-2" attributes="0"/>
                           <Component id="etiquetaPropaganda" min="-2" max="-2" attributes="0"/>

@@ -40,7 +40,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         etiquetaImagenIniSes = new javax.swing.JLabel();
         botonAtrasIniSes = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(1300, 700));
+        setPreferredSize(new java.awt.Dimension(1610, 820));
 
         gradienteIniSes.setkEndColor(new java.awt.Color(51, 153, 255));
         gradienteIniSes.setkStartColor(new java.awt.Color(153, 0, 153));
@@ -229,7 +229,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
                         .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(etiquetaTituloIniSes))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(249, 249, 249))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
@@ -244,7 +244,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
                 .addComponent(botonAtrasIniSes)
                 .addGap(26, 26, 26)
                 .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(etiquetaTituloIniSes)
@@ -259,14 +259,14 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1584, Short.MAX_VALUE)
+            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1313, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1300, 700);
+        setBounds(0, 0, 1610, 820);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasIniSesActionPerformed
@@ -290,8 +290,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_textoContraseñaIniSesMouseClicked
 
     private void botonContinuarIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarIniSesActionPerformed
-        /*Clases.CLogin objetoLogin = new Clases.CLogin();
-        objetoLogin.validaUsuario(txtUsuario, txtContrasenia);*/
+
     }//GEN-LAST:event_botonContinuarIniSesActionPerformed
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
