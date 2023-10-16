@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author JOSE
- */
 public class Afiliados extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Afiliados
-     */
     public Afiliados() {
+        
         initComponents();
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -32,135 +23,140 @@ public class Afiliados extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AfiliadosOrdenes = new keeptoo.KGradientPanel();
-        botonAtrasAfiliados = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        panelGradAfi = new keeptoo.KGradientPanel();
+        botonAtrasAfi = new javax.swing.JButton();
+        menuBarAfi = new javax.swing.JMenuBar();
+        menuAfiContAfi = new javax.swing.JMenu();
+        menuItemAfiHabYDes = new javax.swing.JMenuItem();
+        menuItemAfiMod = new javax.swing.JMenuItem();
+        menuAfiListaAfi = new javax.swing.JMenu();
+        menuItemAfiLista = new javax.swing.JMenuItem();
 
-        AfiliadosOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
-        AfiliadosOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        botonAtrasAfiliados.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasAfiliados.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasAfiliados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso25bit.png"))); // NOI18N
-        botonAtrasAfiliados.setText("Atrás");
-        botonAtrasAfiliados.setBorderPainted(false);
-        botonAtrasAfiliados.setContentAreaFilled(false);
-        botonAtrasAfiliados.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        botonAtrasAfiliados.addActionListener(new java.awt.event.ActionListener() {
+        panelGradAfi.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradAfi.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradAfi.setPreferredSize(new java.awt.Dimension(1260, 620));
+
+        botonAtrasAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasAfi.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasAfi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasAfi.setText("Atrás");
+        botonAtrasAfi.setBorderPainted(false);
+        botonAtrasAfi.setContentAreaFilled(false);
+        botonAtrasAfi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasAfi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasAfiliadosActionPerformed(evt);
+                botonAtrasAfiActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout AfiliadosOrdenesLayout = new javax.swing.GroupLayout(AfiliadosOrdenes);
-        AfiliadosOrdenes.setLayout(AfiliadosOrdenesLayout);
-        AfiliadosOrdenesLayout.setHorizontalGroup(
-            AfiliadosOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfiliadosOrdenesLayout.createSequentialGroup()
-                .addContainerGap(1132, Short.MAX_VALUE)
-                .addComponent(botonAtrasAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout panelGradAfiLayout = new javax.swing.GroupLayout(panelGradAfi);
+        panelGradAfi.setLayout(panelGradAfiLayout);
+        panelGradAfiLayout.setHorizontalGroup(
+            panelGradAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiLayout.createSequentialGroup()
+                .addContainerGap(1081, Short.MAX_VALUE)
+                .addComponent(botonAtrasAfi)
                 .addContainerGap())
         );
-        AfiliadosOrdenesLayout.setVerticalGroup(
-            AfiliadosOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AfiliadosOrdenesLayout.createSequentialGroup()
+        panelGradAfiLayout.setVerticalGroup(
+            panelGradAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradAfiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonAtrasAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(530, Short.MAX_VALUE))
+                .addComponent(botonAtrasAfi)
+                .addContainerGap(505, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Control de afiliados");
+        menuAfiContAfi.setText("Control De Afiliados");
+        menuAfiContAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
-        jMenuItem1.setText("Abilitar y desabilitar");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        menuItemAfiHabYDes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemAfiHabYDes.setText("Habilitar Y Deshabilitar");
+        menuItemAfiHabYDes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                menuItemAfiHabYDesActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        menuAfiContAfi.add(menuItemAfiHabYDes);
 
-        jMenuItem2.setText("Modificar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        menuItemAfiMod.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemAfiMod.setText("Modificar");
+        menuItemAfiMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                menuItemAfiModActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        menuAfiContAfi.add(menuItemAfiMod);
 
-        jMenuBar1.add(jMenu1);
+        menuBarAfi.add(menuAfiContAfi);
 
-        jMenu2.setText("Lista de afiliados");
+        menuAfiListaAfi.setText("Lista De Afiliados");
+        menuAfiListaAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
-        jMenuItem3.setText("Lista");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menuItemAfiLista.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemAfiLista.setText("Lista");
+        menuItemAfiLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menuItemAfiListaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        menuAfiListaAfi.add(menuItemAfiLista);
 
-        jMenuBar1.add(jMenu2);
+        menuBarAfi.add(menuAfiListaAfi);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuBarAfi);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AfiliadosOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AfiliadosOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
         );
 
         setBounds(315, 200, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAtrasAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasAfiliadosActionPerformed
-        dispose();
-    }//GEN-LAST:event_botonAtrasAfiliadosActionPerformed
+    private void menuItemAfiHabYDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiHabYDesActionPerformed
+        panelGradAfi.removeAll();
+        panelGradAfi.repaint();
+        AfiliadosAgregarYAnular afiAA = new AfiliadosAgregarYAnular();
+        panelGradAfi.add(afiAA);
+        afiAA.setVisible(true);
+    }//GEN-LAST:event_menuItemAfiHabYDesActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-         AfiliadosOrdenes.removeAll();
-         AfiliadosOrdenes.repaint();
-         AfiliadosAgregarYAnular afiAA = new AfiliadosAgregarYAnular();
-         AfiliadosOrdenes.add(afiAA);
-         afiAA.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code
-        AfiliadosOrdenes.removeAll();
-        AfiliadosOrdenes.repaint();
+    private void menuItemAfiModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiModActionPerformed
+        panelGradAfi.removeAll();
+        panelGradAfi.repaint();
         AfiliadosMod afimod=new AfiliadosMod();
-        AfiliadosOrdenes.add(afimod);
+        panelGradAfi.add(afimod);
         afimod.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_menuItemAfiModActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-        AfiliadosOrdenes.removeAll();
-        AfiliadosOrdenes.repaint();
+    private void menuItemAfiListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiListaActionPerformed
+        panelGradAfi.removeAll();
+        panelGradAfi.repaint();
         AfiliadosLista afl=new AfiliadosLista();
-        AfiliadosOrdenes.add(afl);
+        panelGradAfi.add(afl);
         afl.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_menuItemAfiListaActionPerformed
 
+    private void botonAtrasAfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasAfiActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasAfiActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private keeptoo.KGradientPanel AfiliadosOrdenes;
-    private javax.swing.JButton botonAtrasAfiliados;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JButton botonAtrasAfi;
+    private javax.swing.JMenu menuAfiContAfi;
+    private javax.swing.JMenu menuAfiListaAfi;
+    private javax.swing.JMenuBar menuBarAfi;
+    private javax.swing.JMenuItem menuItemAfiHabYDes;
+    private javax.swing.JMenuItem menuItemAfiLista;
+    private javax.swing.JMenuItem menuItemAfiMod;
+    private keeptoo.KGradientPanel panelGradAfi;
     // End of variables declaration//GEN-END:variables
 }

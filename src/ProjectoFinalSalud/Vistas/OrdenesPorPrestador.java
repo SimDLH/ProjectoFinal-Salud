@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
@@ -12,28 +8,30 @@ import ProjectoFinalSalud.Entidades.Prestador;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author coki_
- */
 public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
 
-    DefaultTableModel modelo = new DefaultTableModel() {
-        public boolean isCellEditable(int fila, int columna) {
-            return false;//aca son editables fila y columna si es = false no lo son
+    DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int colum) {
+            return false;
         }
-
     };
 
     PrestadorData pd = new PrestadorData();
     OrdenData od = new OrdenData();
 
     public OrdenesPorPrestador() {
+        
         initComponents();
         cargarComboPrestador();
         armarCabecera();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+        bui.setNorthPane(null);
     }
 
     /**
@@ -45,28 +43,61 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBoxP = new javax.swing.JComboBox<>();
-        jBuscarOPP = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTablaOPP = new javax.swing.JTable();
+        panelGradOrdenXPres = new keeptoo.KGradientPanel();
+        etiquetaOrdenXPres = new javax.swing.JLabel();
+        etiquetaOrdenXPresSelec = new javax.swing.JLabel();
+        comboBoxOrdenXPres = new javax.swing.JComboBox<>();
+        botonOrdenXPresBuscar = new javax.swing.JButton();
+        botonAtrasOrdenXPrest = new javax.swing.JButton();
+        panelScrollTabla = new javax.swing.JScrollPane();
+        tablaOrdenXPres = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Ordenes Por Prestador");
+        panelGradOrdenXPres.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradOrdenXPres.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradOrdenXPres.setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        jLabel2.setText("Seleccione:");
+        etiquetaOrdenXPres.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaOrdenXPres.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaOrdenXPres.setText("Ordenes Por Prestador");
 
-        jBuscarOPP.setText("Buscar");
-        jBuscarOPP.addActionListener(new java.awt.event.ActionListener() {
+        etiquetaOrdenXPresSelec.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaOrdenXPresSelec.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaOrdenXPresSelec.setText("Seleccione:");
+
+        comboBoxOrdenXPres.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        botonOrdenXPresBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonOrdenXPresBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        botonOrdenXPresBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonOrdenXPresBuscar.setText("Buscar");
+        botonOrdenXPresBuscar.setBorderPainted(false);
+        botonOrdenXPresBuscar.setContentAreaFilled(false);
+        botonOrdenXPresBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonOrdenXPresBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBuscarOPPActionPerformed(evt);
+                botonOrdenXPresBuscarActionPerformed(evt);
             }
         });
 
-        jTablaOPP.setModel(new javax.swing.table.DefaultTableModel(
+        botonAtrasOrdenXPrest.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasOrdenXPrest.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasOrdenXPrest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasOrdenXPrest.setText("Atrás");
+        botonAtrasOrdenXPrest.setBorderPainted(false);
+        botonAtrasOrdenXPrest.setContentAreaFilled(false);
+        botonAtrasOrdenXPrest.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrdenXPrest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasOrdenXPrestActionPerformed(evt);
+            }
+        });
+
+        tablaOrdenXPres.setBackground(panelGradOrdenXPres.getkStartColor());
+        tablaOrdenXPres.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        tablaOrdenXPres.setForeground(new java.awt.Color(255, 255, 255));
+        tablaOrdenXPres.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -76,93 +107,123 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
-        jScrollPane1.setViewportView(jTablaOPP);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaOrdenXPres.getTableHeader().setReorderingAllowed(false);
+        panelScrollTabla.setViewportView(tablaOrdenXPres);
+        if (tablaOrdenXPres.getColumnModel().getColumnCount() > 0) {
+            tablaOrdenXPres.getColumnModel().getColumn(0).setResizable(false);
+            tablaOrdenXPres.getColumnModel().getColumn(1).setResizable(false);
+            tablaOrdenXPres.getColumnModel().getColumn(2).setResizable(false);
+            tablaOrdenXPres.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout panelGradOrdenXPresLayout = new javax.swing.GroupLayout(panelGradOrdenXPres);
+        panelGradOrdenXPres.setLayout(panelGradOrdenXPresLayout);
+        panelGradOrdenXPresLayout.setHorizontalGroup(
+            panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                .addGap(358, 358, 358)
+                .addComponent(etiquetaOrdenXPres)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonAtrasOrdenXPrest)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
+                .addContainerGap(178, Short.MAX_VALUE)
+                .addComponent(etiquetaOrdenXPresSelec)
+                .addGap(18, 18, 18)
+                .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botonOrdenXPresBuscar)
+                .addGap(450, 450, 450))
+            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelGradOrdenXPresLayout.setVerticalGroup(
+            panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAtrasOrdenXPrest)
+                    .addComponent(etiquetaOrdenXPres))
+                .addGap(53, 53, 53)
+                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonOrdenXPresBuscar)
+                    .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaOrdenXPresSelec))
+                .addGap(18, 18, 18)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(227, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(76, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBuscarOPP)))
-                .addGap(76, 76, 76))
+            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBoxP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBuscarOPP))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBuscarOPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarOPPActionPerformed
+    private void botonOrdenXPresBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenXPresBuscarActionPerformed
         limpiarTabla();
         try {
-            Prestador pSeleccionado = (Prestador) jComboBoxP.getSelectedItem();
+            Prestador pSeleccionado = (Prestador) comboBoxOrdenXPres.getSelectedItem();
             int id = pSeleccionado.getIdPrestador();
             ArrayList<Orden> listarOrdenP = od.OrdenesPorPrestador(id);
-
             for (Orden orden : listarOrdenP) {
-
                 modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
                     orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
-
             }
         } catch (NullPointerException np) {
             JOptionPane.showMessageDialog(null, "Debe seleccioar un Prestador de la lista");
         }
+    }//GEN-LAST:event_botonOrdenXPresBuscarActionPerformed
 
-    }//GEN-LAST:event_jBuscarOPPActionPerformed
+    private void botonAtrasOrdenXPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXPrestActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasOrdenXPrestActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBuscarOPP;
-    private javax.swing.JComboBox<Prestador> jComboBoxP;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTablaOPP;
+    private javax.swing.JButton botonAtrasOrdenXPrest;
+    private javax.swing.JButton botonOrdenXPresBuscar;
+    private javax.swing.JComboBox<Prestador> comboBoxOrdenXPres;
+    private javax.swing.JLabel etiquetaOrdenXPres;
+    private javax.swing.JLabel etiquetaOrdenXPresSelec;
+    private keeptoo.KGradientPanel panelGradOrdenXPres;
+    private javax.swing.JScrollPane panelScrollTabla;
+    private javax.swing.JTable tablaOrdenXPres;
     // End of variables declaration//GEN-END:variables
 
     private void cargarComboPrestador() {
 
         ArrayList<Prestador> prestadores = pd.listarPrestador();
-
         for (Prestador pres : prestadores) {
-            jComboBoxP.addItem(pres);
+            comboBoxOrdenXPres.addItem(pres);
         }
-
     }
 
     private void armarCabecera() {
-        modelo.addColumn("Codigo");
+        modelo.addColumn("Código");
         modelo.addColumn("Afiliado");
         modelo.addColumn("Fecha");
         modelo.addColumn("Pago");
         modelo.addColumn("Importe");
-        jTablaOPP.setModel(modelo);
+        tablaOrdenXPres.setModel(modelo);
     }
 
     private void limpiarTabla() {

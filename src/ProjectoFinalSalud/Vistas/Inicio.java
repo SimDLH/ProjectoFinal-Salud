@@ -1,26 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
-import java.awt.Color;
+import java.awt.Component;
 
-/**
- *
- * @author JOSE
- */
 public class Inicio extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Inicio
-     */
-    /*static int contador = 0;*/
     public Inicio() {
+        
         initComponents();
+        Bloquear();
+        
         setExtendedState(this.MAXIMIZED_BOTH);
         setTitle("MásSalud");
+    }
+    
+    public void Bloquear() {
+        
+        for(Component a:panelGradBotPrincipales.getComponents()){
+            a.setEnabled(false);
+        }
+    }
+    
+    public void Desbloquear() {
+        
+        for(Component b:panelGradBotPrincipales.getComponents()){
+            b.setEnabled(true);
+        }
     }
 
     /**
@@ -33,14 +38,14 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         panelEscritorio = new javax.swing.JDesktopPane();
-        panelGradientePrincipal = new keeptoo.KGradientPanel();
+        panelGradPrincipal = new keeptoo.KGradientPanel();
+        separadorMenuPrincipal1 = new javax.swing.JSeparator();
+        separadorMenuPrincipal2 = new javax.swing.JSeparator();
         etiquetaVideoEmergencia = new javax.swing.JButton();
         botonRegistro = new javax.swing.JButton();
         botonIniSes = new javax.swing.JButton();
-        separadorPaginaPrincipal1 = new javax.swing.JSeparator();
-        separadorPaginaPrincipal2 = new javax.swing.JSeparator();
         etiquetaLogoPrincipal = new javax.swing.JLabel();
-        panelGradienteBotonesPrincipal = new keeptoo.KGradientPanel();
+        panelGradBotPrincipales = new keeptoo.KGradientPanel();
         botonMenuDesplegable1 = new javax.swing.JButton();
         botonMenuDesplegable2 = new javax.swing.JButton();
         botonMenuDesplegable3 = new javax.swing.JButton();
@@ -53,13 +58,20 @@ public class Inicio extends javax.swing.JFrame {
         etiquetaMenuDesplegable4 = new javax.swing.JLabel();
         etiquetaMenuDesplegable5 = new javax.swing.JLabel();
         etiquetaMenuDesplegable6 = new javax.swing.JLabel();
+        etiquetaPropaganda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelEscritorio.setBackground(new java.awt.Color(255, 255, 255));
 
-        panelGradientePrincipal.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradientePrincipal.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradPrincipal.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradPrincipal.setkStartColor(new java.awt.Color(0, 153, 0));
+
+        separadorMenuPrincipal1.setForeground(new java.awt.Color(255, 255, 255));
+        separadorMenuPrincipal1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        separadorMenuPrincipal2.setForeground(new java.awt.Color(255, 255, 255));
+        separadorMenuPrincipal2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         etiquetaVideoEmergencia.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaVideoEmergencia.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -72,10 +84,11 @@ public class Inicio extends javax.swing.JFrame {
         botonRegistro.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistro.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonRegistro.setForeground(new java.awt.Color(255, 255, 255));
-        botonRegistro.setText("Registrarse");
+        botonRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonUsuarioRegis.png"))); // NOI18N
+        botonRegistro.setToolTipText("");
         botonRegistro.setBorderPainted(false);
         botonRegistro.setContentAreaFilled(false);
-        botonRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        botonRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botonRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRegistroActionPerformed(evt);
@@ -85,29 +98,22 @@ public class Inicio extends javax.swing.JFrame {
         botonIniSes.setBackground(new java.awt.Color(255, 255, 255));
         botonIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonIniSes.setForeground(new java.awt.Color(255, 255, 255));
-        botonIniSes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Usuario.png"))); // NOI18N
-        botonIniSes.setText("Iniciar Sesion");
+        botonIniSes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonUsuarioIniSes.png"))); // NOI18N
         botonIniSes.setBorderPainted(false);
         botonIniSes.setContentAreaFilled(false);
-        botonIniSes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        botonIniSes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botonIniSes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonIniSesActionPerformed(evt);
             }
         });
 
-        separadorPaginaPrincipal1.setForeground(new java.awt.Color(255, 255, 255));
-        separadorPaginaPrincipal1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        separadorPaginaPrincipal2.setForeground(new java.awt.Color(255, 255, 255));
-        separadorPaginaPrincipal2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
         etiquetaLogoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MasSaludLogo.png"))); // NOI18N
 
-        panelGradienteBotonesPrincipal.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteBotonesPrincipal.setkStartColor(new java.awt.Color(204, 255, 255));
+        panelGradBotPrincipales.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradBotPrincipales.setkStartColor(new java.awt.Color(204, 255, 255));
 
-        botonMenuDesplegable1.setBackground(panelGradientePrincipal.getkStartColor());
+        botonMenuDesplegable1.setBackground(panelGradPrincipal.getkStartColor());
         botonMenuDesplegable1.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable1.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable1.setText("Ordenes");
@@ -117,7 +123,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        botonMenuDesplegable2.setBackground(panelGradientePrincipal.getkStartColor());
+        botonMenuDesplegable2.setBackground(panelGradPrincipal.getkStartColor());
         botonMenuDesplegable2.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable2.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable2.setText("Consultas");
@@ -127,7 +133,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        botonMenuDesplegable3.setBackground(panelGradientePrincipal.getkStartColor());
+        botonMenuDesplegable3.setBackground(panelGradPrincipal.getkStartColor());
         botonMenuDesplegable3.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable3.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable3.setText("Especialidades");
@@ -137,7 +143,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        botonMenuDesplegable4.setBackground(panelGradientePrincipal.getkStartColor());
+        botonMenuDesplegable4.setBackground(panelGradPrincipal.getkStartColor());
         botonMenuDesplegable4.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable4.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable4.setText("Profesionales");
@@ -147,7 +153,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        botonMenuDesplegable5.setBackground(panelGradientePrincipal.getkStartColor());
+        botonMenuDesplegable5.setBackground(panelGradPrincipal.getkStartColor());
         botonMenuDesplegable5.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable5.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable5.setText("Afiliados");
@@ -157,7 +163,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        botonMenuDesplegable6.setBackground(panelGradientePrincipal.getkStartColor());
+        botonMenuDesplegable6.setBackground(panelGradPrincipal.getkStartColor());
         botonMenuDesplegable6.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable6.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable6.setText("Más Informacion");
@@ -179,122 +185,127 @@ public class Inicio extends javax.swing.JFrame {
 
         etiquetaMenuDesplegable6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/EspecialidadesIcono.png"))); // NOI18N
 
-        javax.swing.GroupLayout panelGradienteBotonesPrincipalLayout = new javax.swing.GroupLayout(panelGradienteBotonesPrincipal);
-        panelGradienteBotonesPrincipal.setLayout(panelGradienteBotonesPrincipalLayout);
-        panelGradienteBotonesPrincipalLayout.setHorizontalGroup(
-            panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteBotonesPrincipalLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelGradBotPrincipalesLayout = new javax.swing.GroupLayout(panelGradBotPrincipales);
+        panelGradBotPrincipales.setLayout(panelGradBotPrincipalesLayout);
+        panelGradBotPrincipalesLayout.setHorizontalGroup(
+            panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradBotPrincipalesLayout.createSequentialGroup()
                 .addComponent(etiquetaMenuDesplegable1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonMenuDesplegable1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelGradienteBotonesPrincipalLayout.createSequentialGroup()
+            .addGroup(panelGradBotPrincipalesLayout.createSequentialGroup()
                 .addComponent(etiquetaMenuDesplegable4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonMenuDesplegable5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelGradienteBotonesPrincipalLayout.createSequentialGroup()
+            .addGroup(panelGradBotPrincipalesLayout.createSequentialGroup()
                 .addComponent(etiquetaMenuDesplegable2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonMenuDesplegable2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelGradienteBotonesPrincipalLayout.createSequentialGroup()
+            .addGroup(panelGradBotPrincipalesLayout.createSequentialGroup()
                 .addComponent(etiquetaMenuDesplegable6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonMenuDesplegable3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelGradienteBotonesPrincipalLayout.createSequentialGroup()
+            .addGroup(panelGradBotPrincipalesLayout.createSequentialGroup()
                 .addComponent(etiquetaMenuDesplegable3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonMenuDesplegable4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteBotonesPrincipalLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradBotPrincipalesLayout.createSequentialGroup()
                 .addComponent(etiquetaMenuDesplegable5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonMenuDesplegable6, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
         );
-        panelGradienteBotonesPrincipalLayout.setVerticalGroup(
-            panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteBotonesPrincipalLayout.createSequentialGroup()
+        panelGradBotPrincipalesLayout.setVerticalGroup(
+            panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradBotPrincipalesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonMenuDesplegable1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(etiquetaMenuDesplegable1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(etiquetaMenuDesplegable2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonMenuDesplegable2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonMenuDesplegable3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(etiquetaMenuDesplegable6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(etiquetaMenuDesplegable3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonMenuDesplegable4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(etiquetaMenuDesplegable4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonMenuDesplegable5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panelGradienteBotonesPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelGradBotPrincipalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(etiquetaMenuDesplegable5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonMenuDesplegable6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout panelGradientePrincipalLayout = new javax.swing.GroupLayout(panelGradientePrincipal);
-        panelGradientePrincipal.setLayout(panelGradientePrincipalLayout);
-        panelGradientePrincipalLayout.setHorizontalGroup(
-            panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradientePrincipalLayout.createSequentialGroup()
-                .addGroup(panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradientePrincipalLayout.createSequentialGroup()
+        etiquetaPropaganda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/TableroDePropaganda1.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelGradPrincipalLayout = new javax.swing.GroupLayout(panelGradPrincipal);
+        panelGradPrincipal.setLayout(panelGradPrincipalLayout);
+        panelGradPrincipalLayout.setHorizontalGroup(
+            panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 328, Short.MAX_VALUE)
+                .addComponent(separadorMenuPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradPrincipalLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(etiquetaLogoPrincipal))
-                    .addComponent(separadorPaginaPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(etiquetaVideoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradientePrincipalLayout.createSequentialGroup()
+                        .addComponent(etiquetaLogoPrincipal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(etiquetaVideoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(320, 320, 320)
                         .addComponent(botonRegistro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonIniSes))
-                    .addComponent(separadorPaginaPrincipal2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelGradientePrincipalLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(panelGradienteBotonesPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        panelGradientePrincipalLayout.setVerticalGroup(
-            panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradientePrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradientePrincipalLayout.createSequentialGroup()
-                        .addGroup(panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(etiquetaLogoPrincipal)
-                            .addGroup(panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(botonIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelGradientePrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(separadorPaginaPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(separadorPaginaPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botonIniSes))
+                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156)
+                        .addComponent(etiquetaPropaganda)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelGradPrincipalLayout.setVerticalGroup(
+            panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                        .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonIniSes)
+                            .addComponent(botonRegistro)
+                            .addComponent(etiquetaLogoPrincipal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(separadorMenuPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(etiquetaVideoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(panelGradienteBotonesPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaPropaganda))
+                .addGap(75, 75, 75))
         );
 
-        panelEscritorio.setLayer(panelGradientePrincipal, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        panelEscritorio.setLayer(panelGradPrincipal, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout panelEscritorioLayout = new javax.swing.GroupLayout(panelEscritorio);
         panelEscritorio.setLayout(panelEscritorioLayout);
         panelEscritorioLayout.setHorizontalGroup(
             panelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradientePrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelEscritorioLayout.setVerticalGroup(
             panelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradientePrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -308,7 +319,7 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(panelEscritorio)
         );
 
-        setSize(new java.awt.Dimension(1616, 859));
+        setSize(new java.awt.Dimension(1600, 820));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -322,6 +333,7 @@ public class Inicio extends javax.swing.JFrame {
         IniciarSesion InSe = new IniciarSesion();
         panelEscritorio.add(InSe);
         InSe.setVisible(true);
+        Desbloquear();
     }//GEN-LAST:event_botonIniSesActionPerformed
 
     private void botonMenuDesplegable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1ActionPerformed
@@ -355,9 +367,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuDesplegable5ActionPerformed
 
     private void botonMenuDesplegable6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable6ActionPerformed
-        MasInformacion mssin = new MasInformacion();
-        panelEscritorio.add(mssin);
-        mssin.setVisible(true);
+        MasInformacion msinf = new MasInformacion();
+        panelEscritorio.add(msinf);
+        msinf.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable6ActionPerformed
 
     /**
@@ -412,11 +424,12 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaMenuDesplegable4;
     private javax.swing.JLabel etiquetaMenuDesplegable5;
     private javax.swing.JLabel etiquetaMenuDesplegable6;
+    public javax.swing.JLabel etiquetaPropaganda;
     private javax.swing.JButton etiquetaVideoEmergencia;
     private javax.swing.JDesktopPane panelEscritorio;
-    private keeptoo.KGradientPanel panelGradienteBotonesPrincipal;
-    private keeptoo.KGradientPanel panelGradientePrincipal;
-    private javax.swing.JSeparator separadorPaginaPrincipal1;
-    private javax.swing.JSeparator separadorPaginaPrincipal2;
+    private keeptoo.KGradientPanel panelGradBotPrincipales;
+    private keeptoo.KGradientPanel panelGradPrincipal;
+    private javax.swing.JSeparator separadorMenuPrincipal1;
+    private javax.swing.JSeparator separadorMenuPrincipal2;
     // End of variables declaration//GEN-END:variables
 }

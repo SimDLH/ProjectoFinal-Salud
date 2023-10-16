@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
@@ -10,25 +6,27 @@ import ProjectoFinalSalud.Entidades.Orden;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author coki_
- */
 public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
 
     OrdenData od = new OrdenData();
 
-    DefaultTableModel modelo = new DefaultTableModel() {
-        public boolean isCellEditable(int fila, int columna) {
-            return false;//aca son editables fila y columna si es = false no lo son
+     DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int colum) {
+            return false;
         }
-
     };
 
     public OrdenesPorAfiliado() {
+        
         initComponents();
         armarCabecera();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+        bui.setNorthPane(null);
     }
 
     /**
@@ -40,28 +38,58 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTdocumento = new javax.swing.JTextField();
-        jButtonBuscarA = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTablaAfiliados = new javax.swing.JTable();
+        panelGradOrdenXAfi = new keeptoo.KGradientPanel();
+        etiquetaOrdenXAfi = new javax.swing.JLabel();
+        etiquetaOrdenXAfiDNI = new javax.swing.JLabel();
+        textoOrdenXAfiDNI = new javax.swing.JTextField();
+        botonOrdenXAfiBuscar = new javax.swing.JButton();
+        botonAtrasOrdenXAfi = new javax.swing.JButton();
+        panelScrollTabla = new javax.swing.JScrollPane();
+        tablaOrdenXAfi = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Busqueda por Afiliado");
+        panelGradOrdenXAfi.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradOrdenXAfi.setkStartColor(new java.awt.Color(0, 153, 0));
 
-        jLabel2.setText("DNI Afiliado:");
+        etiquetaOrdenXAfi.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaOrdenXAfi.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaOrdenXAfi.setText("Busqueda Por Afiliado");
 
-        jButtonBuscarA.setText("Buscar");
-        jButtonBuscarA.addActionListener(new java.awt.event.ActionListener() {
+        etiquetaOrdenXAfiDNI.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaOrdenXAfiDNI.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaOrdenXAfiDNI.setText("DNI Afiliado:");
+
+        botonOrdenXAfiBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonOrdenXAfiBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        botonOrdenXAfiBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonOrdenXAfiBuscar.setText("Buscar");
+        botonOrdenXAfiBuscar.setBorderPainted(false);
+        botonOrdenXAfiBuscar.setContentAreaFilled(false);
+        botonOrdenXAfiBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonOrdenXAfiBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarAActionPerformed(evt);
+                botonOrdenXAfiBuscarActionPerformed(evt);
             }
         });
 
-        jTablaAfiliados.setModel(new javax.swing.table.DefaultTableModel(
+        botonAtrasOrdenXAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasOrdenXAfi.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasOrdenXAfi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasOrdenXAfi.setText("Atrás");
+        botonAtrasOrdenXAfi.setBorderPainted(false);
+        botonAtrasOrdenXAfi.setContentAreaFilled(false);
+        botonAtrasOrdenXAfi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrdenXAfi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasOrdenXAfiActionPerformed(evt);
+            }
+        });
+
+        tablaOrdenXAfi.setBackground(panelGradOrdenXAfi.getkStartColor());
+        tablaOrdenXAfi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        tablaOrdenXAfi.setForeground(new java.awt.Color(255, 255, 255));
+        tablaOrdenXAfi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -71,79 +99,119 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
-        jScrollPane1.setViewportView(jTablaAfiliados);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaOrdenXAfi.getTableHeader().setReorderingAllowed(false);
+        panelScrollTabla.setViewportView(tablaOrdenXAfi);
+        if (tablaOrdenXAfi.getColumnModel().getColumnCount() > 0) {
+            tablaOrdenXAfi.getColumnModel().getColumn(0).setResizable(false);
+            tablaOrdenXAfi.getColumnModel().getColumn(1).setResizable(false);
+            tablaOrdenXAfi.getColumnModel().getColumn(2).setResizable(false);
+            tablaOrdenXAfi.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout panelGradOrdenXAfiLayout = new javax.swing.GroupLayout(panelGradOrdenXAfi);
+        panelGradOrdenXAfi.setLayout(panelGradOrdenXAfiLayout);
+        panelGradOrdenXAfiLayout.setHorizontalGroup(
+            panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonAtrasOrdenXAfi))
+            .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                .addGroup(panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                        .addGap(302, 302, 302)
+                        .addGroup(panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(etiquetaOrdenXAfi)
+                            .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                                .addComponent(etiquetaOrdenXAfiDNI)
+                                .addGap(18, 18, 18)
+                                .addComponent(textoOrdenXAfiDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(botonOrdenXAfiBuscar))
+                    .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 876, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(183, 271, Short.MAX_VALUE))
+        );
+        panelGradOrdenXAfiLayout.setVerticalGroup(
+            panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                .addGroup(panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botonAtrasOrdenXAfi))
+                    .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(etiquetaOrdenXAfi)))
+                .addGap(36, 36, 36)
+                .addGroup(panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoOrdenXAfiDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaOrdenXAfiDNI)
+                    .addComponent(botonOrdenXAfiBuscar))
+                .addGap(18, 18, 18)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(238, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTdocumento))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonBuscarA)
-                        .addGap(119, 119, 119))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95))))
+            .addComponent(panelGradOrdenXAfi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTdocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButtonBuscarA))
-                    .addComponent(jLabel2))
-                .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
+            .addComponent(panelGradOrdenXAfi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonBuscarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarAActionPerformed
+    private void botonOrdenXAfiBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenXAfiBuscarActionPerformed
         limpiarTabla();
         try {
-            int dni = Integer.parseInt(jTdocumento.getText());
+            int dni = Integer.parseInt(textoOrdenXAfiDNI.getText());
             ArrayList<Orden> listarOrdenes = od.OrdenesPorAfiliado(dni);
             for (Orden orden : listarOrdenes) {
                 modelo.addRow(new Object[]{orden.getIdOrden(),
                     orden.getPrestador().getNombre(), orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
             }
         } catch (NumberFormatException nf) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar un DNI valido");
+            JOptionPane.showMessageDialog(null, "Debe ingresar un DNI válido");
         }
 
-    }//GEN-LAST:event_jButtonBuscarAActionPerformed
+    }//GEN-LAST:event_botonOrdenXAfiBuscarActionPerformed
+
+    private void botonAtrasOrdenXAfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXAfiActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasOrdenXAfiActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscarA;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTablaAfiliados;
-    private javax.swing.JTextField jTdocumento;
+    private javax.swing.JButton botonAtrasOrdenXAfi;
+    private javax.swing.JButton botonOrdenXAfiBuscar;
+    private javax.swing.JLabel etiquetaOrdenXAfi;
+    private javax.swing.JLabel etiquetaOrdenXAfiDNI;
+    private keeptoo.KGradientPanel panelGradOrdenXAfi;
+    private javax.swing.JScrollPane panelScrollTabla;
+    private javax.swing.JTable tablaOrdenXAfi;
+    private javax.swing.JTextField textoOrdenXAfiDNI;
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
-        modelo.addColumn("Codigo");
+        modelo.addColumn("Código");
         modelo.addColumn("Prestador");
         modelo.addColumn("Fecha");
         modelo.addColumn("Pago");
         modelo.addColumn("Importe");
-        jTablaAfiliados.setModel(modelo);
+        tablaOrdenXAfi.setModel(modelo);
     }
 
     private void limpiarTabla() {

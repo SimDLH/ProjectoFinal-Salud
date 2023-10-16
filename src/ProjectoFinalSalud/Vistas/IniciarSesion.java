@@ -1,21 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author JOSE
- */
 public class IniciarSesion extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form IniciarSesion
-     */
     public IniciarSesion() {
         
         initComponents();
@@ -51,11 +40,11 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         etiquetaImagenIniSes = new javax.swing.JLabel();
         botonAtrasIniSes = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(1600, 820));
+        setPreferredSize(new java.awt.Dimension(1600, 900));
 
         gradienteIniSes.setkEndColor(new java.awt.Color(51, 153, 255));
         gradienteIniSes.setkStartColor(new java.awt.Color(153, 0, 153));
-        gradienteIniSes.setPreferredSize(new java.awt.Dimension(1600, 820));
+        gradienteIniSes.setPreferredSize(new java.awt.Dimension(1610, 820));
 
         panelIniSes.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -71,6 +60,11 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         textoNombreIniSes.setText("Ej: Juan");
         textoNombreIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
         textoNombreIniSes.setPreferredSize(new java.awt.Dimension(60, 20));
+        textoNombreIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textoNombreIniSesMouseClicked(evt);
+            }
+        });
 
         textoApellidoIniSes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         textoApellidoIniSes.setForeground(new java.awt.Color(204, 204, 204));
@@ -127,11 +121,21 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         textoContraseñaIniSes.setText("***********");
         textoContraseñaIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 120, 215)));
         textoContraseñaIniSes.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+        textoContraseñaIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textoContraseñaIniSesMouseClicked(evt);
+            }
+        });
 
         botonContinuarIniSes.setBackground(new java.awt.Color(153, 0, 153));
         botonContinuarIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonContinuarIniSes.setForeground(new java.awt.Color(255, 255, 255));
         botonContinuarIniSes.setText("¡CONTINUAR!");
+        botonContinuarIniSes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonContinuarIniSesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelIniSesLayout = new javax.swing.GroupLayout(panelIniSes);
         panelIniSes.setLayout(panelIniSesLayout);
@@ -200,11 +204,11 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
 
         botonAtrasIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasIniSes.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasIniSes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso25bit.png"))); // NOI18N
+        botonAtrasIniSes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
         botonAtrasIniSes.setText("Atrás");
         botonAtrasIniSes.setBorderPainted(false);
         botonAtrasIniSes.setContentAreaFilled(false);
-        botonAtrasIniSes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        botonAtrasIniSes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         botonAtrasIniSes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasIniSesActionPerformed(evt);
@@ -225,31 +229,30 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
                         .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(etiquetaTituloIniSes))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
                 .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(249, 249, 249))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(botonAtrasIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89))
+                .addComponent(botonAtrasIniSes)
+                .addContainerGap())
         );
         gradienteIniSesLayout.setVerticalGroup(
             gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gradienteIniSesLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(botonAtrasIniSes)
+                .addGap(26, 26, 26)
+                .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(gradienteIniSesLayout.createSequentialGroup()
-                        .addComponent(botonAtrasIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(72, Short.MAX_VALUE))
-                    .addGroup(gradienteIniSesLayout.createSequentialGroup()
-                        .addComponent(etiquetaTituloIniSes)
-                        .addGap(18, 18, 18)
-                        .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(etiquetaImagenIniSes)
-                        .addGap(45, 45, 45))))
+                .addComponent(etiquetaTituloIniSes)
+                .addGap(18, 18, 18)
+                .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(etiquetaImagenIniSes)
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -260,15 +263,19 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
+            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1600, 820);
+        setBounds(0, 0, 1600, 900);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasIniSesActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasIniSesActionPerformed
+
+    private void textoNombreIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoNombreIniSesMouseClicked
+        textoNombreIniSes.setText("");
+    }//GEN-LAST:event_textoNombreIniSesMouseClicked
 
     private void textoApellidoIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoApellidoIniSesMouseClicked
         textoApellidoIniSes.setText("");
@@ -278,7 +285,15 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         textoDireccionEmailIniSes.setText("");
     }//GEN-LAST:event_textoDireccionEmailIniSesMouseClicked
 
+    private void textoContraseñaIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoContraseñaIniSesMouseClicked
+        textoContraseñaIniSes.setText("");
+    }//GEN-LAST:event_textoContraseñaIniSesMouseClicked
 
+    private void botonContinuarIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarIniSesActionPerformed
+        /*Clases.CLogin objetoLogin = new Clases.CLogin();
+        objetoLogin.validaUsuario(txtUsuario, txtContrasenia);*/
+    }//GEN-LAST:event_botonContinuarIniSesActionPerformed
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasIniSes;
     private javax.swing.JButton botonContinuarIniSes;
@@ -297,5 +312,4 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textoDireccionEmailIniSes;
     private javax.swing.JTextField textoNombreIniSes;
     // End of variables declaration//GEN-END:variables
-
 }

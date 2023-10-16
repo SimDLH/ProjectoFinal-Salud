@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Entidades;
 
-/**
- *
- * @author simon
- */
 public class Afiliado {
    
     private int IdAfiliado;
@@ -19,7 +11,6 @@ public class Afiliado {
     private boolean activo;
     
     public Afiliado(){
-        
     }
 
     public Afiliado(int IdAfiliado, String nombre, int dni, String domicilio, int telefono, boolean activo) {
@@ -38,8 +29,6 @@ public class Afiliado {
         this.telefono = telefono;
         this.activo = activo;
     }
-    
-    
 
     public int getIdAfiliado() {
         return IdAfiliado;
@@ -93,7 +82,4 @@ public class Afiliado {
     public String toString() {
         return "Afiliado{" + "IdAfiliado=" + IdAfiliado + ", nombre=" + nombre + ", dni=" + dni + ", domicilio=" + domicilio + ", telefono=" + telefono + ", activo=" + activo + '}';
     }
-    
-    
-    
 }

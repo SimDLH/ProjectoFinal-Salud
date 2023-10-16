@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Especialidad;
@@ -15,10 +11,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author JOSE
- */
 public class PrestadorData {
     
     private Connection con = null;
@@ -50,6 +42,7 @@ public class PrestadorData {
             JOptionPane.showMessageDialog(null, "Error al ingresar al nuevo Prestador");
         }
     }
+    
     public void modificarPrestador(Prestador pres) {
         
         String sql = "Update prestador set Nombre=?,Dni=?,Domicilio=?,Telefono=?,IdEspecialidad=?"
@@ -70,6 +63,7 @@ public class PrestadorData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de Prestadores");
         }
     }
+    
     public void eliminarPrestador(int id) {
         
         String sql = "Update Prestador set Activo=0 where IdPrestador=?";
@@ -84,6 +78,7 @@ public class PrestadorData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de Prestadores");
         }
     }
+    
     public Prestador buscarPrestador(int id) {
 
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=? AND Activo=1";
@@ -112,6 +107,7 @@ public class PrestadorData {
         }
         return pres;
     }
+    
     public Prestador buscarIdEspecialidad(int IdE) {
 
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
@@ -141,6 +137,7 @@ public class PrestadorData {
         }
         return pres;
     }
+    
     public ArrayList<Prestador> listarPrestador(){
         
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE Activo=1";

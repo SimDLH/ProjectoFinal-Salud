@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author JOSE
- */
 public class MasInformacion extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form MasInformacion
-     */
     public MasInformacion() {
+        
         initComponents();
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -32,63 +23,66 @@ public class MasInformacion extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradienteOrdenes = new keeptoo.KGradientPanel();
-        botonAtrasMasInformacion = new javax.swing.JButton();
+        panelGradienteMasInformacion = new keeptoo.KGradientPanel();
+        botonAtrasMasInfo = new javax.swing.JButton();
 
-        panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        botonAtrasMasInformacion.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasMasInformacion.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasMasInformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso25bit.png"))); // NOI18N
-        botonAtrasMasInformacion.setText("Atrás");
-        botonAtrasMasInformacion.setBorderPainted(false);
-        botonAtrasMasInformacion.setContentAreaFilled(false);
-        botonAtrasMasInformacion.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        botonAtrasMasInformacion.addActionListener(new java.awt.event.ActionListener() {
+        panelGradienteMasInformacion.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        panelGradienteMasInformacion.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradienteMasInformacion.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradienteMasInformacion.setPreferredSize(new java.awt.Dimension(1260, 620));
+
+        botonAtrasMasInfo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasMasInfo.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasMasInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasMasInfo.setText("Atrás");
+        botonAtrasMasInfo.setBorderPainted(false);
+        botonAtrasMasInfo.setContentAreaFilled(false);
+        botonAtrasMasInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasMasInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasMasInformacionActionPerformed(evt);
+                botonAtrasMasInfoActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelGradienteOrdenesLayout = new javax.swing.GroupLayout(panelGradienteOrdenes);
-        panelGradienteOrdenes.setLayout(panelGradienteOrdenesLayout);
-        panelGradienteOrdenesLayout.setHorizontalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteOrdenesLayout.createSequentialGroup()
-                .addContainerGap(1132, Short.MAX_VALUE)
-                .addComponent(botonAtrasMasInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout panelGradienteMasInformacionLayout = new javax.swing.GroupLayout(panelGradienteMasInformacion);
+        panelGradienteMasInformacion.setLayout(panelGradienteMasInformacionLayout);
+        panelGradienteMasInformacionLayout.setHorizontalGroup(
+            panelGradienteMasInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteMasInformacionLayout.createSequentialGroup()
+                .addContainerGap(1081, Short.MAX_VALUE)
+                .addComponent(botonAtrasMasInfo)
                 .addContainerGap())
         );
-        panelGradienteOrdenesLayout.setVerticalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
+        panelGradienteMasInformacionLayout.setVerticalGroup(
+            panelGradienteMasInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradienteMasInformacionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonAtrasMasInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(551, Short.MAX_VALUE))
+                .addComponent(botonAtrasMasInfo)
+                .addContainerGap(526, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradienteMasInformacion, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradienteMasInformacion, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
         setBounds(315, 200, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAtrasMasInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasMasInformacionActionPerformed
+    private void botonAtrasMasInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasMasInfoActionPerformed
         dispose();
-    }//GEN-LAST:event_botonAtrasMasInformacionActionPerformed
-
+    }//GEN-LAST:event_botonAtrasMasInfoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAtrasMasInformacion;
-    private keeptoo.KGradientPanel panelGradienteOrdenes;
+    private javax.swing.JButton botonAtrasMasInfo;
+    private keeptoo.KGradientPanel panelGradienteMasInformacion;
     // End of variables declaration//GEN-END:variables
 }

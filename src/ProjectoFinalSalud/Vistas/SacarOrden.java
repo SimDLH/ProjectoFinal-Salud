@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
@@ -15,23 +11,22 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author coki_
- */
 public class SacarOrden extends javax.swing.JInternalFrame {
 
     AfiliadoData ad = new AfiliadoData();
     PrestadorData pd = new PrestadorData();
     OrdenData od = new OrdenData();
 
-    /**
-     * Creates new form SacarOrden
-     */
     public SacarOrden() {
+        
         initComponents();
         cargarComboPrestador();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+        bui.setNorthPane(null);
     }
 
     /**
@@ -43,213 +38,245 @@ public class SacarOrden extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextDocumento = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jDateFechaOrden = new com.toedter.calendar.JDateChooser();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextFomaPago = new javax.swing.JTextField();
-        jTextImporte = new javax.swing.JTextField();
-        jButtonBuscarOrden = new javax.swing.JButton();
-        jButtonGuardarOrden = new javax.swing.JButton();
+        panelGradSacarOrden = new keeptoo.KGradientPanel();
+        etiquetaSacarOrden = new javax.swing.JLabel();
+        etiquetaSacarOrdenDoc = new javax.swing.JLabel();
+        etiquetaSacarOrdenPres = new javax.swing.JLabel();
+        etiquetaSacarOrdenFecha = new javax.swing.JLabel();
+        etiquetaSacarOrdenForPag = new javax.swing.JLabel();
+        etiquetaSacarOrdenImp = new javax.swing.JLabel();
+        textoSacarOrdenDoc = new javax.swing.JTextField();
+        textoSacarOrdenForPag = new javax.swing.JTextField();
+        textoSacarOrdenImp = new javax.swing.JTextField();
+        comboBoxSacarOrdenPres = new javax.swing.JComboBox<>();
+        calendarioSacarOrden = new com.toedter.calendar.JDateChooser();
+        botonSacarOrdenBuscar = new javax.swing.JButton();
+        botonSacarOrdenGuardar = new javax.swing.JButton();
+        botonAtrasSacarOrden = new javax.swing.JButton();
 
-        setClosable(true);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 2, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Nueva Orden");
+        panelGradSacarOrden.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradSacarOrden.setkStartColor(new java.awt.Color(0, 153, 0));
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel2.setText("Documento:");
+        etiquetaSacarOrden.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaSacarOrden.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaSacarOrden.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaSacarOrden.setText("Nueva Orden");
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel3.setText(" Prestador:");
+        etiquetaSacarOrdenDoc.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaSacarOrdenDoc.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaSacarOrdenDoc.setText("Documento:");
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        etiquetaSacarOrdenPres.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaSacarOrdenPres.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaSacarOrdenPres.setText(" Prestador:");
+
+        etiquetaSacarOrdenFecha.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaSacarOrdenFecha.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaSacarOrdenFecha.setText("Fecha:");
+
+        etiquetaSacarOrdenForPag.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaSacarOrdenForPag.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaSacarOrdenForPag.setText("Forma de Pago:");
+
+        etiquetaSacarOrdenImp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaSacarOrdenImp.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaSacarOrdenImp.setText("Importe:");
+
+        botonSacarOrdenBuscar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        botonSacarOrdenBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        botonSacarOrdenBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonSacarOrdenBuscar.setText("Buscar");
+        botonSacarOrdenBuscar.setBorderPainted(false);
+        botonSacarOrdenBuscar.setContentAreaFilled(false);
+        botonSacarOrdenBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonSacarOrdenBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                botonSacarOrdenBuscarActionPerformed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel4.setText("Fecha:");
-
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel5.setText("Forma de Pago:");
-
-        jLabel6.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel6.setText("Importe:");
-
-        jTextImporte.addActionListener(new java.awt.event.ActionListener() {
+        botonSacarOrdenGuardar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        botonSacarOrdenGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        botonSacarOrdenGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonSacarOrdenGuardar.setText("Guardar");
+        botonSacarOrdenGuardar.setBorderPainted(false);
+        botonSacarOrdenGuardar.setContentAreaFilled(false);
+        botonSacarOrdenGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonSacarOrdenGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextImporteActionPerformed(evt);
+                botonSacarOrdenGuardarActionPerformed(evt);
             }
         });
 
-        jButtonBuscarOrden.setText("Buscar");
-        jButtonBuscarOrden.addActionListener(new java.awt.event.ActionListener() {
+        botonAtrasSacarOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasSacarOrden.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasSacarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasSacarOrden.setText("Atrás");
+        botonAtrasSacarOrden.setBorderPainted(false);
+        botonAtrasSacarOrden.setContentAreaFilled(false);
+        botonAtrasSacarOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasSacarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarOrdenActionPerformed(evt);
+                botonAtrasSacarOrdenActionPerformed(evt);
             }
         });
 
-        jButtonGuardarOrden.setText("Guardar");
-        jButtonGuardarOrden.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGuardarOrdenActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout panelGradSacarOrdenLayout = new javax.swing.GroupLayout(panelGradSacarOrden);
+        panelGradSacarOrden.setLayout(panelGradSacarOrdenLayout);
+        panelGradSacarOrdenLayout.setHorizontalGroup(
+            panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradSacarOrdenLayout.createSequentialGroup()
+                .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradSacarOrdenLayout.createSequentialGroup()
+                        .addGap(338, 338, 338)
+                        .addComponent(etiquetaSacarOrden)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 611, Short.MAX_VALUE)
+                        .addComponent(botonAtrasSacarOrden))
+                    .addGroup(panelGradSacarOrdenLayout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(etiquetaSacarOrdenPres)
+                            .addComponent(etiquetaSacarOrdenDoc)
+                            .addComponent(etiquetaSacarOrdenFecha)
+                            .addComponent(etiquetaSacarOrdenForPag)
+                            .addComponent(etiquetaSacarOrdenImp))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textoSacarOrdenDoc, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                            .addComponent(comboBoxSacarOrdenPres, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(calendarioSacarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textoSacarOrdenForPag)
+                            .addComponent(textoSacarOrdenImp))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonSacarOrdenBuscar)
+                            .addComponent(botonSacarOrdenGuardar))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelGradSacarOrdenLayout.setVerticalGroup(
+            panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradSacarOrdenLayout.createSequentialGroup()
+                .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradSacarOrdenLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botonAtrasSacarOrden))
+                    .addGroup(panelGradSacarOrdenLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(etiquetaSacarOrden)))
+                .addGap(27, 27, 27)
+                .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiquetaSacarOrdenDoc)
+                    .addComponent(textoSacarOrdenDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonSacarOrdenBuscar))
+                .addGap(18, 18, 18)
+                .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiquetaSacarOrdenPres)
+                    .addComponent(comboBoxSacarOrdenPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaSacarOrdenFecha)
+                    .addComponent(calendarioSacarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiquetaSacarOrdenForPag)
+                    .addComponent(textoSacarOrdenForPag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiquetaSacarOrdenImp)
+                    .addComponent(textoSacarOrdenImp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonSacarOrdenGuardar))
+                .addContainerGap(199, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextDocumento)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateFechaOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(jTextFomaPago)
-                            .addComponent(jTextImporte))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonBuscarOrden)
-                            .addComponent(jButtonGuardarOrden)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
-                        .addComponent(jLabel1)))
-                .addContainerGap(676, Short.MAX_VALUE))
+            .addComponent(panelGradSacarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonBuscarOrden))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateFechaOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextFomaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextImporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
-                .addComponent(jButtonGuardarOrden)
-                .addGap(36, 36, 36))
+            .addComponent(panelGradSacarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextImporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextImporteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextImporteActionPerformed
-
-    private void jButtonBuscarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarOrdenActionPerformed
+    private void botonSacarOrdenBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSacarOrdenBuscarActionPerformed
         try {
-            int dni = Integer.parseInt(jTextDocumento.getText());
+            int dni = Integer.parseInt(textoSacarOrdenDoc.getText());
             Afiliado afiliado;
             afiliado = ad.buscarAfiliados(dni);
             if (afiliado.isActivo()) {
                 JOptionPane.showMessageDialog(null, "Bienvenido" + " " + afiliado.getNombre());//arreglar esto
             }
         } catch (NumberFormatException nf) {
-            JOptionPane.showMessageDialog(null, "El DNI debe ser un numero entero");
+            JOptionPane.showMessageDialog(null, "El DNI debe ser un número entero");
         } catch (NullPointerException np) {
-            JOptionPane.showMessageDialog(null, "Debe colocar un numero de DNI");
+            JOptionPane.showMessageDialog(null, "Debe colocar un número de DNI");
         }
+    }//GEN-LAST:event_botonSacarOrdenBuscarActionPerformed
 
-    }//GEN-LAST:event_jButtonBuscarOrdenActionPerformed
-
-    private void jButtonGuardarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarOrdenActionPerformed
-
-        int dni = Integer.parseInt(jTextDocumento.getText());
-        Prestador pSeleccionado = (Prestador) jComboBox1.getSelectedItem();
-        LocalDate fecha = jDateFechaOrden.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    private void botonSacarOrdenGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSacarOrdenGuardarActionPerformed
+        int dni = Integer.parseInt(textoSacarOrdenDoc.getText());
+        Prestador pSeleccionado = (Prestador) comboBoxSacarOrdenPres.getSelectedItem();
+        LocalDate fecha = calendarioSacarOrden.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         ArrayList<Orden> ordenes = od.listarOrdenesPorFecha(fecha);
         for (Orden o : ordenes) {
             if (o.getPrestador().getIdPrestador() == pSeleccionado.getIdPrestador() && o.getAfiliado().getDni() == dni) {
-                JOptionPane.showMessageDialog(null, "Solo se admite 1 Orden por dia para el"
-                        + " mismo prestador por afiliado");
+                JOptionPane.showMessageDialog(null, "Solo se admite 1 (una) Orden por día para el"
+                        + " mismo Prestador por Afiliado");
                 limpiarCampos();
                 return;
             }
-
         }
-        double importe = Double.parseDouble(jTextImporte.getText());
-
-        Orden orden = new Orden(fecha, jTextFomaPago.getText(), importe,
+        double importe = Double.parseDouble(textoSacarOrdenImp.getText());
+        Orden orden = new Orden(fecha, textoSacarOrdenForPag.getText(), importe,
                 ad.buscarAfiliados(dni),
                 pSeleccionado);// arreglado
-
         od.guardarOrden(orden);
         limpiarCampos();
+    }//GEN-LAST:event_botonSacarOrdenGuardarActionPerformed
 
-    }//GEN-LAST:event_jButtonGuardarOrdenActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void botonAtrasSacarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasSacarOrdenActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasSacarOrdenActionPerformed
 
     private void cargarComboPrestador() {
+        
         int id;
-
         ArrayList<Prestador> prestadores = pd.listarPrestador();
-
         for (Prestador pres : prestadores) {
-            jComboBox1.addItem(pres);
+            comboBoxSacarOrdenPres.addItem(pres);
         }
-
     }
 
     private void limpiarCampos() {
-        jTextDocumento.setText("");
-        jDateFechaOrden.setDate(null);
-        jTextFomaPago.setText("");
-        jTextImporte.setText("");
-
+       
+        textoSacarOrdenDoc.setText("");
+        calendarioSacarOrden.setDate(null);
+        textoSacarOrdenForPag.setText("");
+        textoSacarOrdenImp.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBuscarOrden;
-    private javax.swing.JButton jButtonGuardarOrden;
-    private javax.swing.JComboBox<Prestador> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateFechaOrden;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextDocumento;
-    private javax.swing.JTextField jTextFomaPago;
-    private javax.swing.JTextField jTextImporte;
+    private javax.swing.JButton botonAtrasSacarOrden;
+    private javax.swing.JButton botonSacarOrdenBuscar;
+    private javax.swing.JButton botonSacarOrdenGuardar;
+    private com.toedter.calendar.JDateChooser calendarioSacarOrden;
+    private javax.swing.JComboBox<Prestador> comboBoxSacarOrdenPres;
+    private javax.swing.JLabel etiquetaSacarOrden;
+    private javax.swing.JLabel etiquetaSacarOrdenDoc;
+    private javax.swing.JLabel etiquetaSacarOrdenFecha;
+    private javax.swing.JLabel etiquetaSacarOrdenForPag;
+    private javax.swing.JLabel etiquetaSacarOrdenImp;
+    private javax.swing.JLabel etiquetaSacarOrdenPres;
+    private keeptoo.KGradientPanel panelGradSacarOrden;
+    private javax.swing.JTextField textoSacarOrdenDoc;
+    private javax.swing.JTextField textoSacarOrdenForPag;
+    private javax.swing.JTextField textoSacarOrdenImp;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
@@ -11,18 +7,14 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author simon
- */
 public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form AfiliadosAgregarYAnular
-     */
     AfiliadoData ad=new AfiliadoData();
+    
     public AfiliadosAgregarYAnular() {
+        
         initComponents();
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -37,275 +29,333 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        TextDNI = new javax.swing.JTextField();
-        TextNYA = new javax.swing.JTextField();
-        TextNumT = new javax.swing.JTextField();
-        TextDomicilio = new javax.swing.JTextField();
-        ButtonGuardar = new javax.swing.JButton();
-        ButtonAnular = new javax.swing.JButton();
-        botonAtrasAfiliados = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        BRein = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        panelGradAfiAgreYAnul = new keeptoo.KGradientPanel();
+        etiquetaAfiAgreYAnul = new javax.swing.JLabel();
+        etiquetaAfiNumDoc = new javax.swing.JLabel();
+        etiquetaAfiNomYApe = new javax.swing.JLabel();
+        etiquetaAfiNumTel = new javax.swing.JLabel();
+        etiquetaAfiDom = new javax.swing.JLabel();
+        etiquetaAfiEstado = new javax.swing.JLabel();
+        etiquetaAfiEstAcONoac = new javax.swing.JLabel();
+        textoAfiAgreYAnulDNI = new javax.swing.JTextField();
+        textoAfiAgreYAnulNomYApe = new javax.swing.JTextField();
+        textoAfiAgreYAnulNumTel = new javax.swing.JTextField();
+        textoAfiAgreYAnulDom = new javax.swing.JTextField();
+        botonAfiAgreYAnulBuscar = new javax.swing.JButton();
+        botonAfiAgreYAnulRein = new javax.swing.JButton();
+        botonAfiAgreYAnulGuardar = new javax.swing.JButton();
+        botonAfiAgreYAnulAnular = new javax.swing.JButton();
+        botonAtrasAfiAgreYAnul = new javax.swing.JButton();
+        separadorAfiAgreYAnul = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Agregar y Anular Afiliados");
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        jLabel2.setText("Numero de documento:");
+        panelGradAfiAgreYAnul.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradAfiAgreYAnul.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradAfiAgreYAnul.setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        jLabel3.setText("Numero de telefono:");
+        etiquetaAfiAgreYAnul.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaAfiAgreYAnul.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaAfiAgreYAnul.setText("Agregar Y Anular Afiliados");
 
-        jLabel4.setText("Domicilio:");
+        etiquetaAfiNumDoc.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaAfiNumDoc.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaAfiNumDoc.setText("Número de Documento:");
 
-        jLabel5.setText("Nombre y Apellido:");
+        etiquetaAfiNomYApe.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaAfiNomYApe.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaAfiNomYApe.setText("Nombre y Apellido:");
 
-        TextDNI.addActionListener(new java.awt.event.ActionListener() {
+        etiquetaAfiNumTel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaAfiNumTel.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaAfiNumTel.setText("Número de Teléfono:");
+
+        etiquetaAfiDom.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaAfiDom.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaAfiDom.setText("Domicilio:");
+
+        etiquetaAfiEstado.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaAfiEstado.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaAfiEstado.setText("Estado:");
+
+        etiquetaAfiEstAcONoac.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaAfiEstAcONoac.setForeground(new java.awt.Color(255, 255, 255));
+
+        botonAfiAgreYAnulBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAfiAgreYAnulBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        botonAfiAgreYAnulBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonAfiAgreYAnulBuscar.setText("Buscar");
+        botonAfiAgreYAnulBuscar.setBorderPainted(false);
+        botonAfiAgreYAnulBuscar.setContentAreaFilled(false);
+        botonAfiAgreYAnulBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextDNIActionPerformed(evt);
+                botonAfiAgreYAnulBuscarActionPerformed(evt);
             }
         });
 
-        ButtonGuardar.setText("Guardar");
-        ButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+        botonAfiAgreYAnulRein.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAfiAgreYAnulRein.setForeground(new java.awt.Color(255, 255, 255));
+        botonAfiAgreYAnulRein.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonAfiAgreYAnulRein.setText("Reinstituir");
+        botonAfiAgreYAnulRein.setBorderPainted(false);
+        botonAfiAgreYAnulRein.setContentAreaFilled(false);
+        botonAfiAgreYAnulRein.setEnabled(false);
+        botonAfiAgreYAnulRein.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulRein.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonGuardarActionPerformed(evt);
+                botonAfiAgreYAnulReinActionPerformed(evt);
             }
         });
 
-        ButtonAnular.setText("Anular");
-        ButtonAnular.addActionListener(new java.awt.event.ActionListener() {
+        botonAfiAgreYAnulGuardar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAfiAgreYAnulGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        botonAfiAgreYAnulGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonAfiAgreYAnulGuardar.setText("Guardar");
+        botonAfiAgreYAnulGuardar.setBorderPainted(false);
+        botonAfiAgreYAnulGuardar.setContentAreaFilled(false);
+        botonAfiAgreYAnulGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonAnularActionPerformed(evt);
+                botonAfiAgreYAnulGuardarActionPerformed(evt);
             }
         });
 
-        botonAtrasAfiliados.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasAfiliados.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasAfiliados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso25bit.png"))); // NOI18N
-        botonAtrasAfiliados.setText("Atrás");
-        botonAtrasAfiliados.setBorderPainted(false);
-        botonAtrasAfiliados.setContentAreaFilled(false);
-        botonAtrasAfiliados.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        botonAtrasAfiliados.addActionListener(new java.awt.event.ActionListener() {
+        botonAfiAgreYAnulAnular.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAfiAgreYAnulAnular.setForeground(new java.awt.Color(255, 255, 255));
+        botonAfiAgreYAnulAnular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonAfiAgreYAnulAnular.setText("Anular");
+        botonAfiAgreYAnulAnular.setBorderPainted(false);
+        botonAfiAgreYAnulAnular.setContentAreaFilled(false);
+        botonAfiAgreYAnulAnular.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulAnular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasAfiliadosActionPerformed(evt);
+                botonAfiAgreYAnulAnularActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonAtrasAfiAgreYAnul.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasAfiAgreYAnul.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasAfiAgreYAnul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasAfiAgreYAnul.setText("Atrás");
+        botonAtrasAfiAgreYAnul.setBorderPainted(false);
+        botonAtrasAfiAgreYAnul.setContentAreaFilled(false);
+        botonAtrasAfiAgreYAnul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasAfiAgreYAnul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonAtrasAfiAgreYAnulActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("Estado:");
+        separadorAfiAgreYAnul.setForeground(new java.awt.Color(255, 255, 255));
+        separadorAfiAgreYAnul.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
-        BRein.setText("Reinstituir");
-        BRein.setEnabled(false);
-        BRein.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BReinActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        javax.swing.GroupLayout panelGradAfiAgreYAnulLayout = new javax.swing.GroupLayout(panelGradAfiAgreYAnul);
+        panelGradAfiAgreYAnul.setLayout(panelGradAfiAgreYAnulLayout);
+        panelGradAfiAgreYAnulLayout.setHorizontalGroup(
+            panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                        .addGap(353, 353, 353)
+                        .addComponent(etiquetaAfiAgreYAnul)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 465, Short.MAX_VALUE)
+                        .addComponent(botonAtrasAfiAgreYAnul))
+                    .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(separadorAfiAgreYAnul, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                .addGap(103, 103, 103)
+                                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(etiquetaAfiNumDoc)
+                                    .addComponent(etiquetaAfiNomYApe)
+                                    .addComponent(etiquetaAfiNumTel)
+                                    .addComponent(etiquetaAfiDom)
+                                    .addComponent(etiquetaAfiEstado))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(textoAfiAgreYAnulNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textoAfiAgreYAnulNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textoAfiAgreYAnulDom, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(etiquetaAfiEstAcONoac, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(botonAfiAgreYAnulGuardar)
+                                            .addComponent(botonAfiAgreYAnulRein)
+                                            .addComponent(botonAfiAgreYAnulAnular)))
+                                    .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                        .addComponent(textoAfiAgreYAnulDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(botonAfiAgreYAnulBuscar)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelGradAfiAgreYAnulLayout.setVerticalGroup(
+            panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(etiquetaAfiAgreYAnul, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonAtrasAfiAgreYAnul))
+                        .addGap(110, 110, 110))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(etiquetaAfiNumDoc)
+                        .addComponent(textoAfiAgreYAnulDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonAfiAgreYAnulBuscar)))
+                .addComponent(separadorAfiAgreYAnul, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonAfiAgreYAnulRein, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textoAfiAgreYAnulNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etiquetaAfiNomYApe))
+                        .addGap(35, 35, 35)
+                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(etiquetaAfiNumTel)
+                            .addComponent(textoAfiAgreYAnulNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textoAfiAgreYAnulDom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etiquetaAfiDom))
+                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(etiquetaAfiEstado))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(etiquetaAfiEstAcONoac, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(6, 6, 6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(botonAfiAgreYAnulGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonAfiAgreYAnulAnular)
+                .addGap(63, 63, 63))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonAtrasAfiliados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(145, 145, 145))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ButtonAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(TextDNI)
-                                    .addComponent(TextNYA)
-                                    .addComponent(TextNumT)
-                                    .addComponent(TextDomicilio, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(248, 248, 248)
-                                    .addComponent(ButtonGuardar))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BRein))))))
-                .addContainerGap(18, Short.MAX_VALUE))
+            .addComponent(panelGradAfiAgreYAnul, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(botonAtrasAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TextDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(TextNYA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(TextNumT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(TextDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(BRein)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(ButtonGuardar)
-                .addGap(18, 18, 18)
-                .addComponent(ButtonAnular)
-                .addGap(26, 26, 26))
+            .addComponent(panelGradAfiAgreYAnul, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextDNIActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextDNIActionPerformed
-
-    private void ButtonAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAnularActionPerformed
+    private void botonAfiAgreYAnulAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulAnularActionPerformed
         try{
-        int dni=Integer.parseInt(TextDNI.getText());
+        int dni=Integer.parseInt(textoAfiAgreYAnulDNI.getText());
         ad.borrarAfiliado(dni);
         }catch(NumberFormatException ne){
-           JOptionPane.showMessageDialog(null, "Ingrese un numero de documento de un afiliado para anularlo");
+           JOptionPane.showMessageDialog(null, "Ingrese el número de documento de un Afiliado para anularlo");
        }catch(NullPointerException np){
-           JOptionPane.showMessageDialog(null, "Tiene que ingresar el DNI de un afiliado para anularlo");
+           JOptionPane.showMessageDialog(null, "Tiene que ingresar el DNI de un Afiliado para anularlo");
        }
         limpiar();
-    }//GEN-LAST:event_ButtonAnularActionPerformed
+    }//GEN-LAST:event_botonAfiAgreYAnulAnularActionPerformed
 
-    private void ButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGuardarActionPerformed
+    private void botonAfiAgreYAnulGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulGuardarActionPerformed
        try{
-           if(TextDNI.getText().isEmpty() || TextNumT.getText().isEmpty()){
-               JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un afiliado");
-           }else if(buscarDni(Integer.parseInt(TextDNI.getText()))){
-               JOptionPane.showMessageDialog(null, "El Documento ingresado ya le pertenece a un alumno registrado");
+           if(textoAfiAgreYAnulDNI.getText().isEmpty() || textoAfiAgreYAnulNumTel.getText().isEmpty()){
+               JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Afiliado");
+           }else if(buscarDni(Integer.parseInt(textoAfiAgreYAnulDNI.getText()))){
+               JOptionPane.showMessageDialog(null, "El Documento ingresado ya le pertenece a un Afiliado registrado");
            }else{
-               int dni=Integer.parseInt(TextDNI.getText());
-               int tel=Integer.parseInt(TextNumT.getText());
+               int dni=Integer.parseInt(textoAfiAgreYAnulDNI.getText());
+               int tel=Integer.parseInt(textoAfiAgreYAnulNumTel.getText());
                Afiliado afiliado=new Afiliado();
                afiliado.setDni(dni);
-               afiliado.setNombre(TextNYA.getText());
+               afiliado.setNombre(textoAfiAgreYAnulNomYApe.getText());
                afiliado.setTelefono(tel);
-               afiliado.setDomicilio(TextDomicilio.getText());
+               afiliado.setDomicilio(textoAfiAgreYAnulDom.getText());
                afiliado.setActivo(true);
                ad.guardarAfiliado(afiliado);
            }
        }catch(NumberFormatException ne){
-           JOptionPane.showMessageDialog(null, "Error al ingresar caracteres equivocados");
+           JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres equivocados");
        }catch(NullPointerException np){
-           JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un afiliado");
+           JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Afiliado");
        }
         limpiar();
-    }//GEN-LAST:event_ButtonGuardarActionPerformed
+    }//GEN-LAST:event_botonAfiAgreYAnulGuardarActionPerformed
 
-    private void botonAtrasAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasAfiliadosActionPerformed
-        dispose();
-    }//GEN-LAST:event_botonAtrasAfiliadosActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonAfiAgreYAnulBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulBuscarActionPerformed
         try{
-        int dni=Integer.parseInt(TextDNI.getText());
-        ButtonGuardar.setEnabled(false);
+        int dni=Integer.parseInt(textoAfiAgreYAnulDNI.getText());
+        botonAfiAgreYAnulGuardar.setEnabled(false);
         Afiliado af=ad.buscarAfiliados(dni);
         if(af.getTelefono()==0){
             limpiar();
         }else{
-        TextNYA.setText(af.getNombre());
-        TextDomicilio.setText(af.getDomicilio());
-        TextNumT.setText(af.getTelefono()+"");
+        textoAfiAgreYAnulNomYApe.setText(af.getNombre());
+        textoAfiAgreYAnulDom.setText(af.getDomicilio());
+        textoAfiAgreYAnulNumTel.setText(af.getTelefono()+"");
         if(af.isActivo()){
-            jLabel8.setText("Activo");
-            BRein.setEnabled(false);
+            etiquetaAfiEstAcONoac.setText("Activo");
+            botonAfiAgreYAnulRein.setEnabled(false);
             
         }else{
-            jLabel8.setText("Inactivo");
-            BRein.setEnabled(true);
+            etiquetaAfiEstAcONoac.setText("Inactivo");
+            botonAfiAgreYAnulRein.setEnabled(true);
         }
         }
         }catch(NumberFormatException ne){
-           JOptionPane.showMessageDialog(null, "Ingrese un numero de documento valido para buscar a un afiliado");
+           JOptionPane.showMessageDialog(null, "Ingrese un número de documento válido para buscar a un Afiliado");
            limpiar();
        }
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonAfiAgreYAnulBuscarActionPerformed
 
-    private void BReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BReinActionPerformed
- 
-            int dni=Integer.parseInt(TextDNI.getText());
-            ad.reinstituirAfliliado(dni);
-            limpiar();
-    }//GEN-LAST:event_BReinActionPerformed
+    private void botonAfiAgreYAnulReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulReinActionPerformed
+        int dni=Integer.parseInt(textoAfiAgreYAnulDNI.getText());
+        ad.reinstituirAfliliado(dni);
+        limpiar();
+    }//GEN-LAST:event_botonAfiAgreYAnulReinActionPerformed
+
+    private void botonAtrasAfiAgreYAnulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasAfiAgreYAnulActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasAfiAgreYAnulActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BRein;
-    private javax.swing.JButton ButtonAnular;
-    private javax.swing.JButton ButtonGuardar;
-    private javax.swing.JTextField TextDNI;
-    private javax.swing.JTextField TextDomicilio;
-    private javax.swing.JTextField TextNYA;
-    private javax.swing.JTextField TextNumT;
-    private javax.swing.JButton botonAtrasAfiliados;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JButton botonAfiAgreYAnulAnular;
+    private javax.swing.JButton botonAfiAgreYAnulBuscar;
+    private javax.swing.JButton botonAfiAgreYAnulGuardar;
+    private javax.swing.JButton botonAfiAgreYAnulRein;
+    private javax.swing.JButton botonAtrasAfiAgreYAnul;
+    private javax.swing.JLabel etiquetaAfiAgreYAnul;
+    private javax.swing.JLabel etiquetaAfiDom;
+    private javax.swing.JLabel etiquetaAfiEstAcONoac;
+    private javax.swing.JLabel etiquetaAfiEstado;
+    private javax.swing.JLabel etiquetaAfiNomYApe;
+    private javax.swing.JLabel etiquetaAfiNumDoc;
+    private javax.swing.JLabel etiquetaAfiNumTel;
+    private keeptoo.KGradientPanel panelGradAfiAgreYAnul;
+    private javax.swing.JSeparator separadorAfiAgreYAnul;
+    private javax.swing.JTextField textoAfiAgreYAnulDNI;
+    private javax.swing.JTextField textoAfiAgreYAnulDom;
+    private javax.swing.JTextField textoAfiAgreYAnulNomYApe;
+    private javax.swing.JTextField textoAfiAgreYAnulNumTel;
     // End of variables declaration//GEN-END:variables
 
-
     private void limpiar(){
-        TextDNI.setText("");
-        TextDomicilio.setText("");
-        TextNYA.setText("");
-        TextNumT.setText("");
-        jLabel8.setText("");
-        BRein.setEnabled(false);
-        ButtonGuardar.setEnabled(true);
+        textoAfiAgreYAnulDNI.setText("");
+        textoAfiAgreYAnulDom.setText("");
+        textoAfiAgreYAnulNomYApe.setText("");
+        textoAfiAgreYAnulNumTel.setText("");
+        etiquetaAfiEstAcONoac.setText("");
+        botonAfiAgreYAnulRein.setEnabled(false);
+        botonAfiAgreYAnulGuardar.setEnabled(true);
     }
     
     private boolean buscarDni(int dni) {

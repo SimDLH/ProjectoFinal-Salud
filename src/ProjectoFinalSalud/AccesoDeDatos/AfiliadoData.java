@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Afiliado;
@@ -16,10 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author simon
- */
 public class AfiliadoData {
 
     private Connection con = null;
@@ -28,9 +20,6 @@ public class AfiliadoData {
         con = Conexion.getConnection();
     }
 
-
-    
-    
     public void guardarAfiliado(Afiliado a){
         String sql="INSERT INTO afiliado(nombre, dni ,domicilio, telefono, Activo)"
 
@@ -46,19 +35,13 @@ public class AfiliadoData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 a.setIdAfiliado(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Se a agregado un nuevo afiliado exitosamente");
+                JOptionPane.showMessageDialog(null, "Se ha agregado un nuevo Afiliado exitosamente");
 
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al ingresar el afiliado");
+            JOptionPane.showMessageDialog(null, "Error al ingresar el Afiliado");
         }
     }
-
-
-    
-    
-    
-    
     
     public ArrayList<Afiliado> listarAfiliados(){
         String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono FROM afiliado WHERE Activo=1";
@@ -78,15 +61,11 @@ public class AfiliadoData {
                 afiliados.add(af);
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de afiliados");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de Afiliados");
         }
         return afiliados;
     }
 
-
-    
-
-    
     public void borrarAfiliado(int dni){
         String sql="UPDATE afiliado SET Activo=0 WHERE dni=? AND Activo=1";
         try {
@@ -94,12 +73,12 @@ public class AfiliadoData {
             ps.setInt(1, dni);
             int exito = ps.executeUpdate();
             if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "Anulacion completa");
+                JOptionPane.showMessageDialog(null, "Anulación completa");
             } else {
                 JOptionPane.showMessageDialog(null, "No hay Afiliados activos con este DNI");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de afiliados");
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Afiliados");
         }
     }
 
@@ -122,7 +101,7 @@ public class AfiliadoData {
                 JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de afiliados");
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Afiliados");
         }
         return afiliado;
     }
@@ -137,16 +116,13 @@ public class AfiliadoData {
             ps.setInt(4, afiliado.getDni());
             int exito = ps.executeUpdate();
             if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "La informacion del afiliado ha sido actualisada exitosamente");
+                JOptionPane.showMessageDialog(null, "La información del Afiliado ha sido actualisada exitosamente");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
         }
-
     }
 
-    
-    
     public void reinstituirAfliliado(int dni){
         String sql="UPDATE afiliado set Activo=1 WHERE dni=?";
 
@@ -155,12 +131,11 @@ public class AfiliadoData {
             ps.setInt(1, dni);
             int exito = ps.executeUpdate();
             if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "El afiliado ha sido reinscripto exitosamente");
+                JOptionPane.showMessageDialog(null, "El Afiliado ha sido reinscripto exitosamente");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
         }
-
     }
 
     public Afiliado buscarAfiliadoID(int id) {
@@ -177,16 +152,12 @@ public class AfiliadoData {
                 afiliado.setTelefono(rs.getInt("telefono"));
                 afiliado.setActivo(true);
             }
-
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al ingresar a la tabla de afiliados");
+            JOptionPane.showMessageDialog(null, "Error al ingresar a la tabla de Afiliados");
         }
         return afiliado;
     }
 
-
-        
-    
     public Afiliado buscarAfiliadosActivos(int dni){
         String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono ,Activo  FROM afiliado WHERE dni=? AND Activo=1";
         Afiliado afiliado=new Afiliado();
@@ -206,9 +177,8 @@ public class AfiliadoData {
                 JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de afiliados");
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Afiliados");
         }
         return afiliado;
     }
-    
 }

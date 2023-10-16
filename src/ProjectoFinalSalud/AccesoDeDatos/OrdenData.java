@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Afiliado;
@@ -18,10 +14,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author coki_
- */
 public class OrdenData {
 
     private Connection con = null;
@@ -40,21 +32,16 @@ public class OrdenData {
             ps.setDate(3, Date.valueOf(orden.getFecha()));
             ps.setString(4, orden.getFormaPago());
             ps.setDouble(5, orden.getImporte());
-
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
 
                 JOptionPane.showMessageDialog(null, "Orden guardada exitosamente!");
-
             }
             ps.close();
-
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Ordenes");
-
         }
-
     }
 
     public ArrayList<Orden> listarOrdenesPorFecha(LocalDate fecha) {
@@ -66,9 +53,7 @@ public class OrdenData {
             ResultSet rs = ps.executeQuery();
             Orden orden;
             AfiliadoData ad = new AfiliadoData();
-
             PrestadorData pd = new PrestadorData();
-
             while (rs.next()) {
                 orden = new Orden();
                 orden.setIdOrden(rs.getInt("idOrden"));
@@ -80,13 +65,11 @@ public class OrdenData {
                 orden.setPrestador(p);
 
                 ordenes.add(orden);
-
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de ordenes");
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Ordenes");
         }
-
         return ordenes;
     }
 
@@ -106,35 +89,28 @@ public class OrdenData {
             Orden orden;
             AfiliadoData ad = new AfiliadoData();
             PrestadorData pd = new PrestadorData();
-
             while (rs.next()) {
                 orden = new Orden();
                 orden.setIdOrden(rs.getInt("idOrden"));
-
                 Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
                 orden.setAfiliado(a);
-
                 Prestador p = pd.buscarPrestador(rs.getInt("idPrestador"));
                 orden.setPrestador(p);
-
                 orden.setFecha(rs.getDate("fecha").toLocalDate());
                 orden.setFormaPago(rs.getString("formaPago"));
                 orden.setImporte(rs.getDouble("importe"));
                 ordenes.add(orden);
-
             }
             ps.close();
         } catch (SQLException ex) {
             System.out.println("error");
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de ordenes");
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Ordenes");
         }
         return ordenes;
-
     }
 
     public ArrayList<Orden> OrdenesPorPrestador(int id) {
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
-
         String sql = "SELECT orden.idOrden ,fecha,formaPago ,importe, orden.idPrestador,orden.idAfiliado"
                 + " FROM orden JOIN prestador WHERE orden.idPrestador=prestador.Idprestador"
                 + " AND prestador.IdPrestador=? AND prestador.Activo=1";
@@ -146,7 +122,6 @@ public class OrdenData {
             AfiliadoData ad = new AfiliadoData();
             PrestadorData pd = new PrestadorData();
             Prestador p = pd.buscarPrestador(id);
-
             while (rs.next()) {
                 orden = new Orden();
                 orden.setIdOrden(rs.getInt("idOrden"));
@@ -157,13 +132,11 @@ public class OrdenData {
                 orden.setPrestador(p);
                 orden.setAfiliado(a);
                 ordenes.add(orden);
-
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de ordenes");
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Ordenes");
         }
-
         return ordenes;
     }
 }

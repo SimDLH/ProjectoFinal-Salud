@@ -1,28 +1,49 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
+import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
+import ProjectoFinalSalud.Entidades.Prestador;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author JOSE
- */
 public class Profesionales extends javax.swing.JInternalFrame {
-
-    /**
-     * Creates new form Profesionales
-     */
-    public Profesionales() {
+    
+    DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int colum) {
+            return false;
+        }
+    };
+    
+    PrestadorData presData = new PrestadorData();
+    
+    public Profesionales() {    
+        
         initComponents();
+        armarTablaProfesionales();
+        cargarTablaProfesionales();
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
     }
-
+    
+    private void armarTablaProfesionales(){
+        
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Domicilio");
+        modelo.addColumn("Telefono");
+        modelo.addColumn("Especialidad");
+        tablaProf.setModel(modelo);
+        }
+        
+    private void cargarTablaProfesionales(){
+        for(Prestador pres:presData.listarPrestador()){
+            modelo.addRow(new Object[]{pres.getNombre(),pres.getDomicilio(),pres.getTelefono(),pres.getEspecialidad().getEspecialidad()});
+        }
+    }
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,63 +53,147 @@ public class Profesionales extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradienteOrdenes = new keeptoo.KGradientPanel();
-        botonAtrasProfesionales = new javax.swing.JButton();
+        panelGradProf = new keeptoo.KGradientPanel();
+        etiquetaProfCartilla = new javax.swing.JLabel();
+        botonProfPedirOrden = new javax.swing.JButton();
+        botonAtrasProf = new javax.swing.JButton();
+        panelScrollTabla = new javax.swing.JScrollPane();
+        tablaProf = new javax.swing.JTable();
 
-        panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        botonAtrasProfesionales.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasProfesionales.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasProfesionales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso25bit.png"))); // NOI18N
-        botonAtrasProfesionales.setText("Atrás");
-        botonAtrasProfesionales.setBorderPainted(false);
-        botonAtrasProfesionales.setContentAreaFilled(false);
-        botonAtrasProfesionales.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        botonAtrasProfesionales.addActionListener(new java.awt.event.ActionListener() {
+        panelGradProf.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradProf.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradProf.setPreferredSize(new java.awt.Dimension(1260, 620));
+
+        etiquetaProfCartilla.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaProfCartilla.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfCartilla.setText("Consulta Nuestra Cartilla Médica");
+
+        botonProfPedirOrden.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        botonProfPedirOrden.setForeground(new java.awt.Color(255, 255, 255));
+        botonProfPedirOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonProfPedirOrden.setText("¡Pedir Orden!");
+        botonProfPedirOrden.setBorderPainted(false);
+        botonProfPedirOrden.setContentAreaFilled(false);
+        botonProfPedirOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfPedirOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasProfesionalesActionPerformed(evt);
+                botonProfPedirOrdenActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelGradienteOrdenesLayout = new javax.swing.GroupLayout(panelGradienteOrdenes);
-        panelGradienteOrdenes.setLayout(panelGradienteOrdenesLayout);
-        panelGradienteOrdenesLayout.setHorizontalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteOrdenesLayout.createSequentialGroup()
-                .addContainerGap(1132, Short.MAX_VALUE)
-                .addComponent(botonAtrasProfesionales, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        botonAtrasProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasProf.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasProf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasProf.setText("Atrás");
+        botonAtrasProf.setBorderPainted(false);
+        botonAtrasProf.setContentAreaFilled(false);
+        botonAtrasProf.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasProfActionPerformed(evt);
+            }
+        });
+
+        tablaProf.setBackground(panelGradProf.getkStartColor());
+        tablaProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        tablaProf.setForeground(new java.awt.Color(255, 255, 255));
+        tablaProf.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaProf.getTableHeader().setReorderingAllowed(false);
+        panelScrollTabla.setViewportView(tablaProf);
+        if (tablaProf.getColumnModel().getColumnCount() > 0) {
+            tablaProf.getColumnModel().getColumn(0).setResizable(false);
+            tablaProf.getColumnModel().getColumn(1).setResizable(false);
+            tablaProf.getColumnModel().getColumn(2).setResizable(false);
+            tablaProf.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout panelGradProfLayout = new javax.swing.GroupLayout(panelGradProf);
+        panelGradProf.setLayout(panelGradProfLayout);
+        panelGradProfLayout.setHorizontalGroup(
+            panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfLayout.createSequentialGroup()
+                .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradProfLayout.createSequentialGroup()
+                        .addGap(370, 370, 370)
+                        .addComponent(etiquetaProfCartilla))
+                    .addGroup(panelGradProfLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 957, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradProfLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonAtrasProf)
+                        .addContainerGap())
+                    .addGroup(panelGradProfLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(botonProfPedirOrden)
+                        .addContainerGap(66, Short.MAX_VALUE))))
         );
-        panelGradienteOrdenesLayout.setVerticalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
+        panelGradProfLayout.setVerticalGroup(
+            panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradProfLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonAtrasProfesionales, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(551, Short.MAX_VALUE))
+                .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradProfLayout.createSequentialGroup()
+                        .addComponent(botonAtrasProf)
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfLayout.createSequentialGroup()
+                        .addComponent(etiquetaProfCartilla, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonProfPedirOrden))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradProf, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradProf, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
         setBounds(315, 200, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAtrasProfesionalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfesionalesActionPerformed
+    private void botonAtrasProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfActionPerformed
         dispose();
-    }//GEN-LAST:event_botonAtrasProfesionalesActionPerformed
+    }//GEN-LAST:event_botonAtrasProfActionPerformed
 
+    private void botonProfPedirOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfPedirOrdenActionPerformed
+        
+    }//GEN-LAST:event_botonProfPedirOrdenActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAtrasProfesionales;
-    private keeptoo.KGradientPanel panelGradienteOrdenes;
+    private javax.swing.JButton botonAtrasProf;
+    private javax.swing.JButton botonProfPedirOrden;
+    private javax.swing.JLabel etiquetaProfCartilla;
+    private keeptoo.KGradientPanel panelGradProf;
+    private javax.swing.JScrollPane panelScrollTabla;
+    private javax.swing.JTable tablaProf;
     // End of variables declaration//GEN-END:variables
 }

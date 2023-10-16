@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author JOSE
- */
 public class Ordenes extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Ordenes
-     */
     public Ordenes() {
+        
         initComponents();
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -32,88 +23,97 @@ public class Ordenes extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradienteOrdenes = new keeptoo.KGradientPanel();
-        botonAtrasOrdenes = new javax.swing.JButton();
+        panelGradOrden = new keeptoo.KGradientPanel();
+        botonAtrasOrden = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuSacarOrden = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuPorFecha = new javax.swing.JMenuItem();
-        jMenuPorAfiliado = new javax.swing.JMenuItem();
-        jMenuPorPrestador = new javax.swing.JMenuItem();
+        menuOrdenSacOrd = new javax.swing.JMenu();
+        menuItemOrdenSacOrd = new javax.swing.JMenuItem();
+        menuOrdenOrdenes = new javax.swing.JMenu();
+        menuItemOrdenOrdXFecha = new javax.swing.JMenuItem();
+        menuItemOrdenOrdXAfi = new javax.swing.JMenuItem();
+        menuItemOrdenOrdXPres = new javax.swing.JMenuItem();
 
-        panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
+        setPreferredSize(new java.awt.Dimension(1260, 620));
 
-        botonAtrasOrdenes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasOrdenes.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasOrdenes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso25bit.png"))); // NOI18N
-        botonAtrasOrdenes.setText("Atrás");
-        botonAtrasOrdenes.setBorderPainted(false);
-        botonAtrasOrdenes.setContentAreaFilled(false);
-        botonAtrasOrdenes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        botonAtrasOrdenes.addActionListener(new java.awt.event.ActionListener() {
+        panelGradOrden.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradOrden.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradOrden.setPreferredSize(new java.awt.Dimension(1260, 620));
+
+        botonAtrasOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasOrden.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasOrden.setText("Atrás");
+        botonAtrasOrden.setBorderPainted(false);
+        botonAtrasOrden.setContentAreaFilled(false);
+        botonAtrasOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasOrdenesActionPerformed(evt);
+                botonAtrasOrdenActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelGradienteOrdenesLayout = new javax.swing.GroupLayout(panelGradienteOrdenes);
-        panelGradienteOrdenes.setLayout(panelGradienteOrdenesLayout);
-        panelGradienteOrdenesLayout.setHorizontalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteOrdenesLayout.createSequentialGroup()
-                .addContainerGap(1132, Short.MAX_VALUE)
-                .addComponent(botonAtrasOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout panelGradOrdenLayout = new javax.swing.GroupLayout(panelGradOrden);
+        panelGradOrden.setLayout(panelGradOrdenLayout);
+        panelGradOrdenLayout.setHorizontalGroup(
+            panelGradOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenLayout.createSequentialGroup()
+                .addContainerGap(1081, Short.MAX_VALUE)
+                .addComponent(botonAtrasOrden)
                 .addContainerGap())
         );
-        panelGradienteOrdenesLayout.setVerticalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
+        panelGradOrdenLayout.setVerticalGroup(
+            panelGradOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradOrdenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonAtrasOrdenes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(541, Short.MAX_VALUE))
+                .addComponent(botonAtrasOrden)
+                .addContainerGap(505, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Sacar Orden");
+        menuOrdenSacOrd.setText("Sacar Orden");
+        menuOrdenSacOrd.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
-        jMenuSacarOrden.setText("Sacar Orden");
-        jMenuSacarOrden.addActionListener(new java.awt.event.ActionListener() {
+        menuItemOrdenSacOrd.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemOrdenSacOrd.setText("Sacar Orden");
+        menuItemOrdenSacOrd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuSacarOrdenActionPerformed(evt);
+                menuItemOrdenSacOrdActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuSacarOrden);
+        menuOrdenSacOrd.add(menuItemOrdenSacOrd);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menuOrdenSacOrd);
 
-        jMenu2.setText("Ordenes");
+        menuOrdenOrdenes.setText("Ordenes");
+        menuOrdenOrdenes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
-        jMenuPorFecha.setText("Ordenes Por Feha");
-        jMenuPorFecha.addActionListener(new java.awt.event.ActionListener() {
+        menuItemOrdenOrdXFecha.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemOrdenOrdXFecha.setText("Ordenes Por Fecha");
+        menuItemOrdenOrdXFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuPorFechaActionPerformed(evt);
+                menuItemOrdenOrdXFechaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuPorFecha);
+        menuOrdenOrdenes.add(menuItemOrdenOrdXFecha);
 
-        jMenuPorAfiliado.setText("Ordenes Por Afiliado");
-        jMenuPorAfiliado.addActionListener(new java.awt.event.ActionListener() {
+        menuItemOrdenOrdXAfi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemOrdenOrdXAfi.setText("Ordenes Por Afiliado");
+        menuItemOrdenOrdXAfi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuPorAfiliadoActionPerformed(evt);
+                menuItemOrdenOrdXAfiActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuPorAfiliado);
+        menuOrdenOrdenes.add(menuItemOrdenOrdXAfi);
 
-        jMenuPorPrestador.setText("Ordenes Por Prestador");
-        jMenuPorPrestador.addActionListener(new java.awt.event.ActionListener() {
+        menuItemOrdenOrdXPres.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemOrdenOrdXPres.setText("Ordenes Por Prestador");
+        menuItemOrdenOrdXPres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuPorPrestadorActionPerformed(evt);
+                menuItemOrdenOrdXPresActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuPorPrestador);
+        menuOrdenOrdenes.add(menuItemOrdenOrdXPres);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menuOrdenOrdenes);
 
         setJMenuBar(jMenuBar1);
 
@@ -121,65 +121,61 @@ public class Ordenes extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
         );
 
         setBounds(315, 200, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAtrasOrdenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenesActionPerformed
-        dispose();
-    }//GEN-LAST:event_botonAtrasOrdenesActionPerformed
-
-    private void jMenuSacarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSacarOrdenActionPerformed
-        panelGradienteOrdenes.removeAll();
-        panelGradienteOrdenes.repaint();
+    private void menuItemOrdenSacOrdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenSacOrdActionPerformed
+        panelGradOrden.removeAll();
+        panelGradOrden.repaint();
         SacarOrden sa = new SacarOrden();
+        panelGradOrden.add(sa);
         sa.setVisible(true);
-        panelGradienteOrdenes.add(sa);
-        panelGradienteOrdenes.setVisible(true);
-    }//GEN-LAST:event_jMenuSacarOrdenActionPerformed
+    }//GEN-LAST:event_menuItemOrdenSacOrdActionPerformed
 
-    private void jMenuPorFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPorFechaActionPerformed
-        panelGradienteOrdenes.removeAll();
-        panelGradienteOrdenes.repaint();
+    private void menuItemOrdenOrdXFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenOrdXFechaActionPerformed
+        panelGradOrden.removeAll();
+        panelGradOrden.repaint();
         OrdenPorFecha opf = new OrdenPorFecha();
+        panelGradOrden.add(opf);
         opf.setVisible(true);
-        panelGradienteOrdenes.add(opf);
-        panelGradienteOrdenes.setVisible(true);
-    }//GEN-LAST:event_jMenuPorFechaActionPerformed
+    }//GEN-LAST:event_menuItemOrdenOrdXFechaActionPerformed
 
-    private void jMenuPorAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPorAfiliadoActionPerformed
-        panelGradienteOrdenes.removeAll();
-        panelGradienteOrdenes.repaint();
+    private void menuItemOrdenOrdXAfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenOrdXAfiActionPerformed
+        panelGradOrden.removeAll();
+        panelGradOrden.repaint();
         OrdenesPorAfiliado opa = new OrdenesPorAfiliado();
+        panelGradOrden.add(opa);
         opa.setVisible(true);
-        panelGradienteOrdenes.add(opa);
-        panelGradienteOrdenes.setVisible(true);
-    }//GEN-LAST:event_jMenuPorAfiliadoActionPerformed
+    }//GEN-LAST:event_menuItemOrdenOrdXAfiActionPerformed
 
-    private void jMenuPorPrestadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPorPrestadorActionPerformed
-        panelGradienteOrdenes.removeAll();
-        panelGradienteOrdenes.repaint();
+    private void menuItemOrdenOrdXPresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenOrdXPresActionPerformed
+        panelGradOrden.removeAll();
+        panelGradOrden.repaint();
         OrdenesPorPrestador opp = new OrdenesPorPrestador();
+        panelGradOrden.add(opp);
         opp.setVisible(true);
-        panelGradienteOrdenes.add(opp);
-        panelGradienteOrdenes.setVisible(true);
-    }//GEN-LAST:event_jMenuPorPrestadorActionPerformed
+    }//GEN-LAST:event_menuItemOrdenOrdXPresActionPerformed
+
+    private void botonAtrasOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasOrdenActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAtrasOrdenes;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JButton botonAtrasOrden;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuPorAfiliado;
-    private javax.swing.JMenuItem jMenuPorFecha;
-    private javax.swing.JMenuItem jMenuPorPrestador;
-    private javax.swing.JMenuItem jMenuSacarOrden;
-    private keeptoo.KGradientPanel panelGradienteOrdenes;
+    private javax.swing.JMenuItem menuItemOrdenOrdXAfi;
+    private javax.swing.JMenuItem menuItemOrdenOrdXFecha;
+    private javax.swing.JMenuItem menuItemOrdenOrdXPres;
+    private javax.swing.JMenuItem menuItemOrdenSacOrd;
+    private javax.swing.JMenu menuOrdenOrdenes;
+    private javax.swing.JMenu menuOrdenSacOrd;
+    private keeptoo.KGradientPanel panelGradOrden;
     // End of variables declaration//GEN-END:variables
 }

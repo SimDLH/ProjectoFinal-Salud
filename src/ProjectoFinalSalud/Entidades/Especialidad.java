@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Entidades;
 
-/**
- *
- * @author simon
- */
 public class Especialidad {
 
     private int IdEspecialidad;
@@ -46,5 +38,4 @@ public class Especialidad {
     public String toString() {
         return "Codigo:" + IdEspecialidad + ", Especialidad:" + Especialidad;
     }
-
 }

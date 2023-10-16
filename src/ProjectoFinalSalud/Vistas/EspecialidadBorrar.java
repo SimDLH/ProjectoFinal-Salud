@@ -1,29 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
 import ProjectoFinalSalud.Entidades.Especialidad;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author simon
- */
 public class EspecialidadBorrar extends javax.swing.JInternalFrame {
-     DefaultTableModel modelo=new DefaultTableModel();
-    /**
-     * Creates new form EspecialidadBorrar
-     */
-     EspecialidadData ed=new EspecialidadData();
+    
+    DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int colum) {
+            return false;
+        }
+    };
+    
+    EspecialidadData ed=new EspecialidadData();
+    
     public EspecialidadBorrar() {
+        
         initComponents();
         armarCabesera();
         cargarTabla();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+        bui.setNorthPane(null);
     }
 
     /**
@@ -35,12 +38,53 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TablaEsp = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        panelGradEspBorrar = new keeptoo.KGradientPanel();
+        etiquetaEspBorrar = new javax.swing.JLabel();
+        botonEspBorrBorrar = new javax.swing.JButton();
+        botonAtrasEspBorr = new javax.swing.JButton();
+        panelScrollTabla = new javax.swing.JScrollPane();
+        tablaEspBorrar = new javax.swing.JTable();
 
-        TablaEsp.setModel(new javax.swing.table.DefaultTableModel(
+        setPreferredSize(new java.awt.Dimension(1260, 620));
+
+        panelGradEspBorrar.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradEspBorrar.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradEspBorrar.setPreferredSize(new java.awt.Dimension(1260, 620));
+
+        etiquetaEspBorrar.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaEspBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaEspBorrar.setText("Borrar Especialidades");
+
+        botonEspBorrBorrar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        botonEspBorrBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        botonEspBorrBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonEspBorrBorrar.setText("Borrar");
+        botonEspBorrBorrar.setBorderPainted(false);
+        botonEspBorrBorrar.setContentAreaFilled(false);
+        botonEspBorrBorrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonEspBorrBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEspBorrBorrarActionPerformed(evt);
+            }
+        });
+
+        botonAtrasEspBorr.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasEspBorr.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasEspBorr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasEspBorr.setText("Atrás");
+        botonAtrasEspBorr.setBorderPainted(false);
+        botonAtrasEspBorr.setContentAreaFilled(false);
+        botonAtrasEspBorr.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasEspBorr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasEspBorrActionPerformed(evt);
+            }
+        });
+
+        tablaEspBorrar.setBackground(panelGradEspBorrar.getkStartColor());
+        tablaEspBorrar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        tablaEspBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        tablaEspBorrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -50,75 +94,101 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
-        jScrollPane1.setViewportView(TablaEsp);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Borrar especialidades");
-
-        jButton1.setText("Borrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
+        tablaEspBorrar.getTableHeader().setReorderingAllowed(false);
+        panelScrollTabla.setViewportView(tablaEspBorrar);
+        if (tablaEspBorrar.getColumnModel().getColumnCount() > 0) {
+            tablaEspBorrar.getColumnModel().getColumn(0).setResizable(false);
+            tablaEspBorrar.getColumnModel().getColumn(1).setResizable(false);
+            tablaEspBorrar.getColumnModel().getColumn(2).setResizable(false);
+            tablaEspBorrar.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout panelGradEspBorrarLayout = new javax.swing.GroupLayout(panelGradEspBorrar);
+        panelGradEspBorrar.setLayout(panelGradEspBorrarLayout);
+        panelGradEspBorrarLayout.setHorizontalGroup(
+            panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
+                .addGap(328, 328, 328)
+                .addComponent(etiquetaEspBorrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonAtrasEspBorr)
+                .addContainerGap())
+            .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonEspBorrBorrar)
+                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(463, Short.MAX_VALUE))
+        );
+        panelGradEspBorrarLayout.setVerticalGroup(
+            panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
+                        .addComponent(botonAtrasEspBorr)
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspBorrarLayout.createSequentialGroup()
+                        .addComponent(etiquetaEspBorrar)
+                        .addGap(27, 27, 27)))
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(botonEspBorrBorrar)
+                .addContainerGap(170, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
-                        .addComponent(jLabel1)))
-                .addContainerGap(98, Short.MAX_VALUE))
+            .addComponent(panelGradEspBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(48, 48, 48))
+            .addComponent(panelGradEspBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 1260, 620);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        int fila=TablaEsp.getSelectedRow();
+    private void botonEspBorrBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEspBorrBorrarActionPerformed
+        int fila=tablaEspBorrar.getSelectedRow();
         if (fila!=-1){
-            int id=(Integer)TablaEsp.getValueAt(fila,0);
+            int id=(Integer)tablaEspBorrar.getValueAt(fila,0);
             ed.eliminarEspecialidad(id);
             limpiarTabla();
             cargarTabla();
         }else{
-            JOptionPane.showMessageDialog(null, "Seleccione una especialidad para poder borrarla");
+            JOptionPane.showMessageDialog(null, "Seleccione una Especialidad para poder borrarla");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonEspBorrBorrarActionPerformed
 
+    private void botonAtrasEspBorrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspBorrActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasEspBorrActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TablaEsp;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton botonAtrasEspBorr;
+    private javax.swing.JButton botonEspBorrBorrar;
+    private javax.swing.JLabel etiquetaEspBorrar;
+    private keeptoo.KGradientPanel panelGradEspBorrar;
+    private javax.swing.JScrollPane panelScrollTabla;
+    private javax.swing.JTable tablaEspBorrar;
     // End of variables declaration//GEN-END:variables
     
     private void armarCabesera(){
         modelo.addColumn("ID");
         modelo.addColumn("Especialidad");
-        TablaEsp.setModel(modelo);
+        tablaEspBorrar.setModel(modelo);
     }
     
     private void cargarTabla(){
@@ -133,5 +203,4 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
             modelo.removeRow(i);
         }
     }
-
 }
