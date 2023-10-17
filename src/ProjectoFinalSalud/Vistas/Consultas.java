@@ -26,8 +26,11 @@ public class Consultas extends javax.swing.JInternalFrame {
         panelGradienteOrdenes = new keeptoo.KGradientPanel();
         botonAtrasConsultas = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(975, 575));
+
         panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradienteOrdenes.setPreferredSize(new java.awt.Dimension(975, 575));
 
         botonAtrasConsultas.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasConsultas.setForeground(new java.awt.Color(255, 255, 255));
@@ -56,21 +59,21 @@ public class Consultas extends javax.swing.JInternalFrame {
             .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasConsultas)
-                .addContainerGap(526, Short.MAX_VALUE))
+                .addContainerGap(530, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
-        setBounds(315, 200, 1260, 620);
+        setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasConsultasActionPerformed
@@ -79,7 +82,6 @@ public class Consultas extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasConsultas;
-    private javax.swing.JButton botonAtrasIniSes;
     private keeptoo.KGradientPanel panelGradienteOrdenes;
     // End of variables declaration//GEN-END:variables
 }

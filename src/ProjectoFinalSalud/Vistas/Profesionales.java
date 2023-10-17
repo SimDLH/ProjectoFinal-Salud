@@ -60,11 +60,11 @@ public class Profesionales extends javax.swing.JInternalFrame {
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaProf = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradProf.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradProf.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradProf.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradProf.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaProfCartilla.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaProfCartilla.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,52 +132,50 @@ public class Profesionales extends javax.swing.JInternalFrame {
         panelGradProfLayout.setHorizontalGroup(
             panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfLayout.createSequentialGroup()
+                .addGap(251, 251, 251)
+                .addComponent(etiquetaProfCartilla)
                 .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGradProfLayout.createSequentialGroup()
-                        .addGap(370, 370, 370)
-                        .addComponent(etiquetaProfCartilla))
+                        .addGap(445, 445, 445)
+                        .addComponent(botonProfPedirOrden))
                     .addGroup(panelGradProfLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 957, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradProfLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonAtrasProf)
-                        .addContainerGap())
-                    .addGroup(panelGradProfLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(botonProfPedirOrden)
-                        .addContainerGap(66, Short.MAX_VALUE))))
+                        .addGap(206, 206, 206)
+                        .addComponent(botonAtrasProf)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(412, 412, 412))
         );
         panelGradProfLayout.setVerticalGroup(
             panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradProfLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGradProfLayout.createSequentialGroup()
-                        .addComponent(botonAtrasProf)
-                        .addGap(38, 38, 38))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfLayout.createSequentialGroup()
-                        .addComponent(etiquetaProfCartilla, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(panelGradProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonProfPedirOrden))
-                .addContainerGap(100, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addComponent(etiquetaProfCartilla, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelGradProfLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botonAtrasProf)))
+                .addGap(18, 18, 18)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonProfPedirOrden)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradProf, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradProf, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradProf, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(panelGradProf, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
-        setBounds(315, 200, 1260, 620);
+        setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfActionPerformed

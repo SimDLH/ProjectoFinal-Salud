@@ -45,9 +45,11 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
         tablaListaAfi = new javax.swing.JTable();
         botonAtrasAfiLista = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(975, 575));
+
         panelGradAfiLista.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradAfiLista.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradAfiLista.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradAfiLista.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaAfiListaAfi.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaAfiListaAfi.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,7 +142,7 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
                 .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(etiquetaAfiTotal)
                     .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,10 +153,10 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfiLista, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(panelGradAfiLista, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1260, 620);
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasAfiListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasAfiListaActionPerformed

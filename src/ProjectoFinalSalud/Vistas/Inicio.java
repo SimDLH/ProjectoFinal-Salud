@@ -8,9 +8,7 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         
         initComponents();
-        Bloquear();
-        
-        setExtendedState(this.MAXIMIZED_BOTH);
+        //Bloquear();
         setTitle("MásSalud");
     }
     
@@ -40,8 +38,6 @@ public class Inicio extends javax.swing.JFrame {
         panelEscritorio = new javax.swing.JDesktopPane();
         panelGradPrincipal = new keeptoo.KGradientPanel();
         separadorMenuPrincipal1 = new javax.swing.JSeparator();
-        separadorMenuPrincipal2 = new javax.swing.JSeparator();
-        etiquetaVideoEmergencia = new javax.swing.JButton();
         botonRegistro = new javax.swing.JButton();
         botonIniSes = new javax.swing.JButton();
         etiquetaLogoPrincipal = new javax.swing.JLabel();
@@ -58,7 +54,6 @@ public class Inicio extends javax.swing.JFrame {
         etiquetaMenuDesplegable4 = new javax.swing.JLabel();
         etiquetaMenuDesplegable5 = new javax.swing.JLabel();
         etiquetaMenuDesplegable6 = new javax.swing.JLabel();
-        etiquetaPropaganda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,17 +64,6 @@ public class Inicio extends javax.swing.JFrame {
 
         separadorMenuPrincipal1.setForeground(new java.awt.Color(255, 255, 255));
         separadorMenuPrincipal1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        separadorMenuPrincipal2.setForeground(new java.awt.Color(255, 255, 255));
-        separadorMenuPrincipal2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        etiquetaVideoEmergencia.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaVideoEmergencia.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaVideoEmergencia.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaVideoEmergencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Emergencias.gif"))); // NOI18N
-        etiquetaVideoEmergencia.setBorderPainted(false);
-        etiquetaVideoEmergencia.setContentAreaFilled(false);
-        etiquetaVideoEmergencia.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         botonRegistro.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistro.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -244,55 +228,39 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        etiquetaPropaganda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/TableroDePropaganda1.png"))); // NOI18N
-
         javax.swing.GroupLayout panelGradPrincipalLayout = new javax.swing.GroupLayout(panelGradPrincipal);
         panelGradPrincipal.setLayout(panelGradPrincipalLayout);
         panelGradPrincipalLayout.setHorizontalGroup(
             panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(separadorMenuPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradPrincipalLayout.createSequentialGroup()
+                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(etiquetaLogoPrincipal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(etiquetaVideoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(320, 320, 320)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 847, Short.MAX_VALUE)
                         .addComponent(botonRegistro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonIniSes))
                     .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(156, 156, 156)
-                        .addComponent(etiquetaPropaganda)
-                        .addGap(0, 381, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(separadorMenuPrincipal1)
         );
         panelGradPrincipalLayout.setVerticalGroup(
             panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                        .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonIniSes)
-                            .addComponent(botonRegistro)
-                            .addComponent(etiquetaLogoPrincipal))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(separadorMenuPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(etiquetaVideoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(etiquetaPropaganda))
-                .addGap(75, 75, 75))
+                    .addComponent(botonIniSes)
+                    .addComponent(etiquetaLogoPrincipal)
+                    .addComponent(botonRegistro))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
         );
 
         panelEscritorio.setLayer(panelGradPrincipal, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -319,7 +287,7 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(panelEscritorio)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1296, 759));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -424,12 +392,9 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaMenuDesplegable4;
     private javax.swing.JLabel etiquetaMenuDesplegable5;
     private javax.swing.JLabel etiquetaMenuDesplegable6;
-    public javax.swing.JLabel etiquetaPropaganda;
-    private javax.swing.JButton etiquetaVideoEmergencia;
     private javax.swing.JDesktopPane panelEscritorio;
     private keeptoo.KGradientPanel panelGradBotPrincipales;
     private keeptoo.KGradientPanel panelGradPrincipal;
     private javax.swing.JSeparator separadorMenuPrincipal1;
-    private javax.swing.JSeparator separadorMenuPrincipal2;
     // End of variables declaration//GEN-END:variables
 }

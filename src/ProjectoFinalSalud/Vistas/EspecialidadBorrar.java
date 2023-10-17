@@ -45,11 +45,11 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaEspBorrar = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradEspBorrar.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradEspBorrar.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradEspBorrar.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradEspBorrar.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaEspBorrar.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaEspBorrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +157,7 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
             .addComponent(panelGradEspBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1260, 620);
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonEspBorrBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEspBorrBorrarActionPerformed

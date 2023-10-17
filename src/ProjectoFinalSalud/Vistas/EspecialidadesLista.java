@@ -43,6 +43,8 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPro = new javax.swing.JTable();
 
+        setPreferredSize(new java.awt.Dimension(975, 575));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Lista de profecionales por especialidad");
 
@@ -94,7 +96,7 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
                 .addContainerGap(156, Short.MAX_VALUE))
         );
 
-        pack();
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboEsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEsActionPerformed

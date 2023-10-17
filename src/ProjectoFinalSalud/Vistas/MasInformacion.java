@@ -26,12 +26,12 @@ public class MasInformacion extends javax.swing.JInternalFrame {
         panelGradienteMasInformacion = new keeptoo.KGradientPanel();
         botonAtrasMasInfo = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradienteMasInformacion.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         panelGradienteMasInformacion.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradienteMasInformacion.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradienteMasInformacion.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradienteMasInformacion.setPreferredSize(new java.awt.Dimension(975, 575));
 
         botonAtrasMasInfo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasMasInfo.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,7 +74,7 @@ public class MasInformacion extends javax.swing.JInternalFrame {
             .addComponent(panelGradienteMasInformacion, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        setBounds(315, 200, 1260, 620);
+        setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasMasInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasMasInfoActionPerformed

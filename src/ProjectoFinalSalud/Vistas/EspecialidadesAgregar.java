@@ -35,11 +35,11 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         ButtonAgregar = new javax.swing.JButton();
         botonAtrasEspAgre = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradEspAgre.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradEspAgre.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradEspAgre.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradEspAgre.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaEspAgreIngr.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaEspAgreIngr.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,7 +125,7 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
             .addComponent(panelGradEspAgre, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1260, 620);
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarActionPerformed

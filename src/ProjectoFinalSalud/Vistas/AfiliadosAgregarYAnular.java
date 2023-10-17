@@ -48,11 +48,11 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         botonAtrasAfiAgreYAnul = new javax.swing.JButton();
         separadorAfiAgreYAnul = new javax.swing.JSeparator();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradAfiAgreYAnul.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradAfiAgreYAnul.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradAfiAgreYAnul.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradAfiAgreYAnul.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaAfiAgreYAnul.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaAfiAgreYAnul.setForeground(new java.awt.Color(255, 255, 255));
@@ -250,7 +250,7 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
             .addComponent(panelGradAfiAgreYAnul, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1260, 620);
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAfiAgreYAnulAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulAnularActionPerformed

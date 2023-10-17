@@ -32,11 +32,11 @@ public class Afiliados extends javax.swing.JInternalFrame {
         menuAfiListaAfi = new javax.swing.JMenu();
         menuItemAfiLista = new javax.swing.JMenuItem();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradAfi.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradAfi.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradAfi.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradAfi.setPreferredSize(new java.awt.Dimension(975, 575));
 
         botonAtrasAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasAfi.setForeground(new java.awt.Color(255, 255, 255));
@@ -56,7 +56,7 @@ public class Afiliados extends javax.swing.JInternalFrame {
         panelGradAfiLayout.setHorizontalGroup(
             panelGradAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiLayout.createSequentialGroup()
-                .addContainerGap(1081, Short.MAX_VALUE)
+                .addContainerGap(796, Short.MAX_VALUE)
                 .addComponent(botonAtrasAfi)
                 .addContainerGap())
         );
@@ -65,7 +65,7 @@ public class Afiliados extends javax.swing.JInternalFrame {
             .addGroup(panelGradAfiLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasAfi)
-                .addContainerGap(505, Short.MAX_VALUE))
+                .addContainerGap(460, Short.MAX_VALUE))
         );
 
         menuAfiContAfi.setText("Control De Afiliados");
@@ -111,14 +111,14 @@ public class Afiliados extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+            .addComponent(panelGradAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
         );
 
-        setBounds(315, 200, 1260, 620);
+        setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItemAfiHabYDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiHabYDesActionPerformed

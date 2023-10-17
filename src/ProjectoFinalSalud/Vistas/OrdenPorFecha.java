@@ -50,11 +50,11 @@ public class OrdenPorFecha extends javax.swing.JInternalFrame {
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaOrdenXFecha = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradOrdenXFecha.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradOrdenXFecha.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradOrdenXFecha.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradOrdenXFecha.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaOrdenXFecha.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaOrdenXFecha.setForeground(new java.awt.Color(255, 255, 255));
@@ -182,7 +182,7 @@ public class OrdenPorFecha extends javax.swing.JInternalFrame {
             .addComponent(panelGradOrdenXFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1260, 620);
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonOrdenXFechaBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenXFechaBuscarActionPerformed

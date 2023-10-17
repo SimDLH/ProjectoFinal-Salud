@@ -39,15 +39,12 @@ public class Registrarse extends javax.swing.JInternalFrame {
         textoDireccionEmailRegis = new javax.swing.JTextField();
         textoContraseñaRegis = new javax.swing.JPasswordField();
         calendarioFechaNacRegis = new com.toedter.calendar.JDateChooser();
-        etiquetaFotos1 = new javax.swing.JLabel();
-        etiquetaFotos2 = new javax.swing.JLabel();
-        etiquetaFotos3 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(1610, 820));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         gradienteRegis.setkEndColor(new java.awt.Color(51, 153, 255));
         gradienteRegis.setkStartColor(new java.awt.Color(153, 0, 153));
-        gradienteRegis.setPreferredSize(new java.awt.Dimension(1610, 820));
+        gradienteRegis.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         etiquetaTituloRegis.setFont(new java.awt.Font("Calibri", 2, 48)); // NOI18N
         etiquetaTituloRegis.setForeground(new java.awt.Color(255, 255, 255));
@@ -287,83 +284,55 @@ public class Registrarse extends javax.swing.JInternalFrame {
                 .addGap(19, 19, 19))
         );
 
-        etiquetaFotos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Familia1.png"))); // NOI18N
-
-        etiquetaFotos2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Familia4.png"))); // NOI18N
-
-        etiquetaFotos3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Familia7.png"))); // NOI18N
-
         javax.swing.GroupLayout gradienteRegisLayout = new javax.swing.GroupLayout(gradienteRegis);
         gradienteRegis.setLayout(gradienteRegisLayout);
         gradienteRegisLayout.setHorizontalGroup(
             gradienteRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gradienteRegisLayout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(etiquetaTituloRegis)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonAtrasRegis)
-                .addContainerGap())
-            .addGroup(gradienteRegisLayout.createSequentialGroup()
                 .addGroup(gradienteRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gradienteRegisLayout.createSequentialGroup()
                         .addGap(98, 98, 98)
-                        .addComponent(etiquetaEsloganRegis, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
-                        .addGap(56, 56, 56))
+                        .addComponent(etiquetaTituloRegis))
                     .addGroup(gradienteRegisLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(etiquetaFotos1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
-                        .addComponent(etiquetaFotos2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)))
+                        .addGap(34, 34, 34)
+                        .addComponent(etiquetaEsloganRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(etiquetaFotos3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addGap(37, 37, 37)
+                .addComponent(botonAtrasRegis)
+                .addContainerGap())
         );
         gradienteRegisLayout.setVerticalGroup(
             gradienteRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteRegisLayout.createSequentialGroup()
-                .addGroup(gradienteRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(gradienteRegisLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(etiquetaTituloRegis)
+                .addGap(37, 37, 37)
+                .addComponent(etiquetaEsloganRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(gradienteRegisLayout.createSequentialGroup()
+                .addGroup(gradienteRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gradienteRegisLayout.createSequentialGroup()
-                        .addGroup(gradienteRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(gradienteRegisLayout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(etiquetaTituloRegis))
-                            .addGroup(gradienteRegisLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(botonAtrasRegis)))
-                        .addGroup(gradienteRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(gradienteRegisLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(etiquetaEsloganRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(etiquetaFotos1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteRegisLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(etiquetaFotos2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(144, 144, 144))
-                            .addGroup(gradienteRegisLayout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(etiquetaFotos3, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                        .addContainerGap()
+                        .addComponent(botonAtrasRegis))
                     .addGroup(gradienteRegisLayout.createSequentialGroup()
-                        .addContainerGap(81, Short.MAX_VALUE)
+                        .addGap(24, 24, 24)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteRegis, javax.swing.GroupLayout.DEFAULT_SIZE, 1594, Short.MAX_VALUE)
+            .addComponent(gradienteRegis, javax.swing.GroupLayout.DEFAULT_SIZE, 1264, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteRegis, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
+            .addComponent(gradienteRegis, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1610, 820);
+        setBounds(0, 0, 1280, 720);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasRegisActionPerformed
@@ -405,9 +374,6 @@ public class Registrarse extends javax.swing.JInternalFrame {
     private javax.swing.JLabel etiquetaDni1;
     private javax.swing.JLabel etiquetaEsloganRegis;
     private javax.swing.JLabel etiquetaFechaNacRegis;
-    public javax.swing.JLabel etiquetaFotos1;
-    public javax.swing.JLabel etiquetaFotos2;
-    public javax.swing.JLabel etiquetaFotos3;
     private javax.swing.JLabel etiquetaNacionRegis;
     private javax.swing.JLabel etiquetaNombreRegis;
     private javax.swing.JLabel etiquetaTituloRegis;

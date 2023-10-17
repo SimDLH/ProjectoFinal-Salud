@@ -52,11 +52,11 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaOrdenXPres = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradOrdenXPres.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradOrdenXPres.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradOrdenXPres.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradOrdenXPres.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaOrdenXPres.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaOrdenXPres.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,54 +129,60 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         panelGradOrdenXPres.setLayout(panelGradOrdenXPresLayout);
         panelGradOrdenXPresLayout.setHorizontalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                .addGap(358, 358, 358)
-                .addComponent(etiquetaOrdenXPres)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonAtrasOrdenXPrest)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
-                .addContainerGap(178, Short.MAX_VALUE)
-                .addComponent(etiquetaOrdenXPresSelec)
-                .addGap(18, 18, 18)
-                .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonOrdenXPresBuscar)
-                .addGap(450, 450, 450))
-            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                        .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(etiquetaOrdenXPresSelec)
+                                .addGap(18, 18, 18)
+                                .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonOrdenXPresBuscar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(panelScrollTabla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(etiquetaOrdenXPres)
+                        .addGap(317, 317, 317)
+                        .addComponent(botonAtrasOrdenXPrest)
+                        .addGap(32, 32, 32))))
         );
         panelGradOrdenXPresLayout.setVerticalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAtrasOrdenXPrest)
-                    .addComponent(etiquetaOrdenXPres))
-                .addGap(53, 53, 53)
+                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(etiquetaOrdenXPres))
+                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botonAtrasOrdenXPrest)))
+                .addGap(35, 35, 35)
                 .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonOrdenXPresBuscar)
                     .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaOrdenXPresSelec))
                 .addGap(18, 18, 18)
                 .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1260, 620);
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonOrdenXPresBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenXPresBuscarActionPerformed

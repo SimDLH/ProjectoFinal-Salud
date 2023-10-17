@@ -44,7 +44,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
 
         gradienteIniSes.setkEndColor(new java.awt.Color(51, 153, 255));
         gradienteIniSes.setkStartColor(new java.awt.Color(153, 0, 153));
-        gradienteIniSes.setPreferredSize(new java.awt.Dimension(1610, 820));
+        gradienteIniSes.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         panelIniSes.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -222,48 +222,51 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             .addGroup(gradienteIniSesLayout.createSequentialGroup()
                 .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gradienteIniSesLayout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(etiquetaImagenIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(gradienteIniSesLayout.createSequentialGroup()
-                        .addGap(152, 152, 152)
                         .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etiquetaTituloIniSes))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(gradienteIniSesLayout.createSequentialGroup()
+                                .addGap(152, 152, 152)
+                                .addComponent(etiquetaTituloIniSes))
+                            .addGroup(gradienteIniSesLayout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(etiquetaImagenIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 107, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(45, 45, 45)
                 .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(249, 249, 249))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(61, 61, 61)
                 .addComponent(botonAtrasIniSes)
                 .addContainerGap())
         );
         gradienteIniSesLayout.setVerticalGroup(
             gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(botonAtrasIniSes)
-                .addGap(26, 26, 26)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonAtrasIniSes)
+                    .addGroup(gradienteIniSesLayout.createSequentialGroup()
+                        .addComponent(etiquetaTituloIniSes)
+                        .addGap(28, 28, 28)
+                        .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(etiquetaImagenIniSes)))
+                .addGap(56, 56, 56))
+            .addGroup(gradienteIniSesLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(etiquetaTituloIniSes)
-                .addGap(18, 18, 18)
-                .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(etiquetaImagenIniSes)
-                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1594, Short.MAX_VALUE)
+            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1264, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
+            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 1280, 720);

@@ -32,11 +32,11 @@ public class Especialidades extends javax.swing.JInternalFrame {
         menuEspListaEsp = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
-        setPreferredSize(new java.awt.Dimension(1260, 620));
+        setPreferredSize(new java.awt.Dimension(975, 575));
 
         panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradienteOrdenes.setPreferredSize(new java.awt.Dimension(1260, 620));
+        panelGradienteOrdenes.setPreferredSize(new java.awt.Dimension(975, 575));
 
         botonAtrasEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasEsp.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,14 +110,14 @@ public class Especialidades extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
         );
 
-        setBounds(315, 200, 1260, 620);
+        setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItemEspAgreEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspAgreEspActionPerformed
