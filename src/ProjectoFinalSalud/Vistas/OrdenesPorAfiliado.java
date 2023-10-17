@@ -1,4 +1,3 @@
-
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
@@ -12,7 +11,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
 
     OrdenData od = new OrdenData();
 
-     DefaultTableModel modelo = new DefaultTableModel(){
+    DefaultTableModel modelo = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int colum) {
             return false;
@@ -20,10 +19,10 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
     };
 
     public OrdenesPorAfiliado() {
-        
+
         initComponents();
         armarCabecera();
-        
+
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -188,7 +187,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
                     orden.getPrestador().getNombre(), orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
             }
         } catch (NumberFormatException nf) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar un DNI válido");
+            JOptionPane.showMessageDialog(null, "Debe ingresar un numero de DNI");
         }
 
     }//GEN-LAST:event_botonOrdenXAfiBuscarActionPerformed
