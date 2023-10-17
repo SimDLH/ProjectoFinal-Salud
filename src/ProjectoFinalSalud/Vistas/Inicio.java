@@ -319,7 +319,7 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(panelEscritorio)
         );
 
-        setSize(new java.awt.Dimension(1600, 820));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

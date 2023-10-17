@@ -30,6 +30,7 @@ public class Especialidades extends javax.swing.JInternalFrame {
         menuItemEspAgreEsp = new javax.swing.JMenuItem();
         menuItemEspBorrEsp = new javax.swing.JMenuItem();
         menuEspListaEsp = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setPreferredSize(new java.awt.Dimension(1260, 620));
 
@@ -92,6 +93,15 @@ public class Especialidades extends javax.swing.JInternalFrame {
 
         menuEspListaEsp.setText("Lista De Especialidades");
         menuEspListaEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+
+        jMenuItem1.setText("Profesionales por Especialidades");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuEspListaEsp.add(jMenuItem1);
+
         jMenuBar1.add(menuEspListaEsp);
 
         setJMenuBar(jMenuBar1);
@@ -130,9 +140,18 @@ public class Especialidades extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasEspActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        panelGradienteOrdenes.removeAll();
+        panelGradienteOrdenes.repaint();
+        EspecialidadesLista ed=new EspecialidadesLista();
+        panelGradienteOrdenes.add(ed);
+        ed.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasEsp;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu menuEspContEsp;
     private javax.swing.JMenu menuEspListaEsp;
     private javax.swing.JMenuItem menuItemEspAgreEsp;

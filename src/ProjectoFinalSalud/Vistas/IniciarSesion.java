@@ -40,7 +40,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         etiquetaImagenIniSes = new javax.swing.JLabel();
         botonAtrasIniSes = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(1610, 820));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         gradienteIniSes.setkEndColor(new java.awt.Color(51, 153, 255));
         gradienteIniSes.setkStartColor(new java.awt.Color(153, 0, 153));
@@ -259,14 +259,14 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1313, Short.MAX_VALUE)
+            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1594, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
+            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1610, 820);
+        setBounds(0, 0, 1280, 720);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAtrasIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasIniSesActionPerformed
