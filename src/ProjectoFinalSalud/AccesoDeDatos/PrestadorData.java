@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class PrestadorData {
@@ -164,4 +166,30 @@ public class PrestadorData {
         }
         return prestadores;
     }
+    
+    public ArrayList<Prestador> listarPrestadorPorEspecialidad(int id){
+        String sql="SELECT Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
+        ArrayList<Prestador>prestadores=new ArrayList<>();
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs=ps.executeQuery();
+            EspecialidadData ed=new EspecialidadData();
+            while(rs.next()){
+                Prestador pres=new Prestador();
+                pres.setNombre(rs.getString("Nombre"));
+                pres.setDni(rs.getInt("Dni"));
+                pres.setDomicilio(rs.getString("Domicilio"));
+                pres.setTelefono(rs.getInt("Telefono"));
+                pres.setEspecialidad(ed.buscarEspecialidad(id));
+                pres.setActivo(true);
+                prestadores.add(pres);
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al entrar a la tabla de prestadores");
+        }
+        return prestadores;
+    }
+    
 }

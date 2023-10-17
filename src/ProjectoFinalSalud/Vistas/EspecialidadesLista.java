@@ -103,7 +103,7 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         limpiarTabla();
         Especialidad es=(Especialidad)comboEs.getSelectedItem();
-        cargarTabla(pd.buscarIdEspecialidad(es.getIdEspecialidad()));
+        cargarTabla(pd.listarPrestadorPorEspecialidad(es.getIdEspecialidad()));
     }//GEN-LAST:event_comboEsActionPerformed
 
 
@@ -135,10 +135,10 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         }
     }
     
-    private void cargarTabla(Prestador p){
-      //  for (Prestador p:prestadores){
+    private void cargarTabla(ArrayList<Prestador> prestadores){
+        for (Prestador p:prestadores){
             modelo.addRow(new Object[]{p.getNombre(),p.getDni(),p.getDomicilio(),p.getTelefono()});
-      //  }
+        }
     }
 
 
