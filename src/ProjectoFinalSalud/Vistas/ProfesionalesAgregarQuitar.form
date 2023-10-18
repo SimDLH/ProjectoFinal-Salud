@@ -324,9 +324,6 @@
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitBuscarActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonProfAgreQuitRein">
           <Properties>
@@ -348,9 +345,6 @@
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitReinActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonProfAgreQuitGuardar">
           <Properties>
@@ -371,9 +365,6 @@
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitGuardarActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonProfAgreQuitAnular">
           <Properties>
@@ -394,9 +385,6 @@
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitAnularActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonAtrasProfAgreQuit">
           <Properties>

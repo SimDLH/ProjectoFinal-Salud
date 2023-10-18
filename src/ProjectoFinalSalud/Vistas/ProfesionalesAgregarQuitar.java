@@ -109,11 +109,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitBuscar.setBorderPainted(false);
         botonProfAgreQuitBuscar.setContentAreaFilled(false);
         botonProfAgreQuitBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonProfAgreQuitBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonProfAgreQuitBuscarActionPerformed(evt);
-            }
-        });
 
         botonProfAgreQuitRein.setBackground(new java.awt.Color(255, 255, 255));
         botonProfAgreQuitRein.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -124,11 +119,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitRein.setContentAreaFilled(false);
         botonProfAgreQuitRein.setEnabled(false);
         botonProfAgreQuitRein.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonProfAgreQuitRein.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonProfAgreQuitReinActionPerformed(evt);
-            }
-        });
 
         botonProfAgreQuitGuardar.setBackground(new java.awt.Color(255, 255, 255));
         botonProfAgreQuitGuardar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -138,11 +128,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitGuardar.setBorderPainted(false);
         botonProfAgreQuitGuardar.setContentAreaFilled(false);
         botonProfAgreQuitGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonProfAgreQuitGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonProfAgreQuitGuardarActionPerformed(evt);
-            }
-        });
 
         botonProfAgreQuitAnular.setBackground(new java.awt.Color(255, 255, 255));
         botonProfAgreQuitAnular.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -152,11 +137,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitAnular.setBorderPainted(false);
         botonProfAgreQuitAnular.setContentAreaFilled(false);
         botonProfAgreQuitAnular.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonProfAgreQuitAnular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonProfAgreQuitAnularActionPerformed(evt);
-            }
-        });
 
         botonAtrasProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -276,74 +256,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasProfAgreQuitActionPerformed
 
-    private void botonProfAgreQuitBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarActionPerformed
-        try{
-            int Dni = Integer.parseInt(textoProfAgreQuitDni.getText());
-            botonProfAgreQuitGuardar.setEnabled(false);
-            Prestador pre = presData.buscarPrestador(Dni);
-            if(pre.getTelefono()==0){
-                limpiar();
-            }else{
-                textoProfAgreQuitNomYApe.setText(pre.getNombre());
-                textoProfAgreQuitDom.setText(pre.getDomicilio());
-                textoProfAgreQuitNumTel.setText(pre.getTelefono()+"");
-                if(pre.isActivo()){
-                    etiquetaProfAgreQuitAcONoac.setText("Activo");
-                    botonProfAgreQuitRein.setEnabled(false);
-                }else{
-                    etiquetaProfAgreQuitAcONoac.setText("Inactivo");
-                    botonProfAgreQuitRein.setEnabled(true);
-                }
-            }
-        }catch(NumberFormatException ne){
-            JOptionPane.showMessageDialog(null, "Ingrese un DNI válido para buscar a un Profesional");
-            limpiar();
-        }
-    }//GEN-LAST:event_botonProfAgreQuitBuscarActionPerformed
-
-    private void botonProfAgreQuitReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinActionPerformed
-        int Dni = Integer.parseInt(textoProfAgreQuitDni.getText());
-        presData.reinstituirPrestador(Dni);
-        limpiar();
-    }//GEN-LAST:event_botonProfAgreQuitReinActionPerformed
-
-    private void botonProfAgreQuitGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarActionPerformed
-        try{
-            if(textoProfAgreQuitDni.getText().isEmpty() || textoProfAgreQuitNumTel.getText().isEmpty()){
-                JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Profesional");
-            }else if(buscarDni(Integer.parseInt(textoProfAgreQuitDni.getText()))){
-                JOptionPane.showMessageDialog(null, "El DNI ingresado ya le pertenece a un Profesional registrado");
-            }else{
-                int Dni = Integer.parseInt(textoProfAgreQuitDni.getText());
-                int Tel = Integer.parseInt(textoProfAgreQuitNumTel.getText());
-                Prestador prest = new Prestador();
-                prest.setDni(Dni);
-                prest.setNombre(textoProfAgreQuitNomYApe.getText());
-                prest.setTelefono(Tel);
-                prest.setDomicilio(textoProfAgreQuitDom.getText());
-                prest.setActivo(true);
-                presData.guardarPrestador(prest);
-            }
-        }catch(NumberFormatException ne){
-            JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres errónes");
-        }catch(NullPointerException np){
-            JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Profesional");
-        }
-        limpiar();
-    }//GEN-LAST:event_botonProfAgreQuitGuardarActionPerformed
-
-    private void botonProfAgreQuitAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularActionPerformed
-        try{
-            int Dni = Integer.parseInt(textoProfAgreQuitDni.getText());
-            presData.eliminarPrestador(Dni);
-        }catch(NumberFormatException ne){
-            JOptionPane.showMessageDialog(null, "Ingrese el DNI de un Profesional para anularlo");
-        }catch(NullPointerException np){
-            JOptionPane.showMessageDialog(null, "Tiene que ingresar el DNI de un Profesional para anularlo");
-        }
-        limpiar();
-    }//GEN-LAST:event_botonProfAgreQuitAnularActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasProfAgreQuit;
     private javax.swing.JButton botonProfAgreQuitAnular;
@@ -365,7 +277,7 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textoProfAgreQuitNumTel;
     // End of variables declaration//GEN-END:variables
 
-    private void limpiar(){
+    /*private void limpiar(){
         textoProfAgreQuitDni.setText("");
         textoProfAgreQuitDom.setText("");
         textoProfAgreQuitNomYApe.setText("");
@@ -385,5 +297,5 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
             }
         }
         return bd;
-    }
+    }*/
 }
