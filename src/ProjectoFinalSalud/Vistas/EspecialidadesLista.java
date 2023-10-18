@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
@@ -10,23 +6,29 @@ import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Especialidad;
 import ProjectoFinalSalud.Entidades.Prestador;
 import java.util.ArrayList;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author simon
- */
 public class EspecialidadesLista extends javax.swing.JInternalFrame {
-     DefaultTableModel modelo=new DefaultTableModel();
-    /**
-     * Creates new form EspecialidadesLista
-     */
-     EspecialidadData ed=new EspecialidadData();
-     PrestadorData pd=new PrestadorData();
+    
+    DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int colum) {
+            return false;
+        }
+    };
+    EspecialidadData ed=new EspecialidadData();
+    PrestadorData pd=new PrestadorData();
+     
     public EspecialidadesLista() {
+        
         initComponents();
         armarCabesera();
         cargarComboBox();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+        bui.setNorthPane(null);
     }
 
     /**
@@ -38,23 +40,53 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        comboEs = new javax.swing.JComboBox<>();
+        panelGradEspLista = new keeptoo.KGradientPanel();
+        etiquetaEspListaProfXEsp = new javax.swing.JLabel();
+        botonAtrasProfConsul = new javax.swing.JButton();
+        comboBoxEspEsp = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaPro = new javax.swing.JTable();
+        tablaEspListaProf = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Lista de profecionales por especialidad");
+        panelGradEspLista.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradEspLista.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradEspLista.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradEspLista.setPreferredSize(new java.awt.Dimension(975, 575));
 
-        comboEs.addActionListener(new java.awt.event.ActionListener() {
+        etiquetaEspListaProfXEsp.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaEspListaProfXEsp.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaEspListaProfXEsp.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaEspListaProfXEsp.setText("Lista De Profecionales Por Especialidad");
+
+        botonAtrasProfConsul.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasProfConsul.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasProfConsul.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasProfConsul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasProfConsul.setText("Atrás");
+        botonAtrasProfConsul.setBorderPainted(false);
+        botonAtrasProfConsul.setContentAreaFilled(false);
+        botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboEsActionPerformed(evt);
+                botonAtrasProfConsulActionPerformed(evt);
             }
         });
 
-        tablaPro.setModel(new javax.swing.table.DefaultTableModel(
+        comboBoxEspEsp.setBackground(panelGradEspLista.getkStartColor());
+        comboBoxEspEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        comboBoxEspEsp.setForeground(new java.awt.Color(255, 255, 255));
+        comboBoxEspEsp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxEspEspActionPerformed(evt);
+            }
+        });
+
+        tablaEspListaProf.setBackground(panelGradEspLista.getkStartColor());
+        tablaEspListaProf.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        tablaEspListaProf.setForeground(new java.awt.Color(255, 255, 255));
+        tablaEspListaProf.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -65,66 +97,85 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tablaPro);
+        jScrollPane1.setViewportView(tablaEspListaProf);
+
+        javax.swing.GroupLayout panelGradEspListaLayout = new javax.swing.GroupLayout(panelGradEspLista);
+        panelGradEspLista.setLayout(panelGradEspListaLayout);
+        panelGradEspListaLayout.setHorizontalGroup(
+            panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradEspListaLayout.createSequentialGroup()
+                .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGradEspListaLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(comboBoxEspEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGradEspListaLayout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(etiquetaEspListaProfXEsp)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+                        .addComponent(botonAtrasProfConsul)))
+                .addContainerGap())
+        );
+        panelGradEspListaLayout.setVerticalGroup(
+            panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradEspListaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(etiquetaEspListaProfXEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonAtrasProfConsul))
+                .addGap(30, 30, 30)
+                .addComponent(comboBoxEspEsp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(comboEs, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(37, Short.MAX_VALUE))
+            .addComponent(panelGradEspLista, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(comboEs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+            .addComponent(panelGradEspLista, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void comboEsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEsActionPerformed
-        // TODO add your handling code here:
+    private void comboBoxEspEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxEspEspActionPerformed
         limpiarTabla();
-        Especialidad es=(Especialidad)comboEs.getSelectedItem();
+        Especialidad es=(Especialidad)comboBoxEspEsp.getSelectedItem();
         cargarTabla(pd.listarPrestadorPorEspecialidad(es.getIdEspecialidad()));
-    }//GEN-LAST:event_comboEsActionPerformed
+    }//GEN-LAST:event_comboBoxEspEspActionPerformed
 
+    private void botonAtrasProfConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasProfConsulActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<Especialidad> comboEs;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton botonAtrasProfConsul;
+    private javax.swing.JComboBox<Especialidad> comboBoxEspEsp;
+    private javax.swing.JLabel etiquetaEspListaProfXEsp;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaPro;
+    private keeptoo.KGradientPanel panelGradEspLista;
+    private javax.swing.JTable tablaEspListaProf;
     // End of variables declaration//GEN-END:variables
 
     private void armarCabesera(){
         modelo.addColumn("Nombre");
         modelo.addColumn("DNI");
         modelo.addColumn("Domicilio");
-        modelo.addColumn("Numero de telefono");
-        tablaPro.setModel(modelo);
+        modelo.addColumn("Número de Teléfono");
+        tablaEspListaProf.setModel(modelo);
     }
     
     private void cargarComboBox(){
         for(Especialidad es:ed.listarEspecialidad()){
-            comboEs.addItem(es);
+            comboBoxEspEsp.addItem(es);
         }
     }
     
@@ -140,6 +191,4 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
             modelo.addRow(new Object[]{p.getNombre(),p.getDni(),p.getDomicilio(),p.getTelefono()});
         }
     }
-
-
 }

@@ -23,21 +23,24 @@ public class Especialidades extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradienteOrdenes = new keeptoo.KGradientPanel();
+        panelGradEspecialidades = new keeptoo.KGradientPanel();
         botonAtrasEsp = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        menuEsp = new javax.swing.JMenuBar();
         menuEspContEsp = new javax.swing.JMenu();
         menuItemEspAgreEsp = new javax.swing.JMenuItem();
         menuItemEspBorrEsp = new javax.swing.JMenuItem();
         menuEspListaEsp = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        menuItemEspListaProfXEsp = new javax.swing.JMenuItem();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
-        panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradienteOrdenes.setPreferredSize(new java.awt.Dimension(975, 575));
+        panelGradEspecialidades.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradEspecialidades.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradEspecialidades.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradEspecialidades.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        botonAtrasEsp.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasEsp.setForeground(new java.awt.Color(255, 255, 255));
         botonAtrasEsp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
@@ -51,26 +54,28 @@ public class Especialidades extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout panelGradienteOrdenesLayout = new javax.swing.GroupLayout(panelGradienteOrdenes);
-        panelGradienteOrdenes.setLayout(panelGradienteOrdenesLayout);
-        panelGradienteOrdenesLayout.setHorizontalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteOrdenesLayout.createSequentialGroup()
-                .addContainerGap(1081, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelGradEspecialidadesLayout = new javax.swing.GroupLayout(panelGradEspecialidades);
+        panelGradEspecialidades.setLayout(panelGradEspecialidadesLayout);
+        panelGradEspecialidadesLayout.setHorizontalGroup(
+            panelGradEspecialidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspecialidadesLayout.createSequentialGroup()
+                .addContainerGap(796, Short.MAX_VALUE)
                 .addComponent(botonAtrasEsp)
                 .addContainerGap())
         );
-        panelGradienteOrdenesLayout.setVerticalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
+        panelGradEspecialidadesLayout.setVerticalGroup(
+            panelGradEspecialidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradEspecialidadesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasEsp)
-                .addContainerGap(505, Short.MAX_VALUE))
+                .addContainerGap(460, Short.MAX_VALUE))
         );
 
+        menuEspContEsp.setBackground(new java.awt.Color(255, 255, 255));
         menuEspContEsp.setText("Control De Especialidades");
         menuEspContEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
+        menuItemEspAgreEsp.setBackground(new java.awt.Color(255, 255, 255));
         menuItemEspAgreEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemEspAgreEsp.setText("Agregar Una Especialidad");
         menuItemEspAgreEsp.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +85,7 @@ public class Especialidades extends javax.swing.JInternalFrame {
         });
         menuEspContEsp.add(menuItemEspAgreEsp);
 
+        menuItemEspBorrEsp.setBackground(new java.awt.Color(255, 255, 255));
         menuItemEspBorrEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemEspBorrEsp.setText("Borrar Una Especialidad");
         menuItemEspBorrEsp.addActionListener(new java.awt.event.ActionListener() {
@@ -89,50 +95,53 @@ public class Especialidades extends javax.swing.JInternalFrame {
         });
         menuEspContEsp.add(menuItemEspBorrEsp);
 
-        jMenuBar1.add(menuEspContEsp);
+        menuEsp.add(menuEspContEsp);
 
+        menuEspListaEsp.setBackground(new java.awt.Color(255, 255, 255));
         menuEspListaEsp.setText("Lista De Especialidades");
         menuEspListaEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
-        jMenuItem1.setText("Profesionales por Especialidades");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        menuItemEspListaProfXEsp.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemEspListaProfXEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemEspListaProfXEsp.setText("Profesionales Por Especialidad");
+        menuItemEspListaProfXEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                menuItemEspListaProfXEspActionPerformed(evt);
             }
         });
-        menuEspListaEsp.add(jMenuItem1);
+        menuEspListaEsp.add(menuItemEspListaProfXEsp);
 
-        jMenuBar1.add(menuEspListaEsp);
+        menuEsp.add(menuEspListaEsp);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuEsp);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(panelGradEspecialidades, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+            .addComponent(panelGradEspecialidades, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
         );
 
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItemEspAgreEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspAgreEspActionPerformed
-        panelGradienteOrdenes.removeAll();
-        panelGradienteOrdenes.repaint();
+        panelGradEspecialidades.removeAll();
+        panelGradEspecialidades.repaint();
         EspecialidadesAgregar ea=new EspecialidadesAgregar();
-        panelGradienteOrdenes.add(ea);
+        panelGradEspecialidades.add(ea);
         ea.setVisible(true);
     }//GEN-LAST:event_menuItemEspAgreEspActionPerformed
 
     private void menuItemEspBorrEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspBorrEspActionPerformed
-        panelGradienteOrdenes.removeAll();
-        panelGradienteOrdenes.repaint();
-        EspecialidadBorrar eb=new EspecialidadBorrar();
-        panelGradienteOrdenes.add(eb);
+        panelGradEspecialidades.removeAll();
+        panelGradEspecialidades.repaint();
+        EspecialidadesBorrar eb=new EspecialidadesBorrar();
+        panelGradEspecialidades.add(eb);
         eb.setVisible(true);
     }//GEN-LAST:event_menuItemEspBorrEspActionPerformed
 
@@ -140,22 +149,22 @@ public class Especialidades extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasEspActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        panelGradienteOrdenes.removeAll();
-        panelGradienteOrdenes.repaint();
+    private void menuItemEspListaProfXEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspListaProfXEspActionPerformed
+        panelGradEspecialidades.removeAll();
+        panelGradEspecialidades.repaint();
         EspecialidadesLista ed=new EspecialidadesLista();
-        panelGradienteOrdenes.add(ed);
+        panelGradEspecialidades.add(ed);
         ed.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_menuItemEspListaProfXEspActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasEsp;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuBar menuEsp;
     private javax.swing.JMenu menuEspContEsp;
     private javax.swing.JMenu menuEspListaEsp;
     private javax.swing.JMenuItem menuItemEspAgreEsp;
     private javax.swing.JMenuItem menuItemEspBorrEsp;
-    private keeptoo.KGradientPanel panelGradienteOrdenes;
+    private javax.swing.JMenuItem menuItemEspListaProfXEsp;
+    private keeptoo.KGradientPanel panelGradEspecialidades;
     // End of variables declaration//GEN-END:variables
 }

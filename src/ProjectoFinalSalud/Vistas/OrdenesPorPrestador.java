@@ -46,22 +46,27 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaOrdenXPres = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
+        panelGradOrdenXPres.setBackground(new java.awt.Color(255, 255, 255));
         panelGradOrdenXPres.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradOrdenXPres.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradOrdenXPres.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        etiquetaOrdenXPres.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaOrdenXPres.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaOrdenXPres.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaOrdenXPres.setText("Ordenes Por Prestador");
 
+        etiquetaOrdenXPresSelec.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaOrdenXPresSelec.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaOrdenXPresSelec.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaOrdenXPresSelec.setText("Seleccione:");
 
         comboBoxOrdenXPres.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
+        botonOrdenXPresBuscar.setBackground(new java.awt.Color(255, 255, 255));
         botonOrdenXPresBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonOrdenXPresBuscar.setForeground(new java.awt.Color(255, 255, 255));
         botonOrdenXPresBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
@@ -75,6 +80,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
             }
         });
 
+        botonAtrasOrdenXPrest.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasOrdenXPrest.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasOrdenXPrest.setForeground(new java.awt.Color(255, 255, 255));
         botonAtrasOrdenXPrest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
@@ -123,53 +129,48 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         panelGradOrdenXPres.setLayout(panelGradOrdenXPresLayout);
         panelGradOrdenXPresLayout.setHorizontalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                        .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(etiquetaOrdenXPresSelec)
-                                .addGap(18, 18, 18)
-                                .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(botonOrdenXPresBuscar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(panelScrollTabla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                        .addGap(206, 206, 206)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
                         .addComponent(etiquetaOrdenXPres)
-                        .addGap(317, 317, 317)
+                        .addGap(226, 226, 226)
                         .addComponent(botonAtrasOrdenXPrest)
-                        .addGap(32, 32, 32))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
+                        .addComponent(etiquetaOrdenXPresSelec)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonOrdenXPresBuscar)
+                        .addGap(155, 155, 155))))
         );
         panelGradOrdenXPresLayout.setVerticalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(etiquetaOrdenXPres))
-                    .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(botonAtrasOrdenXPrest)))
-                .addGap(35, 35, 35)
+                .addContainerGap()
+                .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAtrasOrdenXPrest)
+                    .addComponent(etiquetaOrdenXPres))
+                .addGap(60, 60, 60)
                 .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonOrdenXPresBuscar)
+                    .addComponent(etiquetaOrdenXPresSelec)
                     .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(etiquetaOrdenXPresSelec))
-                .addGap(18, 18, 18)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                    .addComponent(botonOrdenXPresBuscar))
+                .addGap(55, 55, 55)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelGradOrdenXPres, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

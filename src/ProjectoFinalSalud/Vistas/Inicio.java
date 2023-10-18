@@ -56,9 +56,11 @@ public class Inicio extends javax.swing.JFrame {
         etiquetaMenuDesplegable6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         panelEscritorio.setBackground(new java.awt.Color(255, 255, 255));
 
+        panelGradPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         panelGradPrincipal.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradPrincipal.setkStartColor(new java.awt.Color(0, 153, 0));
 
@@ -94,6 +96,7 @@ public class Inicio extends javax.swing.JFrame {
 
         etiquetaLogoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MasSaludLogo.png"))); // NOI18N
 
+        panelGradBotPrincipales.setBackground(new java.awt.Color(255, 255, 255));
         panelGradBotPrincipales.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradBotPrincipales.setkStartColor(new java.awt.Color(204, 255, 255));
 
@@ -157,16 +160,28 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        etiquetaMenuDesplegable1.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMenuDesplegable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         etiquetaMenuDesplegable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/OrdenDeConsultaIcono.png"))); // NOI18N
 
+        etiquetaMenuDesplegable2.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMenuDesplegable2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         etiquetaMenuDesplegable2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/ConsultasIcono.png"))); // NOI18N
 
+        etiquetaMenuDesplegable3.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMenuDesplegable3.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         etiquetaMenuDesplegable3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/ProfesionalesIcono.png"))); // NOI18N
 
+        etiquetaMenuDesplegable4.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMenuDesplegable4.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         etiquetaMenuDesplegable4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/AfiliadoIcono.png"))); // NOI18N
 
+        etiquetaMenuDesplegable5.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMenuDesplegable5.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         etiquetaMenuDesplegable5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MasInformacionIcono.png"))); // NOI18N
 
+        etiquetaMenuDesplegable6.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMenuDesplegable6.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         etiquetaMenuDesplegable6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/EspecialidadesIcono.png"))); // NOI18N
 
         javax.swing.GroupLayout panelGradBotPrincipalesLayout = new javax.swing.GroupLayout(panelGradBotPrincipales);
@@ -257,8 +272,8 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(etiquetaLogoPrincipal)
                     .addComponent(botonRegistro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
         );

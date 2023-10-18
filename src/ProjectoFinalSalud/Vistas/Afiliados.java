@@ -25,19 +25,22 @@ public class Afiliados extends javax.swing.JInternalFrame {
 
         panelGradAfi = new keeptoo.KGradientPanel();
         botonAtrasAfi = new javax.swing.JButton();
-        menuBarAfi = new javax.swing.JMenuBar();
+        menuAfi = new javax.swing.JMenuBar();
         menuAfiContAfi = new javax.swing.JMenu();
         menuItemAfiHabYDes = new javax.swing.JMenuItem();
         menuItemAfiMod = new javax.swing.JMenuItem();
         menuAfiListaAfi = new javax.swing.JMenu();
         menuItemAfiLista = new javax.swing.JMenuItem();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
+        panelGradAfi.setBackground(new java.awt.Color(255, 255, 255));
         panelGradAfi.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradAfi.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradAfi.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        botonAtrasAfi.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasAfi.setForeground(new java.awt.Color(255, 255, 255));
         botonAtrasAfi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
@@ -68,9 +71,11 @@ public class Afiliados extends javax.swing.JInternalFrame {
                 .addContainerGap(460, Short.MAX_VALUE))
         );
 
+        menuAfiContAfi.setBackground(new java.awt.Color(255, 255, 255));
         menuAfiContAfi.setText("Control De Afiliados");
         menuAfiContAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
+        menuItemAfiHabYDes.setBackground(new java.awt.Color(255, 255, 255));
         menuItemAfiHabYDes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemAfiHabYDes.setText("Habilitar Y Deshabilitar");
         menuItemAfiHabYDes.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +85,7 @@ public class Afiliados extends javax.swing.JInternalFrame {
         });
         menuAfiContAfi.add(menuItemAfiHabYDes);
 
+        menuItemAfiMod.setBackground(new java.awt.Color(255, 255, 255));
         menuItemAfiMod.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemAfiMod.setText("Modificar");
         menuItemAfiMod.addActionListener(new java.awt.event.ActionListener() {
@@ -89,11 +95,13 @@ public class Afiliados extends javax.swing.JInternalFrame {
         });
         menuAfiContAfi.add(menuItemAfiMod);
 
-        menuBarAfi.add(menuAfiContAfi);
+        menuAfi.add(menuAfiContAfi);
 
+        menuAfiListaAfi.setBackground(new java.awt.Color(255, 255, 255));
         menuAfiListaAfi.setText("Lista De Afiliados");
         menuAfiListaAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 
+        menuItemAfiLista.setBackground(new java.awt.Color(255, 255, 255));
         menuItemAfiLista.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemAfiLista.setText("Lista");
         menuItemAfiLista.addActionListener(new java.awt.event.ActionListener() {
@@ -103,9 +111,9 @@ public class Afiliados extends javax.swing.JInternalFrame {
         });
         menuAfiListaAfi.add(menuItemAfiLista);
 
-        menuBarAfi.add(menuAfiListaAfi);
+        menuAfi.add(menuAfiListaAfi);
 
-        setJMenuBar(menuBarAfi);
+        setJMenuBar(menuAfi);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,9 +159,9 @@ public class Afiliados extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasAfi;
+    private javax.swing.JMenuBar menuAfi;
     private javax.swing.JMenu menuAfiContAfi;
     private javax.swing.JMenu menuAfiListaAfi;
-    private javax.swing.JMenuBar menuBarAfi;
     private javax.swing.JMenuItem menuItemAfiHabYDes;
     private javax.swing.JMenuItem menuItemAfiLista;
     private javax.swing.JMenuItem menuItemAfiMod;

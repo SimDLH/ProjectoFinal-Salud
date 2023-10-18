@@ -41,26 +41,45 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
         etiquetaAfiListaAfi = new javax.swing.JLabel();
         etiquetaAfiTotal = new javax.swing.JLabel();
         etiquetaAfiTotalAfi = new javax.swing.JLabel();
+        botonAtrasAfiLista = new javax.swing.JButton();
         panelScrollTablaListaAfi = new javax.swing.JScrollPane();
         tablaListaAfi = new javax.swing.JTable();
-        botonAtrasAfiLista = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
+        panelGradAfiLista.setBackground(new java.awt.Color(255, 255, 255));
         panelGradAfiLista.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradAfiLista.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradAfiLista.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        etiquetaAfiListaAfi.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiListaAfi.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaAfiListaAfi.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaAfiListaAfi.setText("Lista De Afiliados");
 
+        etiquetaAfiTotal.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiTotal.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         etiquetaAfiTotal.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaAfiTotal.setText("Total de Afiliados en la Lista:");
 
+        etiquetaAfiTotalAfi.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiTotalAfi.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         etiquetaAfiTotalAfi.setForeground(new java.awt.Color(255, 255, 255));
+
+        botonAtrasAfiLista.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasAfiLista.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasAfiLista.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasAfiLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasAfiLista.setText("Atrás");
+        botonAtrasAfiLista.setBorderPainted(false);
+        botonAtrasAfiLista.setContentAreaFilled(false);
+        botonAtrasAfiLista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasAfiLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasAfiListaActionPerformed(evt);
+            }
+        });
 
         tablaListaAfi.setBackground(panelGradAfiLista.getkStartColor());
         tablaListaAfi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -93,67 +112,56 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
             tablaListaAfi.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        botonAtrasAfiLista.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasAfiLista.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasAfiLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
-        botonAtrasAfiLista.setText("Atrás");
-        botonAtrasAfiLista.setBorderPainted(false);
-        botonAtrasAfiLista.setContentAreaFilled(false);
-        botonAtrasAfiLista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonAtrasAfiLista.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasAfiListaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelGradAfiListaLayout = new javax.swing.GroupLayout(panelGradAfiLista);
         panelGradAfiLista.setLayout(panelGradAfiListaLayout);
         panelGradAfiListaLayout.setHorizontalGroup(
             panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                .addGap(357, 357, 357)
-                .addComponent(etiquetaAfiListaAfi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonAtrasAfiLista)
-                .addContainerGap())
-            .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
+                .addGap(106, 106, 106)
                 .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                        .addComponent(etiquetaAfiTotal)
-                        .addGap(18, 18, 18)
-                        .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(501, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(etiquetaAfiListaAfi)
+                        .addGap(248, 248, 248)
+                        .addComponent(botonAtrasAfiLista))
+                    .addGroup(panelGradAfiListaLayout.createSequentialGroup()
+                        .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGradAfiListaLayout.createSequentialGroup()
+                                .addComponent(etiquetaAfiTotal)
+                                .addGap(18, 18, 18)
+                                .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 125, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panelGradAfiListaLayout.setVerticalGroup(
             panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradAfiListaLayout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAtrasAfiLista)
+                    .addComponent(etiquetaAfiListaAfi))
+                .addGap(57, 57, 57)
+                .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                        .addComponent(botonAtrasAfiLista)
-                        .addGap(45, 45, 45))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiListaLayout.createSequentialGroup()
-                        .addComponent(etiquetaAfiListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
-                .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(etiquetaAfiTotal)
-                    .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
+                        .addComponent(etiquetaAfiTotal))
+                    .addGroup(panelGradAfiListaLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfiLista, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradAfiLista, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfiLista, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(panelGradAfiLista, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);
@@ -175,10 +183,10 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
     
     private void armarCabesera(){
-        modelo.addColumn("Id");
+        modelo.addColumn("ID");
         modelo.addColumn("Nombre y Apellido");
-        modelo.addColumn("Numero de documento");
-        modelo.addColumn("Numero telefonico");
+        modelo.addColumn("Número de Documento");
+        modelo.addColumn("Número Telefónico");
         modelo.addColumn("Domicilio");
         tablaListaAfi.setModel(modelo);
     }

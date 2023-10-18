@@ -8,23 +8,26 @@ public class IniciarSesion {
     private String Apellido;
     private String Email;
     private String Password;
+    private boolean Activo;
 
     public IniciarSesion() {
     }
-    
-    public IniciarSesion(int IdUsuario, String Nombre, String Apellido, String Email, String Password) {
+
+    public IniciarSesion(int IdUsuario, String Nombre, String Apellido, String Email, String Password, boolean Activo) {
         this.IdUsuario = IdUsuario;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Email = Email;
         this.Password = Password;
+        this.Activo = Activo;
     }
     
-    public IniciarSesion(String Nombre, String Apellido, String Email, String Password) {
+    public IniciarSesion(String Nombre, String Apellido, String Email, String Password, boolean Activo) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Email = Email;
         this.Password = Password;
+        this.Activo = Activo;
     }
 
     public int getIdUsuario() {
@@ -66,9 +69,17 @@ public class IniciarSesion {
     public void setPassword(String Password) {
         this.Password = Password;
     }
-    
+
+    public boolean isActivo() {
+        return Activo;
+    }
+
+    public void setActivo(boolean Activo) {
+        this.Activo = Activo;
+    }
+
     @Override
     public String toString() {
-        return "IniciarSesion{" + "IdUsuario=" + IdUsuario + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Email=" + Email + ", Password=" + Password + '}';
+        return "IniciarSesion{" + "IdUsuario=" + IdUsuario + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Email=" + Email + ", Password=" + Password + "Activo=" + Activo +'}';
     }
 }

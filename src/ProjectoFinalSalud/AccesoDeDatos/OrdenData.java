@@ -139,4 +139,34 @@ public class OrdenData {
         }
         return ordenes;
     }
+
+    public ArrayList<Orden> ListarOrdenes() {
+        ArrayList<Orden> ordenes = new ArrayList<Orden>();
+        String sql = "SELECT idOrden, idAfiliado,idPrestador, fecha,formaPago,importe FROM orden";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            Orden orden;
+            AfiliadoData ad = new AfiliadoData();
+            PrestadorData pd = new PrestadorData();
+
+            while (rs.next()) {
+                orden = new Orden();
+                orden.setIdOrden(rs.getInt("idOrden"));
+                orden.setFormaPago(rs.getString("formaPago"));
+                orden.setImporte(rs.getDouble("importe"));
+                orden.setFecha(rs.getDate("fecha").toLocalDate());
+                Prestador p = pd.buscarPrestador(rs.getInt("idPrestador"));
+                Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
+                orden.setPrestador(p);
+                orden.setAfiliado(a);
+                ordenes.add(orden);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla orden");
+        }
+        return ordenes;
+    }
 }

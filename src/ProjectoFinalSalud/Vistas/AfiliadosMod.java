@@ -43,32 +43,48 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
         botonAtrasAfiMod = new javax.swing.JButton();
         separadorAfiMod = new javax.swing.JSeparator();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
+        panelGradAfiModAfi.setBackground(new java.awt.Color(255, 255, 255));
         panelGradAfiModAfi.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradAfiModAfi.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradAfiModAfi.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        etiquetaAfiModAfi.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModAfi.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaAfiModAfi.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModAfi.setText("Modificar Afiliados");
 
+        etiquetaAfiModNumDoc.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModNumDoc.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaAfiModNumDoc.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModNumDoc.setText("Número de Documento:");
 
+        etiquetaAfiModNomYApe.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModNomYApe.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaAfiModNomYApe.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModNomYApe.setText("Nombre y Apellido:");
 
+        etiquetaAfiModNumTel.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModNumTel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaAfiModNumTel.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModNumTel.setText("Número de Teléfono:");
 
+        etiquetaAfiModDom.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModDom.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaAfiModDom.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaAfiModDom.setText("Domicilio:");
 
+        textoAfiModDNI.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        textoAfiModNomYApe.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        textoAfiModNumTel.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        textoAfiModDom.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        botonAfiModBuscar.setBackground(new java.awt.Color(255, 255, 255));
         botonAfiModBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAfiModBuscar.setForeground(new java.awt.Color(255, 255, 255));
         botonAfiModBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
@@ -82,6 +98,7 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
             }
         });
 
+        botonAfiModModif.setBackground(new java.awt.Color(255, 255, 255));
         botonAfiModModif.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAfiModModif.setForeground(new java.awt.Color(255, 255, 255));
         botonAfiModModif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
@@ -95,6 +112,7 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
             }
         });
 
+        botonAtrasAfiMod.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasAfiMod.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasAfiMod.setForeground(new java.awt.Color(255, 255, 255));
         botonAtrasAfiMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
@@ -117,79 +135,86 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
             panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
                 .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiModAfiLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(etiquetaAfiModAfi)
+                        .addGap(261, 261, 261)
+                        .addComponent(botonAtrasAfiMod))
                     .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(etiquetaAfiModNomYApe)
-                            .addComponent(etiquetaAfiModNumTel)
-                            .addComponent(etiquetaAfiModDom))
-                        .addGap(18, 18, 18)
                         .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textoAfiModNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textoAfiModNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textoAfiModDom, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botonAfiModModif)
-                            .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(separadorAfiMod, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
-                                    .addComponent(etiquetaAfiModNumDoc)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
-                                            .addComponent(textoAfiModDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(botonAfiModBuscar))
-                                        .addComponent(etiquetaAfiModAfi)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 395, Short.MAX_VALUE)
-                        .addComponent(botonAtrasAfiMod)))
+                            .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
+                                .addGap(164, 164, 164)
+                                .addComponent(etiquetaAfiModNumDoc)
+                                .addGap(18, 18, 18)
+                                .addComponent(textoAfiModDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonAfiModBuscar))
+                            .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
+                                .addGap(183, 183, 183)
+                                .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
+                                        .addComponent(etiquetaAfiModNumTel)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textoAfiModNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
+                                        .addComponent(etiquetaAfiModNomYApe)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textoAfiModNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
+                                        .addComponent(etiquetaAfiModDom)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textoAfiModDom, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 217, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiModAfiLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(botonAfiModModif)
+                .addGap(226, 226, 226))
+            .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(separadorAfiMod, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGradAfiModAfiLayout.setVerticalGroup(
             panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradAfiModAfiLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(etiquetaAfiModAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(etiquetaAfiModNumDoc)
-                            .addComponent(textoAfiModDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonAfiModBuscar)))
-                    .addComponent(botonAtrasAfiMod))
-                .addGap(40, 40, 40)
-                .addComponent(separadorAfiMod, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addContainerGap()
+                .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAtrasAfiMod)
+                    .addComponent(etiquetaAfiModAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoAfiModDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonAfiModBuscar)
+                    .addComponent(etiquetaAfiModNumDoc))
+                .addGap(18, 18, 18)
+                .addComponent(separadorAfiMod, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoAfiModNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaAfiModNomYApe))
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoAfiModNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaAfiModNumTel))
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(panelGradAfiModAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoAfiModDom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaAfiModDom))
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addComponent(botonAfiModModif)
-                .addContainerGap())
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfiModAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradAfiModAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfiModAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(panelGradAfiModAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);

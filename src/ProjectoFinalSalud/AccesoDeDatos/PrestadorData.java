@@ -9,8 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class PrestadorData {
@@ -81,22 +79,22 @@ public class PrestadorData {
         }
     }
     
-    public Prestador buscarPrestador(int id) {
+    public Prestador buscarPrestador(int Dni) {
 
-        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=? AND Activo=1";
+        String sql = "SELECT IdPrestador,Nombre,Domicilio,Dni,Telefono,IdEspecialidad FROM Prestador WHERE Dni=? AND Activo=1";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, Dni);
             ResultSet rs = ps.executeQuery();
             EspecialidadData ed=new EspecialidadData();
             if (rs.next()) {
                 pres = new Prestador();
-                pres.setIdPrestador(id);
+                pres.setIdPrestador(Dni);
                 pres.setNombre(rs.getString("Nombre"));
                 pres.setDomicilio(rs.getString("Domicilio"));
-                pres.setTelefono(rs.getInt("Telefono"));
                 pres.setDni(rs.getInt("Dni"));
+                pres.setTelefono(rs.getInt("Telefono"));
                 pres.setActivo(true);
                 Especialidad esp=ed.buscarEspecialidad(rs.getInt("IdEspecialidad"));
                 pres.setEspecialidad(esp);
@@ -192,4 +190,18 @@ public class PrestadorData {
         return prestadores;
     }
     
+    public void reinstituirPrestador(int Dni){
+        String sql="UPDATE prestador SET Activo=1 WHERE Dni=?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, Dni);
+            int exi = ps.executeUpdate();
+            if (exi == 1) {
+                JOptionPane.showMessageDialog(null, "El Prestador ha sido reactivado exitosamente");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
+        }
+    }
 }

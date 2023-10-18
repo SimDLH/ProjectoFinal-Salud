@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-public class EspecialidadBorrar extends javax.swing.JInternalFrame {
+public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
     
     DefaultTableModel modelo = new DefaultTableModel(){
         @Override
@@ -18,7 +18,7 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
     
     EspecialidadData ed=new EspecialidadData();
     
-    public EspecialidadBorrar() {
+    public EspecialidadesBorrar() {
         
         initComponents();
         armarCabesera();
@@ -45,17 +45,21 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaEspBorrar = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
+        panelGradEspBorrar.setBackground(new java.awt.Color(255, 255, 255));
         panelGradEspBorrar.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradEspBorrar.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradEspBorrar.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        etiquetaEspBorrar.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaEspBorrar.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaEspBorrar.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaEspBorrar.setText("Borrar Especialidades");
 
-        botonEspBorrBorrar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        botonEspBorrBorrar.setBackground(new java.awt.Color(255, 255, 255));
+        botonEspBorrBorrar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonEspBorrBorrar.setForeground(new java.awt.Color(255, 255, 255));
         botonEspBorrBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
         botonEspBorrBorrar.setText("Borrar");
@@ -68,6 +72,7 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
             }
         });
 
+        botonAtrasEspBorr.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasEspBorr.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasEspBorr.setForeground(new java.awt.Color(255, 255, 255));
         botonAtrasEspBorr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
@@ -127,7 +132,7 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
                 .addGroup(panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonEspBorrBorrar)
                     .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(463, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         panelGradEspBorrarLayout.setVerticalGroup(
             panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,11 +155,11 @@ public class EspecialidadBorrar extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradEspBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradEspBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradEspBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(panelGradEspBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);

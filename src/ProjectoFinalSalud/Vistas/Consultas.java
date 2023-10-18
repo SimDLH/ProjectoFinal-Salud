@@ -1,4 +1,3 @@
-
 package ProjectoFinalSalud.Vistas;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -6,9 +5,9 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class Consultas extends javax.swing.JInternalFrame {
 
     public Consultas() {
-        
+
         initComponents();
-        
+
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -23,14 +22,19 @@ public class Consultas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradienteOrdenes = new keeptoo.KGradientPanel();
+        panelGradConsul = new keeptoo.KGradientPanel();
         botonAtrasConsultas = new javax.swing.JButton();
+        menuconsul = new javax.swing.JMenuBar();
+        menuConsulConsulOrden = new javax.swing.JMenu();
+        menuItemConsulOrden = new javax.swing.JMenuItem();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
-        panelGradienteOrdenes.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteOrdenes.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradienteOrdenes.setPreferredSize(new java.awt.Dimension(975, 575));
+        panelGradConsul.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradConsul.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradConsul.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradConsul.setPreferredSize(new java.awt.Dimension(975, 575));
 
         botonAtrasConsultas.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasConsultas.setForeground(new java.awt.Color(255, 255, 255));
@@ -45,32 +49,50 @@ public class Consultas extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout panelGradienteOrdenesLayout = new javax.swing.GroupLayout(panelGradienteOrdenes);
-        panelGradienteOrdenes.setLayout(panelGradienteOrdenesLayout);
-        panelGradienteOrdenesLayout.setHorizontalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteOrdenesLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelGradConsulLayout = new javax.swing.GroupLayout(panelGradConsul);
+        panelGradConsul.setLayout(panelGradConsulLayout);
+        panelGradConsulLayout.setHorizontalGroup(
+            panelGradConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradConsulLayout.createSequentialGroup()
                 .addContainerGap(1081, Short.MAX_VALUE)
                 .addComponent(botonAtrasConsultas)
                 .addContainerGap())
         );
-        panelGradienteOrdenesLayout.setVerticalGroup(
-            panelGradienteOrdenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteOrdenesLayout.createSequentialGroup()
+        panelGradConsulLayout.setVerticalGroup(
+            panelGradConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradConsulLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasConsultas)
-                .addContainerGap(530, Short.MAX_VALUE))
+                .addContainerGap(463, Short.MAX_VALUE))
         );
+
+        menuConsulConsulOrden.setBackground(new java.awt.Color(255, 255, 255));
+        menuConsulConsulOrden.setText("Consultar Ordenes");
+        menuConsulConsulOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+
+        menuItemConsulOrden.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemConsulOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulOrden.setText("Ordenes");
+        menuItemConsulOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemConsulOrdenActionPerformed(evt);
+            }
+        });
+        menuConsulConsulOrden.add(menuItemConsulOrden);
+
+        menuconsul.add(menuConsulConsulOrden);
+
+        setJMenuBar(menuconsul);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(panelGradConsul, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteOrdenes, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(panelGradConsul, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
         );
 
         setBounds(300, 140, 975, 575);
@@ -80,8 +102,20 @@ public class Consultas extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasConsultasActionPerformed
 
+    private void menuItemConsulOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulOrdenActionPerformed
+        panelGradConsul.removeAll();
+        panelGradConsul.repaint();
+        ConsultasOrdenes co = new ConsultasOrdenes();
+        panelGradConsul.add(co);
+        co.setVisible(true);
+
+    }//GEN-LAST:event_menuItemConsulOrdenActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasConsultas;
-    private keeptoo.KGradientPanel panelGradienteOrdenes;
+    private javax.swing.JMenu menuConsulConsulOrden;
+    private javax.swing.JMenuItem menuItemConsulOrden;
+    private javax.swing.JMenuBar menuconsul;
+    private keeptoo.KGradientPanel panelGradConsul;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,20 +35,25 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         ButtonAgregar = new javax.swing.JButton();
         botonAtrasEspAgre = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
+        panelGradEspAgre.setBackground(new java.awt.Color(255, 255, 255));
         panelGradEspAgre.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradEspAgre.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradEspAgre.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        etiquetaEspAgreIngr.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaEspAgreIngr.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaEspAgreIngr.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaEspAgreIngr.setText("Ingreso De Especialidades");
 
+        etiquetaEspAgreNomEsp.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaEspAgreNomEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaEspAgreNomEsp.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaEspAgreNomEsp.setText("Nombre de la Especialidad:");
 
+        ButtonAgregar.setBackground(new java.awt.Color(255, 255, 255));
         ButtonAgregar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         ButtonAgregar.setForeground(new java.awt.Color(255, 255, 255));
         ButtonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
@@ -62,6 +67,7 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
             }
         });
 
+        botonAtrasEspAgre.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasEspAgre.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasEspAgre.setForeground(new java.awt.Color(255, 255, 255));
         botonAtrasEspAgre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
@@ -80,21 +86,18 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         panelGradEspAgreLayout.setHorizontalGroup(
             panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradEspAgreLayout.createSequentialGroup()
+                .addGap(0, 154, Short.MAX_VALUE)
+                .addComponent(etiquetaEspAgreNomEsp)
+                .addGap(18, 18, 18)
                 .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelGradEspAgreLayout.createSequentialGroup()
-                        .addGap(183, 1081, Short.MAX_VALUE)
-                        .addComponent(botonAtrasEspAgre))
-                    .addGroup(panelGradEspAgreLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(etiquetaEspAgreNomEsp)
-                        .addGap(18, 18, 18)
-                        .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etiquetaEspAgreIngr))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(etiquetaEspAgreIngr)
+                        .addGap(207, 207, 207)
+                        .addComponent(botonAtrasEspAgre)))
                 .addContainerGap())
             .addGroup(panelGradEspAgreLayout.createSequentialGroup()
-                .addGap(299, 299, 299)
+                .addGap(384, 384, 384)
                 .addComponent(ButtonAgregar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -102,27 +105,27 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
             panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradEspAgreLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonAtrasEspAgre)
-                .addGap(9, 9, 9)
-                .addComponent(etiquetaEspAgreIngr, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAtrasEspAgre)
+                    .addComponent(etiquetaEspAgreIngr, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
                 .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaEspAgreNomEsp))
-                .addGap(62, 62, 62)
+                .addGap(18, 18, 18)
                 .addComponent(ButtonAgregar)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(336, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradEspAgre, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradEspAgre, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradEspAgre, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(panelGradEspAgre, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);

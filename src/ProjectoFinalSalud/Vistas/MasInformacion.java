@@ -23,66 +23,95 @@ public class MasInformacion extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradienteMasInformacion = new keeptoo.KGradientPanel();
-        botonAtrasMasInfo = new javax.swing.JButton();
+        panelGradMsInfo = new keeptoo.KGradientPanel();
+        botonAtrasMsInfo = new javax.swing.JButton();
+        botonHola = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
-        panelGradienteMasInformacion.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        panelGradienteMasInformacion.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradienteMasInformacion.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradienteMasInformacion.setPreferredSize(new java.awt.Dimension(975, 575));
+        panelGradMsInfo.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradMsInfo.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        panelGradMsInfo.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradMsInfo.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradMsInfo.setPreferredSize(new java.awt.Dimension(975, 575));
 
-        botonAtrasMasInfo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasMasInfo.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasMasInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
-        botonAtrasMasInfo.setText("Atrás");
-        botonAtrasMasInfo.setBorderPainted(false);
-        botonAtrasMasInfo.setContentAreaFilled(false);
-        botonAtrasMasInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonAtrasMasInfo.addActionListener(new java.awt.event.ActionListener() {
+        botonAtrasMsInfo.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasMsInfo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasMsInfo.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasMsInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasMsInfo.setText("Atrás");
+        botonAtrasMsInfo.setBorderPainted(false);
+        botonAtrasMsInfo.setContentAreaFilled(false);
+        botonAtrasMsInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasMsInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasMasInfoActionPerformed(evt);
+                botonAtrasMsInfoActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelGradienteMasInformacionLayout = new javax.swing.GroupLayout(panelGradienteMasInformacion);
-        panelGradienteMasInformacion.setLayout(panelGradienteMasInformacionLayout);
-        panelGradienteMasInformacionLayout.setHorizontalGroup(
-            panelGradienteMasInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradienteMasInformacionLayout.createSequentialGroup()
-                .addContainerGap(1081, Short.MAX_VALUE)
-                .addComponent(botonAtrasMasInfo)
+        botonHola.setBackground(new java.awt.Color(0, 0, 255));
+        botonHola.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        botonHola.setForeground(new java.awt.Color(255, 255, 255));
+        botonHola.setText("HOLA");
+        botonHola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonHolaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelGradMsInfoLayout = new javax.swing.GroupLayout(panelGradMsInfo);
+        panelGradMsInfo.setLayout(panelGradMsInfoLayout);
+        panelGradMsInfoLayout.setHorizontalGroup(
+            panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradMsInfoLayout.createSequentialGroup()
+                .addContainerGap(796, Short.MAX_VALUE)
+                .addComponent(botonAtrasMsInfo)
                 .addContainerGap())
+            .addGroup(panelGradMsInfoLayout.createSequentialGroup()
+                .addGap(343, 343, 343)
+                .addComponent(botonHola, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelGradienteMasInformacionLayout.setVerticalGroup(
-            panelGradienteMasInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradienteMasInformacionLayout.createSequentialGroup()
+        panelGradMsInfoLayout.setVerticalGroup(
+            panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradMsInfoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonAtrasMasInfo)
-                .addContainerGap(526, Short.MAX_VALUE))
+                .addComponent(botonAtrasMsInfo)
+                .addGap(158, 158, 158)
+                .addComponent(botonHola, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteMasInformacion, javax.swing.GroupLayout.DEFAULT_SIZE, 1244, Short.MAX_VALUE)
+            .addComponent(panelGradMsInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradienteMasInformacion, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(panelGradMsInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAtrasMasInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasMasInfoActionPerformed
+    private void botonAtrasMsInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasMsInfoActionPerformed
         dispose();
-    }//GEN-LAST:event_botonAtrasMasInfoActionPerformed
+    }//GEN-LAST:event_botonAtrasMsInfoActionPerformed
+
+    private void botonHolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHolaActionPerformed
+        panelGradMsInfo.removeAll();
+        panelGradMsInfo.repaint();
+        MasInformacionPrueba msInfoP = new MasInformacionPrueba();
+        panelGradMsInfo.add(msInfoP);
+        msInfoP.setVisible(true);
+    }//GEN-LAST:event_botonHolaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAtrasMasInfo;
-    private keeptoo.KGradientPanel panelGradienteMasInformacion;
+    private javax.swing.JButton botonAtrasMsInfo;
+    private javax.swing.JButton botonHola;
+    private keeptoo.KGradientPanel panelGradMsInfo;
     // End of variables declaration//GEN-END:variables
 }
