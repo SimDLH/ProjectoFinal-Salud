@@ -56,6 +56,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
 
         tablaConsulOrden.setBackground(panelConsulConsulOrden.getkStartColor());
         tablaConsulOrden.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        tablaConsulOrden.setForeground(new java.awt.Color(255, 255, 255));
         tablaConsulOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
