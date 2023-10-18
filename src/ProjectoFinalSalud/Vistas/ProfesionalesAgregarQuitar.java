@@ -30,23 +30,23 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         panelGradProfAgreQuit = new keeptoo.KGradientPanel();
+        botonAtrasProfAgreQuit = new javax.swing.JButton();
         etiquetaProfAgreQuit = new javax.swing.JLabel();
-        etiquetaProfAgreQuitDni = new javax.swing.JLabel();
+        etiquetaProfAgreQuitDNI = new javax.swing.JLabel();
+        textoProfAgreQuitDNI = new javax.swing.JTextField();
+        botonProfAgreQuitBuscar = new javax.swing.JButton();
+        separadorProfAgreQuit = new javax.swing.JSeparator();
         etiquetaProfAgreQuitNomYApe = new javax.swing.JLabel();
+        textoProfAgreQuitNomYApe = new javax.swing.JTextField();
         etiquetaProfAgreQuitNumTel = new javax.swing.JLabel();
+        textoProfAgreQuitNumTel = new javax.swing.JTextField();
         etiquetaProfAgreQuitDom = new javax.swing.JLabel();
+        textoProfAgreQuitDom = new javax.swing.JTextField();
         etiquetaProfAgreQuitEstado = new javax.swing.JLabel();
         etiquetaProfAgreQuitAcONoac = new javax.swing.JLabel();
-        textoProfAgreQuitDni = new javax.swing.JTextField();
-        textoProfAgreQuitNomYApe = new javax.swing.JTextField();
-        textoProfAgreQuitNumTel = new javax.swing.JTextField();
-        textoProfAgreQuitDom = new javax.swing.JTextField();
-        separadorProfAgreQuit = new javax.swing.JSeparator();
-        botonProfAgreQuitBuscar = new javax.swing.JButton();
         botonProfAgreQuitRein = new javax.swing.JButton();
         botonProfAgreQuitGuardar = new javax.swing.JButton();
         botonProfAgreQuitAnular = new javax.swing.JButton();
-        botonAtrasProfAgreQuit = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -55,88 +55,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         panelGradProfAgreQuit.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradProfAgreQuit.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradProfAgreQuit.setPreferredSize(new java.awt.Dimension(975, 575));
-
-        etiquetaProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        etiquetaProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuit.setText("Agregar Y Anular Profesionales");
-
-        etiquetaProfAgreQuitDni.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDni.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitDni.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDni.setText("Ingrese DNI Del Profesional:");
-
-        etiquetaProfAgreQuitNomYApe.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitNomYApe.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNomYApe.setText("Nombre y Apellido:");
-
-        etiquetaProfAgreQuitNumTel.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitNumTel.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNumTel.setText("Número de Teléfono:");
-
-        etiquetaProfAgreQuitDom.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitDom.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDom.setText("Domicilio:");
-
-        etiquetaProfAgreQuitEstado.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitEstado.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitEstado.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitEstado.setText("Estado:");
-
-        etiquetaProfAgreQuitAcONoac.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitAcONoac.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        etiquetaProfAgreQuitAcONoac.setForeground(new java.awt.Color(255, 255, 255));
-
-        textoProfAgreQuitDni.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        textoProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        textoProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        textoProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        separadorProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
-        separadorProfAgreQuit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        botonProfAgreQuitBuscar.setBackground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonProfAgreQuitBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
-        botonProfAgreQuitBuscar.setText("Buscar");
-        botonProfAgreQuitBuscar.setBorderPainted(false);
-        botonProfAgreQuitBuscar.setContentAreaFilled(false);
-        botonProfAgreQuitBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        botonProfAgreQuitRein.setBackground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitRein.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonProfAgreQuitRein.setForeground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitRein.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
-        botonProfAgreQuitRein.setText("Reinstituir");
-        botonProfAgreQuitRein.setBorderPainted(false);
-        botonProfAgreQuitRein.setContentAreaFilled(false);
-        botonProfAgreQuitRein.setEnabled(false);
-        botonProfAgreQuitRein.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        botonProfAgreQuitGuardar.setBackground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitGuardar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonProfAgreQuitGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
-        botonProfAgreQuitGuardar.setText("Guardar");
-        botonProfAgreQuitGuardar.setBorderPainted(false);
-        botonProfAgreQuitGuardar.setContentAreaFilled(false);
-        botonProfAgreQuitGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        botonProfAgreQuitAnular.setBackground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitAnular.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonProfAgreQuitAnular.setForeground(new java.awt.Color(255, 255, 255));
-        botonProfAgreQuitAnular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
-        botonProfAgreQuitAnular.setText("Anular");
-        botonProfAgreQuitAnular.setBorderPainted(false);
-        botonProfAgreQuitAnular.setContentAreaFilled(false);
-        botonProfAgreQuitAnular.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         botonAtrasProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -152,51 +70,154 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
             }
         });
 
+        etiquetaProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuit.setText("Agregar Y Anular Profesionales");
+
+        etiquetaProfAgreQuitDNI.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDNI.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitDNI.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDNI.setText("Ingrese El DNI Del Profesional");
+
+        textoProfAgreQuitDNI.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        botonProfAgreQuitBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonProfAgreQuitBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonProfAgreQuitBuscar.setText("Buscar");
+        botonProfAgreQuitBuscar.setBorderPainted(false);
+        botonProfAgreQuitBuscar.setContentAreaFilled(false);
+        botonProfAgreQuitBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonProfAgreQuitBuscarActionPerformed(evt);
+            }
+        });
+
+        separadorProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
+        separadorProfAgreQuit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        etiquetaProfAgreQuitNomYApe.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitNomYApe.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNomYApe.setText("Nombre y Apellido:");
+
+        textoProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        etiquetaProfAgreQuitNumTel.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitNumTel.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNumTel.setText("Número de Teléfono:");
+
+        textoProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        etiquetaProfAgreQuitDom.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitDom.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDom.setText("Domicilio:");
+
+        textoProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        etiquetaProfAgreQuitEstado.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitEstado.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitEstado.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitEstado.setText("Estado:");
+
+        etiquetaProfAgreQuitAcONoac.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitAcONoac.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaProfAgreQuitAcONoac.setForeground(new java.awt.Color(255, 255, 255));
+
+        botonProfAgreQuitRein.setBackground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitRein.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonProfAgreQuitRein.setForeground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitRein.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonProfAgreQuitRein.setText("Reinstituir");
+        botonProfAgreQuitRein.setBorderPainted(false);
+        botonProfAgreQuitRein.setContentAreaFilled(false);
+        botonProfAgreQuitRein.setEnabled(false);
+        botonProfAgreQuitRein.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitRein.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonProfAgreQuitReinActionPerformed(evt);
+            }
+        });
+
+        botonProfAgreQuitGuardar.setBackground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitGuardar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonProfAgreQuitGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonProfAgreQuitGuardar.setText("Guardar");
+        botonProfAgreQuitGuardar.setBorderPainted(false);
+        botonProfAgreQuitGuardar.setContentAreaFilled(false);
+        botonProfAgreQuitGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonProfAgreQuitGuardarActionPerformed(evt);
+            }
+        });
+
+        botonProfAgreQuitAnular.setBackground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitAnular.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonProfAgreQuitAnular.setForeground(new java.awt.Color(255, 255, 255));
+        botonProfAgreQuitAnular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonProfAgreQuitAnular.setText("Anular");
+        botonProfAgreQuitAnular.setBorderPainted(false);
+        botonProfAgreQuitAnular.setContentAreaFilled(false);
+        botonProfAgreQuitAnular.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitAnular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonProfAgreQuitAnularActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelGradProfAgreQuitLayout = new javax.swing.GroupLayout(panelGradProfAgreQuit);
         panelGradProfAgreQuit.setLayout(panelGradProfAgreQuitLayout);
         panelGradProfAgreQuitLayout.setHorizontalGroup(
             panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfAgreQuitLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(etiquetaProfAgreQuit)
-                .addGap(186, 186, 186)
+                .addContainerGap(167, Short.MAX_VALUE)
+                .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfAgreQuitLayout.createSequentialGroup()
+                        .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(botonProfAgreQuitGuardar)
+                            .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
+                                    .addGap(30, 30, 30)
+                                    .addComponent(etiquetaProfAgreQuitDNI)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(textoProfAgreQuitDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botonProfAgreQuitBuscar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(separadorProfAgreQuit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
+                                    .addGap(49, 49, 49)
+                                    .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
+                                            .addComponent(etiquetaProfAgreQuitNumTel)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(textoProfAgreQuitNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
+                                            .addComponent(etiquetaProfAgreQuitNomYApe)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(textoProfAgreQuitNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
+                                            .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(etiquetaProfAgreQuitEstado)
+                                                .addComponent(etiquetaProfAgreQuitDom))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(textoProfAgreQuitDom, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(etiquetaProfAgreQuitAcONoac, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botonProfAgreQuitRein)))
+                            .addComponent(botonProfAgreQuitAnular))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradProfAgreQuitLayout.createSequentialGroup()
+                        .addComponent(etiquetaProfAgreQuit)
+                        .addGap(162, 162, 162)))
                 .addComponent(botonAtrasProfAgreQuit)
                 .addContainerGap())
-            .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonProfAgreQuitGuardar)
-                    .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addComponent(etiquetaProfAgreQuitDni)
-                            .addGap(18, 18, 18)
-                            .addComponent(textoProfAgreQuitDni, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(botonProfAgreQuitBuscar, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(separadorProfAgreQuit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
-                            .addGap(49, 49, 49)
-                            .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
-                                    .addComponent(etiquetaProfAgreQuitNumTel)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(textoProfAgreQuitNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
-                                    .addComponent(etiquetaProfAgreQuitNomYApe)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(textoProfAgreQuitNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panelGradProfAgreQuitLayout.createSequentialGroup()
-                                    .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(etiquetaProfAgreQuitEstado)
-                                        .addComponent(etiquetaProfAgreQuitDom))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(textoProfAgreQuitDom, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(etiquetaProfAgreQuitAcONoac, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonProfAgreQuitRein)))
-                    .addComponent(botonProfAgreQuitAnular))
-                .addContainerGap(207, Short.MAX_VALUE))
         );
         panelGradProfAgreQuitLayout.setVerticalGroup(
             panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,11 +226,11 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
                 .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasProfAgreQuit)
                     .addComponent(etiquetaProfAgreQuit))
-                .addGap(30, 30, 30)
+                .addGap(47, 47, 47)
                 .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonProfAgreQuitBuscar)
-                    .addComponent(textoProfAgreQuitDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(etiquetaProfAgreQuitDni))
+                    .addComponent(textoProfAgreQuitDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaProfAgreQuitDNI))
                 .addGap(27, 27, 27)
                 .addComponent(separadorProfAgreQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -235,7 +256,7 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
                 .addComponent(botonProfAgreQuitGuardar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonProfAgreQuitAnular)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -256,6 +277,74 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasProfAgreQuitActionPerformed
 
+    private void botonProfAgreQuitBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarActionPerformed
+        try{
+            int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
+            botonProfAgreQuitGuardar.setEnabled(false);
+            Prestador pres = presData.buscarPrestadorDni(Dni);
+            if(pres.getTelefono()==0){
+                limpiar();
+            }else{
+                textoProfAgreQuitNomYApe.setText(pres.getNombre());
+                textoProfAgreQuitDom.setText(pres.getDomicilio());
+                textoProfAgreQuitNumTel.setText(pres.getTelefono()+"");
+                if(pres.isActivo()){
+                    etiquetaProfAgreQuitAcONoac.setText("Activo");
+                    botonProfAgreQuitRein.setEnabled(false);
+                }else{
+                    etiquetaProfAgreQuitAcONoac.setText("Inactivo");
+                    botonProfAgreQuitRein.setEnabled(true);
+                }
+            }
+        }catch(NumberFormatException ne){
+            JOptionPane.showMessageDialog(null, "Ingrese un DNI válido para buscar a un Prestador");
+            limpiar();
+        }
+    }//GEN-LAST:event_botonProfAgreQuitBuscarActionPerformed
+
+    private void botonProfAgreQuitReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinActionPerformed
+        int Dni=Integer.parseInt(textoProfAgreQuitDNI.getText());
+        presData.reinstituirPrestador(Dni);
+        limpiar();
+    }//GEN-LAST:event_botonProfAgreQuitReinActionPerformed
+
+    private void botonProfAgreQuitGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarActionPerformed
+        try{
+            if(textoProfAgreQuitDNI.getText().isEmpty() || textoProfAgreQuitNumTel.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Profesional");
+            }else if(buscarDni(Integer.parseInt(textoProfAgreQuitDNI.getText()))){
+                JOptionPane.showMessageDialog(null, "El DNI ingresado ya le pertenece a un Profesional registrado");
+            }else{
+                int Dni=Integer.parseInt(textoProfAgreQuitDNI.getText());
+                int Tel=Integer.parseInt(textoProfAgreQuitNumTel.getText());
+                Prestador pres = new Prestador();
+                pres.setDni(Dni);
+                pres.setNombre(textoProfAgreQuitNomYApe.getText());
+                pres.setTelefono(Tel);
+                pres.setDomicilio(textoProfAgreQuitDom.getText());
+                pres.setActivo(true);
+                presData.guardarPrestador(pres);
+            }
+        }catch(NumberFormatException ne){
+            JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres erróneos");
+        }catch(NullPointerException np){
+            JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Profesional");
+        }
+        limpiar();
+    }//GEN-LAST:event_botonProfAgreQuitGuardarActionPerformed
+
+    private void botonProfAgreQuitAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularActionPerformed
+        try{
+            int Dni=Integer.parseInt(textoProfAgreQuitDNI.getText());
+            presData.eliminarPrestador(Dni);
+        }catch(NumberFormatException ne){
+            JOptionPane.showMessageDialog(null, "Ingrese el DNI de un Profesional para anularlo");
+        }catch(NullPointerException np){
+            JOptionPane.showMessageDialog(null, "Tiene que ingresar el DNI de un Profesional para anularlo");
+        }
+        limpiar();
+    }//GEN-LAST:event_botonProfAgreQuitAnularActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasProfAgreQuit;
     private javax.swing.JButton botonProfAgreQuitAnular;
@@ -264,21 +353,20 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private javax.swing.JButton botonProfAgreQuitRein;
     private javax.swing.JLabel etiquetaProfAgreQuit;
     private javax.swing.JLabel etiquetaProfAgreQuitAcONoac;
-    private javax.swing.JLabel etiquetaProfAgreQuitDni;
+    private javax.swing.JLabel etiquetaProfAgreQuitDNI;
     private javax.swing.JLabel etiquetaProfAgreQuitDom;
     private javax.swing.JLabel etiquetaProfAgreQuitEstado;
     private javax.swing.JLabel etiquetaProfAgreQuitNomYApe;
     private javax.swing.JLabel etiquetaProfAgreQuitNumTel;
     private keeptoo.KGradientPanel panelGradProfAgreQuit;
     private javax.swing.JSeparator separadorProfAgreQuit;
-    private javax.swing.JTextField textoProfAgreQuitDni;
+    private javax.swing.JTextField textoProfAgreQuitDNI;
     private javax.swing.JTextField textoProfAgreQuitDom;
     private javax.swing.JTextField textoProfAgreQuitNomYApe;
     private javax.swing.JTextField textoProfAgreQuitNumTel;
     // End of variables declaration//GEN-END:variables
 
-    /*private void limpiar(){
-        textoProfAgreQuitDni.setText("");
+    private void limpiar(){
         textoProfAgreQuitDom.setText("");
         textoProfAgreQuitNomYApe.setText("");
         textoProfAgreQuitNumTel.setText("");
@@ -297,5 +385,5 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
             }
         }
         return bd;
-    }*/
+    }
 }

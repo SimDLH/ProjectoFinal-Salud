@@ -81,7 +81,7 @@ public class PrestadorData {
     
     public Prestador buscarPrestador(int id) {
 
-        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=? AND Activo=1";
+        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=?";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -189,5 +189,66 @@ public class PrestadorData {
         }
         return prestadores;
     }
+    public void reinstituirPrestador(int Dni){
+        
+        String sql = "UPDATE prestador SET Activo=1 WHERE Dni=?";
+
+            try {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, Dni);
+                int exito = ps.executeUpdate();
+                if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "El Prestador ha sido reinscripto exitosamente");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
+        }
+    }
+
+    public Prestador buscarPrestadorActivo(int Dni){
+        
+        String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni , Telefono ,Activo  FROM prestador WHERE Dni=? AND Activo=1";
+        Prestador pres = new Prestador();
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setInt(1, Dni);
+            ResultSet rs=ps.executeQuery();
+            if (rs.next()){
+                pres.setIdPrestador(rs.getInt("IdPrestador"));
+                pres.setNombre(rs.getString("Nombre"));
+                pres.setDomicilio(rs.getString("Domicilio"));
+                pres.setDni(rs.getInt("Dni"));
+                pres.setTelefono(rs.getInt("Telefono"));
+                pres.setActivo(rs.getBoolean("Activo"));
+            }else{
+                JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Prestadores");
+        }
+        return pres;
+    }
     
+    public Prestador buscarPrestadorDni(int Dni) {
+        String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni, Telefono, Activo  FROM prestador WHERE dni=?";
+        Prestador pres = new Prestador();
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, Dni);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                pres.setIdPrestador(rs.getInt("IdPrestador"));
+                pres.setNombre(rs.getString("Nombre"));
+                pres.setDomicilio(rs.getString("Domicilio"));
+                pres.setDni(rs.getInt("Dni"));
+                pres.setTelefono(rs.getInt("Telefono"));
+                pres.setActivo(rs.getBoolean("Activo"));
+            }else{
+                JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Prestador");
+        }
+        return pres;
+    }
 }

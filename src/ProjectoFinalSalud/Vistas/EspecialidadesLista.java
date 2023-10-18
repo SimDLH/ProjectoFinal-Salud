@@ -74,7 +74,6 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
             }
         });
 
-        comboBoxEspEsp.setBackground(panelGradEspLista.getkStartColor());
         comboBoxEspEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         comboBoxEspEsp.setForeground(new java.awt.Color(255, 255, 255));
         comboBoxEspEsp.addActionListener(new java.awt.event.ActionListener() {

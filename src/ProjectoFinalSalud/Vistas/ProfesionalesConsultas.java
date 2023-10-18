@@ -181,7 +181,11 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonAtrasProfConsulActionPerformed
 
     private void botonProfPedirOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfPedirOrdenActionPerformed
-
+        panelGradProfConsul.removeAll();
+        panelGradProfConsul.repaint();
+        OrdenesSacar ordSac = new OrdenesSacar();
+        panelGradProfConsul.add(ordSac);
+        ordSac.setVisible(true);
     }//GEN-LAST:event_botonProfPedirOrdenActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
