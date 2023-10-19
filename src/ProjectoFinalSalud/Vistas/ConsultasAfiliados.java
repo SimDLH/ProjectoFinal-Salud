@@ -1,29 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.Entidades.Afiliado;
+import java.awt.Component;
+import javax.swing.JTable;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
-/**
- *
- * @author simon
- */
 public class ConsultasAfiliados extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form ConsultasAfiliados
-     */
-    DefaultTableModel modelo=new DefaultTableModel();
+    DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int colum) {
+            return false;
+        }
+    };
+    
     AfiliadoData ad=new AfiliadoData();
+    
     public ConsultasAfiliados() {
         initComponents();
         armarCabesera();
         cargarTabla();
+        resizeColumnWidth(tablaListaAfi);
+        tablaListaAfi.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+        bui.setNorthPane(null);
     }
 
     /**
@@ -39,10 +46,22 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         panelScrollTablaListaAfi = new javax.swing.JScrollPane();
         tablaListaAfi = new javax.swing.JTable();
+        botonAtrasProfConsul = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(975, 575));
+
+        kGradientPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(0, 153, 0));
+        kGradientPanel1.setPreferredSize(new java.awt.Dimension(975, 575));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Consultar Afiliados");
 
+        tablaListaAfi.setBackground(kGradientPanel1.getkStartColor());
         tablaListaAfi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         tablaListaAfi.setForeground(new java.awt.Color(255, 255, 255));
         tablaListaAfi.setModel(new javax.swing.table.DefaultTableModel(
@@ -66,54 +85,75 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         });
         tablaListaAfi.getTableHeader().setReorderingAllowed(false);
         panelScrollTablaListaAfi.setViewportView(tablaListaAfi);
+        if (tablaListaAfi.getColumnModel().getColumnCount() > 0) {
+            tablaListaAfi.getColumnModel().getColumn(0).setResizable(false);
+            tablaListaAfi.getColumnModel().getColumn(1).setResizable(false);
+            tablaListaAfi.getColumnModel().getColumn(2).setResizable(false);
+            tablaListaAfi.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        botonAtrasProfConsul.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasProfConsul.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasProfConsul.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasProfConsul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasProfConsul.setText("Atrás");
+        botonAtrasProfConsul.setBorderPainted(false);
+        botonAtrasProfConsul.setContentAreaFilled(false);
+        botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasProfConsulActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(345, 345, 345)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(245, 245, 245)
+                .addComponent(botonAtrasProfConsul)
+                .addContainerGap())
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 920, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
-            .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                    .addGap(88, 88, 88)
-                    .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(118, Short.MAX_VALUE)))
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAtrasProfConsul)
+                    .addComponent(jLabel1))
+                .addGap(116, 116, 116)
+                .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 792, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 48, Short.MAX_VALUE))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonAtrasProfConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulActionPerformed
+        dispose();
+    }//GEN-LAST:event_botonAtrasProfConsulActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAtrasProfConsul;
     private javax.swing.JLabel jLabel1;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JScrollPane panelScrollTablaListaAfi;
@@ -134,6 +174,21 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
             modelo.addRow(new Object[]{afi.getIdAfiliado(),afi.getNombre(),afi.getDni(),afi.getTelefono(),afi.getDomicilio()});
         }
     }
+    
+    private void resizeColumnWidth(JTable tablaListaAfi) {
 
-
+        TableColumnModel columnModel = tablaListaAfi.getColumnModel();
+        for (int column = 0; column < tablaListaAfi.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaListaAfi.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaListaAfi.getCellRenderer(row, column);
+                Component comp = tablaListaAfi.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
+        }
+    }
 }

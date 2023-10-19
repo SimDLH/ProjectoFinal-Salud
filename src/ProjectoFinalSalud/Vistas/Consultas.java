@@ -27,6 +27,12 @@ public class Consultas extends javax.swing.JInternalFrame {
         menuconsul = new javax.swing.JMenuBar();
         menuConsulConsulOrden = new javax.swing.JMenu();
         menuItemConsulOrden = new javax.swing.JMenuItem();
+        menuConsulConsulAfil = new javax.swing.JMenu();
+        menuItemConsulAfil = new javax.swing.JMenuItem();
+        menuConsulEsp = new javax.swing.JMenu();
+        menuItemConsulEsp = new javax.swing.JMenuItem();
+        menuConsulProf = new javax.swing.JMenu();
+        menuItemConsulProf = new javax.swing.JMenuItem();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -82,6 +88,54 @@ public class Consultas extends javax.swing.JInternalFrame {
 
         menuconsul.add(menuConsulConsulOrden);
 
+        menuConsulConsulAfil.setBackground(new java.awt.Color(255, 255, 255));
+        menuConsulConsulAfil.setText("Consultar Afiliados");
+        menuConsulConsulAfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+
+        menuItemConsulAfil.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemConsulAfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulAfil.setText("Afiliados");
+        menuItemConsulAfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemConsulAfilActionPerformed(evt);
+            }
+        });
+        menuConsulConsulAfil.add(menuItemConsulAfil);
+
+        menuconsul.add(menuConsulConsulAfil);
+
+        menuConsulEsp.setBackground(new java.awt.Color(255, 255, 255));
+        menuConsulEsp.setText("Consultar Especialidades");
+        menuConsulEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+
+        menuItemConsulEsp.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemConsulEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulEsp.setText("Especialidades");
+        menuItemConsulEsp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemConsulEspActionPerformed(evt);
+            }
+        });
+        menuConsulEsp.add(menuItemConsulEsp);
+
+        menuconsul.add(menuConsulEsp);
+
+        menuConsulProf.setBackground(new java.awt.Color(255, 255, 255));
+        menuConsulProf.setText("Consultar Profesionales");
+        menuConsulProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+
+        menuItemConsulProf.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemConsulProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulProf.setText("Profesionales");
+        menuItemConsulProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemConsulProfActionPerformed(evt);
+            }
+        });
+        menuConsulProf.add(menuItemConsulProf);
+
+        menuconsul.add(menuConsulProf);
+
         setJMenuBar(menuconsul);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,13 +162,42 @@ public class Consultas extends javax.swing.JInternalFrame {
         ConsultasOrdenes co = new ConsultasOrdenes();
         panelGradConsul.add(co);
         co.setVisible(true);
-
     }//GEN-LAST:event_menuItemConsulOrdenActionPerformed
+
+    private void menuItemConsulAfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulAfilActionPerformed
+        panelGradConsul.removeAll();
+        panelGradConsul.repaint();
+        ConsultasAfiliados conAfi = new ConsultasAfiliados();
+        panelGradConsul.add(conAfi);
+        conAfi.setVisible(true);
+    }//GEN-LAST:event_menuItemConsulAfilActionPerformed
+
+    private void menuItemConsulEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulEspActionPerformed
+        panelGradConsul.removeAll();
+        panelGradConsul.repaint();
+        ConsultasEspecialidades conEsp = new ConsultasEspecialidades();
+        panelGradConsul.add(conEsp);
+        conEsp.setVisible(true);
+    }//GEN-LAST:event_menuItemConsulEspActionPerformed
+
+    private void menuItemConsulProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulProfActionPerformed
+        panelGradConsul.removeAll();
+        panelGradConsul.repaint();
+        ConsultasProfesionales conProf = new ConsultasProfesionales();
+        panelGradConsul.add(conProf);
+        conProf.setVisible(true);
+    }//GEN-LAST:event_menuItemConsulProfActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasConsultas;
+    private javax.swing.JMenu menuConsulConsulAfil;
     private javax.swing.JMenu menuConsulConsulOrden;
+    private javax.swing.JMenu menuConsulEsp;
+    private javax.swing.JMenu menuConsulProf;
+    private javax.swing.JMenuItem menuItemConsulAfil;
+    private javax.swing.JMenuItem menuItemConsulEsp;
     private javax.swing.JMenuItem menuItemConsulOrden;
+    private javax.swing.JMenuItem menuItemConsulProf;
     private javax.swing.JMenuBar menuconsul;
     private keeptoo.KGradientPanel panelGradConsul;
     // End of variables declaration//GEN-END:variables

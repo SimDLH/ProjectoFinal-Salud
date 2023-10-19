@@ -52,6 +52,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
+        panelConsulConsulOrden.setBackground(new java.awt.Color(255, 255, 255));
         panelConsulConsulOrden.setkEndColor(new java.awt.Color(0, 153, 255));
         panelConsulConsulOrden.setkStartColor(new java.awt.Color(0, 153, 0));
 
