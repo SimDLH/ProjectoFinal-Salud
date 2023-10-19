@@ -2,12 +2,16 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.Entidades.Orden;
+import java.awt.Component;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class OrdenesPorFecha extends javax.swing.JInternalFrame {
 
@@ -25,6 +29,8 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         initComponents();
         armarCabecera();
         cargarDatos();
+        resizeColumnWidth(tablaOrdenXFecha);
+        tablaOrdenXFecha.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -129,25 +135,24 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         panelGradOrdenXFechaLayout.setHorizontalGroup(
             panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
+                        .addComponent(etiquetaOrdenXFecha)
+                        .addGap(231, 231, 231)
+                        .addComponent(botonAtrasOrdenXFecha)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
                         .addComponent(etiquetaOrdenXFechaFecha)
                         .addGap(18, 18, 18)
-                        .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(calendarioFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(etiquetaOrdenXFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
-                                .addGap(230, 230, 230)
-                                .addComponent(botonAtrasOrdenXFecha))
-                            .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(botonOrdenXFechaBuscar)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
-                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74))))
+                        .addComponent(calendarioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonOrdenXFechaBuscar)
+                        .addGap(245, 245, 245))))
+            .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 103, Short.MAX_VALUE))
         );
         panelGradOrdenXFechaLayout.setVerticalGroup(
             panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,16 +163,17 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
                     .addComponent(etiquetaOrdenXFecha))
                 .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(botonOrdenXFechaBuscar))
-                    .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
+                        .addGap(77, 77, 77)
                         .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(etiquetaOrdenXFechaFecha)
-                            .addComponent(calendarioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
+                            .addComponent(calendarioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonOrdenXFechaBuscar)
+                        .addGap(31, 31, 31)))
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,17 +195,13 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         try {
             LocalDate fecha = calendarioFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             ArrayList<Orden> listaFecha = od.listarOrdenesPorFecha(fecha);
-
             for (Orden orden : listaFecha) {
                 modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
                     orden.getPrestador().getNombre(), orden.getFormaPago(), orden.getImporte()});
-
             }
         } catch (NullPointerException np) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar una Fecha");
-
         }
-
     }//GEN-LAST:event_botonOrdenXFechaBuscarActionPerformed
 
     private void botonAtrasOrdenXFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXFechaActionPerformed
@@ -238,6 +240,23 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         int fila = modelo.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
+        }
+    }
+    
+    private void resizeColumnWidth(JTable tablaOrdenXFecha) {
+
+    TableColumnModel columnModel = tablaOrdenXFecha.getColumnModel();
+        for (int column = 0; column < tablaOrdenXFecha.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaOrdenXFecha.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaOrdenXFecha.getCellRenderer(row, column);
+                Component comp = tablaOrdenXFecha.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
         }
     }
 }

@@ -3,9 +3,13 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.Entidades.Orden;
+import java.awt.Component;
 import java.util.ArrayList;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class ConsultasOrdenes extends javax.swing.JInternalFrame {
 
@@ -22,6 +26,8 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         initComponents();
         armarCabecera();
         cargarTabla();
+        resizeColumnWidth(tablaConsulOrden);
+        tablaConsulOrden.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -103,16 +109,17 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         panelConsulConsulOrden.setLayout(panelConsulConsulOrdenLayout);
         panelConsulConsulOrdenLayout.setHorizontalGroup(
             panelConsulConsulOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsulConsulOrdenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(etiquetaConsulOrden)
-                .addGap(218, 218, 218)
-                .addComponent(botonAtrasAfiLista)
-                .addContainerGap())
             .addGroup(panelConsulConsulOrdenLayout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(panelScrollConsulOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addGroup(panelConsulConsulOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsulConsulOrdenLayout.createSequentialGroup()
+                        .addComponent(etiquetaConsulOrden)
+                        .addGap(218, 218, 218)
+                        .addComponent(botonAtrasAfiLista)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsulConsulOrdenLayout.createSequentialGroup()
+                        .addComponent(panelScrollConsulOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
         );
         panelConsulConsulOrdenLayout.setVerticalGroup(
             panelConsulConsulOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,9 +128,9 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
                 .addGroup(panelConsulConsulOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasAfiLista)
                     .addComponent(etiquetaConsulOrden))
-                .addGap(98, 98, 98)
-                .addComponent(panelScrollConsulOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addGap(116, 116, 116)
+                .addComponent(panelScrollConsulOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,6 +182,23 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
             modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
                 orden.getPrestador().getNombre(),
                 orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
+        }
+    }
+    
+    private void resizeColumnWidth(JTable tablaConsulOrden) {
+
+    TableColumnModel columnModel = tablaConsulOrden.getColumnModel();
+        for (int column = 0; column < tablaConsulOrden.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaConsulOrden.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaConsulOrden.getCellRenderer(row, column);
+                Component comp = tablaConsulOrden.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
         }
     }
 }

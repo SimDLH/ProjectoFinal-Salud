@@ -1,30 +1,41 @@
 
 package ProjectoFinalSalud.Entidades;
 
-public class IniciarSesion {
+import java.time.LocalDate;
+
+public class Usuario {
     
     private int IdUsuario;
     private String Nombre;
     private String Apellido;
+    private int Dni;
+    private LocalDate FechaDeNac;
+    private String Nacionalidad;
     private String Email;
     private String Password;
     private boolean Activo;
-
-    public IniciarSesion() {
+    
+    public Usuario () {
     }
 
-    public IniciarSesion(int IdUsuario, String Nombre, String Apellido, String Email, String Password, boolean Activo) {
+    public Usuario(int IdUsuario, String Nombre, String Apellido, int Dni, LocalDate FechaDeNac, String Nacionalidad, String Email, String Password, boolean Activo) {
         this.IdUsuario = IdUsuario;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
+        this.Dni = Dni;
+        this.FechaDeNac = FechaDeNac;
+        this.Nacionalidad = Nacionalidad;
         this.Email = Email;
         this.Password = Password;
         this.Activo = Activo;
     }
     
-    public IniciarSesion(String Nombre, String Apellido, String Email, String Password, boolean Activo) {
+    public Usuario(String Nombre, String Apellido, int Dni, LocalDate FechaDeNac, String Nacionalidad, String Email, String Password, boolean Activo) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
+        this.Dni = Dni;
+        this.FechaDeNac = FechaDeNac;
+        this.Nacionalidad = Nacionalidad;
         this.Email = Email;
         this.Password = Password;
         this.Activo = Activo;
@@ -54,6 +65,30 @@ public class IniciarSesion {
         this.Apellido = Apellido;
     }
 
+    public int getDni() {
+        return Dni;
+    }
+
+    public void setDni(int Dni) {
+        this.Dni = Dni;
+    }
+
+    public LocalDate getFechaDeNac() {
+        return FechaDeNac;
+    }
+
+    public void setFechaDeNac(LocalDate FechaDeNac) {
+        this.FechaDeNac = FechaDeNac;
+    }
+
+    public String getNacionalidad() {
+        return Nacionalidad;
+    }
+
+    public void setNacionalidad(String Nacionalidad) {
+        this.Nacionalidad = Nacionalidad;
+    }
+
     public String getEmail() {
         return Email;
     }
@@ -77,9 +112,9 @@ public class IniciarSesion {
     public void setActivo(boolean Activo) {
         this.Activo = Activo;
     }
-
+        
     @Override
     public String toString() {
-        return "IniciarSesion{" + "IdUsuario=" + IdUsuario + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Email=" + Email + ", Password=" + Password + "Activo=" + Activo +'}';
+        return "Usuario{" + "IdUsuario=" + IdUsuario + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", Dni=" + Dni + ", FechaDeNac=" + FechaDeNac + ", Nacionalidad=" + Nacionalidad + ", Email=" + Email + ", Password=" + Password + ", Activo=" + Activo + '}';
     }
 }

@@ -1,10 +1,18 @@
 
 package ProjectoFinalSalud.Vistas;
 
+import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
+import ProjectoFinalSalud.Entidades.Usuario;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Registrarse extends javax.swing.JInternalFrame {
 
+    UsuarioData usuData = new UsuarioData();
+    
     public Registrarse() {
         
         initComponents();
@@ -27,17 +35,17 @@ public class Registrarse extends javax.swing.JInternalFrame {
         etiquetaNombreRegis = new javax.swing.JLabel();
         etiquetaApellidoRegis = new javax.swing.JLabel();
         etiquetaDireccionEmailRegis = new javax.swing.JLabel();
-        etiquetaDni1 = new javax.swing.JLabel();
+        etiquetaDni = new javax.swing.JLabel();
         etiquetaFechaNacRegis = new javax.swing.JLabel();
         etiquetaNacionRegis = new javax.swing.JLabel();
-        etiquetaContraseñaRegis = new javax.swing.JLabel();
+        etiquetaContraRegis = new javax.swing.JLabel();
         botonRegistrateRegis = new javax.swing.JButton();
         textoNombreRegis = new javax.swing.JTextField();
         textoApellidoRegis = new javax.swing.JTextField();
         textoDniRegis = new javax.swing.JTextField();
-        textoTelefonoRegis = new javax.swing.JTextField();
-        textoDireccionEmailRegis = new javax.swing.JTextField();
-        textoContraseñaRegis = new javax.swing.JPasswordField();
+        textoNacionRegis = new javax.swing.JTextField();
+        textoDireEmailRegis = new javax.swing.JTextField();
+        textoContraRegis = new javax.swing.JPasswordField();
         calendarioFechaNacRegis = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -109,13 +117,13 @@ public class Registrarse extends javax.swing.JInternalFrame {
         etiquetaDireccionEmailRegis.setMinimumSize(new java.awt.Dimension(250, 15));
         etiquetaDireccionEmailRegis.setPreferredSize(new java.awt.Dimension(250, 15));
 
-        etiquetaDni1.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaDni1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaDni1.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaDni1.setText("DNI:");
-        etiquetaDni1.setMaximumSize(new java.awt.Dimension(250, 15));
-        etiquetaDni1.setMinimumSize(new java.awt.Dimension(250, 15));
-        etiquetaDni1.setPreferredSize(new java.awt.Dimension(250, 15));
+        etiquetaDni.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaDni.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaDni.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaDni.setText("DNI:");
+        etiquetaDni.setMaximumSize(new java.awt.Dimension(250, 15));
+        etiquetaDni.setMinimumSize(new java.awt.Dimension(250, 15));
+        etiquetaDni.setPreferredSize(new java.awt.Dimension(250, 15));
 
         etiquetaFechaNacRegis.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaFechaNacRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -133,18 +141,23 @@ public class Registrarse extends javax.swing.JInternalFrame {
         etiquetaNacionRegis.setMinimumSize(new java.awt.Dimension(250, 15));
         etiquetaNacionRegis.setPreferredSize(new java.awt.Dimension(250, 15));
 
-        etiquetaContraseñaRegis.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaContraseñaRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaContraseñaRegis.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaContraseñaRegis.setText("Contraseña:");
-        etiquetaContraseñaRegis.setMaximumSize(new java.awt.Dimension(250, 15));
-        etiquetaContraseñaRegis.setMinimumSize(new java.awt.Dimension(250, 15));
-        etiquetaContraseñaRegis.setPreferredSize(new java.awt.Dimension(250, 15));
+        etiquetaContraRegis.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaContraRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaContraRegis.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaContraRegis.setText("Contraseña:");
+        etiquetaContraRegis.setMaximumSize(new java.awt.Dimension(250, 15));
+        etiquetaContraRegis.setMinimumSize(new java.awt.Dimension(250, 15));
+        etiquetaContraRegis.setPreferredSize(new java.awt.Dimension(250, 15));
 
         botonRegistrateRegis.setBackground(panelGradRegis.getkStartColor());
         botonRegistrateRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonRegistrateRegis.setForeground(new java.awt.Color(255, 255, 255));
         botonRegistrateRegis.setText("¡REGISTRATE!");
+        botonRegistrateRegis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrateRegisActionPerformed(evt);
+            }
+        });
 
         textoNombreRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         textoNombreRegis.setForeground(new java.awt.Color(204, 204, 204));
@@ -179,36 +192,36 @@ public class Registrarse extends javax.swing.JInternalFrame {
             }
         });
 
-        textoTelefonoRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        textoTelefonoRegis.setForeground(new java.awt.Color(204, 204, 204));
-        textoTelefonoRegis.setText("Ej: Argentina");
-        textoTelefonoRegis.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
-        textoTelefonoRegis.setPreferredSize(new java.awt.Dimension(60, 20));
-        textoTelefonoRegis.addMouseListener(new java.awt.event.MouseAdapter() {
+        textoNacionRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        textoNacionRegis.setForeground(new java.awt.Color(204, 204, 204));
+        textoNacionRegis.setText("Ej: Argentina");
+        textoNacionRegis.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
+        textoNacionRegis.setPreferredSize(new java.awt.Dimension(60, 20));
+        textoNacionRegis.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textoTelefonoRegisMouseClicked(evt);
+                textoNacionRegisMouseClicked(evt);
             }
         });
 
-        textoDireccionEmailRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        textoDireccionEmailRegis.setForeground(new java.awt.Color(204, 204, 204));
-        textoDireccionEmailRegis.setText("Ej: juanlopez@gmail.com");
-        textoDireccionEmailRegis.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
-        textoDireccionEmailRegis.setPreferredSize(new java.awt.Dimension(60, 20));
-        textoDireccionEmailRegis.addMouseListener(new java.awt.event.MouseAdapter() {
+        textoDireEmailRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        textoDireEmailRegis.setForeground(new java.awt.Color(204, 204, 204));
+        textoDireEmailRegis.setText("Ej: juanlopez@gmail.com");
+        textoDireEmailRegis.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
+        textoDireEmailRegis.setPreferredSize(new java.awt.Dimension(60, 20));
+        textoDireEmailRegis.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textoDireccionEmailRegisMouseClicked(evt);
+                textoDireEmailRegisMouseClicked(evt);
             }
         });
 
-        textoContraseñaRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        textoContraseñaRegis.setForeground(new java.awt.Color(204, 204, 204));
-        textoContraseñaRegis.setText("//////////*");
-        textoContraseñaRegis.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 120, 215)));
-        textoContraseñaRegis.setDisabledTextColor(new java.awt.Color(102, 102, 102));
-        textoContraseñaRegis.addMouseListener(new java.awt.event.MouseAdapter() {
+        textoContraRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        textoContraRegis.setForeground(new java.awt.Color(204, 204, 204));
+        textoContraRegis.setText("//////////*");
+        textoContraRegis.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 120, 215)));
+        textoContraRegis.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+        textoContraRegis.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textoContraseñaRegisMouseClicked(evt);
+                textoContraRegisMouseClicked(evt);
             }
         });
 
@@ -232,23 +245,23 @@ public class Registrarse extends javax.swing.JInternalFrame {
                                     .addComponent(textoNombreRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
-                                        .addComponent(etiquetaContraseñaRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(etiquetaContraRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(textoContraseñaRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(textoContraRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
                                         .addComponent(etiquetaDireccionEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(textoDireccionEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(textoDireEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
                                         .addComponent(etiquetaNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(textoTelefonoRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(textoNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
                                         .addComponent(etiquetaFechaNacRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(calendarioFechaNacRegis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
-                                        .addComponent(etiquetaDni1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(etiquetaDni, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(textoDniRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
@@ -275,7 +288,7 @@ public class Registrarse extends javax.swing.JInternalFrame {
                     .addComponent(textoApellidoRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaDni1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaDni, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textoDniRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -284,15 +297,15 @@ public class Registrarse extends javax.swing.JInternalFrame {
                 .addGap(35, 35, 35)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textoTelefonoRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaDireccionEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textoDireccionEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoDireEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(etiquetaContraseñaRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textoContraseñaRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etiquetaContraRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textoContraRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
                 .addComponent(botonRegistrateRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
@@ -365,27 +378,57 @@ public class Registrarse extends javax.swing.JInternalFrame {
         textoDniRegis.setText("");
     }//GEN-LAST:event_textoDniRegisMouseClicked
 
-    private void textoTelefonoRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoTelefonoRegisMouseClicked
-        textoTelefonoRegis.setText("");
-    }//GEN-LAST:event_textoTelefonoRegisMouseClicked
+    private void textoNacionRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoNacionRegisMouseClicked
+        textoNacionRegis.setText("");
+    }//GEN-LAST:event_textoNacionRegisMouseClicked
 
-    private void textoDireccionEmailRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoDireccionEmailRegisMouseClicked
-        textoDireccionEmailRegis.setText("");
-    }//GEN-LAST:event_textoDireccionEmailRegisMouseClicked
+    private void textoDireEmailRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoDireEmailRegisMouseClicked
+        textoDireEmailRegis.setText("");
+    }//GEN-LAST:event_textoDireEmailRegisMouseClicked
 
-    private void textoContraseñaRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoContraseñaRegisMouseClicked
-        textoContraseñaRegis.setText("");
-    }//GEN-LAST:event_textoContraseñaRegisMouseClicked
+    private void textoContraRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoContraRegisMouseClicked
+        textoContraRegis.setText("");
+    }//GEN-LAST:event_textoContraRegisMouseClicked
+
+    private void botonRegistrateRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrateRegisActionPerformed
+        try{
+            if(textoDniRegis.getText().isEmpty() || textoNacionRegis.getText().isEmpty()){
+               JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para registrar un Usuario");
+            }else if(buscarDni(Integer.parseInt(textoDniRegis.getText()))){
+               JOptionPane.showMessageDialog(null, "El DNI ingresado ya le pertenece a un Usuario registrado");
+            }else{
+                int Dni = Integer.parseInt(textoDniRegis.getText());
+                String pass = String.valueOf(textoContraRegis.getPassword());
+                LocalDate fecha = calendarioFechaNacRegis.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                Usuario usua = new Usuario();
+                usua.setNombre(textoNombreRegis.getText());
+                usua.setApellido(textoApellidoRegis.getText());
+                usua.setDni(Dni);
+                usua.setFechaDeNac(fecha);
+                usua.setNacionalidad(textoNacionRegis.getText());
+                usua.setEmail(textoDireEmailRegis.getText());
+                usua.setPassword(pass);
+                usua.setActivo(true);
+                usuData.guardarUsuario(usua);
+            }
+        }catch(NumberFormatException ne){
+           JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres equivocados");
+        }catch(NullPointerException np){
+           JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para registrar un Usuario");
+        }
+    limpiar();
+    //dispose();
+    }//GEN-LAST:event_botonRegistrateRegisActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasRegis;
     private javax.swing.JButton botonRegistrateRegis;
     private com.toedter.calendar.JDateChooser calendarioFechaNacRegis;
     private javax.swing.JLabel etiquetaApellidoRegis;
-    private javax.swing.JLabel etiquetaContraseñaRegis;
+    private javax.swing.JLabel etiquetaContraRegis;
     private javax.swing.JLabel etiquetaCuadroRegis;
     private javax.swing.JLabel etiquetaDireccionEmailRegis;
-    private javax.swing.JLabel etiquetaDni1;
+    private javax.swing.JLabel etiquetaDni;
     private javax.swing.JLabel etiquetaEsloganRegis;
     private javax.swing.JLabel etiquetaFechaNacRegis;
     private javax.swing.JLabel etiquetaNacionRegis;
@@ -394,10 +437,32 @@ public class Registrarse extends javax.swing.JInternalFrame {
     private keeptoo.KGradientPanel panelGradRegis;
     private javax.swing.JPanel panelRegistro;
     private javax.swing.JTextField textoApellidoRegis;
-    private javax.swing.JPasswordField textoContraseñaRegis;
-    private javax.swing.JTextField textoDireccionEmailRegis;
+    private javax.swing.JPasswordField textoContraRegis;
+    private javax.swing.JTextField textoDireEmailRegis;
     private javax.swing.JTextField textoDniRegis;
+    private javax.swing.JTextField textoNacionRegis;
     private javax.swing.JTextField textoNombreRegis;
-    private javax.swing.JTextField textoTelefonoRegis;
     // End of variables declaration//GEN-END:variables
+
+    private void limpiar(){
+        textoNombreRegis.setText("");
+        textoApellidoRegis.setText("");
+        textoDniRegis.setText("");
+        //calendarioFechaNacRegis.setDate();
+        textoNacionRegis.setText("");
+        textoDireEmailRegis.setText("");
+        textoContraRegis.setText("");
+    }
+    
+    private boolean buscarDni(int Dni) {
+        ArrayList<Usuario> usuario = usuData.listarUsuario();
+        boolean us = false;
+        for (Usuario usu : usuario) {
+            if (usu.getDni() == Dni) {
+                us = true;
+                return us;
+            }
+        }
+        return us;
+    }
 }

@@ -85,21 +85,19 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         panelGradEspAgre.setLayout(panelGradEspAgreLayout);
         panelGradEspAgreLayout.setHorizontalGroup(
             panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradEspAgreLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspAgreLayout.createSequentialGroup()
                 .addGap(0, 154, Short.MAX_VALUE)
                 .addComponent(etiquetaEspAgreNomEsp)
                 .addGap(18, 18, 18)
                 .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonAgregar)
                     .addGroup(panelGradEspAgreLayout.createSequentialGroup()
-                        .addComponent(etiquetaEspAgreIngr)
-                        .addGap(207, 207, 207)
+                        .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etiquetaEspAgreIngr))
+                        .addGap(190, 190, 190)
                         .addComponent(botonAtrasEspAgre)))
                 .addContainerGap())
-            .addGroup(panelGradEspAgreLayout.createSequentialGroup()
-                .addGap(384, 384, 384)
-                .addComponent(ButtonAgregar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGradEspAgreLayout.setVerticalGroup(
             panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,9 +110,9 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
                 .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaEspAgreNomEsp))
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(ButtonAgregar)
-                .addContainerGap(336, Short.MAX_VALUE))
+                .addContainerGap(323, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

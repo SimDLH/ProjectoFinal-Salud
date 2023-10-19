@@ -67,13 +67,6 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="botonProfAgreQuitGuardar" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Component id="etiquetaProfAgreQuitDNI" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="textoProfAgreQuitDNI" min="-2" pref="236" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="botonProfAgreQuitBuscar" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="separadorProfAgreQuit" alignment="1" min="-2" pref="611" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -103,6 +96,13 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="botonProfAgreQuitRein" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="etiquetaProfAgreQuitDNI" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="textoProfAgreQuitDNI" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="botonProfAgreQuitBuscar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Component id="botonProfAgreQuitAnular" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -110,7 +110,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="etiquetaProfAgreQuit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="botonAtrasProfAgreQuit" min="-2" max="-2" attributes="0"/>
@@ -126,13 +126,13 @@
                       <Component id="botonAtrasProfAgreQuit" min="-2" max="-2" attributes="0"/>
                       <Component id="etiquetaProfAgreQuit" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="botonProfAgreQuitBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="textoProfAgreQuitDNI" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="etiquetaProfAgreQuitDNI" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="separadorProfAgreQuit" min="-2" pref="11" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">

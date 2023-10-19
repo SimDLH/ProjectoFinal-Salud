@@ -1,10 +1,13 @@
 
 package ProjectoFinalSalud.Vistas;
 
+import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class IniciarSesion extends javax.swing.JInternalFrame {
 
+    UsuarioData usuData = new UsuarioData ();
+    
     public IniciarSesion() {
         
         initComponents();
@@ -28,12 +31,12 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         etiquetaCuadroIniSes = new javax.swing.JLabel();
         textoNombreIniSes = new javax.swing.JTextField();
         textoApellidoIniSes = new javax.swing.JTextField();
-        textoDireccionEmailIniSes = new javax.swing.JTextField();
+        textoDireEmailIniSes = new javax.swing.JTextField();
         etiquetaNombreIniSes = new javax.swing.JLabel();
         etiquetaApellidoIniSes = new javax.swing.JLabel();
         etiquetaDireccionEmailIniSes = new javax.swing.JLabel();
         etiquetaContraseñaIniSes = new javax.swing.JLabel();
-        textoContraseñaIniSes = new javax.swing.JPasswordField();
+        textoContraIniSes = new javax.swing.JPasswordField();
         botonContinuarIniSes = new javax.swing.JButton();
         etiquetaTituloIniSes = new javax.swing.JLabel();
         etiquetaEsloganIniSes = new javax.swing.JLabel();
@@ -78,14 +81,14 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             }
         });
 
-        textoDireccionEmailIniSes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        textoDireccionEmailIniSes.setForeground(new java.awt.Color(204, 204, 204));
-        textoDireccionEmailIniSes.setText("Ej: juanlopes@gmail.com");
-        textoDireccionEmailIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
-        textoDireccionEmailIniSes.setPreferredSize(new java.awt.Dimension(60, 20));
-        textoDireccionEmailIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+        textoDireEmailIniSes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        textoDireEmailIniSes.setForeground(new java.awt.Color(204, 204, 204));
+        textoDireEmailIniSes.setText("Ej: juanlopes@gmail.com");
+        textoDireEmailIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
+        textoDireEmailIniSes.setPreferredSize(new java.awt.Dimension(60, 20));
+        textoDireEmailIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textoDireccionEmailIniSesMouseClicked(evt);
+                textoDireEmailIniSesMouseClicked(evt);
             }
         });
 
@@ -121,14 +124,14 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         etiquetaContraseñaIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
         etiquetaContraseñaIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
 
-        textoContraseñaIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        textoContraseñaIniSes.setForeground(new java.awt.Color(204, 204, 204));
-        textoContraseñaIniSes.setText("***********");
-        textoContraseñaIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 120, 215)));
-        textoContraseñaIniSes.setDisabledTextColor(new java.awt.Color(102, 102, 102));
-        textoContraseñaIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+        textoContraIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        textoContraIniSes.setForeground(new java.awt.Color(204, 204, 204));
+        textoContraIniSes.setText("***********");
+        textoContraIniSes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 120, 215)));
+        textoContraIniSes.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+        textoContraIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textoContraseñaIniSesMouseClicked(evt);
+                textoContraIniSesMouseClicked(evt);
             }
         });
 
@@ -160,12 +163,12 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
                                 .addComponent(etiquetaNombreIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(panelIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textoNombreIniSes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textoDireccionEmailIniSes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textoDireEmailIniSes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(textoApellidoIniSes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(etiquetaApellidoIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(etiquetaDireccionEmailIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(etiquetaContraseñaIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(textoContraseñaIniSes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textoContraIniSes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         panelIniSesLayout.setVerticalGroup(
@@ -184,11 +187,11 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(etiquetaDireccionEmailIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(textoDireccionEmailIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textoDireEmailIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(etiquetaContraseñaIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(textoContraseñaIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textoContraIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(botonContinuarIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -294,16 +297,18 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         textoApellidoIniSes.setText("");
     }//GEN-LAST:event_textoApellidoIniSesMouseClicked
 
-    private void textoDireccionEmailIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoDireccionEmailIniSesMouseClicked
-        textoDireccionEmailIniSes.setText("");
-    }//GEN-LAST:event_textoDireccionEmailIniSesMouseClicked
+    private void textoDireEmailIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoDireEmailIniSesMouseClicked
+        textoDireEmailIniSes.setText("");
+    }//GEN-LAST:event_textoDireEmailIniSesMouseClicked
 
-    private void textoContraseñaIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoContraseñaIniSesMouseClicked
-        textoContraseñaIniSes.setText("");
-    }//GEN-LAST:event_textoContraseñaIniSesMouseClicked
+    private void textoContraIniSesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoContraIniSesMouseClicked
+        textoContraIniSes.setText("");
+    }//GEN-LAST:event_textoContraIniSesMouseClicked
 
     private void botonContinuarIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarIniSesActionPerformed
-
+        UsuarioData usua = new UsuarioData();
+        usua.validarUsuario(textoNombreIniSes, textoApellidoIniSes, textoDireEmailIniSes, textoContraIniSes);
+        limpiar();
     }//GEN-LAST:event_botonContinuarIniSesActionPerformed
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -320,8 +325,15 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     private keeptoo.KGradientPanel gradienteIniSes;
     private javax.swing.JPanel panelIniSes;
     private javax.swing.JTextField textoApellidoIniSes;
-    private javax.swing.JPasswordField textoContraseñaIniSes;
-    private javax.swing.JTextField textoDireccionEmailIniSes;
+    private javax.swing.JPasswordField textoContraIniSes;
+    private javax.swing.JTextField textoDireEmailIniSes;
     private javax.swing.JTextField textoNombreIniSes;
     // End of variables declaration//GEN-END:variables
+
+    private void limpiar(){
+        textoNombreIniSes.setText("");
+        textoApellidoIniSes.setText("");
+        textoDireEmailIniSes.setText("");
+        textoContraIniSes.setText("");
+    }
 }

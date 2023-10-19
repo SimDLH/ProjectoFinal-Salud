@@ -135,14 +135,14 @@
                                       <Component id="etiquetaNombreIniSes" min="-2" pref="94" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="textoNombreIniSes" alignment="1" min="-2" pref="313" max="-2" attributes="0"/>
-                                          <Component id="textoDireccionEmailIniSes" alignment="1" min="-2" pref="313" max="-2" attributes="0"/>
+                                          <Component id="textoDireEmailIniSes" alignment="1" min="-2" pref="313" max="-2" attributes="0"/>
                                           <Component id="textoApellidoIniSes" alignment="1" min="-2" pref="313" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="etiquetaApellidoIniSes" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                       <Component id="etiquetaDireccionEmailIniSes" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                       <Component id="etiquetaContraseñaIniSes" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="textoContraseñaIniSes" alignment="1" min="-2" pref="313" max="-2" attributes="0"/>
+                                  <Component id="textoContraIniSes" alignment="1" min="-2" pref="313" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -166,11 +166,11 @@
                       <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Component id="etiquetaDireccionEmailIniSes" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="textoDireccionEmailIniSes" min="-2" max="-2" attributes="0"/>
+                      <Component id="textoDireEmailIniSes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="etiquetaContraseñaIniSes" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="textoContraseñaIniSes" min="-2" max="-2" attributes="0"/>
+                      <Component id="textoContraIniSes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="botonContinuarIniSes" min="-2" pref="58" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -247,7 +247,7 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoApellidoIniSesMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="textoDireccionEmailIniSes">
+            <Component class="javax.swing.JTextField" name="textoDireEmailIniSes">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Calibri" size="14" style="0"/>
@@ -268,7 +268,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoDireccionEmailIniSesMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoDireEmailIniSesMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="etiquetaNombreIniSes">
@@ -363,7 +363,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="textoContrase&#xf1;aIniSes">
+            <Component class="javax.swing.JPasswordField" name="textoContraIniSes">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Calibri" size="14" style="1"/>
@@ -384,7 +384,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoContrase&#xf1;aIniSesMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoContraIniSesMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botonContinuarIniSes">

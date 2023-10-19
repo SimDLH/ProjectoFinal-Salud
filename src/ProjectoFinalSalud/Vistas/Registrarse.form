@@ -189,19 +189,19 @@
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="etiquetaContraseñaRegis" min="-2" pref="94" max="-2" attributes="0"/>
+                                              <Component id="etiquetaContraRegis" min="-2" pref="94" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="textoContraseñaRegis" min="-2" pref="313" max="-2" attributes="0"/>
+                                              <Component id="textoContraRegis" min="-2" pref="313" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="etiquetaDireccionEmailRegis" min="-2" pref="94" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="textoDireccionEmailRegis" min="-2" pref="313" max="-2" attributes="0"/>
+                                              <Component id="textoDireEmailRegis" min="-2" pref="313" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="etiquetaNacionRegis" min="-2" pref="94" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="textoTelefonoRegis" min="-2" pref="313" max="-2" attributes="0"/>
+                                              <Component id="textoNacionRegis" min="-2" pref="313" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="etiquetaFechaNacRegis" min="-2" pref="130" max="-2" attributes="0"/>
@@ -209,7 +209,7 @@
                                               <Component id="calendarioFechaNacRegis" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="etiquetaDni1" min="-2" pref="94" max="-2" attributes="0"/>
+                                              <Component id="etiquetaDni" min="-2" pref="94" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="textoDniRegis" min="-2" pref="313" max="-2" attributes="0"/>
                                           </Group>
@@ -248,7 +248,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="etiquetaDni1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="etiquetaDni" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                           <Component id="textoDniRegis" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -259,17 +259,17 @@
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="etiquetaNacionRegis" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="textoTelefonoRegis" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textoNacionRegis" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="etiquetaDireccionEmailRegis" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="textoDireccionEmailRegis" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textoDireEmailRegis" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="etiquetaContraseñaRegis" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="textoContraseñaRegis" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="etiquetaContraRegis" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="textoContraRegis" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="botonRegistrateRegis" min="-2" pref="58" max="-2" attributes="0"/>
@@ -371,7 +371,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="etiquetaDni1">
+            <Component class="javax.swing.JLabel" name="etiquetaDni">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -440,7 +440,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="etiquetaContrase&#xf1;aRegis">
+            <Component class="javax.swing.JLabel" name="etiquetaContraRegis">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -476,6 +476,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xa1;REGISTRATE!"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRegistrateRegisActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="textoNombreRegis">
               <Properties>
@@ -549,7 +552,7 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoDniRegisMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="textoTelefonoRegis">
+            <Component class="javax.swing.JTextField" name="textoNacionRegis">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Calibri" size="14" style="0"/>
@@ -570,10 +573,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoTelefonoRegisMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoNacionRegisMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="textoDireccionEmailRegis">
+            <Component class="javax.swing.JTextField" name="textoDireEmailRegis">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Calibri" size="14" style="0"/>
@@ -594,10 +597,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoDireccionEmailRegisMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoDireEmailRegisMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="textoContrase&#xf1;aRegis">
+            <Component class="javax.swing.JPasswordField" name="textoContraRegis">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Calibri" size="14" style="1"/>
@@ -618,7 +621,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoContrase&#xf1;aRegisMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoContraRegisMouseClicked"/>
               </Events>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="calendarioFechaNacRegis">

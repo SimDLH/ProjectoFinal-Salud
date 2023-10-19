@@ -316,7 +316,6 @@ public class Inicio extends javax.swing.JFrame {
         IniciarSesion InSe = new IniciarSesion();
         panelEscritorio.add(InSe);
         InSe.setVisible(true);
-        Desbloquear();
     }//GEN-LAST:event_botonIniSesActionPerformed
 
     private void botonMenuDesplegable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1ActionPerformed
@@ -350,9 +349,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuDesplegable5ActionPerformed
 
     private void botonMenuDesplegable6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable6ActionPerformed
-        MasInformacion msinf = new MasInformacion();
-        panelEscritorio.add(msinf);
-        msinf.setVisible(true);
+        MasInformacion msInfo = new MasInformacion();
+        panelEscritorio.add(msInfo);
+        msInfo.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable6ActionPerformed
 
     /**

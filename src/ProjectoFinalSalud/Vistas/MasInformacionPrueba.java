@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjectoFinalSalud.Vistas;
 
-/**
- *
- * @author JOSE
- */
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 public class MasInformacionPrueba extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form MasInformacionPrueba
-     */
     public MasInformacionPrueba() {
+        
         initComponents();
+        
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+        bui.setNorthPane(null);
     }
 
     /**
@@ -67,7 +63,6 @@ public class MasInformacionPrueba extends javax.swing.JInternalFrame {
     private void botonAtrasMsInfoPrueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasMsInfoPrueActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasMsInfoPrueActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasMsInfoPrue;

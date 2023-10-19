@@ -15,6 +15,7 @@ public class AfiliadoData {
     private Connection con = null;
 
     public AfiliadoData() {
+        
         con = Conexion.getConnection();
     }
 
@@ -34,7 +35,6 @@ public class AfiliadoData {
             if (rs.next()) {
                 a.setIdAfiliado(rs.getInt(1));
                 JOptionPane.showMessageDialog(null, "Se ha agregado un nuevo Afiliado exitosamente");
-
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al ingresar el Afiliado");

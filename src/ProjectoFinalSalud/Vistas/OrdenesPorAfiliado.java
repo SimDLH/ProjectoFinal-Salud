@@ -2,10 +2,14 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.Entidades.Orden;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
 
@@ -22,6 +26,8 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
 
         initComponents();
         armarCabecera();
+        resizeColumnWidth(tablaOrdenXAfi);
+        tablaOrdenXAfi.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -222,6 +228,23 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
         int fila = modelo.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
+        }
+    }
+    
+    private void resizeColumnWidth(JTable tablaOrdenXAfi) {
+
+    TableColumnModel columnModel = tablaOrdenXAfi.getColumnModel();
+        for (int column = 0; column < tablaOrdenXAfi.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaOrdenXAfi.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaOrdenXAfi.getCellRenderer(row, column);
+                Component comp = tablaOrdenXAfi.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
         }
     }
 }

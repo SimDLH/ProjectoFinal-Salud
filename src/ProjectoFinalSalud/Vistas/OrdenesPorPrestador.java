@@ -4,11 +4,15 @@ import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Orden;
 import ProjectoFinalSalud.Entidades.Prestador;
+import java.awt.Component;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
 
@@ -27,6 +31,8 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         initComponents();
         cargarComboPrestador();
         armarCabecera();
+        resizeColumnWidth(tablaOrdenXPres);
+        tablaOrdenXPres.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -130,11 +136,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         panelGradOrdenXPresLayout.setHorizontalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(102, Short.MAX_VALUE)
                 .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
                         .addComponent(etiquetaOrdenXPres)
@@ -147,7 +149,10 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
                         .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botonOrdenXPresBuscar)
-                        .addGap(155, 155, 155))))
+                        .addGap(155, 155, 155))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101))))
         );
         panelGradOrdenXPresLayout.setVerticalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,9 +166,9 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
                     .addComponent(etiquetaOrdenXPresSelec)
                     .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonOrdenXPresBuscar))
-                .addGap(55, 55, 55)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -231,6 +236,23 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         int fila = modelo.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
+        }
+    }
+    
+    private void resizeColumnWidth(JTable tablaOrdenXPres) {
+
+    TableColumnModel columnModel = tablaOrdenXPres.getColumnModel();
+        for (int column = 0; column < tablaOrdenXPres.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaOrdenXPres.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaOrdenXPres.getCellRenderer(row, column);
+                Component comp = tablaOrdenXPres.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
         }
     }
 }

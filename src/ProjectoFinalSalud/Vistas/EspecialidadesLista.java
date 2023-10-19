@@ -5,9 +5,13 @@ import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
 import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Especialidad;
 import ProjectoFinalSalud.Entidades.Prestador;
+import java.awt.Component;
 import java.util.ArrayList;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class EspecialidadesLista extends javax.swing.JInternalFrame {
     
@@ -25,6 +29,8 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         initComponents();
         armarCabesera();
         cargarComboBox();
+        resizeColumnWidth(tablaEspListaProf);
+        tablaEspListaProf.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -103,19 +109,18 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         panelGradEspListaLayout.setHorizontalGroup(
             panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradEspListaLayout.createSequentialGroup()
-                .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGradEspListaLayout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                .addContainerGap(154, Short.MAX_VALUE)
+                .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspListaLayout.createSequentialGroup()
+                        .addComponent(etiquetaEspListaProfXEsp)
+                        .addGap(135, 135, 135)
+                        .addComponent(botonAtrasProfConsul)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspListaLayout.createSequentialGroup()
                         .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(comboBoxEspEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGradEspListaLayout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(etiquetaEspListaProfXEsp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
-                        .addComponent(botonAtrasProfConsul)))
-                .addContainerGap())
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(152, 152, 152))))
         );
         panelGradEspListaLayout.setVerticalGroup(
             panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,11 +129,11 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
                 .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(etiquetaEspListaProfXEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonAtrasProfConsul))
-                .addGap(30, 30, 30)
+                .addGap(44, 44, 44)
                 .addComponent(comboBoxEspEsp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(226, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -188,6 +193,23 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
     private void cargarTabla(ArrayList<Prestador> prestadores){
         for (Prestador p:prestadores){
             modelo.addRow(new Object[]{p.getNombre(),p.getDni(),p.getDomicilio(),p.getTelefono()});
+        }
+    }
+    
+    private void resizeColumnWidth(JTable tablaEspListaProf) {
+
+    TableColumnModel columnModel = tablaEspListaProf.getColumnModel();
+        for (int column = 0; column < tablaEspListaProf.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaEspListaProf.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaEspListaProf.getCellRenderer(row, column);
+                Component comp = tablaEspListaProf.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
         }
     }
 }

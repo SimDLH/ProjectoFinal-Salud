@@ -3,8 +3,12 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Prestador;
+import java.awt.Component;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
 
@@ -22,6 +26,8 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         initComponents();
         armarTablaProfesionales();
         cargarTablaProfesionales();
+        resizeColumnWidth(tablaProf);
+        tablaProf.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -40,6 +46,23 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
     private void cargarTablaProfesionales(){
         for(Prestador pres:presData.listarPrestador()){
             modelo.addRow(new Object[]{pres.getNombre(),pres.getDomicilio(),pres.getTelefono(),pres.getEspecialidad().getEspecialidad()});
+        }
+    }
+    
+    private void resizeColumnWidth(JTable tablaProf) {
+
+    TableColumnModel columnModel = tablaProf.getColumnModel();
+        for (int column = 0; column < tablaProf.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaProf.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaProf.getCellRenderer(row, column);
+                Component comp = tablaProf.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
         }
     }
 
@@ -138,15 +161,15 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
             .addGroup(panelGradProfConsulLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(etiquetaProfCartilla)
-                .addGap(160, 160, 160)
+                .addGap(157, 157, 157)
                 .addComponent(botonAtrasProfConsul)
                 .addContainerGap())
             .addGroup(panelGradProfConsulLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(143, 143, 143)
                 .addGroup(panelGradProfConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonProfPedirOrden)
-                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         panelGradProfConsulLayout.setVerticalGroup(
             panelGradProfConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,12 +177,12 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(panelGradProfConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasProfConsul)
-                    .addComponent(etiquetaProfCartilla, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                    .addComponent(etiquetaProfCartilla))
+                .addGap(60, 60, 60)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(botonProfPedirOrden)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

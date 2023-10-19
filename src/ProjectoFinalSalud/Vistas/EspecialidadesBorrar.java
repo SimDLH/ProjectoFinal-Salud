@@ -3,9 +3,13 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
 import ProjectoFinalSalud.Entidades.Especialidad;
+import java.awt.Component;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
     
@@ -23,6 +27,8 @@ public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
         initComponents();
         armarCabesera();
         cargarTabla();
+        resizeColumnWidth(tablaEspBorrar);
+        tablaEspBorrar.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -120,35 +126,35 @@ public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
         javax.swing.GroupLayout panelGradEspBorrarLayout = new javax.swing.GroupLayout(panelGradEspBorrar);
         panelGradEspBorrar.setLayout(panelGradEspBorrarLayout);
         panelGradEspBorrarLayout.setHorizontalGroup(
-            panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
-                .addGap(328, 328, 328)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(etiquetaEspBorrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(222, 222, 222)
                 .addComponent(botonAtrasEspBorr)
                 .addContainerGap())
-            .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addGroup(panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonEspBorrBorrar)
-                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(178, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelGradEspBorrarLayout.createSequentialGroup()
+                .addGap(313, 313, 313)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botonEspBorrBorrar)
+                .addGap(0, 167, Short.MAX_VALUE))
         );
         panelGradEspBorrarLayout.setVerticalGroup(
             panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspBorrarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
-                        .addComponent(botonAtrasEspBorr)
-                        .addGap(38, 38, 38))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspBorrarLayout.createSequentialGroup()
-                        .addComponent(etiquetaEspBorrar)
-                        .addGap(27, 27, 27)))
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(botonEspBorrBorrar)
-                .addContainerGap(170, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(botonEspBorrBorrar))
+                    .addGroup(panelGradEspBorrarLayout.createSequentialGroup()
+                        .addGroup(panelGradEspBorrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(botonAtrasEspBorr)
+                            .addComponent(etiquetaEspBorrar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(95, 95, 95))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -206,6 +212,23 @@ public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
         int fila=modelo.getRowCount();
         for(int i=fila-1;i>=0;i--){
             modelo.removeRow(i);
+        }
+    }
+    
+    private void resizeColumnWidth(JTable tablaEspBorrar) {
+
+    TableColumnModel columnModel = tablaEspBorrar.getColumnModel();
+        for (int column = 0; column < tablaEspBorrar.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaEspBorrar.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaEspBorrar.getCellRenderer(row, column);
+                Component comp = tablaEspBorrar.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
         }
     }
 }

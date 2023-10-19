@@ -1,6 +1,7 @@
 
 package ProjectoFinalSalud.Vistas;
 
+import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class MasInformacion extends javax.swing.JInternalFrame {
@@ -54,6 +55,14 @@ public class MasInformacion extends javax.swing.JInternalFrame {
         botonHola.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         botonHola.setForeground(new java.awt.Color(255, 255, 255));
         botonHola.setText("HOLA");
+        botonHola.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonHolaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonHolaMouseExited(evt);
+            }
+        });
         botonHola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonHolaActionPerformed(evt);
@@ -108,6 +117,14 @@ public class MasInformacion extends javax.swing.JInternalFrame {
         panelGradMsInfo.add(msInfoP);
         msInfoP.setVisible(true);
     }//GEN-LAST:event_botonHolaActionPerformed
+
+    private void botonHolaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonHolaMouseEntered
+        botonHola.setBackground(Color.cyan);
+    }//GEN-LAST:event_botonHolaMouseEntered
+
+    private void botonHolaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonHolaMouseExited
+        botonHola.setBackground(new Color(0,0,255));
+    }//GEN-LAST:event_botonHolaMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasMsInfo;

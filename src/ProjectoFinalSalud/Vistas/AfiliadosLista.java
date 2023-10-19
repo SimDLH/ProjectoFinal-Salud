@@ -3,8 +3,12 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.Entidades.Afiliado;
+import java.awt.Component;
+import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 public class AfiliadosLista extends javax.swing.JInternalFrame {
     
@@ -22,6 +26,8 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
         initComponents();
         armarCabesera();
         cargarTabla();
+        resizeColumnWidth(tablaListaAfi);
+        tablaListaAfi.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -117,22 +123,20 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
         panelGradAfiListaLayout.setHorizontalGroup(
             panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(etiquetaAfiListaAfi)
-                        .addGap(248, 248, 248)
-                        .addComponent(botonAtrasAfiLista))
-                    .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                        .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                                .addComponent(etiquetaAfiTotal)
-                                .addGap(18, 18, 18)
-                                .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 125, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiquetaAfiListaAfi)
+                .addGap(248, 248, 248)
+                .addComponent(botonAtrasAfiLista)
                 .addContainerGap())
+            .addGroup(panelGradAfiListaLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelGradAfiListaLayout.createSequentialGroup()
+                        .addComponent(etiquetaAfiTotal)
+                        .addGap(18, 18, 18)
+                        .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 67, Short.MAX_VALUE))
         );
         panelGradAfiListaLayout.setVerticalGroup(
             panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,16 +145,16 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
                 .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasAfiLista)
                     .addComponent(etiquetaAfiListaAfi))
-                .addGap(57, 57, 57)
-                .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelGradAfiListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(79, 79, 79)
                         .addComponent(etiquetaAfiTotal))
                     .addGroup(panelGradAfiListaLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(64, 64, 64)
                         .addComponent(etiquetaAfiTotalAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -201,5 +205,22 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
     private void cantAfiliadosActivos(){
         int num=tablaListaAfi.getRowCount();
         etiquetaAfiTotalAfi.setText(num+"");
+    }
+    
+    private void resizeColumnWidth(JTable tablaListaAfi) {
+
+    TableColumnModel columnModel = tablaListaAfi.getColumnModel();
+        for (int column = 0; column < tablaListaAfi.getColumnCount(); column++) {
+            int width = 150;
+            for (int row = 0; row < tablaListaAfi.getRowCount(); row++) {
+                TableCellRenderer renderer = tablaListaAfi.getCellRenderer(row, column);
+                Component comp = tablaListaAfi.prepareRenderer(renderer, row, column);
+                width = Math.max(comp.getPreferredSize().width + 1, width);
+            }
+        if (width > 300) {
+            width = 300;
+        }
+        columnModel.getColumn(column).setPreferredWidth(width);
+        }
     }
 }
