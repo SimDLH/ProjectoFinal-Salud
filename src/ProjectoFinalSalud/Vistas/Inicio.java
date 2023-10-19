@@ -1,27 +1,33 @@
-
 package ProjectoFinalSalud.Vistas;
 
 import java.awt.Component;
+import javax.swing.JInternalFrame;
 
 public class Inicio extends javax.swing.JFrame {
 
     public Inicio() {
-        
+
         initComponents();
         //Bloquear();
         setTitle("MásSalud");
     }
-    
+    JInternalFrame o = new JInternalFrame();
+
+    public void limpiar(JInternalFrame j) {
+        j.dispose();
+
+    }
+
     public void Bloquear() {
-        
-        for(Component a:panelGradBotPrincipales.getComponents()){
+
+        for (Component a : panelGradBotPrincipales.getComponents()) {
             a.setEnabled(false);
         }
     }
-    
+
     public void Desbloquear() {
-        
-        for(Component b:panelGradBotPrincipales.getComponents()){
+
+        for (Component b : panelGradBotPrincipales.getComponents()) {
             b.setEnabled(true);
         }
     }
@@ -309,6 +315,7 @@ public class Inicio extends javax.swing.JFrame {
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
         Registrarse Regis = new Registrarse();
         panelEscritorio.add(Regis);
+
         Regis.setVisible(true);
     }//GEN-LAST:event_botonRegistroActionPerformed
 
@@ -320,36 +327,48 @@ public class Inicio extends javax.swing.JFrame {
 
     private void botonMenuDesplegable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1ActionPerformed
         Ordenes ord = new Ordenes();
+        limpiar(o);
+        o = ord;
         panelEscritorio.add(ord);
         ord.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable1ActionPerformed
 
     private void botonMenuDesplegable2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable2ActionPerformed
         Consultas consu = new Consultas();
+        limpiar(o);
+        o = consu;
         panelEscritorio.add(consu);
         consu.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable2ActionPerformed
 
     private void botonMenuDesplegable3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable3ActionPerformed
         Especialidades espe = new Especialidades();
+        limpiar(o);
+        o = espe;
         panelEscritorio.add(espe);
         espe.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable3ActionPerformed
 
     private void botonMenuDesplegable4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable4ActionPerformed
         Profesionales prof = new Profesionales();
+        limpiar(o);
+        o = prof;
         panelEscritorio.add(prof);
         prof.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable4ActionPerformed
 
     private void botonMenuDesplegable5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable5ActionPerformed
         Afiliados afil = new Afiliados();
+        limpiar(o);
+        o = afil;
         panelEscritorio.add(afil);
         afil.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable5ActionPerformed
 
     private void botonMenuDesplegable6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable6ActionPerformed
         MasInformacion msInfo = new MasInformacion();
+        limpiar(o);
+        o = msInfo;
         panelEscritorio.add(msInfo);
         msInfo.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable6ActionPerformed

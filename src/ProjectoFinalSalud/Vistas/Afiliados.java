@@ -1,14 +1,14 @@
-
 package ProjectoFinalSalud.Vistas;
 
+import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Afiliados extends javax.swing.JInternalFrame {
 
     public Afiliados() {
-        
+
         initComponents();
-        
+
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -128,11 +128,18 @@ public class Afiliados extends javax.swing.JInternalFrame {
 
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
+JInternalFrame o = new JInternalFrame();
 
+    public void limpiar(JInternalFrame j) {
+        j.dispose();
+
+    }
     private void menuItemAfiHabYDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiHabYDesActionPerformed
         panelGradAfi.removeAll();
         panelGradAfi.repaint();
         AfiliadosAgregarYAnular afiAA = new AfiliadosAgregarYAnular();
+        limpiar(o);
+        o = afiAA;
         panelGradAfi.add(afiAA);
         afiAA.setVisible(true);
     }//GEN-LAST:event_menuItemAfiHabYDesActionPerformed
@@ -140,7 +147,9 @@ public class Afiliados extends javax.swing.JInternalFrame {
     private void menuItemAfiModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiModActionPerformed
         panelGradAfi.removeAll();
         panelGradAfi.repaint();
-        AfiliadosMod afimod=new AfiliadosMod();
+        AfiliadosMod afimod = new AfiliadosMod();
+        limpiar(o);
+        o = afimod;
         panelGradAfi.add(afimod);
         afimod.setVisible(true);
     }//GEN-LAST:event_menuItemAfiModActionPerformed
@@ -148,7 +157,9 @@ public class Afiliados extends javax.swing.JInternalFrame {
     private void menuItemAfiListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiListaActionPerformed
         panelGradAfi.removeAll();
         panelGradAfi.repaint();
-        AfiliadosLista afl=new AfiliadosLista();
+        AfiliadosLista afl = new AfiliadosLista();
+        limpiar(o);
+        o = afl;
         panelGradAfi.add(afl);
         afl.setVisible(true);
     }//GEN-LAST:event_menuItemAfiListaActionPerformed
