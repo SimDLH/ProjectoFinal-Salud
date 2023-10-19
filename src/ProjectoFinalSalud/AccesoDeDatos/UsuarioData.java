@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -121,4 +123,25 @@ public class UsuarioData {
         }
         return usuario;
     }
+    
+    
+        public void identificar(Usuario us){
+            String sql="SELECT * usuario WHERE Nombre=?, Apellido=?, Email=? ,Password=?";
+        try {
+            PreparedStatement ps=con.prepareStatement(sql);
+            ps.setString(1, us.getNombre());
+            ps.setString(2, us.getApellido());
+            ps.setString(3, us.getEmail());
+            String contra = String.valueOf(us.getPassword());
+            ps.setString(4, contra);
+            ResultSet rs=ps.executeQuery();
+            if (rs.next()){
+                JOptionPane.showMessageDialog(null, "Vienbenido");
+            }else{
+                JOptionPane.showMessageDialog(null, "Equivocado");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error "+ex.toString());
+        }
+        }
 }
