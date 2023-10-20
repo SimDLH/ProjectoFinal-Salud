@@ -2,7 +2,6 @@
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Usuario;
-import ProjectoFinalSalud.Vistas.Inicio;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -10,8 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -51,7 +48,7 @@ public class UsuarioData {
     
     public void validarUsuario(JTextField textoNombreIniSes, JTextField textoApellidoIniSes, JTextField textoDireEmailIniSes, JPasswordField textoContraIniSes) {
         
-        String sql = "SELECT Nombre, Apellido, Email, Password FROM usuario";
+        String sql = "SELECT * FROM usuario WHERE Nombre=?, Apellido=?, Email=?, Password=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -70,7 +67,39 @@ public class UsuarioData {
             JOptionPane.showMessageDialog(null, "Error:" + ex.toString());
         }
     }
+    
+    public void activarUsuario(String Email, String Password) {
         
+        String sql = "SELECT * FROM usuario WHERE Email=? AND Password=?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            ps.setString(1, Email);
+            ps.setString(2, Password);
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Bienvenido");
+            } else {
+                JOptionPane.showMessageDialog(null, "El Usuario es incorrecto, por favor vuelva a intentarlo");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: " + ex.toString());
+        }
+    }
+    
+    public void desactivarUsuario(int dni) {
+        
+        String sql = "UPDATE usuario SET Activo=0";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, dni);
+            int exi = ps.executeUpdate();
+            if (exi == 1) {
+                JOptionPane.showMessageDialog(null, "Hasta Pronto " + buscarUsuario(dni).getNombre());
+            }
+        } catch (SQLException ex) {
+        }
+    }
+           
     public Usuario buscarUsuario(int Dni) {
         
         String sql = "SELECT IdUsuario, Nombre, Apellido, Dni, FechaDeNac, Nacionalidad, Email, Password, Activo FROM usuario WHERE Dni=?";
@@ -100,7 +129,7 @@ public class UsuarioData {
     
     public ArrayList<Usuario> listarUsuario(){
         
-        String sql="SELECT IdUsuario, Nombre, Apellido, Dni, FechaDeNac, Nacionalidad, Email, Password FROM usuario WHERE Activo=1";
+        String sql = "SELECT IdUsuario, Nombre, Apellido, Dni, FechaDeNac, Nacionalidad, Email, Password FROM usuario WHERE Activo=?";
         ArrayList<Usuario> usuario = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -124,9 +153,9 @@ public class UsuarioData {
         return usuario;
     }
     
-    
-        public void identificar(Usuario us){
-            String sql="SELECT * usuario WHERE Nombre=?, Apellido=?, Email=? ,Password=?";
+    public void identificar(Usuario us){
+        
+        String sql="SELECT * usuario WHERE Nombre=?, Apellido=?, Email=? ,Password=?";
         try {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setString(1, us.getNombre());
@@ -136,12 +165,12 @@ public class UsuarioData {
             ps.setString(4, contra);
             ResultSet rs=ps.executeQuery();
             if (rs.next()){
-                JOptionPane.showMessageDialog(null, "Vienbenido");
+                JOptionPane.showMessageDialog(null, "Bienvenido");
             }else{
                 JOptionPane.showMessageDialog(null, "Equivocado");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error "+ex.toString());
         }
-        }
+    }
 }

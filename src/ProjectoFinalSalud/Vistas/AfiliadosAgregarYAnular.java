@@ -340,7 +340,7 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonAfiAgreYAnulBuscarActionPerformed
 
     private void botonAfiAgreYAnulReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulReinActionPerformed
-        int dni=Integer.parseInt(textoAfiAgreYAnulDNI.getText());
+        int dni = Integer.parseInt(textoAfiAgreYAnulDNI.getText());
         ad.reinstituirAfliliado(dni);
         limpiar();
     }//GEN-LAST:event_botonAfiAgreYAnulReinActionPerformed

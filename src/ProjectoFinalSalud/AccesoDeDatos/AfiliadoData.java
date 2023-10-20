@@ -20,7 +20,8 @@ public class AfiliadoData {
     }
 
     public void guardarAfiliado(Afiliado a){
-        String sql="INSERT INTO afiliado(nombre, dni ,domicilio, telefono, Activo)"
+        
+        String sql = "INSERT INTO afiliado(nombre, dni ,domicilio, telefono, Activo)"
 
                 + "values (?,?,?,?,?)";
         try {
@@ -105,6 +106,7 @@ public class AfiliadoData {
     }
 
     public void modificarAfiliado(Afiliado afiliado) {
+        
         String sql = "UPDATE afiliado SET nombre=? ,domicilio=? ,telefono=? WHERE dni=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -122,7 +124,8 @@ public class AfiliadoData {
     }
 
     public void reinstituirAfliliado(int dni){
-        String sql="UPDATE afiliado set Activo=1 WHERE dni=?";
+        
+        String sql="UPDATE afiliado SET Activo=1 WHERE dni=?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);

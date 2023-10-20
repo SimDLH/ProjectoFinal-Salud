@@ -1,15 +1,19 @@
 package ProjectoFinalSalud.Vistas;
 
+import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
+import ProjectoFinalSalud.Entidades.Usuario;
 import java.awt.Component;
 import javax.swing.JInternalFrame;
 
 public class Inicio extends javax.swing.JFrame {
 
+    UsuarioData usuaData = new UsuarioData();
+    
     public Inicio() {
 
         initComponents();
-        //Bloquear();
         setTitle("MásSalud");
+        Bloquear();
     }
     JInternalFrame o = new JInternalFrame();
 
@@ -22,6 +26,11 @@ public class Inicio extends javax.swing.JFrame {
 
         for (Component a : panelGradBotPrincipales.getComponents()) {
             a.setEnabled(false);
+            botonCerrSes.setVisible(false);
+            etiquetaBienvenido.setVisible(false);
+            botonRegistro.setVisible(true);
+            botonIniSes.setVisible(true);
+            
         }
     }
 
@@ -29,6 +38,11 @@ public class Inicio extends javax.swing.JFrame {
 
         for (Component b : panelGradBotPrincipales.getComponents()) {
             b.setEnabled(true);
+            botonCerrSes.setVisible(true);
+            etiquetaBienvenido.setVisible(true);
+            etiquetaBienvenido.setText("Bienvenido " + "ACA IRIA EL NOMBRE" + "...");
+            botonRegistro.setVisible(false);
+            botonIniSes.setVisible(false);
         }
     }
 
@@ -60,6 +74,8 @@ public class Inicio extends javax.swing.JFrame {
         etiquetaMenuDesplegable4 = new javax.swing.JLabel();
         etiquetaMenuDesplegable5 = new javax.swing.JLabel();
         etiquetaMenuDesplegable6 = new javax.swing.JLabel();
+        etiquetaBienvenido = new javax.swing.JLabel();
+        botonCerrSes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -249,25 +265,44 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
+        etiquetaBienvenido.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaBienvenido.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaBienvenido.setForeground(new java.awt.Color(255, 255, 255));
+
+        botonCerrSes.setBackground(new java.awt.Color(255, 255, 255));
+        botonCerrSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonCerrSes.setForeground(new java.awt.Color(255, 255, 255));
+        botonCerrSes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonUsuarioCerrSes.png"))); // NOI18N
+        botonCerrSes.setBorderPainted(false);
+        botonCerrSes.setContentAreaFilled(false);
+        botonCerrSes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonCerrSes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCerrSesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelGradPrincipalLayout = new javax.swing.GroupLayout(panelGradPrincipal);
         panelGradPrincipal.setLayout(panelGradPrincipalLayout);
         panelGradPrincipalLayout.setHorizontalGroup(
             panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(etiquetaLogoPrincipal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 847, Short.MAX_VALUE)
-                        .addComponent(botonRegistro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonIniSes))
-                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(etiquetaLogoPrincipal)
+                .addGap(43, 43, 43)
+                .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 458, Short.MAX_VALUE)
+                .addComponent(botonCerrSes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonRegistro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonIniSes)
                 .addContainerGap())
             .addComponent(separadorMenuPrincipal1)
+            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGradPrincipalLayout.setVerticalGroup(
             panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +311,9 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonIniSes)
                     .addComponent(etiquetaLogoPrincipal)
-                    .addComponent(botonRegistro))
+                    .addComponent(botonRegistro)
+                    .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonCerrSes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
@@ -323,6 +360,7 @@ public class Inicio extends javax.swing.JFrame {
         IniciarSesion InSe = new IniciarSesion();
         panelEscritorio.add(InSe);
         InSe.setVisible(true);
+        Desbloquear();
     }//GEN-LAST:event_botonIniSesActionPerformed
 
     private void botonMenuDesplegable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1ActionPerformed
@@ -373,6 +411,10 @@ public class Inicio extends javax.swing.JFrame {
         msInfo.setVisible(true);
     }//GEN-LAST:event_botonMenuDesplegable6ActionPerformed
 
+    private void botonCerrSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrSesActionPerformed
+        Bloquear();
+    }//GEN-LAST:event_botonCerrSesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -410,6 +452,7 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCerrSes;
     private javax.swing.JButton botonIniSes;
     private javax.swing.JButton botonMenuDesplegable1;
     private javax.swing.JButton botonMenuDesplegable2;
@@ -418,6 +461,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton botonMenuDesplegable5;
     private javax.swing.JButton botonMenuDesplegable6;
     private javax.swing.JButton botonRegistro;
+    private javax.swing.JLabel etiquetaBienvenido;
     private javax.swing.JLabel etiquetaLogoPrincipal;
     private javax.swing.JLabel etiquetaMenuDesplegable1;
     private javax.swing.JLabel etiquetaMenuDesplegable2;
