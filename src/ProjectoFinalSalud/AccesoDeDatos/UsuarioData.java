@@ -68,22 +68,23 @@ public class UsuarioData {
         }
     }
     
-    public void activarUsuario(String Email, String Password) {
-        
-        String sql = "SELECT * FROM usuario WHERE Email=? AND Password=?";
+    public boolean activarUsuario(String Email, String Password) {
+        boolean a=false;
+        String sql = "SELECT * FROM usuario WHERE usuario.Email=? AND usuario.Password=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
             ps.setString(1, Email);
             ps.setString(2, Password);
+            ResultSet rs=ps.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "Bienvenido");
+                return a=true;
             } else {
                 JOptionPane.showMessageDialog(null, "El Usuario es incorrecto, por favor vuelva a intentarlo");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error: " + ex.toString());
-        }
+        }return a;
     }
     
     public void desactivarUsuario(int dni) {

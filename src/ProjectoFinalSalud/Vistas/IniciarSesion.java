@@ -310,12 +310,12 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
 
     private void botonContinuarIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarIniSesActionPerformed
         try{
+            String con = String.valueOf(textoContraIniSes.getPassword());
             if(textoNombreIniSes.getText().isEmpty() || textoApellidoIniSes.getText().isEmpty()){
                JOptionPane.showMessageDialog(null, "Tiene que llenar los campos para ingresar");
-            }else {
-                String con = String.valueOf(textoContraIniSes.getPassword());
-                usuData.activarUsuario(textoDireEmailIniSes.getText(), con);
-            }
+            }else if(usuData.activarUsuario(textoDireEmailIniSes.getText(), con)){
+                dispose();
+               }
         }catch(NumberFormatException ne){
            JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres erróneos");
         }catch(NullPointerException np){
