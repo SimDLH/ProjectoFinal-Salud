@@ -2,8 +2,6 @@
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
-import ProjectoFinalSalud.Entidades.Usuario;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -315,6 +313,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             }else {
                 String con = String.valueOf(textoContraIniSes.getPassword());
                 usuData.activarUsuario(textoDireEmailIniSes.getText(), con);
+                dispose();
             }
         }catch(NumberFormatException ne){
            JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres erróneos");
@@ -348,17 +347,5 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         textoApellidoIniSes.setText("");
         textoDireEmailIniSes.setText("");
         textoContraIniSes.setText("");
-    }
-    
-    private boolean buscarEmail(String Email) {
-        ArrayList<Usuario> usuario = usuData.listarUsuario();
-        boolean usu = false;
-        for (Usuario us : usuario) {
-            if (us.getEmail() != Email) {
-                usu = true;
-                return usu;
-            }
-        }
-        return usu;
     }
 }

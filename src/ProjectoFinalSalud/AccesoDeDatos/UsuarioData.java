@@ -73,9 +73,9 @@ public class UsuarioData {
         String sql = "SELECT * FROM usuario WHERE Email=? AND Password=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
             ps.setString(1, Email);
             ps.setString(2, Password);
+            ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "Bienvenido");
             } else {
