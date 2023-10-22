@@ -227,16 +227,21 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
 
     private void botonSacarOrdenBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSacarOrdenBuscarActionPerformed
         try {
+            if (textoSacarOrdenDoc.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Debe colocar un número de DNI");
+                return;
+            }
             int dni = Integer.parseInt(textoSacarOrdenDoc.getText());
             Afiliado afiliado;
             afiliado = ad.buscarAfiliados(dni);
+
             if (afiliado.isActivo()) {
-                JOptionPane.showMessageDialog(null, "Bienvenido" + " " + afiliado.getNombre());//arreglar esto
+                JOptionPane.showMessageDialog(null, "Es un afiliado activo");
+            } else {
+                JOptionPane.showMessageDialog(null, "NO es un afiliado activo");
             }
         } catch (NumberFormatException nf) {
             JOptionPane.showMessageDialog(null, "El DNI debe ser un número entero");
-        } catch (NullPointerException np) {
-            JOptionPane.showMessageDialog(null, "Debe colocar un número de DNI");
         }
     }//GEN-LAST:event_botonSacarOrdenBuscarActionPerformed
 
@@ -255,15 +260,24 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
                 }
             }
             double importe = Double.parseDouble(textoSacarOrdenImp.getText());
+            Afiliado af = ad.buscarAfiliados(dni);
+            if (af.getDni() == 0) {
+                return;
+            }
+            if (!af.isActivo()) {
+                JOptionPane.showMessageDialog(null, "No se pueden crear ordenes para afiliados INACTIVOS ");
+                return;
+            }
             Orden orden = new Orden(fecha, textoSacarOrdenForPag.getText(), importe,
-                    ad.buscarAfiliados(dni),
+                    af,
                     pSeleccionado);// arreglado
             od.guardarOrden(orden);
             limpiarCampos();
-        } catch (NumberFormatException nf) {
-            JOptionPane.showMessageDialog(null, "El DNI debe ser un numero entero");
         } catch (NullPointerException np) {
             JOptionPane.showMessageDialog(null, "Debe completar todos los campos del formulario");
+        } catch (NumberFormatException nf) {
+            JOptionPane.showMessageDialog(null, "El DNI debe ser un numero entero");
+
         }
     }//GEN-LAST:event_botonSacarOrdenGuardarActionPerformed
 

@@ -1,4 +1,3 @@
-
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Afiliado;
@@ -76,9 +75,6 @@ public class OrdenData {
     public ArrayList<Orden> OrdenesPorAfiliado(int dni) {
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
 
-        /*  String sql = "SELECT idOrden ,formaPago ,importe,fecha,orden.idPrestador "
-                + " FROM orden JOIN afiliado WHERE orden.idAfiliado=afiliado.idAfiliado"
-                + " AND afiliado.dni=? AND afiliado.Activo=1";*/
         String sql = "SELECT idOrden ,idPrestador,fecha,formaPago,importe, orden.idAfiliado\n"
                 + "FROM orden JOIN afiliado\n"
                 + "WHERE orden.idAfiliado=afiliado.idAfiliado AND afiliado.dni=? AND afiliado.Activo=1;";
