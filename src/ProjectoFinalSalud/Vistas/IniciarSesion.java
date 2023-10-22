@@ -2,6 +2,7 @@
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class IniciarSesion extends javax.swing.JInternalFrame {
@@ -306,8 +307,19 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_textoContraIniSesMouseClicked
 
     private void botonContinuarIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarIniSesActionPerformed
-        UsuarioData usua = new UsuarioData();
-        usua.validarUsuario(textoNombreIniSes, textoApellidoIniSes, textoDireEmailIniSes, textoContraIniSes);
+        try{
+            if(textoNombreIniSes.getText().isEmpty() || textoApellidoIniSes.getText().isEmpty()){
+               JOptionPane.showMessageDialog(null, "Tiene que llenar los campos para ingresar");
+            }else {
+                String con = String.valueOf(textoContraIniSes.getPassword());
+                usuData.activarUsuario(textoDireEmailIniSes.getText(), con);
+                dispose();
+            }
+        }catch(NumberFormatException ne){
+           JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres erróneos");
+        }catch(NullPointerException np){
+           JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar");
+        }
         limpiar();
     }//GEN-LAST:event_botonContinuarIniSesActionPerformed
      

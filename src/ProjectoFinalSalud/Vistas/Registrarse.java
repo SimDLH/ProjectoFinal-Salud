@@ -412,12 +412,11 @@ public class Registrarse extends javax.swing.JInternalFrame {
                 usuData.guardarUsuario(usua);
             }
         }catch(NumberFormatException ne){
-           JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres equivocados");
+           JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres erróneos");
         }catch(NullPointerException np){
            JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para registrar un Usuario");
         }
     limpiar();
-    //dispose();
     }//GEN-LAST:event_botonRegistrateRegisActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
