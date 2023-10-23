@@ -1,5 +1,6 @@
 package ProjectoFinalSalud.Vistas;
 
+import java.awt.Cursor;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Consultas extends javax.swing.JInternalFrame {
@@ -49,6 +50,14 @@ public class Consultas extends javax.swing.JInternalFrame {
         botonAtrasConsultas.setBorderPainted(false);
         botonAtrasConsultas.setContentAreaFilled(false);
         botonAtrasConsultas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasConsultasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasConsultasMouseExited(evt);
+            }
+        });
         botonAtrasConsultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasConsultasActionPerformed(evt);
@@ -75,9 +84,17 @@ public class Consultas extends javax.swing.JInternalFrame {
         menuConsulConsulOrden.setBackground(new java.awt.Color(255, 255, 255));
         menuConsulConsulOrden.setText("Consultar Ordenes");
         menuConsulConsulOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuConsulConsulOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuConsulConsulOrdenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuConsulConsulOrdenMouseExited(evt);
+            }
+        });
 
         menuItemConsulOrden.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemConsulOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulOrden.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemConsulOrden.setText("Ordenes");
         menuItemConsulOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,9 +108,17 @@ public class Consultas extends javax.swing.JInternalFrame {
         menuConsulConsulAfil.setBackground(new java.awt.Color(255, 255, 255));
         menuConsulConsulAfil.setText("Consultar Afiliados");
         menuConsulConsulAfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuConsulConsulAfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuConsulConsulAfilMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuConsulConsulAfilMouseExited(evt);
+            }
+        });
 
         menuItemConsulAfil.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemConsulAfil.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulAfil.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemConsulAfil.setText("Afiliados");
         menuItemConsulAfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,9 +132,17 @@ public class Consultas extends javax.swing.JInternalFrame {
         menuConsulEsp.setBackground(new java.awt.Color(255, 255, 255));
         menuConsulEsp.setText("Consultar Especialidades");
         menuConsulEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuConsulEsp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuConsulEspMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuConsulEspMouseExited(evt);
+            }
+        });
 
         menuItemConsulEsp.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemConsulEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemConsulEsp.setText("Especialidades");
         menuItemConsulEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,9 +156,17 @@ public class Consultas extends javax.swing.JInternalFrame {
         menuConsulProf.setBackground(new java.awt.Color(255, 255, 255));
         menuConsulProf.setText("Consultar Profesionales");
         menuConsulProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuConsulProf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuConsulProfMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuConsulProfMouseExited(evt);
+            }
+        });
 
         menuItemConsulProf.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemConsulProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuItemConsulProf.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         menuItemConsulProf.setText("Profesionales");
         menuItemConsulProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,6 +228,46 @@ public class Consultas extends javax.swing.JInternalFrame {
         panelGradConsul.add(conProf);
         conProf.setVisible(true);
     }//GEN-LAST:event_menuItemConsulProfActionPerformed
+
+    private void menuConsulConsulOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulConsulOrdenMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuConsulConsulOrdenMouseEntered
+
+    private void menuConsulConsulOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulConsulOrdenMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuConsulConsulOrdenMouseExited
+
+    private void menuConsulConsulAfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulConsulAfilMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuConsulConsulAfilMouseEntered
+
+    private void menuConsulConsulAfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulConsulAfilMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuConsulConsulAfilMouseExited
+
+    private void menuConsulEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulEspMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuConsulEspMouseEntered
+
+    private void menuConsulEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulEspMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuConsulEspMouseExited
+
+    private void menuConsulProfMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulProfMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuConsulProfMouseEntered
+
+    private void menuConsulProfMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuConsulProfMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuConsulProfMouseExited
+
+    private void botonAtrasConsultasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsultasMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasConsultasMouseEntered
+
+    private void botonAtrasConsultasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsultasMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasConsultasMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasConsultas;

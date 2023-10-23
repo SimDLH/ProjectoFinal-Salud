@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
 import ProjectoFinalSalud.Entidades.Usuario;
+import java.awt.Cursor;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -77,6 +78,14 @@ public class Registrarse extends javax.swing.JInternalFrame {
         botonAtrasRegis.setBorderPainted(false);
         botonAtrasRegis.setContentAreaFilled(false);
         botonAtrasRegis.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasRegis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasRegisMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasRegisMouseExited(evt);
+            }
+        });
         botonAtrasRegis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasRegisActionPerformed(evt);
@@ -153,6 +162,14 @@ public class Registrarse extends javax.swing.JInternalFrame {
         botonRegistrateRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonRegistrateRegis.setForeground(new java.awt.Color(255, 255, 255));
         botonRegistrateRegis.setText("¡REGISTRATE!");
+        botonRegistrateRegis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonRegistrateRegisMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonRegistrateRegisMouseExited(evt);
+            }
+        });
         botonRegistrateRegis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRegistrateRegisActionPerformed(evt);
@@ -410,6 +427,7 @@ public class Registrarse extends javax.swing.JInternalFrame {
                 usua.setPassword(pass);
                 usua.setActivo(true);
                 usuData.guardarUsuario(usua);
+                dispose();
             }
         }catch(NumberFormatException ne){
            JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres erróneos");
@@ -418,6 +436,22 @@ public class Registrarse extends javax.swing.JInternalFrame {
         }
     limpiar();
     }//GEN-LAST:event_botonRegistrateRegisActionPerformed
+
+    private void botonAtrasRegisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasRegisMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasRegisMouseEntered
+
+    private void botonAtrasRegisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasRegisMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasRegisMouseExited
+
+    private void botonRegistrateRegisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegistrateRegisMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonRegistrateRegisMouseEntered
+
+    private void botonRegistrateRegisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegistrateRegisMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonRegistrateRegisMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasRegis;

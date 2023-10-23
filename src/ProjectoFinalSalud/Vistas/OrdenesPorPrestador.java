@@ -5,6 +5,7 @@ import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Orden;
 import ProjectoFinalSalud.Entidades.Prestador;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -63,7 +64,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         etiquetaOrdenXPres.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaOrdenXPres.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaOrdenXPres.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaOrdenXPres.setText("Ordenes Por Prestador");
+        etiquetaOrdenXPres.setText("Ordenes Por Profesional");
 
         etiquetaOrdenXPresSelec.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaOrdenXPresSelec.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -80,6 +81,14 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         botonOrdenXPresBuscar.setBorderPainted(false);
         botonOrdenXPresBuscar.setContentAreaFilled(false);
         botonOrdenXPresBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonOrdenXPresBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonOrdenXPresBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonOrdenXPresBuscarMouseExited(evt);
+            }
+        });
         botonOrdenXPresBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonOrdenXPresBuscarActionPerformed(evt);
@@ -94,6 +103,14 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         botonAtrasOrdenXPrest.setBorderPainted(false);
         botonAtrasOrdenXPrest.setContentAreaFilled(false);
         botonAtrasOrdenXPrest.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrdenXPrest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenXPrestMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenXPrestMouseExited(evt);
+            }
+        });
         botonAtrasOrdenXPrest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasOrdenXPrestActionPerformed(evt);
@@ -140,7 +157,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
                 .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
                         .addComponent(etiquetaOrdenXPres)
-                        .addGap(226, 226, 226)
+                        .addGap(196, 196, 196)
                         .addComponent(botonAtrasOrdenXPrest)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
@@ -203,6 +220,22 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
     private void botonAtrasOrdenXPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXPrestActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasOrdenXPrestActionPerformed
+
+    private void botonAtrasOrdenXPrestMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXPrestMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenXPrestMouseEntered
+
+    private void botonAtrasOrdenXPrestMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXPrestMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenXPrestMouseExited
+
+    private void botonOrdenXPresBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXPresBuscarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonOrdenXPresBuscarMouseEntered
+
+    private void botonOrdenXPresBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXPresBuscarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonOrdenXPresBuscarMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrdenXPrest;

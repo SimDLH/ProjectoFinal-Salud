@@ -4,6 +4,7 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
 import ProjectoFinalSalud.Entidades.Especialidad;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -88,6 +89,14 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
         botonAtrasConsulEsp.setBorderPainted(false);
         botonAtrasConsulEsp.setContentAreaFilled(false);
         botonAtrasConsulEsp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasConsulEsp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasConsulEspMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasConsulEspMouseExited(evt);
+            }
+        });
         botonAtrasConsulEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasConsulEspActionPerformed(evt);
@@ -105,8 +114,8 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
                 .addComponent(botonAtrasConsulEsp)
                 .addContainerGap())
             .addGroup(panelGradConsulEspLayout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(303, 303, 303)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGradConsulEspLayout.setVerticalGroup(
@@ -116,9 +125,9 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
                 .addGroup(panelGradConsulEspLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasConsulEsp)
                     .addComponent(etiquetaConsulEsp))
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,6 +149,14 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
     private void botonAtrasConsulEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasConsulEspActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasConsulEspActionPerformed
+
+    private void botonAtrasConsulEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsulEspMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasConsulEspMouseEntered
+
+    private void botonAtrasConsulEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsulEspMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasConsulEspMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasConsulEsp;

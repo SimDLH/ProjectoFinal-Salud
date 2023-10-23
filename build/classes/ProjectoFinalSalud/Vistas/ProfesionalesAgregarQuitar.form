@@ -189,6 +189,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasProfAgreQuitMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasProfAgreQuitMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasProfAgreQuitActionPerformed"/>
           </Events>
         </Component>
@@ -247,6 +249,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitBuscarMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitBuscarMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitBuscarActionPerformed"/>
           </Events>
         </Component>
@@ -375,6 +379,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitReinMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitReinMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitReinActionPerformed"/>
           </Events>
         </Component>
@@ -398,6 +404,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitGuardarMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitGuardarMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitGuardarActionPerformed"/>
           </Events>
         </Component>
@@ -421,6 +429,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitAnularMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonProfAgreQuitAnularMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonProfAgreQuitAnularActionPerformed"/>
           </Events>
         </Component>

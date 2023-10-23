@@ -162,6 +162,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasRegisMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasRegisMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasRegisActionPerformed"/>
           </Events>
         </Component>
@@ -477,6 +479,8 @@
                 <Property name="text" type="java.lang.String" value="&#xa1;REGISTRATE!"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonRegistrateRegisMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonRegistrateRegisMouseExited"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonRegistrateRegisActionPerformed"/>
               </Events>
             </Component>

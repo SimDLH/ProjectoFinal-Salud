@@ -61,7 +61,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="103" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="102" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="etiquetaOrdenXAfiDNI" min="-2" max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="panelScrollTabla" min="-2" pref="756" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -102,9 +102,9 @@
                       <Component id="etiquetaOrdenXAfiDNI" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botonOrdenXAfiBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="panelScrollTabla" min="-2" pref="170" max="-2" attributes="0"/>
-                  <EmptySpace pref="180" max="32767" attributes="0"/>
+                  <EmptySpace pref="181" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -165,6 +165,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonOrdenXAfiBuscarMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonOrdenXAfiBuscarMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonOrdenXAfiBuscarActionPerformed"/>
           </Events>
         </Component>
@@ -188,6 +190,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasOrdenXAfiMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasOrdenXAfiMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasOrdenXAfiActionPerformed"/>
           </Events>
         </Component>

@@ -67,17 +67,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="344" max="32767" attributes="0"/>
-                  <Component id="etiquetaConsulProf" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
-                  <Component id="botonAtrasConsulProf" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                  <Component id="panelScrollTabla" min="-2" pref="667" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="226" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="etiquetaConsulProf" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                          <Component id="botonAtrasConsulProf" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="panelScrollTabla" min="-2" pref="510" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -89,9 +92,9 @@
                       <Component id="etiquetaConsulProf" min="-2" max="-2" attributes="0"/>
                       <Component id="botonAtrasConsulProf" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   <Component id="panelScrollTabla" min="-2" pref="270" max="-2" attributes="0"/>
-                  <EmptySpace pref="146" max="32767" attributes="0"/>
+                  <EmptySpace pref="142" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -117,6 +120,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasConsulProfMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasConsulProfMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasConsulProfActionPerformed"/>
           </Events>
         </Component>

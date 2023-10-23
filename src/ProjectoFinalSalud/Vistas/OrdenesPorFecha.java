@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.Entidades.Orden;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -79,6 +80,14 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         botonOrdenXFechaBuscar.setBorderPainted(false);
         botonOrdenXFechaBuscar.setContentAreaFilled(false);
         botonOrdenXFechaBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonOrdenXFechaBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonOrdenXFechaBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonOrdenXFechaBuscarMouseExited(evt);
+            }
+        });
         botonOrdenXFechaBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonOrdenXFechaBuscarActionPerformed(evt);
@@ -93,6 +102,14 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         botonAtrasOrdenXFecha.setBorderPainted(false);
         botonAtrasOrdenXFecha.setContentAreaFilled(false);
         botonAtrasOrdenXFecha.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrdenXFecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenXFechaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenXFechaMouseExited(evt);
+            }
+        });
         botonAtrasOrdenXFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasOrdenXFechaActionPerformed(evt);
@@ -136,19 +153,20 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
             panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
-                        .addComponent(etiquetaOrdenXFecha)
-                        .addGap(231, 231, 231)
-                        .addComponent(botonAtrasOrdenXFecha)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
+                .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
                         .addComponent(etiquetaOrdenXFechaFecha)
                         .addGap(18, 18, 18)
-                        .addComponent(calendarioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(calendarioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(etiquetaOrdenXFecha))
+                .addGap(18, 18, 18)
+                .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
                         .addComponent(botonOrdenXFechaBuscar)
-                        .addGap(245, 245, 245))))
+                        .addGap(245, 245, 245))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
+                        .addComponent(botonAtrasOrdenXFecha)
+                        .addContainerGap())))
             .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,6 +225,22 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
     private void botonAtrasOrdenXFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXFechaActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasOrdenXFechaActionPerformed
+
+    private void botonAtrasOrdenXFechaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXFechaMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenXFechaMouseEntered
+
+    private void botonAtrasOrdenXFechaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXFechaMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenXFechaMouseExited
+
+    private void botonOrdenXFechaBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXFechaBuscarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonOrdenXFechaBuscarMouseEntered
+
+    private void botonOrdenXFechaBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXFechaBuscarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonOrdenXFechaBuscarMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrdenXFecha;

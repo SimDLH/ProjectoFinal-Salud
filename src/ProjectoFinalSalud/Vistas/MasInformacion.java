@@ -2,10 +2,17 @@
 package ProjectoFinalSalud.Vistas;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class MasInformacion extends javax.swing.JInternalFrame {
-
+    
+    private String enlace1 = "https://www.google.com.ar/";
+    private String enlace2 = "https://www.youtube.com/";
+    private String enlace3 = "https://web.whatsapp.com/";
+    
     public MasInformacion() {
         
         initComponents();
@@ -25,8 +32,20 @@ public class MasInformacion extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         panelGradMsInfo = new keeptoo.KGradientPanel();
+        etiquetaMsInfo = new javax.swing.JLabel();
+        etiquetaMsInfo0 = new javax.swing.JLabel();
+        etiquetaMsInfo1 = new javax.swing.JLabel();
+        etiquetaMsInfo2 = new javax.swing.JLabel();
         botonAtrasMsInfo = new javax.swing.JButton();
-        botonHola = new javax.swing.JButton();
+        panelGradPropa1 = new keeptoo.KGradientPanel();
+        etiquetaPropa1 = new javax.swing.JLabel();
+        botonPropa1 = new javax.swing.JButton();
+        panelGradPropa2 = new keeptoo.KGradientPanel();
+        etiquetaPropa2 = new javax.swing.JLabel();
+        botonPropa2 = new javax.swing.JButton();
+        panelGradPropa3 = new keeptoo.KGradientPanel();
+        etiquetaPropa3 = new javax.swing.JLabel();
+        botonPropa3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -37,6 +56,26 @@ public class MasInformacion extends javax.swing.JInternalFrame {
         panelGradMsInfo.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradMsInfo.setPreferredSize(new java.awt.Dimension(975, 575));
 
+        etiquetaMsInfo.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaMsInfo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo.setText("Escontrá Lo Que Estás Buscas");
+
+        etiquetaMsInfo0.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo0.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        etiquetaMsInfo0.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MarcoPropagandaMasInfo0.png"))); // NOI18N
+
+        etiquetaMsInfo1.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        etiquetaMsInfo1.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MarcoPropagandaMasInfo1.png"))); // NOI18N
+
+        etiquetaMsInfo2.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        etiquetaMsInfo2.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaMsInfo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MarcoPropagandaMasInfo2.png"))); // NOI18N
+
         botonAtrasMsInfo.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasMsInfo.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonAtrasMsInfo.setForeground(new java.awt.Color(255, 255, 255));
@@ -45,51 +84,207 @@ public class MasInformacion extends javax.swing.JInternalFrame {
         botonAtrasMsInfo.setBorderPainted(false);
         botonAtrasMsInfo.setContentAreaFilled(false);
         botonAtrasMsInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasMsInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasMsInfoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasMsInfoMouseExited(evt);
+            }
+        });
         botonAtrasMsInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasMsInfoActionPerformed(evt);
             }
         });
 
-        botonHola.setBackground(new java.awt.Color(0, 0, 255));
-        botonHola.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        botonHola.setForeground(new java.awt.Color(255, 255, 255));
-        botonHola.setText("HOLA");
-        botonHola.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelGradPropa1.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradPropa1.setkEndColor(new java.awt.Color(255, 255, 255));
+        panelGradPropa1.setkStartColor(new java.awt.Color(153, 153, 153));
+
+        etiquetaPropa1.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaPropa1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        etiquetaPropa1.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaPropa1.setText("<html>\nDescubrí nuestas\n<br>\ninstalaciones\n</html>");
+
+        botonPropa1.setBackground(new java.awt.Color(102, 204, 255));
+        botonPropa1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonPropa1.setText(">> Más Información");
+        botonPropa1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonPropa1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonHolaMouseEntered(evt);
+                botonPropa1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonHolaMouseExited(evt);
+                botonPropa1MouseExited(evt);
             }
         });
-        botonHola.addActionListener(new java.awt.event.ActionListener() {
+        botonPropa1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonHolaActionPerformed(evt);
+                botonPropa1ActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout panelGradPropa1Layout = new javax.swing.GroupLayout(panelGradPropa1);
+        panelGradPropa1.setLayout(panelGradPropa1Layout);
+        panelGradPropa1Layout.setHorizontalGroup(
+            panelGradPropa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPropa1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradPropa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaPropa1)
+                    .addComponent(botonPropa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panelGradPropa1Layout.setVerticalGroup(
+            panelGradPropa1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPropa1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(etiquetaPropa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonPropa1)
+                .addContainerGap())
+        );
+
+        panelGradPropa2.setkEndColor(new java.awt.Color(255, 255, 255));
+        panelGradPropa2.setkStartColor(new java.awt.Color(153, 153, 153));
+
+        etiquetaPropa2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        etiquetaPropa2.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaPropa2.setText("¡Conocenos!");
+
+        botonPropa2.setBackground(new java.awt.Color(102, 204, 255));
+        botonPropa2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonPropa2.setText(">> Más Información");
+        botonPropa2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonPropa2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonPropa2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonPropa2MouseExited(evt);
+            }
+        });
+        botonPropa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPropa2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelGradPropa2Layout = new javax.swing.GroupLayout(panelGradPropa2);
+        panelGradPropa2.setLayout(panelGradPropa2Layout);
+        panelGradPropa2Layout.setHorizontalGroup(
+            panelGradPropa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPropa2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradPropa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaPropa2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonPropa2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panelGradPropa2Layout.setVerticalGroup(
+            panelGradPropa2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPropa2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(etiquetaPropa2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonPropa2)
+                .addContainerGap())
+        );
+
+        panelGradPropa3.setkEndColor(new java.awt.Color(255, 255, 255));
+        panelGradPropa3.setkStartColor(new java.awt.Color(153, 153, 153));
+
+        etiquetaPropa3.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaPropa3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        etiquetaPropa3.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaPropa3.setText("<html>\nVeni a nuestras oficinas\n<br>\nque te asesoramos\n</html>");
+
+        botonPropa3.setBackground(new java.awt.Color(102, 204, 255));
+        botonPropa3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonPropa3.setText(">> Más Información");
+        botonPropa3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonPropa3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonPropa3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonPropa3MouseExited(evt);
+            }
+        });
+        botonPropa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPropa3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelGradPropa3Layout = new javax.swing.GroupLayout(panelGradPropa3);
+        panelGradPropa3.setLayout(panelGradPropa3Layout);
+        panelGradPropa3Layout.setHorizontalGroup(
+            panelGradPropa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPropa3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGradPropa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaPropa3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonPropa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panelGradPropa3Layout.setVerticalGroup(
+            panelGradPropa3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradPropa3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(etiquetaPropa3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(botonPropa3)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout panelGradMsInfoLayout = new javax.swing.GroupLayout(panelGradMsInfo);
         panelGradMsInfo.setLayout(panelGradMsInfoLayout);
         panelGradMsInfoLayout.setHorizontalGroup(
             panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradMsInfoLayout.createSequentialGroup()
-                .addContainerGap(796, Short.MAX_VALUE)
-                .addComponent(botonAtrasMsInfo)
-                .addContainerGap())
             .addGroup(panelGradMsInfoLayout.createSequentialGroup()
-                .addGap(343, 343, 343)
-                .addComponent(botonHola, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(etiquetaMsInfo)
+                    .addGroup(panelGradMsInfoLayout.createSequentialGroup()
+                        .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(etiquetaMsInfo0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(panelGradPropa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(52, 52, 52)
+                        .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(etiquetaMsInfo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(panelGradPropa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradMsInfoLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(etiquetaMsInfo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(panelGradPropa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelGradMsInfoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                        .addComponent(botonAtrasMsInfo)
+                        .addContainerGap())))
         );
         panelGradMsInfoLayout.setVerticalGroup(
             panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradMsInfoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonAtrasMsInfo)
-                .addGap(158, 158, 158)
-                .addComponent(botonHola, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAtrasMsInfo)
+                    .addComponent(etiquetaMsInfo))
+                .addGap(18, 18, 18)
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaMsInfo1)
+                    .addComponent(etiquetaMsInfo2)
+                    .addComponent(etiquetaMsInfo0))
+                .addGap(18, 18, 18)
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelGradPropa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelGradPropa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelGradPropa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -110,25 +305,95 @@ public class MasInformacion extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasMsInfoActionPerformed
 
-    private void botonHolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHolaActionPerformed
-        panelGradMsInfo.removeAll();
-        panelGradMsInfo.repaint();
-        MasInformacionPrueba msInfoP = new MasInformacionPrueba();
-        panelGradMsInfo.add(msInfoP);
-        msInfoP.setVisible(true);
-    }//GEN-LAST:event_botonHolaActionPerformed
+    private void botonPropa1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPropa1MouseEntered
+        botonPropa1.setBackground(Color.BLUE);
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonPropa1MouseEntered
 
-    private void botonHolaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonHolaMouseEntered
-        botonHola.setBackground(Color.cyan);
-    }//GEN-LAST:event_botonHolaMouseEntered
+    private void botonPropa1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPropa1MouseExited
+        botonPropa1.setBackground(new Color(102,204,255));
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonPropa1MouseExited
 
-    private void botonHolaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonHolaMouseExited
-        botonHola.setBackground(new Color(0,0,255));
-    }//GEN-LAST:event_botonHolaMouseExited
+    private void botonPropa2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPropa2MouseEntered
+        botonPropa2.setBackground(Color.BLUE);
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonPropa2MouseEntered
+
+    private void botonPropa2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPropa2MouseExited
+        botonPropa2.setBackground(new Color(102,204,255));
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonPropa2MouseExited
+
+    private void botonPropa3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPropa3MouseEntered
+        botonPropa3.setBackground(Color.BLUE);
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonPropa3MouseEntered
+
+    private void botonPropa3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPropa3MouseExited
+        botonPropa3.setBackground(new Color(102,204,255));
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonPropa3MouseExited
+
+    private void botonPropa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPropa1ActionPerformed
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace1);
+                    desktop.browse(uri);
+                }catch(URISyntaxException | IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_botonPropa1ActionPerformed
+
+    private void botonPropa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPropa2ActionPerformed
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace2);
+                    desktop.browse(uri);
+                }catch(URISyntaxException | IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_botonPropa2ActionPerformed
+
+    private void botonPropa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPropa3ActionPerformed
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace3);
+                    desktop.browse(uri);
+                }catch(URISyntaxException | IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_botonPropa3ActionPerformed
+
+    private void botonAtrasMsInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasMsInfoMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasMsInfoMouseEntered
+
+    private void botonAtrasMsInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasMsInfoMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasMsInfoMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasMsInfo;
-    private javax.swing.JButton botonHola;
+    private javax.swing.JButton botonPropa1;
+    private javax.swing.JButton botonPropa2;
+    private javax.swing.JButton botonPropa3;
+    private javax.swing.JLabel etiquetaMsInfo;
+    private javax.swing.JLabel etiquetaMsInfo0;
+    private javax.swing.JLabel etiquetaMsInfo1;
+    private javax.swing.JLabel etiquetaMsInfo2;
+    private javax.swing.JLabel etiquetaPropa1;
+    private javax.swing.JLabel etiquetaPropa2;
+    private javax.swing.JLabel etiquetaPropa3;
     private keeptoo.KGradientPanel panelGradMsInfo;
+    private keeptoo.KGradientPanel panelGradPropa1;
+    private keeptoo.KGradientPanel panelGradPropa2;
+    private keeptoo.KGradientPanel panelGradPropa3;
     // End of variables declaration//GEN-END:variables
 }

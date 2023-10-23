@@ -6,6 +6,7 @@ import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Afiliado;
 import ProjectoFinalSalud.Entidades.Orden;
 import ProjectoFinalSalud.Entidades.Prestador;
+import java.awt.Cursor;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -87,19 +88,14 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
         etiquetaSacarOrdenImp.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaSacarOrdenImp.setText("Importe:");
 
-        textoSacarOrdenDoc.setBackground(null);
         textoSacarOrdenDoc.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
-        textoSacarOrdenForPag.setBackground(null);
         textoSacarOrdenForPag.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
-        textoSacarOrdenImp.setBackground(null);
         textoSacarOrdenImp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
-        comboBoxSacarOrdenPres.setBackground(null);
         comboBoxSacarOrdenPres.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
-        calendarioSacarOrden.setBackground(null);
         calendarioSacarOrden.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         botonSacarOrdenBuscar.setBackground(new java.awt.Color(255, 255, 255));
@@ -110,6 +106,14 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
         botonSacarOrdenBuscar.setBorderPainted(false);
         botonSacarOrdenBuscar.setContentAreaFilled(false);
         botonSacarOrdenBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonSacarOrdenBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonSacarOrdenBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonSacarOrdenBuscarMouseExited(evt);
+            }
+        });
         botonSacarOrdenBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSacarOrdenBuscarActionPerformed(evt);
@@ -124,6 +128,14 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
         botonSacarOrdenGuardar.setBorderPainted(false);
         botonSacarOrdenGuardar.setContentAreaFilled(false);
         botonSacarOrdenGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonSacarOrdenGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonSacarOrdenGuardarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonSacarOrdenGuardarMouseExited(evt);
+            }
+        });
         botonSacarOrdenGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSacarOrdenGuardarActionPerformed(evt);
@@ -138,6 +150,14 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
         botonAtrasOrdenSacar.setBorderPainted(false);
         botonAtrasOrdenSacar.setContentAreaFilled(false);
         botonAtrasOrdenSacar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrdenSacar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenSacarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenSacarMouseExited(evt);
+            }
+        });
         botonAtrasOrdenSacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasOrdenSacarActionPerformed(evt);
@@ -203,7 +223,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
                 .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoSacarOrdenForPag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaSacarOrdenForPag))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoSacarOrdenImp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaSacarOrdenImp)
@@ -284,6 +304,30 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
     private void botonAtrasOrdenSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenSacarActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasOrdenSacarActionPerformed
+
+    private void botonAtrasOrdenSacarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenSacarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenSacarMouseEntered
+
+    private void botonAtrasOrdenSacarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenSacarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenSacarMouseExited
+
+    private void botonSacarOrdenBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSacarOrdenBuscarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonSacarOrdenBuscarMouseEntered
+
+    private void botonSacarOrdenBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSacarOrdenBuscarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonSacarOrdenBuscarMouseExited
+
+    private void botonSacarOrdenGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSacarOrdenGuardarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonSacarOrdenGuardarMouseEntered
+
+    private void botonSacarOrdenGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSacarOrdenGuardarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonSacarOrdenGuardarMouseExited
 
     private void cargarComboPrestador() {
 

@@ -401,6 +401,8 @@
                 <Property name="text" type="java.lang.String" value="&#xa1;CONTINUAR!"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonContinuarIniSesMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonContinuarIniSesMouseExited"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonContinuarIniSesActionPerformed"/>
               </Events>
             </Component>
@@ -476,6 +478,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasIniSesMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasIniSesMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasIniSesActionPerformed"/>
           </Events>
         </Component>

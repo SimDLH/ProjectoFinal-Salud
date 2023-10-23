@@ -61,16 +61,19 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
-                  <Component id="botonAtrasProfConsul" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="panelScrollTablaListaAfi" min="-2" pref="920" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
+                          <Component id="botonAtrasProfConsul" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="panelScrollTablaListaAfi" min="-2" pref="820" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -82,9 +85,9 @@
                       <Component id="botonAtrasProfConsul" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                   <Component id="panelScrollTablaListaAfi" min="-2" pref="170" max="-2" attributes="0"/>
-                  <EmptySpace pref="195" max="32767" attributes="0"/>
+                  <EmptySpace pref="199" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -181,6 +184,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasProfConsulMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasProfConsulMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasProfConsulActionPerformed"/>
           </Events>
         </Component>

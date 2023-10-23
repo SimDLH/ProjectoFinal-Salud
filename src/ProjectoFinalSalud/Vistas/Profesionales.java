@@ -1,6 +1,7 @@
 
 package ProjectoFinalSalud.Vistas;
 
+import java.awt.Cursor;
 import javax.swing.JMenuItem;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -48,6 +49,14 @@ public class Profesionales extends javax.swing.JInternalFrame {
         botonAtrasProf.setBorderPainted(false);
         botonAtrasProf.setContentAreaFilled(false);
         botonAtrasProf.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasProfMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasProfMouseExited(evt);
+            }
+        });
         botonAtrasProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasProfActionPerformed(evt);
@@ -74,10 +83,18 @@ public class Profesionales extends javax.swing.JInternalFrame {
         menuProfConsulta.setBackground(new java.awt.Color(255, 255, 255));
         menuProfConsulta.setText("Consulta Nuestra Lista De Profesionales");
         menuProfConsulta.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuProfConsulta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuProfConsultaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuProfConsultaMouseExited(evt);
+            }
+        });
 
         menuItemConsul.setBackground(new java.awt.Color(255, 255, 255));
         menuItemConsul.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemConsul.setText("Consulta");
+        menuItemConsul.setText("Consultar Lista");
         menuItemConsul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemConsulActionPerformed(evt);
@@ -90,10 +107,18 @@ public class Profesionales extends javax.swing.JInternalFrame {
         menuProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
         menuProfAgreQuit.setText("Adherir Profesionales");
         menuProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuProfAgreQuit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuProfAgreQuitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuProfAgreQuitMouseExited(evt);
+            }
+        });
 
         menuItemAdherir.setBackground(new java.awt.Color(255, 255, 255));
         menuItemAdherir.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemAdherir.setText("Adherir");
+        menuItemAdherir.setText("Adherir Profesionales");
         menuItemAdherir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemAdherirActionPerformed(evt);
@@ -138,6 +163,30 @@ public class Profesionales extends javax.swing.JInternalFrame {
     private void botonAtrasProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasProfActionPerformed
+
+    private void menuProfConsultaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuProfConsultaMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuProfConsultaMouseEntered
+
+    private void menuProfConsultaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuProfConsultaMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuProfConsultaMouseExited
+
+    private void menuProfAgreQuitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuProfAgreQuitMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuProfAgreQuitMouseEntered
+
+    private void menuProfAgreQuitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuProfAgreQuitMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuProfAgreQuitMouseExited
+
+    private void botonAtrasProfMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfMouseEntered
+
+    private void botonAtrasProfMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasProf;

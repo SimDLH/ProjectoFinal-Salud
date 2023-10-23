@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.Entidades.Orden;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -80,6 +81,14 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
         botonOrdenXAfiBuscar.setBorderPainted(false);
         botonOrdenXAfiBuscar.setContentAreaFilled(false);
         botonOrdenXAfiBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonOrdenXAfiBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonOrdenXAfiBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonOrdenXAfiBuscarMouseExited(evt);
+            }
+        });
         botonOrdenXAfiBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonOrdenXAfiBuscarActionPerformed(evt);
@@ -94,6 +103,14 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
         botonAtrasOrdenXAfi.setBorderPainted(false);
         botonAtrasOrdenXAfi.setContentAreaFilled(false);
         botonAtrasOrdenXAfi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrdenXAfi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenXAfiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenXAfiMouseExited(evt);
+            }
+        });
         botonAtrasOrdenXAfi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasOrdenXAfiActionPerformed(evt);
@@ -136,23 +153,24 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
         panelGradOrdenXAfiLayout.setHorizontalGroup(
             panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
-                .addGap(0, 246, Short.MAX_VALUE)
-                .addComponent(etiquetaOrdenXAfiDNI)
-                .addGap(18, 18, 18)
+                .addGap(0, 102, Short.MAX_VALUE)
                 .addGroup(panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
-                        .addComponent(textoOrdenXAfiDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXAfiLayout.createSequentialGroup()
+                        .addComponent(etiquetaOrdenXAfiDNI)
                         .addGap(18, 18, 18)
-                        .addComponent(botonOrdenXAfiBuscar))
-                    .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
-                        .addComponent(etiquetaOrdenXAfi)
-                        .addGap(236, 236, 236)
-                        .addComponent(botonAtrasOrdenXAfi)))
-                .addContainerGap())
-            .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                                .addComponent(textoOrdenXAfiDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonOrdenXAfiBuscar))
+                            .addGroup(panelGradOrdenXAfiLayout.createSequentialGroup()
+                                .addComponent(etiquetaOrdenXAfi)
+                                .addGap(236, 236, 236)
+                                .addComponent(botonAtrasOrdenXAfi)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXAfiLayout.createSequentialGroup()
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101))))
         );
         panelGradOrdenXAfiLayout.setVerticalGroup(
             panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,8 +184,8 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
                     .addComponent(textoOrdenXAfiDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaOrdenXAfiDNI)
                     .addComponent(botonOrdenXAfiBuscar))
-                .addGap(37, 37, 37)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(181, Short.MAX_VALUE))
         );
 
@@ -203,6 +221,22 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
     private void botonAtrasOrdenXAfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXAfiActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasOrdenXAfiActionPerformed
+
+    private void botonAtrasOrdenXAfiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXAfiMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenXAfiMouseEntered
+
+    private void botonAtrasOrdenXAfiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXAfiMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenXAfiMouseExited
+
+    private void botonOrdenXAfiBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXAfiBuscarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonOrdenXAfiBuscarMouseEntered
+
+    private void botonOrdenXAfiBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXAfiBuscarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonOrdenXAfiBuscarMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrdenXAfi;

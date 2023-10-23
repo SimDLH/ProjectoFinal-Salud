@@ -1,6 +1,7 @@
 
 package ProjectoFinalSalud.Vistas;
 
+import java.awt.Cursor;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Ordenes extends javax.swing.JInternalFrame {
@@ -28,9 +29,11 @@ public class Ordenes extends javax.swing.JInternalFrame {
         menuOrden = new javax.swing.JMenuBar();
         menuOrdenSacOrd = new javax.swing.JMenu();
         menuItemOrdenSacOrd = new javax.swing.JMenuItem();
-        menuOrdenOrdenes = new javax.swing.JMenu();
+        menuOrdenBusXFecha = new javax.swing.JMenu();
         menuItemOrdenOrdXFecha = new javax.swing.JMenuItem();
+        menuOrdenBusXAfi = new javax.swing.JMenu();
         menuItemOrdenOrdXAfi = new javax.swing.JMenuItem();
+        menuOrdenBusXProf = new javax.swing.JMenu();
         menuItemOrdenOrdXPres = new javax.swing.JMenuItem();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -49,6 +52,14 @@ public class Ordenes extends javax.swing.JInternalFrame {
         botonAtrasOrden.setBorderPainted(false);
         botonAtrasOrden.setContentAreaFilled(false);
         botonAtrasOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasOrdenMouseExited(evt);
+            }
+        });
         botonAtrasOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasOrdenActionPerformed(evt);
@@ -75,6 +86,14 @@ public class Ordenes extends javax.swing.JInternalFrame {
         menuOrdenSacOrd.setBackground(new java.awt.Color(255, 255, 255));
         menuOrdenSacOrd.setText("Sacar Orden");
         menuOrdenSacOrd.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuOrdenSacOrd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuOrdenSacOrdMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuOrdenSacOrdMouseExited(evt);
+            }
+        });
 
         menuItemOrdenSacOrd.setBackground(new java.awt.Color(255, 255, 255));
         menuItemOrdenSacOrd.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -88,9 +107,17 @@ public class Ordenes extends javax.swing.JInternalFrame {
 
         menuOrden.add(menuOrdenSacOrd);
 
-        menuOrdenOrdenes.setBackground(new java.awt.Color(255, 255, 255));
-        menuOrdenOrdenes.setText("Ordenes");
-        menuOrdenOrdenes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuOrdenBusXFecha.setBackground(new java.awt.Color(255, 255, 255));
+        menuOrdenBusXFecha.setText("Búsqueda Por Fecha");
+        menuOrdenBusXFecha.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuOrdenBusXFecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuOrdenBusXFechaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuOrdenBusXFechaMouseExited(evt);
+            }
+        });
 
         menuItemOrdenOrdXFecha.setBackground(new java.awt.Color(255, 255, 255));
         menuItemOrdenOrdXFecha.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -100,7 +127,21 @@ public class Ordenes extends javax.swing.JInternalFrame {
                 menuItemOrdenOrdXFechaActionPerformed(evt);
             }
         });
-        menuOrdenOrdenes.add(menuItemOrdenOrdXFecha);
+        menuOrdenBusXFecha.add(menuItemOrdenOrdXFecha);
+
+        menuOrden.add(menuOrdenBusXFecha);
+
+        menuOrdenBusXAfi.setBackground(new java.awt.Color(255, 255, 255));
+        menuOrdenBusXAfi.setText("Búsqueda Por Afiliado");
+        menuOrdenBusXAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuOrdenBusXAfi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuOrdenBusXAfiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuOrdenBusXAfiMouseExited(evt);
+            }
+        });
 
         menuItemOrdenOrdXAfi.setBackground(new java.awt.Color(255, 255, 255));
         menuItemOrdenOrdXAfi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -110,19 +151,33 @@ public class Ordenes extends javax.swing.JInternalFrame {
                 menuItemOrdenOrdXAfiActionPerformed(evt);
             }
         });
-        menuOrdenOrdenes.add(menuItemOrdenOrdXAfi);
+        menuOrdenBusXAfi.add(menuItemOrdenOrdXAfi);
+
+        menuOrden.add(menuOrdenBusXAfi);
+
+        menuOrdenBusXProf.setBackground(new java.awt.Color(255, 255, 255));
+        menuOrdenBusXProf.setText("Búsqueda Por Profesional");
+        menuOrdenBusXProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuOrdenBusXProf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuOrdenBusXProfMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuOrdenBusXProfMouseExited(evt);
+            }
+        });
 
         menuItemOrdenOrdXPres.setBackground(new java.awt.Color(255, 255, 255));
         menuItemOrdenOrdXPres.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemOrdenOrdXPres.setText("Ordenes Por Prestador");
+        menuItemOrdenOrdXPres.setText("Ordenes Por Profesional");
         menuItemOrdenOrdXPres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemOrdenOrdXPresActionPerformed(evt);
             }
         });
-        menuOrdenOrdenes.add(menuItemOrdenOrdXPres);
+        menuOrdenBusXProf.add(menuItemOrdenOrdXPres);
 
-        menuOrden.add(menuOrdenOrdenes);
+        menuOrden.add(menuOrdenBusXProf);
 
         setJMenuBar(menuOrden);
 
@@ -176,6 +231,46 @@ public class Ordenes extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasOrdenActionPerformed
 
+    private void menuOrdenSacOrdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenSacOrdMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuOrdenSacOrdMouseEntered
+
+    private void menuOrdenSacOrdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenSacOrdMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuOrdenSacOrdMouseExited
+
+    private void menuOrdenBusXFechaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenBusXFechaMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuOrdenBusXFechaMouseEntered
+
+    private void menuOrdenBusXFechaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenBusXFechaMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuOrdenBusXFechaMouseExited
+
+    private void menuOrdenBusXAfiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenBusXAfiMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuOrdenBusXAfiMouseEntered
+
+    private void menuOrdenBusXAfiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenBusXAfiMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuOrdenBusXAfiMouseExited
+
+    private void menuOrdenBusXProfMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenBusXProfMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuOrdenBusXProfMouseEntered
+
+    private void menuOrdenBusXProfMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenBusXProfMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuOrdenBusXProfMouseExited
+
+    private void botonAtrasOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenMouseEntered
+
+    private void botonAtrasOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasOrdenMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasOrdenMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrden;
     private javax.swing.JMenuItem menuItemOrdenOrdXAfi;
@@ -183,7 +278,9 @@ public class Ordenes extends javax.swing.JInternalFrame {
     private javax.swing.JMenuItem menuItemOrdenOrdXPres;
     private javax.swing.JMenuItem menuItemOrdenSacOrd;
     private javax.swing.JMenuBar menuOrden;
-    private javax.swing.JMenu menuOrdenOrdenes;
+    private javax.swing.JMenu menuOrdenBusXAfi;
+    private javax.swing.JMenu menuOrdenBusXFecha;
+    private javax.swing.JMenu menuOrdenBusXProf;
     private javax.swing.JMenu menuOrdenSacOrd;
     private keeptoo.KGradientPanel panelGradOrden;
     // End of variables declaration//GEN-END:variables

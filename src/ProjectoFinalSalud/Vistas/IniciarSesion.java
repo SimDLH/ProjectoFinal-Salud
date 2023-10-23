@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
 import ProjectoFinalSalud.Entidades.Usuario;
+import java.awt.Cursor;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -142,6 +143,14 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         botonContinuarIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonContinuarIniSes.setForeground(new java.awt.Color(255, 255, 255));
         botonContinuarIniSes.setText("¡CONTINUAR!");
+        botonContinuarIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonContinuarIniSesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonContinuarIniSesMouseExited(evt);
+            }
+        });
         botonContinuarIniSes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonContinuarIniSesActionPerformed(evt);
@@ -225,6 +234,14 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         botonAtrasIniSes.setBorderPainted(false);
         botonAtrasIniSes.setContentAreaFilled(false);
         botonAtrasIniSes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasIniSesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasIniSesMouseExited(evt);
+            }
+        });
         botonAtrasIniSes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasIniSesActionPerformed(evt);
@@ -323,6 +340,22 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         }
         limpiar();
     }//GEN-LAST:event_botonContinuarIniSesActionPerformed
+
+    private void botonAtrasIniSesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasIniSesMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasIniSesMouseEntered
+
+    private void botonAtrasIniSesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasIniSesMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasIniSesMouseExited
+
+    private void botonContinuarIniSesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContinuarIniSesMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonContinuarIniSesMouseEntered
+
+    private void botonContinuarIniSesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContinuarIniSesMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonContinuarIniSesMouseExited
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasIniSes;

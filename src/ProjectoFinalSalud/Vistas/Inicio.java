@@ -1,8 +1,8 @@
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
-import ProjectoFinalSalud.Entidades.Usuario;
 import java.awt.Component;
+import java.awt.Cursor;
 import javax.swing.JInternalFrame;
 
 public class Inicio extends javax.swing.JFrame {
@@ -13,15 +13,16 @@ public class Inicio extends javax.swing.JFrame {
 
         initComponents();
         setTitle("MásSalud");
-        Bloquear();
+        //Bloquear();
     }
+    
     JInternalFrame o = new JInternalFrame();
 
     public void limpiar(JInternalFrame j) {
+        
         j.dispose();
-
     }
-
+    
     public void Bloquear() {
 
         for (Component a : panelGradBotPrincipales.getComponents()) {
@@ -29,8 +30,7 @@ public class Inicio extends javax.swing.JFrame {
             botonCerrSes.setVisible(false);
             etiquetaBienvenido.setVisible(false);
             botonRegistro.setVisible(true);
-            botonIniSes.setVisible(true);
-            
+            botonIniSes.setVisible(true); 
         }
     }
 
@@ -40,7 +40,7 @@ public class Inicio extends javax.swing.JFrame {
             b.setEnabled(true);
             botonCerrSes.setVisible(true);
             etiquetaBienvenido.setVisible(true);
-            etiquetaBienvenido.setText("Bienvenido " + "ACA IRIA EL NOMBRE" + "...");
+            etiquetaBienvenido.setText("Bienvenido");
             botonRegistro.setVisible(false);
             botonIniSes.setVisible(false);
         }
@@ -57,10 +57,13 @@ public class Inicio extends javax.swing.JFrame {
 
         panelEscritorio = new javax.swing.JDesktopPane();
         panelGradPrincipal = new keeptoo.KGradientPanel();
+        etiquetaLogoPrincipal = new javax.swing.JLabel();
+        etiquetaBienvenido = new javax.swing.JLabel();
+        etiquetaPropaganda = new javax.swing.JLabel();
         separadorMenuPrincipal1 = new javax.swing.JSeparator();
         botonRegistro = new javax.swing.JButton();
         botonIniSes = new javax.swing.JButton();
-        etiquetaLogoPrincipal = new javax.swing.JLabel();
+        botonCerrSes = new javax.swing.JButton();
         panelGradBotPrincipales = new keeptoo.KGradientPanel();
         botonMenuDesplegable1 = new javax.swing.JButton();
         botonMenuDesplegable2 = new javax.swing.JButton();
@@ -74,8 +77,6 @@ public class Inicio extends javax.swing.JFrame {
         etiquetaMenuDesplegable4 = new javax.swing.JLabel();
         etiquetaMenuDesplegable5 = new javax.swing.JLabel();
         etiquetaMenuDesplegable6 = new javax.swing.JLabel();
-        etiquetaBienvenido = new javax.swing.JLabel();
-        botonCerrSes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -85,6 +86,18 @@ public class Inicio extends javax.swing.JFrame {
         panelGradPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         panelGradPrincipal.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradPrincipal.setkStartColor(new java.awt.Color(0, 153, 0));
+
+        etiquetaLogoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MasSaludLogo.png"))); // NOI18N
+
+        etiquetaBienvenido.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaBienvenido.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaBienvenido.setForeground(new java.awt.Color(255, 255, 255));
+
+        etiquetaPropaganda.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaPropaganda.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaPropaganda.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaPropaganda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaPropaganda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MarcoPropaganda0.png"))); // NOI18N
 
         separadorMenuPrincipal1.setForeground(new java.awt.Color(255, 255, 255));
         separadorMenuPrincipal1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
@@ -97,6 +110,14 @@ public class Inicio extends javax.swing.JFrame {
         botonRegistro.setBorderPainted(false);
         botonRegistro.setContentAreaFilled(false);
         botonRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonRegistroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonRegistroMouseExited(evt);
+            }
+        });
         botonRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRegistroActionPerformed(evt);
@@ -110,13 +131,40 @@ public class Inicio extends javax.swing.JFrame {
         botonIniSes.setBorderPainted(false);
         botonIniSes.setContentAreaFilled(false);
         botonIniSes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonIniSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonIniSesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonIniSesMouseExited(evt);
+            }
+        });
         botonIniSes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonIniSesActionPerformed(evt);
             }
         });
 
-        etiquetaLogoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/MasSaludLogo.png"))); // NOI18N
+        botonCerrSes.setBackground(new java.awt.Color(255, 255, 255));
+        botonCerrSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonCerrSes.setForeground(new java.awt.Color(255, 255, 255));
+        botonCerrSes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonUsuarioCerrSes.png"))); // NOI18N
+        botonCerrSes.setBorderPainted(false);
+        botonCerrSes.setContentAreaFilled(false);
+        botonCerrSes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonCerrSes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonCerrSesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonCerrSesMouseExited(evt);
+            }
+        });
+        botonCerrSes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCerrSesActionPerformed(evt);
+            }
+        });
 
         panelGradBotPrincipales.setBackground(new java.awt.Color(255, 255, 255));
         panelGradBotPrincipales.setkEndColor(new java.awt.Color(0, 153, 255));
@@ -126,6 +174,14 @@ public class Inicio extends javax.swing.JFrame {
         botonMenuDesplegable1.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable1.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable1.setText("Ordenes");
+        botonMenuDesplegable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable1MouseExited(evt);
+            }
+        });
         botonMenuDesplegable1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMenuDesplegable1ActionPerformed(evt);
@@ -136,6 +192,14 @@ public class Inicio extends javax.swing.JFrame {
         botonMenuDesplegable2.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable2.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable2.setText("Consultas");
+        botonMenuDesplegable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable2MouseExited(evt);
+            }
+        });
         botonMenuDesplegable2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMenuDesplegable2ActionPerformed(evt);
@@ -146,6 +210,14 @@ public class Inicio extends javax.swing.JFrame {
         botonMenuDesplegable3.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable3.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable3.setText("Especialidades");
+        botonMenuDesplegable3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable3MouseExited(evt);
+            }
+        });
         botonMenuDesplegable3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMenuDesplegable3ActionPerformed(evt);
@@ -156,6 +228,14 @@ public class Inicio extends javax.swing.JFrame {
         botonMenuDesplegable4.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable4.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable4.setText("Profesionales");
+        botonMenuDesplegable4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable4MouseExited(evt);
+            }
+        });
         botonMenuDesplegable4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMenuDesplegable4ActionPerformed(evt);
@@ -166,6 +246,14 @@ public class Inicio extends javax.swing.JFrame {
         botonMenuDesplegable5.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable5.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable5.setText("Afiliados");
+        botonMenuDesplegable5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable5MouseExited(evt);
+            }
+        });
         botonMenuDesplegable5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMenuDesplegable5ActionPerformed(evt);
@@ -176,6 +264,14 @@ public class Inicio extends javax.swing.JFrame {
         botonMenuDesplegable6.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         botonMenuDesplegable6.setForeground(new java.awt.Color(255, 255, 255));
         botonMenuDesplegable6.setText("Más Informacion");
+        botonMenuDesplegable6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMenuDesplegable6MouseExited(evt);
+            }
+        });
         botonMenuDesplegable6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMenuDesplegable6ActionPerformed(evt);
@@ -265,23 +361,6 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        etiquetaBienvenido.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaBienvenido.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaBienvenido.setForeground(new java.awt.Color(255, 255, 255));
-
-        botonCerrSes.setBackground(new java.awt.Color(255, 255, 255));
-        botonCerrSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonCerrSes.setForeground(new java.awt.Color(255, 255, 255));
-        botonCerrSes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonUsuarioCerrSes.png"))); // NOI18N
-        botonCerrSes.setBorderPainted(false);
-        botonCerrSes.setContentAreaFilled(false);
-        botonCerrSes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonCerrSes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCerrSesActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelGradPrincipalLayout = new javax.swing.GroupLayout(panelGradPrincipal);
         panelGradPrincipal.setLayout(panelGradPrincipalLayout);
         panelGradPrincipalLayout.setHorizontalGroup(
@@ -302,6 +381,8 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(etiquetaPropaganda)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGradPrincipalLayout.setVerticalGroup(
@@ -316,9 +397,15 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(botonCerrSes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84))
+                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(etiquetaPropaganda)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         panelEscritorio.setLayer(panelGradPrincipal, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -352,7 +439,6 @@ public class Inicio extends javax.swing.JFrame {
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
         Registrarse Regis = new Registrarse();
         panelEscritorio.add(Regis);
-
         Regis.setVisible(true);
     }//GEN-LAST:event_botonRegistroActionPerformed
 
@@ -360,7 +446,6 @@ public class Inicio extends javax.swing.JFrame {
         IniciarSesion InSe = new IniciarSesion();
         panelEscritorio.add(InSe);
         InSe.setVisible(true);
-        Desbloquear();
     }//GEN-LAST:event_botonIniSesActionPerformed
 
     private void botonMenuDesplegable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1ActionPerformed
@@ -415,6 +500,78 @@ public class Inicio extends javax.swing.JFrame {
         Bloquear();
     }//GEN-LAST:event_botonCerrSesActionPerformed
 
+    private void botonIniSesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniSesMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonIniSesMouseEntered
+
+    private void botonIniSesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniSesMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonIniSesMouseExited
+
+    private void botonRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegistroMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonRegistroMouseEntered
+
+    private void botonRegistroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegistroMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonRegistroMouseExited
+
+    private void botonCerrSesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCerrSesMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonCerrSesMouseEntered
+
+    private void botonCerrSesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCerrSesMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonCerrSesMouseExited
+
+    private void botonMenuDesplegable1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1MouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable1MouseEntered
+
+    private void botonMenuDesplegable1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1MouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable1MouseExited
+
+    private void botonMenuDesplegable2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable2MouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable2MouseEntered
+
+    private void botonMenuDesplegable2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable2MouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable2MouseExited
+
+    private void botonMenuDesplegable3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable3MouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable3MouseEntered
+
+    private void botonMenuDesplegable3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable3MouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable3MouseExited
+
+    private void botonMenuDesplegable4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable4MouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable4MouseEntered
+
+    private void botonMenuDesplegable4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable4MouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable4MouseExited
+
+    private void botonMenuDesplegable5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable5MouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable5MouseEntered
+
+    private void botonMenuDesplegable5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable5MouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable5MouseExited
+
+    private void botonMenuDesplegable6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable6MouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable6MouseEntered
+
+    private void botonMenuDesplegable6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuDesplegable6MouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonMenuDesplegable6MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -440,6 +597,12 @@ public class Inicio extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -469,6 +632,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaMenuDesplegable4;
     private javax.swing.JLabel etiquetaMenuDesplegable5;
     private javax.swing.JLabel etiquetaMenuDesplegable6;
+    public javax.swing.JLabel etiquetaPropaganda;
     private javax.swing.JDesktopPane panelEscritorio;
     private keeptoo.KGradientPanel panelGradBotPrincipales;
     private keeptoo.KGradientPanel panelGradPrincipal;

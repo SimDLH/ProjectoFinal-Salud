@@ -4,6 +4,7 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Prestador;
 import java.awt.Component;
+import java.awt.Cursor;
 import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
@@ -134,6 +135,14 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         botonAtrasProfConsul.setBorderPainted(false);
         botonAtrasProfConsul.setContentAreaFilled(false);
         botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProfConsul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasProfConsulMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasProfConsulMouseExited(evt);
+            }
+        });
         botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasProfConsulActionPerformed(evt);
@@ -148,6 +157,14 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         botonProfPedirOrden.setBorderPainted(false);
         botonProfPedirOrden.setContentAreaFilled(false);
         botonProfPedirOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfPedirOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonProfPedirOrdenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonProfPedirOrdenMouseExited(evt);
+            }
+        });
         botonProfPedirOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonProfPedirOrdenActionPerformed(evt);
@@ -210,6 +227,22 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         panelGradProfConsul.add(ordSac);
         ordSac.setVisible(true);
     }//GEN-LAST:event_botonProfPedirOrdenActionPerformed
+
+    private void botonAtrasProfConsulMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfConsulMouseEntered
+
+    private void botonAtrasProfConsulMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfConsulMouseExited
+
+    private void botonProfPedirOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfPedirOrdenMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonProfPedirOrdenMouseEntered
+
+    private void botonProfPedirOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfPedirOrdenMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonProfPedirOrdenMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasProfConsul;

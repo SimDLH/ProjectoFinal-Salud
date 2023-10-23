@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.PrestadorData;
 import ProjectoFinalSalud.Entidades.Prestador;
+import java.awt.Cursor;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -64,6 +65,14 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonAtrasProfAgreQuit.setBorderPainted(false);
         botonAtrasProfAgreQuit.setContentAreaFilled(false);
         botonAtrasProfAgreQuit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProfAgreQuit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasProfAgreQuitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasProfAgreQuitMouseExited(evt);
+            }
+        });
         botonAtrasProfAgreQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasProfAgreQuitActionPerformed(evt);
@@ -90,6 +99,14 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitBuscar.setBorderPainted(false);
         botonProfAgreQuitBuscar.setContentAreaFilled(false);
         botonProfAgreQuitBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitBuscarMouseExited(evt);
+            }
+        });
         botonProfAgreQuitBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonProfAgreQuitBuscarActionPerformed(evt);
@@ -138,6 +155,14 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitRein.setContentAreaFilled(false);
         botonProfAgreQuitRein.setEnabled(false);
         botonProfAgreQuitRein.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitRein.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitReinMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitReinMouseExited(evt);
+            }
+        });
         botonProfAgreQuitRein.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonProfAgreQuitReinActionPerformed(evt);
@@ -152,6 +177,14 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitGuardar.setBorderPainted(false);
         botonProfAgreQuitGuardar.setContentAreaFilled(false);
         botonProfAgreQuitGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitGuardarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitGuardarMouseExited(evt);
+            }
+        });
         botonProfAgreQuitGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonProfAgreQuitGuardarActionPerformed(evt);
@@ -166,6 +199,14 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitAnular.setBorderPainted(false);
         botonProfAgreQuitAnular.setContentAreaFilled(false);
         botonProfAgreQuitAnular.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfAgreQuitAnular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitAnularMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonProfAgreQuitAnularMouseExited(evt);
+            }
+        });
         botonProfAgreQuitAnular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonProfAgreQuitAnularActionPerformed(evt);
@@ -344,6 +385,46 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         }
         limpiar();
     }//GEN-LAST:event_botonProfAgreQuitAnularActionPerformed
+
+    private void botonAtrasProfAgreQuitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfAgreQuitMouseEntered
+
+    private void botonAtrasProfAgreQuitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfAgreQuitMouseExited
+
+    private void botonProfAgreQuitBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitBuscarMouseEntered
+
+    private void botonProfAgreQuitBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitBuscarMouseExited
+
+    private void botonProfAgreQuitReinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitReinMouseEntered
+
+    private void botonProfAgreQuitReinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitReinMouseExited
+
+    private void botonProfAgreQuitGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitGuardarMouseEntered
+
+    private void botonProfAgreQuitGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitGuardarMouseExited
+
+    private void botonProfAgreQuitAnularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitAnularMouseEntered
+
+    private void botonProfAgreQuitAnularMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonProfAgreQuitAnularMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasProfAgreQuit;

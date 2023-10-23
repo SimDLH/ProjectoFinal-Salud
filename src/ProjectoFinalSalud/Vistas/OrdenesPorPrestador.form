@@ -65,7 +65,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="etiquetaOrdenXPres" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
                           <Component id="botonAtrasOrdenXPrest" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -118,7 +118,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ordenes Por Prestador"/>
+            <Property name="text" type="java.lang.String" value="Ordenes Por Profesional"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="etiquetaOrdenXPresSelec">
@@ -168,6 +168,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonOrdenXPresBuscarMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonOrdenXPresBuscarMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonOrdenXPresBuscarActionPerformed"/>
           </Events>
         </Component>
@@ -191,6 +193,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasOrdenXPrestMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasOrdenXPrestMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasOrdenXPrestActionPerformed"/>
           </Events>
         </Component>

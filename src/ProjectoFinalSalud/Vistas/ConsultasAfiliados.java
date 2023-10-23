@@ -4,6 +4,7 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.Entidades.Afiliado;
 import java.awt.Component;
+import java.awt.Cursor;
 import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
@@ -100,6 +101,14 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         botonAtrasProfConsul.setBorderPainted(false);
         botonAtrasProfConsul.setContentAreaFilled(false);
         botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProfConsul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasProfConsulMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasProfConsulMouseExited(evt);
+            }
+        });
         botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasProfConsulActionPerformed(evt);
@@ -111,15 +120,16 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(245, 245, 245)
-                .addComponent(botonAtrasProfConsul)
-                .addContainerGap())
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 920, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(245, 245, 245)
+                        .addComponent(botonAtrasProfConsul)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                        .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64))))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,9 +138,9 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasProfConsul)
                     .addComponent(jLabel1))
-                .addGap(116, 116, 116)
+                .addGap(112, 112, 112)
                 .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,6 +160,14 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
     private void botonAtrasProfConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasProfConsulActionPerformed
+
+    private void botonAtrasProfConsulMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfConsulMouseEntered
+
+    private void botonAtrasProfConsulMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasProfConsulMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

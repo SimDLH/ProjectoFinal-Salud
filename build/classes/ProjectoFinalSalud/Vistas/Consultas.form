@@ -14,6 +14,10 @@
               <Font name="Calibri" size="14" style="1"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulConsulOrdenMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulConsulOrdenMouseExited"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemConsulOrden">
               <Properties>
@@ -21,7 +25,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri" size="14" style="1"/>
+                  <Font name="Calibri" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ordenes"/>
               </Properties>
@@ -41,6 +45,10 @@
               <Font name="Calibri" size="14" style="1"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulConsulAfilMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulConsulAfilMouseExited"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemConsulAfil">
               <Properties>
@@ -48,7 +56,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri" size="14" style="1"/>
+                  <Font name="Calibri" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Afiliados"/>
               </Properties>
@@ -68,6 +76,10 @@
               <Font name="Calibri" size="14" style="1"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulEspMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulEspMouseExited"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemConsulEsp">
               <Properties>
@@ -75,7 +87,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri" size="14" style="1"/>
+                  <Font name="Calibri" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Especialidades"/>
               </Properties>
@@ -95,6 +107,10 @@
               <Font name="Calibri" size="14" style="1"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulProfMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuConsulProfMouseExited"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemConsulProf">
               <Properties>
@@ -102,7 +118,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri" size="14" style="1"/>
+                  <Font name="Calibri" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Profesionales"/>
               </Properties>
@@ -210,6 +226,8 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasConsultasMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasConsultasMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasConsultasActionPerformed"/>
           </Events>
         </Component>
