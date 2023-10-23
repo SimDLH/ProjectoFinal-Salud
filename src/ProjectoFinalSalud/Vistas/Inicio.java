@@ -13,7 +13,7 @@ public class Inicio extends javax.swing.JFrame {
 
         initComponents();
         setTitle("MásSalud");
-        //Bloquear();
+        Bloquear();
     }
     
     JInternalFrame o = new JInternalFrame();
@@ -446,6 +446,7 @@ public class Inicio extends javax.swing.JFrame {
         IniciarSesion InSe = new IniciarSesion();
         panelEscritorio.add(InSe);
         InSe.setVisible(true);
+        Desbloquear();
     }//GEN-LAST:event_botonIniSesActionPerformed
 
     private void botonMenuDesplegable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1ActionPerformed

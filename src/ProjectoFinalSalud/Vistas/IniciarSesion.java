@@ -11,6 +11,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class IniciarSesion extends javax.swing.JInternalFrame {
 
     UsuarioData usuData = new UsuarioData ();
+    Inicio ini = new Inicio();
     
     public IniciarSesion() {
         
@@ -331,6 +332,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             if(textoNombreIniSes.getText().isEmpty() || textoApellidoIniSes.getText().isEmpty()){
                JOptionPane.showMessageDialog(null, "Tiene que llenar los campos para ingresar");
             }else if(usuData.activarUsuario(textoDireEmailIniSes.getText(), con)){
+                ini.Desbloquear();
                 dispose();
                }
         }catch(NumberFormatException ne){
