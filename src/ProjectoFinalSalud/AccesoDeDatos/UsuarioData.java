@@ -130,7 +130,7 @@ public class UsuarioData {
     
     public ArrayList<Usuario> listarUsuario(){
         
-        String sql = "SELECT IdUsuario, Nombre, Apellido, Dni, FechaDeNac, Nacionalidad, Email, Password FROM usuario WHERE Activo=?";
+        String sql = "SELECT IdUsuario, Nombre, Apellido, Dni, FechaDeNac, Nacionalidad, Email, Password FROM usuario WHERE Activo=1";
         ArrayList<Usuario> usuario = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
