@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.Entidades.Afiliado;
+import java.awt.Cursor;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -92,6 +93,14 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
         botonAfiModBuscar.setBorderPainted(false);
         botonAfiModBuscar.setContentAreaFilled(false);
         botonAfiModBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiModBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAfiModBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAfiModBuscarMouseExited(evt);
+            }
+        });
         botonAfiModBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAfiModBuscarActionPerformed(evt);
@@ -106,6 +115,14 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
         botonAfiModModif.setBorderPainted(false);
         botonAfiModModif.setContentAreaFilled(false);
         botonAfiModModif.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiModModif.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAfiModModifMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAfiModModifMouseExited(evt);
+            }
+        });
         botonAfiModModif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAfiModModifActionPerformed(evt);
@@ -120,6 +137,14 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
         botonAtrasAfiMod.setBorderPainted(false);
         botonAtrasAfiMod.setContentAreaFilled(false);
         botonAtrasAfiMod.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasAfiMod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiModMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiModMouseExited(evt);
+            }
+        });
         botonAtrasAfiMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasAfiModActionPerformed(evt);
@@ -259,6 +284,29 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasAfiModActionPerformed
 
+    private void botonAtrasAfiModMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiModMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiModMouseEntered
+
+    private void botonAtrasAfiModMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiModMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiModMouseExited
+
+    private void botonAfiModBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiModBuscarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAfiModBuscarMouseEntered
+
+    private void botonAfiModBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiModBuscarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAfiModBuscarMouseExited
+
+    private void botonAfiModModifMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiModModifMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAfiModModifMouseEntered
+
+    private void botonAfiModModifMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiModModifMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAfiModModifMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAfiModBuscar;

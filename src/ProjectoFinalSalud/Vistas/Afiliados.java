@@ -1,5 +1,6 @@
 package ProjectoFinalSalud.Vistas;
 
+import java.awt.Cursor;
 import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -26,11 +27,12 @@ public class Afiliados extends javax.swing.JInternalFrame {
         panelGradAfi = new keeptoo.KGradientPanel();
         botonAtrasAfi = new javax.swing.JButton();
         menuAfi = new javax.swing.JMenuBar();
-        menuAfiContAfi = new javax.swing.JMenu();
-        menuItemAfiHabYDes = new javax.swing.JMenuItem();
-        menuItemAfiMod = new javax.swing.JMenuItem();
         menuAfiListaAfi = new javax.swing.JMenu();
         menuItemAfiLista = new javax.swing.JMenuItem();
+        menuAfiHabiODeshAfi = new javax.swing.JMenu();
+        menuItemAfiHabYDes = new javax.swing.JMenuItem();
+        menuAfiMod = new javax.swing.JMenu();
+        menuItemAfiMod = new javax.swing.JMenuItem();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -48,6 +50,14 @@ public class Afiliados extends javax.swing.JInternalFrame {
         botonAtrasAfi.setBorderPainted(false);
         botonAtrasAfi.setContentAreaFilled(false);
         botonAtrasAfi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasAfi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiMouseExited(evt);
+            }
+        });
         botonAtrasAfi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasAfiActionPerformed(evt);
@@ -71,19 +81,65 @@ public class Afiliados extends javax.swing.JInternalFrame {
                 .addContainerGap(460, Short.MAX_VALUE))
         );
 
-        menuAfiContAfi.setBackground(new java.awt.Color(255, 255, 255));
-        menuAfiContAfi.setText("Control De Afiliados");
-        menuAfiContAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuAfiListaAfi.setBackground(new java.awt.Color(255, 255, 255));
+        menuAfiListaAfi.setText("Lista De Afiliados");
+        menuAfiListaAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuAfiListaAfi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuAfiListaAfiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuAfiListaAfiMouseExited(evt);
+            }
+        });
+
+        menuItemAfiLista.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemAfiLista.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemAfiLista.setText("Lista De Afiliados");
+        menuItemAfiLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemAfiListaActionPerformed(evt);
+            }
+        });
+        menuAfiListaAfi.add(menuItemAfiLista);
+
+        menuAfi.add(menuAfiListaAfi);
+
+        menuAfiHabiODeshAfi.setBackground(new java.awt.Color(255, 255, 255));
+        menuAfiHabiODeshAfi.setText("Habilitar O Deshabilitar Afiliados");
+        menuAfiHabiODeshAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuAfiHabiODeshAfi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuAfiHabiODeshAfiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuAfiHabiODeshAfiMouseExited(evt);
+            }
+        });
 
         menuItemAfiHabYDes.setBackground(new java.awt.Color(255, 255, 255));
         menuItemAfiHabYDes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemAfiHabYDes.setText("Habilitar Y Deshabilitar");
+        menuItemAfiHabYDes.setText("Habilitar O Deshabilitar");
         menuItemAfiHabYDes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemAfiHabYDesActionPerformed(evt);
             }
         });
-        menuAfiContAfi.add(menuItemAfiHabYDes);
+        menuAfiHabiODeshAfi.add(menuItemAfiHabYDes);
+
+        menuAfi.add(menuAfiHabiODeshAfi);
+
+        menuAfiMod.setBackground(new java.awt.Color(255, 255, 255));
+        menuAfiMod.setText("Modificar Datos De Un Afiliado");
+        menuAfiMod.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuAfiMod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuAfiModMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuAfiModMouseExited(evt);
+            }
+        });
 
         menuItemAfiMod.setBackground(new java.awt.Color(255, 255, 255));
         menuItemAfiMod.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -93,25 +149,9 @@ public class Afiliados extends javax.swing.JInternalFrame {
                 menuItemAfiModActionPerformed(evt);
             }
         });
-        menuAfiContAfi.add(menuItemAfiMod);
+        menuAfiMod.add(menuItemAfiMod);
 
-        menuAfi.add(menuAfiContAfi);
-
-        menuAfiListaAfi.setBackground(new java.awt.Color(255, 255, 255));
-        menuAfiListaAfi.setText("Lista De Afiliados");
-        menuAfiListaAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-
-        menuItemAfiLista.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemAfiLista.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemAfiLista.setText("Lista");
-        menuItemAfiLista.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemAfiListaActionPerformed(evt);
-            }
-        });
-        menuAfiListaAfi.add(menuItemAfiLista);
-
-        menuAfi.add(menuAfiListaAfi);
+        menuAfi.add(menuAfiMod);
 
         setJMenuBar(menuAfi);
 
@@ -137,7 +177,7 @@ JInternalFrame o = new JInternalFrame();
     private void menuItemAfiHabYDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiHabYDesActionPerformed
         panelGradAfi.removeAll();
         panelGradAfi.repaint();
-        AfiliadosAgregarYAnular afiAA = new AfiliadosAgregarYAnular();
+        AfiliadosAgregarOAnular afiAA = new AfiliadosAgregarOAnular();
         limpiar(o);
         o = afiAA;
         panelGradAfi.add(afiAA);
@@ -168,11 +208,44 @@ JInternalFrame o = new JInternalFrame();
         dispose();
     }//GEN-LAST:event_botonAtrasAfiActionPerformed
 
+    private void menuAfiListaAfiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfiListaAfiMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuAfiListaAfiMouseEntered
+
+    private void menuAfiListaAfiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfiListaAfiMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuAfiListaAfiMouseExited
+
+    private void menuAfiHabiODeshAfiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfiHabiODeshAfiMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuAfiHabiODeshAfiMouseEntered
+
+    private void menuAfiHabiODeshAfiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfiHabiODeshAfiMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuAfiHabiODeshAfiMouseExited
+
+    private void menuAfiModMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfiModMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuAfiModMouseEntered
+
+    private void menuAfiModMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfiModMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuAfiModMouseExited
+
+    private void botonAtrasAfiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiMouseEntered
+
+    private void botonAtrasAfiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasAfi;
     private javax.swing.JMenuBar menuAfi;
-    private javax.swing.JMenu menuAfiContAfi;
+    private javax.swing.JMenu menuAfiHabiODeshAfi;
     private javax.swing.JMenu menuAfiListaAfi;
+    private javax.swing.JMenu menuAfiMod;
     private javax.swing.JMenuItem menuItemAfiHabYDes;
     private javax.swing.JMenuItem menuItemAfiLista;
     private javax.swing.JMenuItem menuItemAfiMod;

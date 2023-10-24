@@ -11,7 +11,7 @@ public class MasInformacion extends javax.swing.JInternalFrame {
     
     private String enlace1 = "https://www.google.com.ar/";
     private String enlace2 = "https://www.youtube.com/";
-    private String enlace3 = "https://web.whatsapp.com/";
+    private String enlace3 = "https://www.starplus.com/es-ar";
     
     public MasInformacion() {
         

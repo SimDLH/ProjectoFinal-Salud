@@ -1,6 +1,7 @@
 
 package ProjectoFinalSalud.Vistas;
 
+import java.awt.Cursor;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Especialidades extends javax.swing.JInternalFrame {
@@ -26,11 +27,12 @@ public class Especialidades extends javax.swing.JInternalFrame {
         panelGradEspecialidades = new keeptoo.KGradientPanel();
         botonAtrasEsp = new javax.swing.JButton();
         menuEsp = new javax.swing.JMenuBar();
-        menuEspContEsp = new javax.swing.JMenu();
-        menuItemEspAgreEsp = new javax.swing.JMenuItem();
-        menuItemEspBorrEsp = new javax.swing.JMenuItem();
         menuEspListaEsp = new javax.swing.JMenu();
         menuItemEspListaProfXEsp = new javax.swing.JMenuItem();
+        menuEspAgreEsp = new javax.swing.JMenu();
+        menuItemEspAgreEsp = new javax.swing.JMenuItem();
+        menuEspQuitEsp = new javax.swing.JMenu();
+        menuItemEspBorrEsp = new javax.swing.JMenuItem();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -48,6 +50,14 @@ public class Especialidades extends javax.swing.JInternalFrame {
         botonAtrasEsp.setBorderPainted(false);
         botonAtrasEsp.setContentAreaFilled(false);
         botonAtrasEsp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasEsp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasEspMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasEspMouseExited(evt);
+            }
+        });
         botonAtrasEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasEspActionPerformed(evt);
@@ -71,35 +81,17 @@ public class Especialidades extends javax.swing.JInternalFrame {
                 .addContainerGap(460, Short.MAX_VALUE))
         );
 
-        menuEspContEsp.setBackground(new java.awt.Color(255, 255, 255));
-        menuEspContEsp.setText("Control De Especialidades");
-        menuEspContEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-
-        menuItemEspAgreEsp.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemEspAgreEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemEspAgreEsp.setText("Agregar Una Especialidad");
-        menuItemEspAgreEsp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemEspAgreEspActionPerformed(evt);
-            }
-        });
-        menuEspContEsp.add(menuItemEspAgreEsp);
-
-        menuItemEspBorrEsp.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemEspBorrEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemEspBorrEsp.setText("Borrar Una Especialidad");
-        menuItemEspBorrEsp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemEspBorrEspActionPerformed(evt);
-            }
-        });
-        menuEspContEsp.add(menuItemEspBorrEsp);
-
-        menuEsp.add(menuEspContEsp);
-
         menuEspListaEsp.setBackground(new java.awt.Color(255, 255, 255));
         menuEspListaEsp.setText("Lista De Especialidades");
         menuEspListaEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuEspListaEsp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuEspListaEspMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuEspListaEspMouseExited(evt);
+            }
+        });
 
         menuItemEspListaProfXEsp.setBackground(new java.awt.Color(255, 255, 255));
         menuItemEspListaProfXEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -112,6 +104,54 @@ public class Especialidades extends javax.swing.JInternalFrame {
         menuEspListaEsp.add(menuItemEspListaProfXEsp);
 
         menuEsp.add(menuEspListaEsp);
+
+        menuEspAgreEsp.setBackground(new java.awt.Color(255, 255, 255));
+        menuEspAgreEsp.setText("Agregar Una Especialidad");
+        menuEspAgreEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuEspAgreEsp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuEspAgreEspMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuEspAgreEspMouseExited(evt);
+            }
+        });
+
+        menuItemEspAgreEsp.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemEspAgreEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemEspAgreEsp.setText("Agregar Una Especialidad");
+        menuItemEspAgreEsp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemEspAgreEspActionPerformed(evt);
+            }
+        });
+        menuEspAgreEsp.add(menuItemEspAgreEsp);
+
+        menuEsp.add(menuEspAgreEsp);
+
+        menuEspQuitEsp.setBackground(new java.awt.Color(255, 255, 255));
+        menuEspQuitEsp.setText("Quitar Una Especialidad");
+        menuEspQuitEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        menuEspQuitEsp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuEspQuitEspMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuEspQuitEspMouseExited(evt);
+            }
+        });
+
+        menuItemEspBorrEsp.setBackground(new java.awt.Color(255, 255, 255));
+        menuItemEspBorrEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        menuItemEspBorrEsp.setText("Quitar Una Especialidad");
+        menuItemEspBorrEsp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemEspBorrEspActionPerformed(evt);
+            }
+        });
+        menuEspQuitEsp.add(menuItemEspBorrEsp);
+
+        menuEsp.add(menuEspQuitEsp);
 
         setJMenuBar(menuEsp);
 
@@ -140,7 +180,7 @@ public class Especialidades extends javax.swing.JInternalFrame {
     private void menuItemEspBorrEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspBorrEspActionPerformed
         panelGradEspecialidades.removeAll();
         panelGradEspecialidades.repaint();
-        EspecialidadesBorrar eb=new EspecialidadesBorrar();
+        EspecialidadesQuitar eb=new EspecialidadesQuitar();
         panelGradEspecialidades.add(eb);
         eb.setVisible(true);
     }//GEN-LAST:event_menuItemEspBorrEspActionPerformed
@@ -157,11 +197,44 @@ public class Especialidades extends javax.swing.JInternalFrame {
         ed.setVisible(true);
     }//GEN-LAST:event_menuItemEspListaProfXEspActionPerformed
 
+    private void menuEspListaEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspListaEspMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuEspListaEspMouseEntered
+
+    private void menuEspListaEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspListaEspMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuEspListaEspMouseExited
+
+    private void menuEspAgreEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspAgreEspMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuEspAgreEspMouseEntered
+
+    private void menuEspAgreEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspAgreEspMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuEspAgreEspMouseExited
+
+    private void menuEspQuitEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspQuitEspMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_menuEspQuitEspMouseEntered
+
+    private void menuEspQuitEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspQuitEspMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_menuEspQuitEspMouseExited
+
+    private void botonAtrasEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasEspMouseEntered
+
+    private void botonAtrasEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasEspMouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasEsp;
     private javax.swing.JMenuBar menuEsp;
-    private javax.swing.JMenu menuEspContEsp;
+    private javax.swing.JMenu menuEspAgreEsp;
     private javax.swing.JMenu menuEspListaEsp;
+    private javax.swing.JMenu menuEspQuitEsp;
     private javax.swing.JMenuItem menuItemEspAgreEsp;
     private javax.swing.JMenuItem menuItemEspBorrEsp;
     private javax.swing.JMenuItem menuItemEspListaProfXEsp;

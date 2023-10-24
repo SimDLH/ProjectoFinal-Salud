@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
 import ProjectoFinalSalud.Entidades.Especialidad;
+import java.awt.Cursor;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -61,6 +62,14 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         ButtonAgregar.setBorderPainted(false);
         ButtonAgregar.setContentAreaFilled(false);
         ButtonAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ButtonAgregarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ButtonAgregarMouseExited(evt);
+            }
+        });
         ButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAgregarActionPerformed(evt);
@@ -75,6 +84,14 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         botonAtrasEspAgre.setBorderPainted(false);
         botonAtrasEspAgre.setContentAreaFilled(false);
         botonAtrasEspAgre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasEspAgre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasEspAgreMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasEspAgreMouseExited(evt);
+            }
+        });
         botonAtrasEspAgre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasEspAgreActionPerformed(evt);
@@ -141,6 +158,22 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
     private void botonAtrasEspAgreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasEspAgreActionPerformed
+
+    private void botonAtrasEspAgreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasEspAgreMouseEntered
+
+    private void botonAtrasEspAgreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasEspAgreMouseExited
+
+    private void ButtonAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAgregarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_ButtonAgregarMouseEntered
+
+    private void ButtonAgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAgregarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_ButtonAgregarMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAgregar;

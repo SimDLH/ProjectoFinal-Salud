@@ -1,3 +1,4 @@
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
@@ -6,7 +7,6 @@ import ProjectoFinalSalud.Entidades.Orden;
 import ProjectoFinalSalud.Entidades.Prestador;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;

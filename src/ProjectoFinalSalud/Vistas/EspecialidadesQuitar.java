@@ -4,6 +4,7 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
 import ProjectoFinalSalud.Entidades.Especialidad;
 import java.awt.Component;
+import java.awt.Cursor;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -11,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 
-public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
+public class EspecialidadesQuitar extends javax.swing.JInternalFrame {
     
     DefaultTableModel modelo = new DefaultTableModel(){
         @Override
@@ -22,7 +23,7 @@ public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
     
     EspecialidadData ed=new EspecialidadData();
     
-    public EspecialidadesBorrar() {
+    public EspecialidadesQuitar() {
         
         initComponents();
         armarCabesera();
@@ -72,6 +73,14 @@ public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
         botonEspBorrBorrar.setBorderPainted(false);
         botonEspBorrBorrar.setContentAreaFilled(false);
         botonEspBorrBorrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonEspBorrBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonEspBorrBorrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonEspBorrBorrarMouseExited(evt);
+            }
+        });
         botonEspBorrBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEspBorrBorrarActionPerformed(evt);
@@ -86,6 +95,14 @@ public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
         botonAtrasEspBorr.setBorderPainted(false);
         botonAtrasEspBorr.setContentAreaFilled(false);
         botonAtrasEspBorr.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasEspBorr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasEspBorrMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasEspBorrMouseExited(evt);
+            }
+        });
         botonAtrasEspBorr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasEspBorrActionPerformed(evt);
@@ -186,6 +203,22 @@ public class EspecialidadesBorrar extends javax.swing.JInternalFrame {
     private void botonAtrasEspBorrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspBorrActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasEspBorrActionPerformed
+
+    private void botonAtrasEspBorrMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspBorrMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasEspBorrMouseEntered
+
+    private void botonAtrasEspBorrMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspBorrMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasEspBorrMouseExited
+
+    private void botonEspBorrBorrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEspBorrBorrarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonEspBorrBorrarMouseEntered
+
+    private void botonEspBorrBorrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEspBorrBorrarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonEspBorrBorrarMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasEspBorr;

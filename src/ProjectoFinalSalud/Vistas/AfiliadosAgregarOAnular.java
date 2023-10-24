@@ -3,15 +3,16 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.Entidades.Afiliado;
+import java.awt.Cursor;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
+public class AfiliadosAgregarOAnular extends javax.swing.JInternalFrame {
 
     AfiliadoData ad = new AfiliadoData();
     
-    public AfiliadosAgregarYAnular() {
+    public AfiliadosAgregarOAnular() {
         
         initComponents();
         
@@ -29,7 +30,7 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradAfiAgreYAnul = new keeptoo.KGradientPanel();
+        panelGradAfiAgreOAnul = new keeptoo.KGradientPanel();
         etiquetaAfiAgreYAnul = new javax.swing.JLabel();
         etiquetaAfiNumDoc = new javax.swing.JLabel();
         etiquetaAfiNomYApe = new javax.swing.JLabel();
@@ -51,10 +52,10 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
-        panelGradAfiAgreYAnul.setBackground(new java.awt.Color(255, 255, 255));
-        panelGradAfiAgreYAnul.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradAfiAgreYAnul.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradAfiAgreYAnul.setPreferredSize(new java.awt.Dimension(975, 575));
+        panelGradAfiAgreOAnul.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradAfiAgreOAnul.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradAfiAgreOAnul.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradAfiAgreOAnul.setPreferredSize(new java.awt.Dimension(975, 575));
 
         etiquetaAfiAgreYAnul.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaAfiAgreYAnul.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -106,6 +107,14 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         botonAfiAgreYAnulBuscar.setBorderPainted(false);
         botonAfiAgreYAnulBuscar.setContentAreaFilled(false);
         botonAfiAgreYAnulBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulBuscarMouseExited(evt);
+            }
+        });
         botonAfiAgreYAnulBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAfiAgreYAnulBuscarActionPerformed(evt);
@@ -121,6 +130,14 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         botonAfiAgreYAnulRein.setContentAreaFilled(false);
         botonAfiAgreYAnulRein.setEnabled(false);
         botonAfiAgreYAnulRein.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulRein.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulReinMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulReinMouseExited(evt);
+            }
+        });
         botonAfiAgreYAnulRein.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAfiAgreYAnulReinActionPerformed(evt);
@@ -135,6 +152,14 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         botonAfiAgreYAnulGuardar.setBorderPainted(false);
         botonAfiAgreYAnulGuardar.setContentAreaFilled(false);
         botonAfiAgreYAnulGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulGuardarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulGuardarMouseExited(evt);
+            }
+        });
         botonAfiAgreYAnulGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAfiAgreYAnulGuardarActionPerformed(evt);
@@ -149,6 +174,14 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         botonAfiAgreYAnulAnular.setBorderPainted(false);
         botonAfiAgreYAnulAnular.setContentAreaFilled(false);
         botonAfiAgreYAnulAnular.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAfiAgreYAnulAnular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulAnularMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAfiAgreYAnulAnularMouseExited(evt);
+            }
+        });
         botonAfiAgreYAnulAnular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAfiAgreYAnulAnularActionPerformed(evt);
@@ -163,6 +196,14 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         botonAtrasAfiAgreYAnul.setBorderPainted(false);
         botonAtrasAfiAgreYAnul.setContentAreaFilled(false);
         botonAtrasAfiAgreYAnul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasAfiAgreYAnul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiAgreYAnulMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiAgreYAnulMouseExited(evt);
+            }
+        });
         botonAtrasAfiAgreYAnul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasAfiAgreYAnulActionPerformed(evt);
@@ -172,48 +213,48 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         separadorAfiAgreYAnul.setForeground(new java.awt.Color(255, 255, 255));
         separadorAfiAgreYAnul.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
-        javax.swing.GroupLayout panelGradAfiAgreYAnulLayout = new javax.swing.GroupLayout(panelGradAfiAgreYAnul);
-        panelGradAfiAgreYAnul.setLayout(panelGradAfiAgreYAnulLayout);
-        panelGradAfiAgreYAnulLayout.setHorizontalGroup(
-            panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
-                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreYAnulLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelGradAfiAgreOAnulLayout = new javax.swing.GroupLayout(panelGradAfiAgreOAnul);
+        panelGradAfiAgreOAnul.setLayout(panelGradAfiAgreOAnulLayout);
+        panelGradAfiAgreOAnulLayout.setHorizontalGroup(
+            panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
+                .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreOAnulLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(etiquetaAfiAgreYAnul)
                         .addGap(215, 215, 215)
                         .addComponent(botonAtrasAfiAgreYAnul))
-                    .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
-                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
+                        .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(botonAfiAgreYAnulGuardar)
-                            .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                            .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
                                     .addGap(171, 171, 171)
                                     .addComponent(etiquetaAfiNumDoc)
                                     .addGap(18, 18, 18)
                                     .addComponent(textoAfiAgreYAnulDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradAfiAgreOAnulLayout.createSequentialGroup()
                                     .addGap(141, 141, 141)
-                                    .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(botonAfiAgreYAnulBuscar, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(separadorAfiAgreYAnul, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
                                     .addGap(190, 190, 190)
-                                    .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                    .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
                                             .addComponent(etiquetaAfiNumTel)
                                             .addGap(18, 18, 18)
                                             .addComponent(textoAfiAgreYAnulNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+                                        .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
                                             .addComponent(etiquetaAfiNomYApe)
                                             .addGap(18, 18, 18)
                                             .addComponent(textoAfiAgreYAnulNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
-                                            .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
+                                            .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addComponent(etiquetaAfiEstado)
                                                 .addComponent(etiquetaAfiDom))
                                             .addGap(18, 18, 18)
-                                            .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(textoAfiAgreYAnulDom, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(etiquetaAfiEstAcONoac, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -222,36 +263,36 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
                         .addGap(0, 197, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        panelGradAfiAgreYAnulLayout.setVerticalGroup(
-            panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
+        panelGradAfiAgreOAnulLayout.setVerticalGroup(
+            panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasAfiAgreYAnul)
                     .addComponent(etiquetaAfiAgreYAnul))
                 .addGap(45, 45, 45)
-                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAfiAgreYAnulBuscar)
                     .addComponent(textoAfiAgreYAnulDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaAfiNumDoc))
                 .addGap(27, 27, 27)
                 .addComponent(separadorAfiAgreYAnul, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoAfiAgreYAnulNomYApe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaAfiNomYApe))
                 .addGap(18, 18, 18)
-                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoAfiAgreYAnulNumTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaAfiNumTel))
                 .addGap(18, 18, 18)
-                .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelGradAfiAgreYAnulLayout.createSequentialGroup()
-                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelGradAfiAgreOAnulLayout.createSequentialGroup()
+                        .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textoAfiAgreYAnulDom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(etiquetaAfiDom))
                         .addGap(18, 18, 18)
-                        .addGroup(panelGradAfiAgreYAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelGradAfiAgreOAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(etiquetaAfiEstado)
                             .addComponent(etiquetaAfiEstAcONoac, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(botonAfiAgreYAnulRein))
@@ -266,11 +307,11 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfiAgreYAnul, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(panelGradAfiAgreOAnul, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradAfiAgreYAnul, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(panelGradAfiAgreOAnul, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);
@@ -349,6 +390,46 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_botonAtrasAfiAgreYAnulActionPerformed
 
+    private void botonAtrasAfiAgreYAnulMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiAgreYAnulMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiAgreYAnulMouseEntered
+
+    private void botonAtrasAfiAgreYAnulMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiAgreYAnulMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiAgreYAnulMouseExited
+
+    private void botonAfiAgreYAnulBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulBuscarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulBuscarMouseEntered
+
+    private void botonAfiAgreYAnulBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulBuscarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulBuscarMouseExited
+
+    private void botonAfiAgreYAnulReinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulReinMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulReinMouseEntered
+
+    private void botonAfiAgreYAnulReinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulReinMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulReinMouseExited
+
+    private void botonAfiAgreYAnulGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulGuardarMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulGuardarMouseEntered
+
+    private void botonAfiAgreYAnulGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulGuardarMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulGuardarMouseExited
+
+    private void botonAfiAgreYAnulAnularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulAnularMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulAnularMouseEntered
+
+    private void botonAfiAgreYAnulAnularMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulAnularMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAfiAgreYAnulAnularMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAfiAgreYAnulAnular;
@@ -363,7 +444,7 @@ public class AfiliadosAgregarYAnular extends javax.swing.JInternalFrame {
     private javax.swing.JLabel etiquetaAfiNomYApe;
     private javax.swing.JLabel etiquetaAfiNumDoc;
     private javax.swing.JLabel etiquetaAfiNumTel;
-    private keeptoo.KGradientPanel panelGradAfiAgreYAnul;
+    private keeptoo.KGradientPanel panelGradAfiAgreOAnul;
     private javax.swing.JSeparator separadorAfiAgreYAnul;
     private javax.swing.JTextField textoAfiAgreYAnulDNI;
     private javax.swing.JTextField textoAfiAgreYAnulDom;

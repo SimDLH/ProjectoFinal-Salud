@@ -165,6 +165,8 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
             }
         });
 
+        jComboBoxPago.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout panelGradSacarOrdenLayout = new javax.swing.GroupLayout(panelGradSacarOrden);
         panelGradSacarOrden.setLayout(panelGradSacarOrdenLayout);
         panelGradSacarOrdenLayout.setHorizontalGroup(
@@ -236,11 +238,11 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradSacarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
+            .addComponent(panelGradSacarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradSacarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 553, Short.MAX_VALUE)
+            .addComponent(panelGradSacarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);
@@ -347,8 +349,8 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
     }
 
     private void cargarCombo() {
-
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrdenSacar;
     private javax.swing.JButton botonSacarOrdenBuscar;

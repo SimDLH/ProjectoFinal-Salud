@@ -2,6 +2,7 @@
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Usuario;
+import ProjectoFinalSalud.Vistas.Inicio;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;

@@ -30,6 +30,8 @@ public class Registrarse extends javax.swing.JInternalFrame {
         panelGradRegis = new keeptoo.KGradientPanel();
         etiquetaTituloRegis = new javax.swing.JLabel();
         etiquetaEsloganRegis = new javax.swing.JLabel();
+        etiquetaFamilia1 = new javax.swing.JLabel();
+        etiquetaFamilia2 = new javax.swing.JLabel();
         botonAtrasRegis = new javax.swing.JButton();
         panelRegistro = new javax.swing.JPanel();
         etiquetaCuadroRegis = new javax.swing.JLabel();
@@ -44,10 +46,10 @@ public class Registrarse extends javax.swing.JInternalFrame {
         textoNombreRegis = new javax.swing.JTextField();
         textoApellidoRegis = new javax.swing.JTextField();
         textoDniRegis = new javax.swing.JTextField();
-        textoNacionRegis = new javax.swing.JTextField();
         textoDireEmailRegis = new javax.swing.JTextField();
         textoContraRegis = new javax.swing.JPasswordField();
         calendarioFechaNacRegis = new com.toedter.calendar.JDateChooser();
+        comboBoxNacRegis = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -69,6 +71,10 @@ public class Registrarse extends javax.swing.JInternalFrame {
         etiquetaEsloganRegis.setMaximumSize(new java.awt.Dimension(250, 15));
         etiquetaEsloganRegis.setMinimumSize(new java.awt.Dimension(250, 15));
         etiquetaEsloganRegis.setPreferredSize(new java.awt.Dimension(250, 15));
+
+        etiquetaFamilia1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Familias1.png"))); // NOI18N
+
+        etiquetaFamilia2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Familias2.png"))); // NOI18N
 
         botonAtrasRegis.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -209,17 +215,6 @@ public class Registrarse extends javax.swing.JInternalFrame {
             }
         });
 
-        textoNacionRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        textoNacionRegis.setForeground(new java.awt.Color(204, 204, 204));
-        textoNacionRegis.setText("Ej: Argentina");
-        textoNacionRegis.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 153, 255)));
-        textoNacionRegis.setPreferredSize(new java.awt.Dimension(60, 20));
-        textoNacionRegis.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textoNacionRegisMouseClicked(evt);
-            }
-        });
-
         textoDireEmailRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         textoDireEmailRegis.setForeground(new java.awt.Color(204, 204, 204));
         textoDireEmailRegis.setText("Ej: juanlopez@gmail.com");
@@ -244,6 +239,14 @@ public class Registrarse extends javax.swing.JInternalFrame {
 
         calendarioFechaNacRegis.setBackground(new java.awt.Color(255, 255, 255));
         calendarioFechaNacRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        comboBoxNacRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        comboBoxNacRegis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Argentina", "Boliviana", "Brasileña", "Colombiana", "Paraguaya", "Peruana", "Uruguaya", "Venezolana" }));
+        comboBoxNacRegis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxNacRegisActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRegistroLayout = new javax.swing.GroupLayout(panelRegistro);
         panelRegistro.setLayout(panelRegistroLayout);
@@ -270,21 +273,21 @@ public class Registrarse extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(textoDireEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
-                                        .addComponent(etiquetaNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(textoNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
-                                        .addComponent(etiquetaFechaNacRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(calendarioFechaNacRegis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
                                         .addComponent(etiquetaDni, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(textoDniRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
                                         .addComponent(etiquetaApellidoRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(32, 32, 32)
-                                        .addComponent(textoApellidoRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(textoApellidoRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
+                                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(etiquetaFechaNacRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(etiquetaNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(calendarioFechaNacRegis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(comboBoxNacRegis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                     .addGroup(panelRegistroLayout.createSequentialGroup()
                         .addGap(85, 85, 85)
                         .addComponent(botonRegistrateRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -314,7 +317,7 @@ public class Registrarse extends javax.swing.JInternalFrame {
                 .addGap(35, 35, 35)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textoNacionRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxNacRegis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaDireccionEmailRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,11 +342,19 @@ public class Registrarse extends javax.swing.JInternalFrame {
                         .addComponent(etiquetaTituloRegis))
                     .addGroup(panelGradRegisLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(etiquetaEsloganRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(etiquetaEsloganRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelGradRegisLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(etiquetaFamilia1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(panelRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(botonAtrasRegis)
+                .addGroup(panelGradRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradRegisLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(botonAtrasRegis))
+                    .addGroup(panelGradRegisLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(etiquetaFamilia2)))
                 .addContainerGap())
         );
         panelGradRegisLayout.setVerticalGroup(
@@ -353,6 +364,8 @@ public class Registrarse extends javax.swing.JInternalFrame {
                 .addComponent(etiquetaTituloRegis)
                 .addGap(37, 37, 37)
                 .addComponent(etiquetaEsloganRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(etiquetaFamilia1)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(panelGradRegisLayout.createSequentialGroup()
                 .addGroup(panelGradRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,7 +374,9 @@ public class Registrarse extends javax.swing.JInternalFrame {
                         .addComponent(panelRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelGradRegisLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(botonAtrasRegis)))
+                        .addComponent(botonAtrasRegis)
+                        .addGap(35, 35, 35)
+                        .addComponent(etiquetaFamilia2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -395,10 +410,6 @@ public class Registrarse extends javax.swing.JInternalFrame {
         textoDniRegis.setText("");
     }//GEN-LAST:event_textoDniRegisMouseClicked
 
-    private void textoNacionRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoNacionRegisMouseClicked
-        textoNacionRegis.setText("");
-    }//GEN-LAST:event_textoNacionRegisMouseClicked
-
     private void textoDireEmailRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoDireEmailRegisMouseClicked
         textoDireEmailRegis.setText("");
     }//GEN-LAST:event_textoDireEmailRegisMouseClicked
@@ -409,7 +420,7 @@ public class Registrarse extends javax.swing.JInternalFrame {
 
     private void botonRegistrateRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrateRegisActionPerformed
         try{
-            if(textoDniRegis.getText().isEmpty() || textoNacionRegis.getText().isEmpty()){
+            if(textoDniRegis.getText().isEmpty() || comboBoxNacRegis.getItemAt(comboBoxNacRegis.getSelectedIndex()).isEmpty()){
                JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para registrar un Usuario");
             }else if(buscarDni(Integer.parseInt(textoDniRegis.getText()))){
                JOptionPane.showMessageDialog(null, "El DNI ingresado ya le pertenece a un Usuario registrado");
@@ -422,7 +433,7 @@ public class Registrarse extends javax.swing.JInternalFrame {
                 usua.setApellido(textoApellidoRegis.getText());
                 usua.setDni(Dni);
                 usua.setFechaDeNac(fecha);
-                usua.setNacionalidad(textoNacionRegis.getText());
+                usua.setNacionalidad(comboBoxNacRegis.getItemAt(comboBoxNacRegis.getSelectedIndex()));
                 usua.setEmail(textoDireEmailRegis.getText());
                 usua.setPassword(pass);
                 usua.setActivo(true);
@@ -453,16 +464,23 @@ public class Registrarse extends javax.swing.JInternalFrame {
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonRegistrateRegisMouseExited
 
+    private void comboBoxNacRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNacRegisActionPerformed
+        String pais = comboBoxNacRegis.getSelectedItem().toString();
+    }//GEN-LAST:event_comboBoxNacRegisActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasRegis;
     private javax.swing.JButton botonRegistrateRegis;
     private com.toedter.calendar.JDateChooser calendarioFechaNacRegis;
+    private javax.swing.JComboBox<String> comboBoxNacRegis;
     private javax.swing.JLabel etiquetaApellidoRegis;
     private javax.swing.JLabel etiquetaContraRegis;
     private javax.swing.JLabel etiquetaCuadroRegis;
     private javax.swing.JLabel etiquetaDireccionEmailRegis;
     private javax.swing.JLabel etiquetaDni;
     private javax.swing.JLabel etiquetaEsloganRegis;
+    private javax.swing.JLabel etiquetaFamilia1;
+    private javax.swing.JLabel etiquetaFamilia2;
     private javax.swing.JLabel etiquetaFechaNacRegis;
     private javax.swing.JLabel etiquetaNacionRegis;
     private javax.swing.JLabel etiquetaNombreRegis;
@@ -473,21 +491,22 @@ public class Registrarse extends javax.swing.JInternalFrame {
     private javax.swing.JPasswordField textoContraRegis;
     private javax.swing.JTextField textoDireEmailRegis;
     private javax.swing.JTextField textoDniRegis;
-    private javax.swing.JTextField textoNacionRegis;
     private javax.swing.JTextField textoNombreRegis;
     // End of variables declaration//GEN-END:variables
 
     private void limpiar(){
+        
         textoNombreRegis.setText("");
         textoApellidoRegis.setText("");
         textoDniRegis.setText("");
-        //calendarioFechaNacRegis.setDate();
-        textoNacionRegis.setText("");
+        calendarioFechaNacRegis.setDate(null);
+        comboBoxNacRegis.setSelectedIndex(0);
         textoDireEmailRegis.setText("");
         textoContraRegis.setText("");
     }
     
     private boolean buscarDni(int Dni) {
+        
         ArrayList<Usuario> usuario = usuData.listarUsuario();
         boolean us = false;
         for (Usuario usu : usuario) {

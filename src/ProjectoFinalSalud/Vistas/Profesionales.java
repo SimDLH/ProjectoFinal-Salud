@@ -2,7 +2,6 @@
 package ProjectoFinalSalud.Vistas;
 
 import java.awt.Cursor;
-import javax.swing.JMenuItem;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Profesionales extends javax.swing.JInternalFrame {

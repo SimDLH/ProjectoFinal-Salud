@@ -3,11 +3,17 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
 import java.awt.Component;
 import java.awt.Cursor;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import javax.swing.JInternalFrame;
 
 public class Inicio extends javax.swing.JFrame {
 
     UsuarioData usuaData = new UsuarioData();
+    private String enlace1 = "https://web.whatsapp.com/";
+    private String enlace2 = "https://www.facebook.com/";
+    private String enlace3 = "https://twitter.com/";
+    private String enlace4 = "https://www.instagram.com/";
     
     public Inicio() {
 
@@ -40,7 +46,7 @@ public class Inicio extends javax.swing.JFrame {
             b.setEnabled(true);
             botonCerrSes.setVisible(true);
             etiquetaBienvenido.setVisible(true);
-            etiquetaBienvenido.setText("Bienvenido");
+            etiquetaBienvenido.setText("Bienvenido ");
             botonRegistro.setVisible(false);
             botonIniSes.setVisible(false);
         }
@@ -77,6 +83,12 @@ public class Inicio extends javax.swing.JFrame {
         etiquetaMenuDesplegable4 = new javax.swing.JLabel();
         etiquetaMenuDesplegable5 = new javax.swing.JLabel();
         etiquetaMenuDesplegable6 = new javax.swing.JLabel();
+        etiquetaChat = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        etiquetaSeguinos = new javax.swing.JLabel();
+        botonFacebook = new javax.swing.JButton();
+        botonX = new javax.swing.JButton();
+        botonInstagram = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -361,29 +373,139 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
+        etiquetaChat.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaChat.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaChat.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaChat.setText("¡Chatea con nosotros!");
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/RedSocialWIcono.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton2MouseExited(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        etiquetaSeguinos.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaSeguinos.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaSeguinos.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaSeguinos.setText("Síguenos");
+
+        botonFacebook.setBackground(new java.awt.Color(255, 255, 255));
+        botonFacebook.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonFacebook.setForeground(new java.awt.Color(255, 255, 255));
+        botonFacebook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/RedSocialFIcono.png"))); // NOI18N
+        botonFacebook.setBorderPainted(false);
+        botonFacebook.setContentAreaFilled(false);
+        botonFacebook.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonFacebook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonFacebookMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonFacebookMouseExited(evt);
+            }
+        });
+        botonFacebook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonFacebookActionPerformed(evt);
+            }
+        });
+
+        botonX.setBackground(new java.awt.Color(255, 255, 255));
+        botonX.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonX.setForeground(new java.awt.Color(255, 255, 255));
+        botonX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/RedSocialXIcono.png"))); // NOI18N
+        botonX.setBorderPainted(false);
+        botonX.setContentAreaFilled(false);
+        botonX.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonXMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonXMouseExited(evt);
+            }
+        });
+        botonX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonXActionPerformed(evt);
+            }
+        });
+
+        botonInstagram.setBackground(new java.awt.Color(255, 255, 255));
+        botonInstagram.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonInstagram.setForeground(new java.awt.Color(255, 255, 255));
+        botonInstagram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/RedSocialIIcono.png"))); // NOI18N
+        botonInstagram.setBorderPainted(false);
+        botonInstagram.setContentAreaFilled(false);
+        botonInstagram.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonInstagram.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonInstagramMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonInstagramMouseExited(evt);
+            }
+        });
+        botonInstagram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonInstagramActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelGradPrincipalLayout = new javax.swing.GroupLayout(panelGradPrincipal);
         panelGradPrincipal.setLayout(panelGradPrincipalLayout);
         panelGradPrincipalLayout.setHorizontalGroup(
             panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiquetaLogoPrincipal)
-                .addGap(43, 43, 43)
-                .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 458, Short.MAX_VALUE)
-                .addComponent(botonCerrSes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonRegistro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonIniSes)
-                .addContainerGap())
             .addComponent(separadorMenuPrincipal1)
             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(etiquetaPropaganda)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(etiquetaLogoPrincipal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonCerrSes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonRegistro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonIniSes))
+                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                .addComponent(etiquetaChat)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(etiquetaPropaganda))
+                            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                .addComponent(etiquetaSeguinos)
+                                .addGap(6, 6, 6)
+                                .addComponent(botonFacebook)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botonX)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botonInstagram)))
+                        .addGap(0, 186, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panelGradPrincipalLayout.setVerticalGroup(
             panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,13 +521,29 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84))
-                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(etiquetaPropaganda)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradPrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etiquetaChat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(etiquetaSeguinos))
+                            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(botonX)
+                                    .addComponent(botonFacebook)
+                                    .addComponent(botonInstagram))))))
+                .addGap(56, 56, 56))
         );
 
         panelEscritorio.setLayer(panelGradPrincipal, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -573,6 +711,86 @@ public class Inicio extends javax.swing.JFrame {
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonMenuDesplegable6MouseExited
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace1);
+                    desktop.browse(uri);
+                }catch(URISyntaxException | IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jButton2MouseEntered
+
+    private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jButton2MouseExited
+
+    private void botonFacebookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFacebookActionPerformed
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace2);
+                    desktop.browse(uri);
+                }catch(URISyntaxException | IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_botonFacebookActionPerformed
+
+    private void botonFacebookMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFacebookMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonFacebookMouseEntered
+
+    private void botonFacebookMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFacebookMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonFacebookMouseExited
+
+    private void botonXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonXActionPerformed
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace3);
+                    desktop.browse(uri);
+                }catch(URISyntaxException | IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_botonXActionPerformed
+
+    private void botonXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonXMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonXMouseEntered
+
+    private void botonXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonXMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonXMouseExited
+
+    private void botonInstagramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInstagramActionPerformed
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+            if(desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    java.net.URI uri = new java.net.URI(enlace4);
+                    desktop.browse(uri);
+                }catch(URISyntaxException | IOException ex){}
+            }
+        }
+    }//GEN-LAST:event_botonInstagramActionPerformed
+
+    private void botonInstagramMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonInstagramMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonInstagramMouseEntered
+
+    private void botonInstagramMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonInstagramMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonInstagramMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -617,7 +835,9 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCerrSes;
+    private javax.swing.JButton botonFacebook;
     private javax.swing.JButton botonIniSes;
+    private javax.swing.JButton botonInstagram;
     private javax.swing.JButton botonMenuDesplegable1;
     private javax.swing.JButton botonMenuDesplegable2;
     private javax.swing.JButton botonMenuDesplegable3;
@@ -625,7 +845,9 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton botonMenuDesplegable5;
     private javax.swing.JButton botonMenuDesplegable6;
     private javax.swing.JButton botonRegistro;
+    private javax.swing.JButton botonX;
     private javax.swing.JLabel etiquetaBienvenido;
+    private javax.swing.JLabel etiquetaChat;
     private javax.swing.JLabel etiquetaLogoPrincipal;
     private javax.swing.JLabel etiquetaMenuDesplegable1;
     private javax.swing.JLabel etiquetaMenuDesplegable2;
@@ -634,6 +856,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaMenuDesplegable5;
     private javax.swing.JLabel etiquetaMenuDesplegable6;
     public javax.swing.JLabel etiquetaPropaganda;
+    private javax.swing.JLabel etiquetaSeguinos;
+    private javax.swing.JButton jButton2;
     private javax.swing.JDesktopPane panelEscritorio;
     private keeptoo.KGradientPanel panelGradBotPrincipales;
     private keeptoo.KGradientPanel panelGradPrincipal;

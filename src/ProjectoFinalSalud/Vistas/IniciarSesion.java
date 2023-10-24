@@ -3,6 +3,7 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
 import ProjectoFinalSalud.Entidades.Usuario;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -21,7 +22,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -332,7 +333,6 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             if(textoNombreIniSes.getText().isEmpty() || textoApellidoIniSes.getText().isEmpty()){
                JOptionPane.showMessageDialog(null, "Tiene que llenar los campos para ingresar");
             }else if(usuData.activarUsuario(textoDireEmailIniSes.getText(), con)){
-                ini.Desbloquear();
                 dispose();
                }
         }catch(NumberFormatException ne){

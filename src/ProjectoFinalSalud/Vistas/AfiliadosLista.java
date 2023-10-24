@@ -4,6 +4,7 @@ package ProjectoFinalSalud.Vistas;
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
 import ProjectoFinalSalud.Entidades.Afiliado;
 import java.awt.Component;
+import java.awt.Cursor;
 import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
@@ -81,6 +82,14 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
         botonAtrasAfiLista.setBorderPainted(false);
         botonAtrasAfiLista.setContentAreaFilled(false);
         botonAtrasAfiLista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasAfiLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiListaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasAfiListaMouseExited(evt);
+            }
+        });
         botonAtrasAfiLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAtrasAfiListaActionPerformed(evt);
@@ -174,6 +183,14 @@ public class AfiliadosLista extends javax.swing.JInternalFrame {
     private void botonAtrasAfiListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasAfiListaActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasAfiListaActionPerformed
+
+    private void botonAtrasAfiListaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiListaMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiListaMouseEntered
+
+    private void botonAtrasAfiListaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiListaMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonAtrasAfiListaMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
