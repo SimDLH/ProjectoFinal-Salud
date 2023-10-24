@@ -10,12 +10,13 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class IniciarSesion extends javax.swing.JInternalFrame {
-
-    UsuarioData usuData = new UsuarioData ();
-    Inicio ini = new Inicio();
     
-    public IniciarSesion() {
+    UsuarioData usuData = new UsuarioData ();
+    private Inicio ini;
+    
+    public IniciarSesion(Inicio ini) {
         
+        this.ini = ini;
         initComponents();
         
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
@@ -333,6 +334,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             if(textoNombreIniSes.getText().isEmpty() || textoApellidoIniSes.getText().isEmpty()){
                JOptionPane.showMessageDialog(null, "Tiene que llenar los campos para ingresar");
             }else if(usuData.activarUsuario(textoDireEmailIniSes.getText(), con)){
+                ini.Desbloquear();
                 dispose();
                }
         }catch(NumberFormatException ne){

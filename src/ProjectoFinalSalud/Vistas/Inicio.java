@@ -581,10 +581,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void botonIniSesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniSesActionPerformed
-        IniciarSesion InSe = new IniciarSesion();
+        IniciarSesion InSe = new IniciarSesion(this);
         panelEscritorio.add(InSe);
         InSe.setVisible(true);
-        Desbloquear();
     }//GEN-LAST:event_botonIniSesActionPerformed
 
     private void botonMenuDesplegable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuDesplegable1ActionPerformed
