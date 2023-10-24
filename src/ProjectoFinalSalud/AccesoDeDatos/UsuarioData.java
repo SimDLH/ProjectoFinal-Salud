@@ -68,7 +68,7 @@ public class UsuarioData {
         }
     }
     
-    public boolean activarUsuario(String Email, String Password) {
+    public boolean activarUsuario(String Email, String Password, String Nombre) {
         boolean a=false;
         String sql = "SELECT * FROM usuario WHERE usuario.Email=? AND usuario.Password=?";
         try {
@@ -77,7 +77,7 @@ public class UsuarioData {
             ps.setString(2, Password);
             ResultSet rs=ps.executeQuery();
             if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Bienvenido");
+                JOptionPane.showMessageDialog(null, "Bienvenido " + Nombre);
                 return a=true;
             } else {
                 JOptionPane.showMessageDialog(null, "El Usuario es incorrecto, por favor vuelva a intentarlo");

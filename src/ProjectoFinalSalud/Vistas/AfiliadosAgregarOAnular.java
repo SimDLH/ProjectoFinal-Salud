@@ -407,7 +407,9 @@ public class AfiliadosAgregarOAnular extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonAfiAgreYAnulBuscarMouseExited
 
     private void botonAfiAgreYAnulReinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulReinMouseEntered
+        if(botonAfiAgreYAnulRein.isEnabled()){
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
     }//GEN-LAST:event_botonAfiAgreYAnulReinMouseEntered
 
     private void botonAfiAgreYAnulReinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulReinMouseExited
@@ -415,7 +417,9 @@ public class AfiliadosAgregarOAnular extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonAfiAgreYAnulReinMouseExited
 
     private void botonAfiAgreYAnulGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulGuardarMouseEntered
+        if(botonAfiAgreYAnulGuardar.isEnabled()){
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
     }//GEN-LAST:event_botonAfiAgreYAnulGuardarMouseEntered
 
     private void botonAfiAgreYAnulGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulGuardarMouseExited
@@ -423,7 +427,9 @@ public class AfiliadosAgregarOAnular extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonAfiAgreYAnulGuardarMouseExited
 
     private void botonAfiAgreYAnulAnularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulAnularMouseEntered
+        if(botonAfiAgreYAnulAnular.isEnabled()){
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
     }//GEN-LAST:event_botonAfiAgreYAnulAnularMouseEntered
 
     private void botonAfiAgreYAnulAnularMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAfiAgreYAnulAnularMouseExited

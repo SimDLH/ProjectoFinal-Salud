@@ -3,7 +3,6 @@ package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
 import ProjectoFinalSalud.Entidades.Usuario;
-import java.awt.Component;
 import java.awt.Cursor;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -333,8 +332,8 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             String con = String.valueOf(textoContraIniSes.getPassword());
             if(textoNombreIniSes.getText().isEmpty() || textoApellidoIniSes.getText().isEmpty()){
                JOptionPane.showMessageDialog(null, "Tiene que llenar los campos para ingresar");
-            }else if(usuData.activarUsuario(textoDireEmailIniSes.getText(), con)){
-                ini.Desbloquear();
+            }else if(usuData.activarUsuario(textoDireEmailIniSes.getText(), con, textoNombreIniSes.getText())){
+                ini.Desbloquear(textoNombreIniSes.getText());
                 dispose();
                }
         }catch(NumberFormatException ne){

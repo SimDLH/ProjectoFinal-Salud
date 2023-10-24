@@ -12,7 +12,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 
 public class ConsultasAfiliados extends javax.swing.JInternalFrame {
-
+    
     DefaultTableModel modelo = new DefaultTableModel(){
         @Override
         public boolean isCellEditable(int row, int colum) {
@@ -23,6 +23,7 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
     AfiliadoData ad=new AfiliadoData();
     
     public ConsultasAfiliados() {
+        
         initComponents();
         armarCabesera();
         cargarTabla();
@@ -43,7 +44,7 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        kGradientPanel1 = new keeptoo.KGradientPanel();
+        panelGradConsConsAfi = new keeptoo.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         panelScrollTablaListaAfi = new javax.swing.JScrollPane();
         tablaListaAfi = new javax.swing.JTable();
@@ -52,17 +53,17 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
-        kGradientPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 255));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 153, 0));
-        kGradientPanel1.setPreferredSize(new java.awt.Dimension(975, 575));
+        panelGradConsConsAfi.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradConsConsAfi.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradConsConsAfi.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradConsConsAfi.setPreferredSize(new java.awt.Dimension(975, 575));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Consultar Afiliados");
 
-        tablaListaAfi.setBackground(kGradientPanel1.getkStartColor());
+        tablaListaAfi.setBackground(panelGradConsConsAfi.getkStartColor());
         tablaListaAfi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         tablaListaAfi.setForeground(new java.awt.Color(255, 255, 255));
         tablaListaAfi.setModel(new javax.swing.table.DefaultTableModel(
@@ -115,27 +116,27 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelGradConsConsAfiLayout = new javax.swing.GroupLayout(panelGradConsConsAfi);
+        panelGradConsConsAfi.setLayout(panelGradConsConsAfiLayout);
+        panelGradConsConsAfiLayout.setHorizontalGroup(
+            panelGradConsConsAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradConsConsAfiLayout.createSequentialGroup()
                 .addContainerGap(75, Short.MAX_VALUE)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addGroup(panelGradConsConsAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradConsConsAfiLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(245, 245, 245)
                         .addComponent(botonAtrasProfConsul)
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradConsConsAfiLayout.createSequentialGroup()
                         .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(64, 64, 64))))
         );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+        panelGradConsConsAfiLayout.setVerticalGroup(
+            panelGradConsConsAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradConsConsAfiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panelGradConsConsAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasProfConsul)
                     .addComponent(jLabel1))
                 .addGap(112, 112, 112)
@@ -147,11 +148,11 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(panelGradConsConsAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(panelGradConsConsAfi, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);
@@ -173,7 +174,7 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasProfConsul;
     private javax.swing.JLabel jLabel1;
-    private keeptoo.KGradientPanel kGradientPanel1;
+    private keeptoo.KGradientPanel panelGradConsConsAfi;
     private javax.swing.JScrollPane panelScrollTablaListaAfi;
     private javax.swing.JTable tablaListaAfi;
     // End of variables declaration//GEN-END:variables

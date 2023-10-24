@@ -1,19 +1,20 @@
 package ProjectoFinalSalud.Vistas;
 
+import java.awt.Component;
 import java.awt.Cursor;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Consultas extends javax.swing.JInternalFrame {
-
+   
     public Consultas() {
 
         initComponents();
-
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

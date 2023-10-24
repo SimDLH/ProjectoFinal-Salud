@@ -40,13 +40,13 @@ public class Inicio extends javax.swing.JFrame {
         }
     }
 
-    public void Desbloquear() {
+    public void Desbloquear(String nombre) {
 
         for (Component b : panelGradBotPrincipales.getComponents()) {
             b.setEnabled(true);
             botonCerrSes.setVisible(true);
             etiquetaBienvenido.setVisible(true);
-            etiquetaBienvenido.setText("Bienvenido ");
+            etiquetaBienvenido.setText("Bienvenido " + nombre + "...");
             botonRegistro.setVisible(false);
             botonIniSes.setVisible(false);
         }
@@ -89,6 +89,7 @@ public class Inicio extends javax.swing.JFrame {
         botonFacebook = new javax.swing.JButton();
         botonX = new javax.swing.JButton();
         botonInstagram = new javax.swing.JButton();
+        etiquetaAmbulancia = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -467,6 +468,14 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        etiquetaAmbulancia.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaAmbulancia.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaAmbulancia.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaAmbulancia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaAmbulancia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/AmbulanciaDer.png"))); // NOI18N
+        etiquetaAmbulancia.setText("<html>\nPara Urgencias Y Emergencias\n<br>\n0800-777-0011\n</html>");
+        etiquetaAmbulancia.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
         javax.swing.GroupLayout panelGradPrincipalLayout = new javax.swing.GroupLayout(panelGradPrincipal);
         panelGradPrincipal.setLayout(panelGradPrincipalLayout);
         panelGradPrincipalLayout.setHorizontalGroup(
@@ -477,8 +486,10 @@ public class Inicio extends javax.swing.JFrame {
                     .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(etiquetaLogoPrincipal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127)
+                        .addComponent(etiquetaAmbulancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonCerrSes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -515,8 +526,10 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(botonIniSes)
                     .addComponent(etiquetaLogoPrincipal)
                     .addComponent(botonRegistro)
-                    .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCerrSes))
+                    .addComponent(botonCerrSes)
+                    .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(etiquetaAmbulancia, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separadorMenuPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -845,6 +858,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton botonMenuDesplegable6;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonX;
+    private javax.swing.JLabel etiquetaAmbulancia;
     private javax.swing.JLabel etiquetaBienvenido;
     private javax.swing.JLabel etiquetaChat;
     private javax.swing.JLabel etiquetaLogoPrincipal;
