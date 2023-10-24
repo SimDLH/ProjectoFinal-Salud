@@ -1,4 +1,3 @@
-
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
@@ -11,8 +10,9 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
-
+    
     PrestadorData presData = new PrestadorData();
+    EspecialidadData espData = new EspecialidadData();
     
     public ProfesionalesAgregarQuitar() {
         
@@ -51,8 +51,8 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitRein = new javax.swing.JButton();
         botonProfAgreQuitGuardar = new javax.swing.JButton();
         botonProfAgreQuitAnular = new javax.swing.JButton();
-        comboBoxProfAgreQuitEsp = new javax.swing.JComboBox<>();
         etiquetaProfAgreQuitEsp = new javax.swing.JLabel();
+        comboBoxProfAgreQuitEsp = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -218,9 +218,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
             }
         });
 
-        comboBoxProfAgreQuitEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        comboBoxProfAgreQuitEsp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
         etiquetaProfAgreQuitEsp.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaProfAgreQuitEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         etiquetaProfAgreQuitEsp.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,10 +268,10 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
                                                 .addComponent(etiquetaProfAgreQuitEstado))
                                             .addGap(18, 18, 18)
                                             .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(textoProfAgreQuitDom)
+                                                .addComponent(textoProfAgreQuitDom, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                                                 .addComponent(etiquetaProfAgreQuitAcONoac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(comboBoxProfAgreQuitEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)))
+                                                .addComponent(comboBoxProfAgreQuitEsp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)))
                 .addComponent(botonAtrasProfAgreQuit)
                 .addContainerGap())
         );
@@ -308,8 +305,8 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
                             .addComponent(etiquetaProfAgreQuitDom))
                         .addGap(18, 18, 18)
                         .addGroup(panelGradProfAgreQuitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(comboBoxProfAgreQuitEsp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etiquetaProfAgreQuitEsp))
+                            .addComponent(etiquetaProfAgreQuitEsp)
+                            .addComponent(comboBoxProfAgreQuitEsp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(etiquetaProfAgreQuitAcONoac, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(etiquetaProfAgreQuitEstado))
@@ -318,18 +315,18 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
                     .addComponent(botonProfAgreQuitRein)
                     .addComponent(botonProfAgreQuitGuardar)
                     .addComponent(botonProfAgreQuitAnular))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);
@@ -338,113 +335,120 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private void botonAtrasProfAgreQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasProfAgreQuitActionPerformed
-
+    
     private void botonProfAgreQuitBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarActionPerformed
-        try{
+        try {
             int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
             botonProfAgreQuitGuardar.setEnabled(false);
             Prestador pres = presData.buscarPrestadorDni(Dni);
-            if(pres.getTelefono()==0){
+            Especialidad e = espData.buscarEspecialidad(pres.getEspecialidad().getIdEspecialidad());
+            if (pres.getTelefono() == 0) {
                 limpiar();
-            }else{
+            } else {
                 textoProfAgreQuitNomYApe.setText(pres.getNombre());
                 textoProfAgreQuitDom.setText(pres.getDomicilio());
-                textoProfAgreQuitNumTel.setText(pres.getTelefono()+"");
-                comboBoxProfAgreQuitEsp.setSelectedItem(pres.getEspecialidad());
-                if(pres.isActivo()){
+                textoProfAgreQuitNumTel.setText(pres.getTelefono() + "");
+                comboBoxProfAgreQuitEsp.addItem(e);
+                //comboBoxProfAgreQuitEsp.setSelectedItem(e.getEspecialidad().toString());
+                //comboBoxProfAgreQuitEsp.setSelectedItem(pres.getEspecialidad());
+                if (pres.isActivo()) {
                     etiquetaProfAgreQuitAcONoac.setText("Activo");
                     botonProfAgreQuitRein.setEnabled(false);
-                }else{
+                } else {
                     etiquetaProfAgreQuitAcONoac.setText("Inactivo");
                     botonProfAgreQuitRein.setEnabled(true);
                 }
             }
-        }catch(NumberFormatException ne){
+        } catch (NumberFormatException ne) {
             JOptionPane.showMessageDialog(null, "Ingrese un DNI válido para buscar a un Prestador");
             limpiar();
         }
     }//GEN-LAST:event_botonProfAgreQuitBuscarActionPerformed
-
+    
     private void botonProfAgreQuitReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinActionPerformed
-        int Dni=Integer.parseInt(textoProfAgreQuitDNI.getText());
+        int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
         presData.reinstituirPrestador(Dni);
         limpiar();
     }//GEN-LAST:event_botonProfAgreQuitReinActionPerformed
-
+    
     private void botonProfAgreQuitGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarActionPerformed
-        try{
-            if(textoProfAgreQuitDNI.getText().isEmpty() || textoProfAgreQuitNumTel.getText().isEmpty()){
+        try {
+            
+            if (textoProfAgreQuitDNI.getText().isEmpty() || textoProfAgreQuitNumTel.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Profesional");
-            }else if(buscarDni(Integer.parseInt(textoProfAgreQuitDNI.getText()))){
+            } else if (buscarDni(Integer.parseInt(textoProfAgreQuitDNI.getText()))) {
                 JOptionPane.showMessageDialog(null, "El DNI ingresado ya le pertenece a un Profesional registrado");
-            }else{
+            } else {
                 int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
                 int Tel = Integer.parseInt(textoProfAgreQuitNumTel.getText());
                 Prestador pres = new Prestador();
+                Especialidad eSeleccionado = (Especialidad) comboBoxProfAgreQuitEsp.getSelectedItem();
                 pres.setDni(Dni);
                 pres.setNombre(textoProfAgreQuitNomYApe.getText());
                 pres.setTelefono(Tel);
                 pres.setDomicilio(textoProfAgreQuitDom.getText());
+                pres.setEspecialidad(eSeleccionado);
+                //pres.setEspecialidad(comboBoxProfAgreQuitEsp.getSelectedItem());
                 //pres.setEspecialidad(comboBoxProfAgreQuitEsp.getItemAt(comboBoxProfAgreQuitEsp.getSelectedIndex()));
                 pres.setActivo(true);
                 presData.guardarPrestador(pres);
             }
-        }catch(NumberFormatException ne){
+        } catch (NumberFormatException ne) {
             JOptionPane.showMessageDialog(null, "Error al ingresar, caracteres erróneos");
-        }catch(NullPointerException np){
+        } catch (NullPointerException np) {
             JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Profesional");
         }
         limpiar();
     }//GEN-LAST:event_botonProfAgreQuitGuardarActionPerformed
-
+    
     private void botonProfAgreQuitAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularActionPerformed
-        try{
-            int Dni=Integer.parseInt(textoProfAgreQuitDNI.getText());
+        try {
+            int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
             presData.eliminarPrestador(Dni);
-        }catch(NumberFormatException ne){
+        } catch (NumberFormatException ne) {
             JOptionPane.showMessageDialog(null, "Ingrese el DNI de un Profesional para anularlo");
-        }catch(NullPointerException np){
+        } catch (NullPointerException np) {
             JOptionPane.showMessageDialog(null, "Tiene que ingresar el DNI de un Profesional para anularlo");
         }
         limpiar();
     }//GEN-LAST:event_botonProfAgreQuitAnularActionPerformed
-
+    
     private void botonAtrasProfAgreQuitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonAtrasProfAgreQuitMouseEntered
-
+    
     private void botonAtrasProfAgreQuitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonAtrasProfAgreQuitMouseExited
-
+    
     private void botonProfAgreQuitBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitBuscarMouseEntered
-
+    
     private void botonProfAgreQuitBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitBuscarMouseExited
-
+    
     private void botonProfAgreQuitReinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitReinMouseEntered
-
+    
     private void botonProfAgreQuitReinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitReinMouseExited
-
+    
     private void botonProfAgreQuitGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitGuardarMouseEntered
-
+    
     private void botonProfAgreQuitGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitGuardarMouseExited
-
+    
     private void botonProfAgreQuitAnularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitAnularMouseEntered
-
+    
     private void botonProfAgreQuitAnularMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitAnularMouseExited
@@ -455,7 +459,7 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private javax.swing.JButton botonProfAgreQuitBuscar;
     private javax.swing.JButton botonProfAgreQuitGuardar;
     private javax.swing.JButton botonProfAgreQuitRein;
-    private javax.swing.JComboBox<String> comboBoxProfAgreQuitEsp;
+    private javax.swing.JComboBox<Especialidad> comboBoxProfAgreQuitEsp;
     private javax.swing.JLabel etiquetaProfAgreQuit;
     private javax.swing.JLabel etiquetaProfAgreQuitAcONoac;
     private javax.swing.JLabel etiquetaProfAgreQuitDNI;
@@ -472,8 +476,8 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textoProfAgreQuitNumTel;
     // End of variables declaration//GEN-END:variables
 
-    private void limpiar(){
-       
+    private void limpiar() {
+        
         textoProfAgreQuitNomYApe.setText("");
         textoProfAgreQuitNumTel.setText("");
         textoProfAgreQuitDom.setText("");
@@ -497,11 +501,9 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     
     private void cargarComboB() {
         
-        EspecialidadData espData = new EspecialidadData();
         ArrayList<Especialidad> especialidades = espData.listarEspecialidad();
-        comboBoxProfAgreQuitEsp.removeAllItems();
-        for(int i = 0; i < especialidades.size(); i++) {
-            comboBoxProfAgreQuitEsp.addItem(especialidades.get(i).getEspecialidad());
-        }    
+        for (Especialidad e : especialidades) {
+            comboBoxProfAgreQuitEsp.addItem(e);
+        }
     }
 }

@@ -1,4 +1,3 @@
-
 package ProjectoFinalSalud.Entidades;
 
 public class Especialidad {
@@ -36,6 +35,6 @@ public class Especialidad {
 
     @Override
     public String toString() {
-        return Especialidad;
+        return "" + Especialidad;
     }
 }
