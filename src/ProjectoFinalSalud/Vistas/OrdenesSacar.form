@@ -31,12 +31,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panelGradSacarOrden" alignment="0" pref="959" max="32767" attributes="0"/>
+          <Component id="panelGradSacarOrden" alignment="0" pref="973" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panelGradSacarOrden" alignment="0" pref="545" max="32767" attributes="0"/>
+          <Component id="panelGradSacarOrden" alignment="0" pref="553" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -76,18 +76,18 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="botonSacarOrdenGuardar" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="comboBoxSacarOrdenPres" max="32767" attributes="0"/>
-                              <Component id="textoSacarOrdenDoc" pref="245" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jComboBoxPago" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboBoxSacarOrdenPres" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textoSacarOrdenDoc" alignment="0" pref="245" max="32767" attributes="0"/>
                               <Component id="calendarioSacarOrden" alignment="1" max="32767" attributes="0"/>
-                              <Component id="textoSacarOrdenForPag" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="botonSacarOrdenBuscar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="225" max="32767" attributes="0"/>
+                  <EmptySpace pref="242" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -124,10 +124,10 @@
                       </Group>
                       <Component id="etiquetaSacarOrdenFecha" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textoSacarOrdenForPag" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="etiquetaSacarOrdenForPag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxPago" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -227,13 +227,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="textoSacarOrdenDoc">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Calibri" size="14" style="0"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="textoSacarOrdenForPag">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="14" style="0"/>
@@ -341,6 +334,16 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasOrdenSacarMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasOrdenSacarActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxPago">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;FormaDePago&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
