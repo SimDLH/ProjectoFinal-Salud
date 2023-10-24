@@ -169,8 +169,8 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
                                 .addComponent(botonAtrasOrdenXAfi)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXAfiLayout.createSequentialGroup()
-                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(101, 101, 101))))
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99))))
         );
         panelGradOrdenXAfiLayout.setVerticalGroup(
             panelGradOrdenXAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

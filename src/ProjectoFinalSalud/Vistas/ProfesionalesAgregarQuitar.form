@@ -61,69 +61,62 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                          <Component id="etiquetaProfAgreQuit" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
-                                  <Component id="separadorProfAgreQuit" min="-2" pref="611" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" attributes="0">
                                   <Component id="etiquetaProfAgreQuitDNI" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="textoProfAgreQuitDNI" min="-2" pref="236" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="botonProfAgreQuitBuscar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="76" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="separadorProfAgreQuit" alignment="0" min="-2" pref="598" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="botonProfAgreQuitRein" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="botonProfAgreQuitGuardar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="botonProfAgreQuitAnular" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="etiquetaProfAgreQuitNomYApe" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="textoProfAgreQuitNomYApe" min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="etiquetaProfAgreQuitNomYApe" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="textoProfAgreQuitNomYApe" min="-2" pref="236" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="etiquetaProfAgreQuitNumTel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="textoProfAgreQuitNumTel" min="-2" pref="236" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="etiquetaProfAgreQuitDom" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="etiquetaProfAgreQuitEsp" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="etiquetaProfAgreQuitEstado" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="etiquetaProfAgreQuitNumTel" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="textoProfAgreQuitNumTel" min="-2" pref="236" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="etiquetaProfAgreQuitDom" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="etiquetaProfAgreQuitEsp" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="etiquetaProfAgreQuitEstado" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="textoProfAgreQuitDom" alignment="0" pref="236" max="32767" attributes="0"/>
-                                                      <Component id="etiquetaProfAgreQuitAcONoac" alignment="0" pref="236" max="32767" attributes="0"/>
-                                                      <Component id="textoProfAgreQuitEsp" alignment="0" max="32767" attributes="0"/>
-                                                  </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="textoProfAgreQuitDom" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="etiquetaProfAgreQuitAcONoac" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="comboBoxProfAgreQuitEsp" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="comboBoxProfAgreQuitEsp" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="etiquetaProfAgreQuit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
+                          <EmptySpace pref="45" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="botonAtrasProfAgreQuit" min="-2" max="-2" attributes="0"/>
@@ -139,17 +132,17 @@
                       <Component id="botonAtrasProfAgreQuit" min="-2" max="-2" attributes="0"/>
                       <Component id="etiquetaProfAgreQuit" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="botonProfAgreQuitBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textoProfAgreQuitDNI" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="etiquetaProfAgreQuitDNI" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Component id="separadorProfAgreQuit" min="-2" pref="11" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botonProfAgreQuitBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="textoProfAgreQuitDNI" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="etiquetaProfAgreQuitDNI" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="separadorProfAgreQuit" min="-2" pref="11" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="textoProfAgreQuitNomYApe" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="etiquetaProfAgreQuitNomYApe" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -166,7 +159,6 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="textoProfAgreQuitEsp" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="comboBoxProfAgreQuitEsp" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="etiquetaProfAgreQuitEsp" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -463,9 +455,6 @@
               </StringArray>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxProfAgreQuitEspActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -482,14 +471,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Especialidad:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="textoProfAgreQuitEsp">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Calibri" size="14" style="1"/>
-            </Property>
           </Properties>
         </Component>
       </SubComponents>

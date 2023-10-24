@@ -2,7 +2,6 @@
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Usuario;
-import ProjectoFinalSalud.Vistas.Inicio;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -96,7 +95,7 @@ public class UsuarioData {
             ps.setInt(1, dni);
             int exi = ps.executeUpdate();
             if (exi == 1) {
-                JOptionPane.showMessageDialog(null, "Hasta Pronto " + buscarUsuario(dni).getNombre());
+                JOptionPane.showMessageDialog(null, "Hasta Pronto " + listarUsuario().get(exi).getNombre());
             }
         } catch (SQLException ex) {
         }

@@ -96,7 +96,7 @@ public class EspecialidadData {
     
     public ArrayList<Especialidad> listarEspecialidad(){
         
-        String sql = "SELECT * from Especialidad";
+        String sql = "SELECT * FROM Especialidad";
         ArrayList<Especialidad> especialidades = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
