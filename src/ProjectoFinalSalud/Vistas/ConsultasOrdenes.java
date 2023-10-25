@@ -35,7 +35,13 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
     }
-
+    
+    private String ordenarFecha(Orden orden) {
+        
+        String stri = "" + orden.getFecha().getDayOfMonth() + "/" + orden.getFecha().getMonthValue() + "/" + orden.getFecha().getYear();
+        return stri;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -219,12 +225,5 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         }
         columnModel.getColumn(column).setPreferredWidth(width);
         }
-    }
-    
-    private String ordenarFecha(Orden orden) {
-        
-
-        String stri = "" + orden.getFecha().getDayOfMonth()+"-"+ orden.getFecha().getMonthValue()+"-"+ orden.getFecha().getYear();
-        return stri;
     }
 }

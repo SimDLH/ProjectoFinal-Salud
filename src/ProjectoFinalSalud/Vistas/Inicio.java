@@ -21,7 +21,7 @@ public class Inicio extends javax.swing.JFrame {
 
         initComponents();
         setTitle("MásSalud");
-        //Bloquear();
+        Bloquear();
     }
     
     JInternalFrame o = new JInternalFrame();

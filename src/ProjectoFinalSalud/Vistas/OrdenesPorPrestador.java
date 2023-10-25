@@ -30,14 +30,20 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
     public OrdenesPorPrestador() {
 
         initComponents();
-        cargarComboPrestador();
         armarCabecera();
+        cargarComboPrestador();
         resizeColumnWidth(tablaOrdenXPres);
         tablaOrdenXPres.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
+    }
+    
+    private String ordenarFecha(Orden orden) {
+        
+        String stri = "" + orden.getFecha().getDayOfMonth() + "/" + orden.getFecha().getMonthValue() + "/" + orden.getFecha().getYear();
+        return stri;
     }
 
     @SuppressWarnings("unchecked")
@@ -48,7 +54,6 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         etiquetaOrdenXPres = new javax.swing.JLabel();
         etiquetaOrdenXPresSelec = new javax.swing.JLabel();
         comboBoxOrdenXPres = new javax.swing.JComboBox<>();
-        botonOrdenXPresBuscar = new javax.swing.JButton();
         botonAtrasOrdenXPrest = new javax.swing.JButton();
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaOrdenXPres = new javax.swing.JTable();
@@ -72,26 +77,9 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         etiquetaOrdenXPresSelec.setText("Seleccione:");
 
         comboBoxOrdenXPres.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        botonOrdenXPresBuscar.setBackground(new java.awt.Color(255, 255, 255));
-        botonOrdenXPresBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonOrdenXPresBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        botonOrdenXPresBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
-        botonOrdenXPresBuscar.setText("Buscar");
-        botonOrdenXPresBuscar.setBorderPainted(false);
-        botonOrdenXPresBuscar.setContentAreaFilled(false);
-        botonOrdenXPresBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonOrdenXPresBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonOrdenXPresBuscarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonOrdenXPresBuscarMouseExited(evt);
-            }
-        });
-        botonOrdenXPresBuscar.addActionListener(new java.awt.event.ActionListener() {
+        comboBoxOrdenXPres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonOrdenXPresBuscarActionPerformed(evt);
+                comboBoxOrdenXPresActionPerformed(evt);
             }
         });
 
@@ -153,7 +141,13 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         panelGradOrdenXPresLayout.setHorizontalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXPresLayout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
+                .addGap(251, 251, 251)
+                .addComponent(etiquetaOrdenXPresSelec)
+                .addGap(18, 18, 18)
+                .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
+                .addContainerGap(108, Short.MAX_VALUE)
                 .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
                         .addComponent(etiquetaOrdenXPres)
@@ -161,15 +155,8 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
                         .addComponent(botonAtrasOrdenXPrest)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
-                        .addComponent(etiquetaOrdenXPresSelec)
-                        .addGap(18, 18, 18)
-                        .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonOrdenXPresBuscar)
-                        .addGap(155, 155, 155))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
                         .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))))
+                        .addGap(93, 93, 93))))
         );
         panelGradOrdenXPresLayout.setVerticalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,14 +165,13 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
                 .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasOrdenXPrest)
                     .addComponent(etiquetaOrdenXPres))
-                .addGap(60, 60, 60)
+                .addGap(65, 65, 65)
                 .addGroup(panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaOrdenXPresSelec)
-                    .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonOrdenXPresBuscar))
-                .addGap(42, 42, 42)
+                    .addComponent(comboBoxOrdenXPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
                 .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -202,21 +188,6 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonOrdenXPresBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenXPresBuscarActionPerformed
-        limpiarTabla();
-        try {
-            Prestador pSeleccionado = (Prestador) comboBoxOrdenXPres.getSelectedItem();
-            int id = pSeleccionado.getIdPrestador();
-            ArrayList<Orden> listarOrdenP = od.OrdenesPorPrestador(id);
-            for (Orden orden : listarOrdenP) {
-                modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
-                    ordenarFecha(orden), orden.getFormaPago(), orden.getImporte()});
-            }
-        } catch (NullPointerException np) {
-            JOptionPane.showMessageDialog(null, "Debe seleccioar un Prestador de la lista");
-        }
-    }//GEN-LAST:event_botonOrdenXPresBuscarActionPerformed
-
     private void botonAtrasOrdenXPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXPrestActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasOrdenXPrestActionPerformed
@@ -229,17 +200,14 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonAtrasOrdenXPrestMouseExited
 
-    private void botonOrdenXPresBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXPresBuscarMouseEntered
-        setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_botonOrdenXPresBuscarMouseEntered
-
-    private void botonOrdenXPresBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonOrdenXPresBuscarMouseExited
-        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_botonOrdenXPresBuscarMouseExited
+    private void comboBoxOrdenXPresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxOrdenXPresActionPerformed
+        limpiarTabla();
+        Prestador prest = (Prestador)comboBoxOrdenXPres.getSelectedItem();
+        cargarTabla(od.OrdenesPorPrestador(prest.getIdPrestador()));
+    }//GEN-LAST:event_comboBoxOrdenXPresActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtrasOrdenXPrest;
-    private javax.swing.JButton botonOrdenXPresBuscar;
     private javax.swing.JComboBox<Prestador> comboBoxOrdenXPres;
     private javax.swing.JLabel etiquetaOrdenXPres;
     private javax.swing.JLabel etiquetaOrdenXPresSelec;
@@ -267,9 +235,16 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
 
     private void limpiarTabla() {
         int fila = modelo.getRowCount();
-        for (int i = fila - 1; i >= 0; i--) {
+        for(int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
         }
+    }
+    
+    private void cargarTabla(ArrayList<Orden> listarOrdenP) {
+        
+        for (Orden orden:listarOrdenP) {
+            modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(), ordenarFecha(orden), orden.getFormaPago(), orden.getImporte()});
+            }
     }
     
     private void resizeColumnWidth(JTable tablaOrdenXPres) {
@@ -287,12 +262,5 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         }
         columnModel.getColumn(column).setPreferredWidth(width);
         }
-    }
-    
-    private String ordenarFecha(Orden orden) {
-        
-
-        String stri = "" + orden.getFecha().getDayOfMonth()+"-"+ orden.getFecha().getMonthValue()+"-"+ orden.getFecha().getYear();
-        return stri;
     }
 }

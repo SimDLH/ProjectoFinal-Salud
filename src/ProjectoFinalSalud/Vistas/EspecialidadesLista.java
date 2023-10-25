@@ -21,8 +21,9 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
             return false;
         }
     };
-    EspecialidadData ed=new EspecialidadData();
-    PrestadorData pd=new PrestadorData();
+    
+    EspecialidadData ed = new EspecialidadData();
+    PrestadorData pd = new PrestadorData();
      
     public EspecialidadesLista() {
         
@@ -152,7 +153,7 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
 
     private void comboBoxEspEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxEspEspActionPerformed
         limpiarTabla();
-        Especialidad es=(Especialidad)comboBoxEspEsp.getSelectedItem();
+        Especialidad es = (Especialidad)comboBoxEspEsp.getSelectedItem();
         cargarTabla(pd.listarPrestadorPorEspecialidad(es.getIdEspecialidad()));
     }//GEN-LAST:event_comboBoxEspEspActionPerformed
 
@@ -169,7 +170,7 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
     private javax.swing.JTable tablaEspListaProf;
     // End of variables declaration//GEN-END:variables
 
-    private void armarCabesera(){
+    private void armarCabesera() {
         modelo.addColumn("Nombre");
         modelo.addColumn("DNI");
         modelo.addColumn("Domicilio");
@@ -177,21 +178,22 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         tablaEspListaProf.setModel(modelo);
     }
     
-    private void cargarComboBox(){
+    private void cargarComboBox() {
         for(Especialidad es:ed.listarEspecialidad()){
             comboBoxEspEsp.addItem(es);
         }
     }
     
-    private void limpiarTabla(){
-        int fila=modelo.getRowCount();
-        for(int i=fila-1;i>=0;i--){
+    private void limpiarTabla() {
+        int fila = modelo.getRowCount();
+        for(int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
         }
     }
     
-    private void cargarTabla(ArrayList<Prestador> prestadores){
-        for (Prestador p:prestadores){
+    private void cargarTabla(ArrayList<Prestador> prestadores) {
+        
+        for (Prestador p:prestadores) {
             modelo.addRow(new Object[]{p.getNombre(),p.getDni(),p.getDomicilio(),p.getTelefono()});
         }
     }
