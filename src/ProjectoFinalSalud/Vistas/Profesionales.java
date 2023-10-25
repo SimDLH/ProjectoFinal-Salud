@@ -2,6 +2,7 @@
 package ProjectoFinalSalud.Vistas;
 
 import java.awt.Cursor;
+import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Profesionales extends javax.swing.JInternalFrame {
@@ -143,18 +144,25 @@ public class Profesionales extends javax.swing.JInternalFrame {
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
+    JInternalFrame o = new JInternalFrame();
+
+    public void limpiar(JInternalFrame j) {
+        
+        j.dispose();
+    }
+    
     private void menuItemConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulActionPerformed
-       panelGradProf.removeAll();
-       panelGradProf.repaint();
        ProfesionalesConsultas profCon = new ProfesionalesConsultas();
+       limpiar(o);
+       o = profCon;
        panelGradProf.add(profCon);
        profCon.setVisible(true);
     }//GEN-LAST:event_menuItemConsulActionPerformed
 
     private void menuItemAdherirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAdherirActionPerformed
-       panelGradProf.removeAll();
-       panelGradProf.repaint();
        ProfesionalesAgregarQuitar profAQ = new ProfesionalesAgregarQuitar();
+       limpiar(o);
+       o = profAQ;
        panelGradProf.add(profAQ);
        profAQ.setVisible(true);
     }//GEN-LAST:event_menuItemAdherirActionPerformed

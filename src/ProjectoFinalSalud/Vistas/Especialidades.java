@@ -2,6 +2,7 @@
 package ProjectoFinalSalud.Vistas;
 
 import java.awt.Cursor;
+import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Especialidades extends javax.swing.JInternalFrame {
@@ -31,8 +32,6 @@ public class Especialidades extends javax.swing.JInternalFrame {
         menuItemEspListaProfXEsp = new javax.swing.JMenuItem();
         menuEspAgreEsp = new javax.swing.JMenu();
         menuItemEspAgreEsp = new javax.swing.JMenuItem();
-        menuEspQuitEsp = new javax.swing.JMenu();
-        menuItemEspBorrEsp = new javax.swing.JMenuItem();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -129,30 +128,6 @@ public class Especialidades extends javax.swing.JInternalFrame {
 
         menuEsp.add(menuEspAgreEsp);
 
-        menuEspQuitEsp.setBackground(new java.awt.Color(255, 255, 255));
-        menuEspQuitEsp.setText("Quitar Una Especialidad");
-        menuEspQuitEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        menuEspQuitEsp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                menuEspQuitEspMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                menuEspQuitEspMouseExited(evt);
-            }
-        });
-
-        menuItemEspBorrEsp.setBackground(new java.awt.Color(255, 255, 255));
-        menuItemEspBorrEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        menuItemEspBorrEsp.setText("Quitar Una Especialidad");
-        menuItemEspBorrEsp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemEspBorrEspActionPerformed(evt);
-            }
-        });
-        menuEspQuitEsp.add(menuItemEspBorrEsp);
-
-        menuEsp.add(menuEspQuitEsp);
-
         setJMenuBar(menuEsp);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -169,30 +144,29 @@ public class Especialidades extends javax.swing.JInternalFrame {
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
+    JInternalFrame o = new JInternalFrame();
+
+    public void limpiar(JInternalFrame j) {
+        
+        j.dispose();
+    }
+    
     private void menuItemEspAgreEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspAgreEspActionPerformed
-        panelGradEspecialidades.removeAll();
-        panelGradEspecialidades.repaint();
-        EspecialidadesAgregar ea=new EspecialidadesAgregar();
+        EspecialidadesAgregar ea = new EspecialidadesAgregar();
+        limpiar(o);
+        o = ea;
         panelGradEspecialidades.add(ea);
         ea.setVisible(true);
     }//GEN-LAST:event_menuItemEspAgreEspActionPerformed
-
-    private void menuItemEspBorrEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspBorrEspActionPerformed
-        panelGradEspecialidades.removeAll();
-        panelGradEspecialidades.repaint();
-        EspecialidadesQuitar eb=new EspecialidadesQuitar();
-        panelGradEspecialidades.add(eb);
-        eb.setVisible(true);
-    }//GEN-LAST:event_menuItemEspBorrEspActionPerformed
 
     private void botonAtrasEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasEspActionPerformed
 
     private void menuItemEspListaProfXEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEspListaProfXEspActionPerformed
-        panelGradEspecialidades.removeAll();
-        panelGradEspecialidades.repaint();
-        EspecialidadesLista ed=new EspecialidadesLista();
+        EspecialidadesLista ed = new EspecialidadesLista();
+        limpiar(o);
+        o = ed;
         panelGradEspecialidades.add(ed);
         ed.setVisible(true);
     }//GEN-LAST:event_menuItemEspListaProfXEspActionPerformed
@@ -213,14 +187,6 @@ public class Especialidades extends javax.swing.JInternalFrame {
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_menuEspAgreEspMouseExited
 
-    private void menuEspQuitEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspQuitEspMouseEntered
-        setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_menuEspQuitEspMouseEntered
-
-    private void menuEspQuitEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuEspQuitEspMouseExited
-        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_menuEspQuitEspMouseExited
-
     private void botonAtrasEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonAtrasEspMouseEntered
@@ -234,9 +200,7 @@ public class Especialidades extends javax.swing.JInternalFrame {
     private javax.swing.JMenuBar menuEsp;
     private javax.swing.JMenu menuEspAgreEsp;
     private javax.swing.JMenu menuEspListaEsp;
-    private javax.swing.JMenu menuEspQuitEsp;
     private javax.swing.JMenuItem menuItemEspAgreEsp;
-    private javax.swing.JMenuItem menuItemEspBorrEsp;
     private javax.swing.JMenuItem menuItemEspListaProfXEsp;
     private keeptoo.KGradientPanel panelGradEspecialidades;
     // End of variables declaration//GEN-END:variables

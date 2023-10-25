@@ -4,6 +4,9 @@ import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.Entidades.Orden;
 import java.awt.Component;
 import java.awt.Cursor;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -34,7 +37,14 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
     }
+    
+    private String ordenarFecha(Orden orden) {
+        
 
+        String stri = "" + orden.getFecha().getDayOfMonth() + orden.getFecha().getMonth() + orden.getFecha().getYear();
+        return stri;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -210,7 +220,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
             ArrayList<Orden> listarOrdenes = od.OrdenesPorAfiliado(dni);
             for (Orden orden : listarOrdenes) {
                 modelo.addRow(new Object[]{orden.getIdOrden(),
-                    orden.getPrestador().getNombre(), orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
+                    orden.getPrestador().getNombre(), ordenarFecha(orden), orden.getFormaPago(), orden.getImporte()});
             }
         } catch (NumberFormatException nf) {
             JOptionPane.showMessageDialog(null, "Debe ingresar un numero de DNI");
@@ -264,7 +274,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
             modelo.removeRow(i);
         }
     }
-    
+        
     private void resizeColumnWidth(JTable tablaOrdenXAfi) {
 
     TableColumnModel columnModel = tablaOrdenXAfi.getColumnModel();

@@ -168,15 +168,15 @@ public class Afiliados extends javax.swing.JInternalFrame {
 
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
-JInternalFrame o = new JInternalFrame();
+    
+    JInternalFrame o = new JInternalFrame();
 
     public void limpiar(JInternalFrame j) {
+        
         j.dispose();
-
     }
+    
     private void menuItemAfiHabYDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiHabYDesActionPerformed
-        panelGradAfi.removeAll();
-        panelGradAfi.repaint();
         AfiliadosAgregarOAnular afiAA = new AfiliadosAgregarOAnular();
         limpiar(o);
         o = afiAA;
@@ -185,8 +185,6 @@ JInternalFrame o = new JInternalFrame();
     }//GEN-LAST:event_menuItemAfiHabYDesActionPerformed
 
     private void menuItemAfiModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiModActionPerformed
-        panelGradAfi.removeAll();
-        panelGradAfi.repaint();
         AfiliadosMod afimod = new AfiliadosMod();
         limpiar(o);
         o = afimod;
@@ -195,8 +193,6 @@ JInternalFrame o = new JInternalFrame();
     }//GEN-LAST:event_menuItemAfiModActionPerformed
 
     private void menuItemAfiListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAfiListaActionPerformed
-        panelGradAfi.removeAll();
-        panelGradAfi.repaint();
         AfiliadosLista afl = new AfiliadosLista();
         limpiar(o);
         o = afl;

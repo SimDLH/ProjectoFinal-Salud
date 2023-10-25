@@ -2,6 +2,7 @@ package ProjectoFinalSalud.Vistas;
 
 import java.awt.Component;
 import java.awt.Cursor;
+import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Consultas extends javax.swing.JInternalFrame {
@@ -194,38 +195,45 @@ public class Consultas extends javax.swing.JInternalFrame {
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
+    JInternalFrame o = new JInternalFrame();
+
+    public void limpiar(JInternalFrame j) {
+        
+        j.dispose();
+    }
+    
     private void botonAtrasConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasConsultasActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasConsultasActionPerformed
 
     private void menuItemConsulOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulOrdenActionPerformed
-        panelGradConsul.removeAll();
-        panelGradConsul.repaint();
         ConsultasOrdenes co = new ConsultasOrdenes();
+        limpiar(o);
+        o = co;
         panelGradConsul.add(co);
         co.setVisible(true);
     }//GEN-LAST:event_menuItemConsulOrdenActionPerformed
 
     private void menuItemConsulAfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulAfilActionPerformed
-        panelGradConsul.removeAll();
-        panelGradConsul.repaint();
         ConsultasAfiliados conAfi = new ConsultasAfiliados();
+        limpiar(o);
+        o = conAfi;
         panelGradConsul.add(conAfi);
         conAfi.setVisible(true);
     }//GEN-LAST:event_menuItemConsulAfilActionPerformed
 
     private void menuItemConsulEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulEspActionPerformed
-        panelGradConsul.removeAll();
-        panelGradConsul.repaint();
         ConsultasEspecialidades conEsp = new ConsultasEspecialidades();
+        limpiar(o);
+        o = conEsp;
         panelGradConsul.add(conEsp);
         conEsp.setVisible(true);
     }//GEN-LAST:event_menuItemConsulEspActionPerformed
 
     private void menuItemConsulProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsulProfActionPerformed
-        panelGradConsul.removeAll();
-        panelGradConsul.repaint();
         ConsultasProfesionales conProf = new ConsultasProfesionales();
+        limpiar(o);
+        o = conProf;
         panelGradConsul.add(conProf);
         conProf.setVisible(true);
     }//GEN-LAST:event_menuItemConsulProfActionPerformed

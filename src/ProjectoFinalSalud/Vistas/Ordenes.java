@@ -2,6 +2,7 @@
 package ProjectoFinalSalud.Vistas;
 
 import java.awt.Cursor;
+import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class Ordenes extends javax.swing.JInternalFrame {
@@ -195,34 +196,41 @@ public class Ordenes extends javax.swing.JInternalFrame {
         setBounds(300, 140, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
+    JInternalFrame o = new JInternalFrame();
+
+    public void limpiar(JInternalFrame j) {
+        
+        j.dispose();
+    }
+    
     private void menuItemOrdenSacOrdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenSacOrdActionPerformed
-        panelGradOrden.removeAll();
-        panelGradOrden.repaint();
         OrdenesSacar sa = new OrdenesSacar();
+        limpiar(o);
+        o = sa;
         panelGradOrden.add(sa);
         sa.setVisible(true);
     }//GEN-LAST:event_menuItemOrdenSacOrdActionPerformed
 
     private void menuItemOrdenOrdXFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenOrdXFechaActionPerformed
-        panelGradOrden.removeAll();
-        panelGradOrden.repaint();
         OrdenesPorFecha opf = new OrdenesPorFecha();
+        limpiar(o);
+        o = opf;
         panelGradOrden.add(opf);
         opf.setVisible(true);
     }//GEN-LAST:event_menuItemOrdenOrdXFechaActionPerformed
 
     private void menuItemOrdenOrdXAfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenOrdXAfiActionPerformed
-        panelGradOrden.removeAll();
-        panelGradOrden.repaint();
         OrdenesPorAfiliado opa = new OrdenesPorAfiliado();
+        limpiar(o);
+        o = opa;
         panelGradOrden.add(opa);
         opa.setVisible(true);
     }//GEN-LAST:event_menuItemOrdenOrdXAfiActionPerformed
 
     private void menuItemOrdenOrdXPresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemOrdenOrdXPresActionPerformed
-        panelGradOrden.removeAll();
-        panelGradOrden.repaint();
         OrdenesPorPrestador opp = new OrdenesPorPrestador();
+        limpiar(o);
+        o = opp;
         panelGradOrden.add(opp);
         opp.setVisible(true);
     }//GEN-LAST:event_menuItemOrdenOrdXPresActionPerformed

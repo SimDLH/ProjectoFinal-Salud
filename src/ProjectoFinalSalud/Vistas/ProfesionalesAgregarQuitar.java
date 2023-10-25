@@ -429,7 +429,9 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonProfAgreQuitBuscarMouseExited
     
     private void botonProfAgreQuitReinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseEntered
+        if(botonProfAgreQuitRein.isEnabled()){
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
     }//GEN-LAST:event_botonProfAgreQuitReinMouseEntered
     
     private void botonProfAgreQuitReinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseExited
@@ -437,7 +439,9 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonProfAgreQuitReinMouseExited
     
     private void botonProfAgreQuitGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseEntered
+        if(botonProfAgreQuitGuardar.isEnabled()){
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
     }//GEN-LAST:event_botonProfAgreQuitGuardarMouseEntered
     
     private void botonProfAgreQuitGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseExited
@@ -445,7 +449,9 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonProfAgreQuitGuardarMouseExited
     
     private void botonProfAgreQuitAnularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseEntered
+        if(botonProfAgreQuitAnular.isEnabled()){
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        }
     }//GEN-LAST:event_botonProfAgreQuitAnularMouseEntered
     
     private void botonProfAgreQuitAnularMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseExited
@@ -477,6 +483,7 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
 
     private void limpiar() {
         
+        textoProfAgreQuitDNI.setText("");
         textoProfAgreQuitNomYApe.setText("");
         textoProfAgreQuitNumTel.setText("");
         textoProfAgreQuitDom.setText("");
