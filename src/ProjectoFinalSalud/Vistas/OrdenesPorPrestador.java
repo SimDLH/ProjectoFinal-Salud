@@ -210,7 +210,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
             ArrayList<Orden> listarOrdenP = od.OrdenesPorPrestador(id);
             for (Orden orden : listarOrdenP) {
                 modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
-                    orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
+                    ordenarFecha(orden), orden.getFormaPago(), orden.getImporte()});
             }
         } catch (NullPointerException np) {
             JOptionPane.showMessageDialog(null, "Debe seleccioar un Prestador de la lista");
@@ -287,5 +287,12 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         }
         columnModel.getColumn(column).setPreferredWidth(width);
         }
+    }
+    
+    private String ordenarFecha(Orden orden) {
+        
+
+        String stri = "" + orden.getFecha().getDayOfMonth()+"-"+ orden.getFecha().getMonthValue()+"-"+ orden.getFecha().getYear();
+        return stri;
     }
 }

@@ -200,7 +200,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         for (Orden orden : listarOrdenes) {
             modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
                 orden.getPrestador().getNombre(),
-                orden.getFecha(), orden.getFormaPago(), orden.getImporte()});
+                ordenarFecha(orden), orden.getFormaPago(), orden.getImporte()});
         }
     }
     
@@ -219,5 +219,12 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         }
         columnModel.getColumn(column).setPreferredWidth(width);
         }
+    }
+    
+    private String ordenarFecha(Orden orden) {
+        
+
+        String stri = "" + orden.getFecha().getDayOfMonth()+"-"+ orden.getFecha().getMonthValue()+"-"+ orden.getFecha().getYear();
+        return stri;
     }
 }

@@ -41,7 +41,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
     private String ordenarFecha(Orden orden) {
         
 
-        String stri = "" + orden.getFecha().getDayOfMonth() + orden.getFecha().getMonth() + orden.getFecha().getYear();
+        String stri = "" + orden.getFecha().getDayOfMonth()+"-"+ orden.getFecha().getMonthValue()+"-"+ orden.getFecha().getYear();
         return stri;
     }
     
