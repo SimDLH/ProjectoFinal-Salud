@@ -1,4 +1,3 @@
-
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Especialidad;
@@ -14,13 +13,14 @@ import javax.swing.JOptionPane;
 public class PrestadorData {
     
     private Connection con = null;
-
+    private EspecialidadData ed = new EspecialidadData();
+    
     public PrestadorData() {
         
         con = Conexion.getConnection();
     }
     
-    public void guardarPrestador(Prestador pres){
+    public void guardarPrestador(Prestador pres) {
         
         String sql = "insert into Prestador(Nombre,Dni,Domicilio,Telefono,Activo,IdEspecialidad)"
                 + "values (?,?,?,?,?,?)";
@@ -36,7 +36,7 @@ public class PrestadorData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 pres.setIdPrestador(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Se ha agregado un nuevo Prestador exitosamente");     
+                JOptionPane.showMessageDialog(null, "Se ha agregado un nuevo Prestador exitosamente");                
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al ingresar al nuevo Prestador");
@@ -80,14 +80,14 @@ public class PrestadorData {
     }
     
     public Prestador buscarPrestador(int id) {
-
+        
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=?";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            EspecialidadData ed=new EspecialidadData();
+            EspecialidadData ed = new EspecialidadData();
             if (rs.next()) {
                 pres = new Prestador();
                 pres.setIdPrestador(id);
@@ -96,7 +96,7 @@ public class PrestadorData {
                 pres.setTelefono(rs.getInt("Telefono"));
                 pres.setDni(rs.getInt("Dni"));
                 pres.setActivo(true);
-                Especialidad esp=ed.buscarEspecialidad(rs.getInt("IdEspecialidad"));
+                Especialidad esp = ed.buscarEspecialidad(rs.getInt("IdEspecialidad"));
                 pres.setEspecialidad(esp);
             } else {
                 JOptionPane.showMessageDialog(null, "El Prestador no existe");
@@ -109,15 +109,15 @@ public class PrestadorData {
     }
     
     public Prestador buscarIdEspecialidad(int IdE) {
-
+        
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, IdE);
-
+            
             ResultSet rs = ps.executeQuery();
-            EspecialidadData ed=new EspecialidadData();
+            EspecialidadData ed = new EspecialidadData();
             if (rs.next()) {
                 pres = new Prestador();
                 pres.setIdPrestador(rs.getInt("IdPrestador"));
@@ -126,7 +126,7 @@ public class PrestadorData {
                 pres.setDomicilio(rs.getString("Domicilio"));
                 pres.setTelefono(rs.getInt("Telefono"));
                 pres.setActivo(true);
-                Especialidad esp=ed.buscarEspecialidad(IdE);
+                Especialidad esp = ed.buscarEspecialidad(IdE);
                 pres.setEspecialidad(esp);
             } else {
                 JOptionPane.showMessageDialog(null, "El IdE no existe");
@@ -138,14 +138,14 @@ public class PrestadorData {
         return pres;
     }
     
-    public ArrayList<Prestador> listarPrestador(){
+    public ArrayList<Prestador> listarPrestador() {
         
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE Activo=1";
         ArrayList<Prestador> prestadores = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            EspecialidadData ed=new EspecialidadData();
+            EspecialidadData ed = new EspecialidadData();
             while (rs.next()) {
                 Prestador pres = new Prestador();
                 pres.setIdPrestador(rs.getInt("IdPrestador"));
@@ -153,7 +153,7 @@ public class PrestadorData {
                 pres.setDni(rs.getInt("Dni"));
                 pres.setDomicilio(rs.getString("Domicilio"));
                 pres.setTelefono(rs.getInt("Telefono"));
-                Especialidad ad=ed.buscarEspecialidad(rs.getInt("IdEspecialidad"));
+                Especialidad ad = ed.buscarEspecialidad(rs.getInt("IdEspecialidad"));
                 pres.setEspecialidad(ad);
                 pres.setActivo(true);
                 prestadores.add(pres);
@@ -165,16 +165,16 @@ public class PrestadorData {
         return prestadores;
     }
     
-    public ArrayList<Prestador> listarPrestadorPorEspecialidad(int id){
-        String sql="SELECT Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
-        ArrayList<Prestador>prestadores=new ArrayList<>();
+    public ArrayList<Prestador> listarPrestadorPorEspecialidad(int id) {
+        String sql = "SELECT Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
+        ArrayList<Prestador> prestadores = new ArrayList<>();
         try {
-            PreparedStatement ps=con.prepareStatement(sql);
+            PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
-            ResultSet rs=ps.executeQuery();
-            EspecialidadData ed=new EspecialidadData();
-            while(rs.next()){
-                Prestador pres=new Prestador();
+            ResultSet rs = ps.executeQuery();
+            EspecialidadData ed = new EspecialidadData();
+            while (rs.next()) {
+                Prestador pres = new Prestador();
                 pres.setNombre(rs.getString("Nombre"));
                 pres.setDni(rs.getInt("Dni"));
                 pres.setDomicilio(rs.getString("Domicilio"));
@@ -189,48 +189,26 @@ public class PrestadorData {
         }
         return prestadores;
     }
-    public void reinstituirPrestador(int Dni){
+
+    public void reinstituirPrestador(int Dni) {
         
         String sql = "UPDATE prestador SET Activo=1 WHERE Dni=?";
-
-            try {
-                PreparedStatement ps = con.prepareStatement(sql);
-                ps.setInt(1, Dni);
-                int exito = ps.executeUpdate();
-                if (exito == 1) {
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, Dni);
+            int exito = ps.executeUpdate();
+            if (exito == 1) {
                 JOptionPane.showMessageDialog(null, "El Prestador ha sido reinscripto exitosamente");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
         }
     }
-
-    public Prestador buscarPrestadorActivo(int Dni){
+    
+    public Prestador buscarPrestadorActivo(int Dni) {
         
         String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni , Telefono ,Activo  FROM prestador WHERE Dni=? AND Activo=1";
-        Prestador pres = new Prestador();
-        try {
-            PreparedStatement ps=con.prepareStatement(sql);
-            ps.setInt(1, Dni);
-            ResultSet rs=ps.executeQuery();
-            if (rs.next()){
-                pres.setIdPrestador(rs.getInt("IdPrestador"));
-                pres.setNombre(rs.getString("Nombre"));
-                pres.setDomicilio(rs.getString("Domicilio"));
-                pres.setDni(rs.getInt("Dni"));
-                pres.setTelefono(rs.getInt("Telefono"));
-                pres.setActivo(rs.getBoolean("Activo"));
-            }else{
-                JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Prestadores");
-        }
-        return pres;
-    }
-    
-    public Prestador buscarPrestadorDni(int Dni) {
-        String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni, Telefono, Activo  FROM prestador WHERE dni=?";
         Prestador pres = new Prestador();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -243,7 +221,31 @@ public class PrestadorData {
                 pres.setDni(rs.getInt("Dni"));
                 pres.setTelefono(rs.getInt("Telefono"));
                 pres.setActivo(rs.getBoolean("Activo"));
-            }else{
+            } else {
+                JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla de Prestadores");
+        }
+        return pres;
+    }
+    
+    public Prestador buscarPrestadorDni(int Dni) {
+        String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni, Telefono,idEspecialidad, Activo  FROM prestador WHERE dni=?";
+        Prestador pres = new Prestador();
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, Dni);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                pres.setIdPrestador(rs.getInt("IdPrestador"));
+                pres.setNombre(rs.getString("Nombre"));
+                pres.setDomicilio(rs.getString("Domicilio"));
+                pres.setDni(rs.getInt("Dni"));
+                pres.setTelefono(rs.getInt("Telefono"));
+                pres.setEspecialidad(ed.buscarEspecialidad(rs.getInt("idEspecialidad")));
+                pres.setActivo(rs.getBoolean("Activo"));
+            } else {
                 JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
             }
         } catch (SQLException ex) {

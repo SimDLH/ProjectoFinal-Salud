@@ -10,15 +10,15 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
-
+    
     PrestadorData presData = new PrestadorData();
     EspecialidadData espData = new EspecialidadData();
-
+    
     public ProfesionalesAgregarQuitar() {
-
+        
         initComponents();
         cargarComboB();
-
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -335,13 +335,13 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private void botonAtrasProfAgreQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitActionPerformed
         dispose();
     }//GEN-LAST:event_botonAtrasProfAgreQuitActionPerformed
-
+    
     private void botonProfAgreQuitBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarActionPerformed
         try {
             int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
             botonProfAgreQuitGuardar.setEnabled(false);
             Prestador pres = presData.buscarPrestadorDni(Dni);
-
+            
             if (pres.getTelefono() == 0) {
                 limpiar();
             } else {
@@ -349,6 +349,7 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
                 textoProfAgreQuitDom.setText(pres.getDomicilio());
                 textoProfAgreQuitNumTel.setText(pres.getTelefono() + "");
                 encontrarIndice(pres.getEspecialidad());
+                
                 if (pres.isActivo()) {
                     etiquetaProfAgreQuitAcONoac.setText("Activo");
                     botonProfAgreQuitRein.setEnabled(false);
@@ -362,16 +363,16 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
             limpiar();
         }
     }//GEN-LAST:event_botonProfAgreQuitBuscarActionPerformed
-
+    
     private void botonProfAgreQuitReinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinActionPerformed
         int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
         presData.reinstituirPrestador(Dni);
         limpiar();
     }//GEN-LAST:event_botonProfAgreQuitReinActionPerformed
-
+    
     private void botonProfAgreQuitGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarActionPerformed
         try {
-
+            
             if (textoProfAgreQuitDNI.getText().isEmpty() || textoProfAgreQuitNumTel.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para ingresar un Profesional");
             } else if (buscarDni(Integer.parseInt(textoProfAgreQuitDNI.getText()))) {
@@ -398,7 +399,7 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         }
         limpiar();
     }//GEN-LAST:event_botonProfAgreQuitGuardarActionPerformed
-
+    
     private void botonProfAgreQuitAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularActionPerformed
         try {
             int Dni = Integer.parseInt(textoProfAgreQuitDNI.getText());
@@ -410,43 +411,43 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         }
         limpiar();
     }//GEN-LAST:event_botonProfAgreQuitAnularActionPerformed
-
+    
     private void botonAtrasProfAgreQuitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonAtrasProfAgreQuitMouseEntered
-
+    
     private void botonAtrasProfAgreQuitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfAgreQuitMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonAtrasProfAgreQuitMouseExited
-
+    
     private void botonProfAgreQuitBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitBuscarMouseEntered
-
+    
     private void botonProfAgreQuitBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitBuscarMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitBuscarMouseExited
-
+    
     private void botonProfAgreQuitReinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitReinMouseEntered
-
+    
     private void botonProfAgreQuitReinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitReinMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitReinMouseExited
-
+    
     private void botonProfAgreQuitGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitGuardarMouseEntered
-
+    
     private void botonProfAgreQuitGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitGuardarMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitGuardarMouseExited
-
+    
     private void botonProfAgreQuitAnularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitAnularMouseEntered
-
+    
     private void botonProfAgreQuitAnularMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProfAgreQuitAnularMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonProfAgreQuitAnularMouseExited
@@ -475,7 +476,7 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void limpiar() {
-
+        
         textoProfAgreQuitNomYApe.setText("");
         textoProfAgreQuitNumTel.setText("");
         textoProfAgreQuitDom.setText("");
@@ -483,9 +484,9 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         botonProfAgreQuitRein.setEnabled(false);
         botonProfAgreQuitGuardar.setEnabled(true);
     }
-
+    
     private boolean buscarDni(int dni) {
-
+        
         ArrayList<Prestador> prestador = presData.listarPrestador();
         boolean bd = false;
         for (Prestador pres : prestador) {
@@ -496,26 +497,30 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         }
         return bd;
     }
-
+    
     private void cargarComboB() {
-
+        
         ArrayList<Especialidad> especialidades = espData.listarEspecialidad();
         for (Especialidad e : especialidades) {
             comboBoxProfAgreQuitEsp.addItem(e);
         }
     }
-
+    
     public void encontrarIndice(Especialidad e) {
-
-        int num = comboBoxProfAgreQuitEsp.getItemCount();
-        for (int i = 0; i < num; i++) {
-            Especialidad especialidadBus = comboBoxProfAgreQuitEsp.getItemAt(i);
-            if (especialidadBus.getIdEspecialidad() == e.getIdEspecialidad()) {
-                comboBoxProfAgreQuitEsp.setSelectedIndex(i);
+        
+        ArrayList<Especialidad> esp = espData.listarEspecialidad();
+        int contador = 0;
+        for (Especialidad espec : esp) {
+            
+            if (e.getIdEspecialidad() == espec.getIdEspecialidad()) {
+                comboBoxProfAgreQuitEsp.setSelectedIndex(contador);
                 return;
-            }//aca encuentro el indice de la especialidad del prestador 
-
+                
+            } else {
+                contador++;
+            }
+            
         }
-
+        
     }
 }
