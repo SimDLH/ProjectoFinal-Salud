@@ -11,17 +11,17 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class PrestadorData {
-    
+
     private Connection con = null;
     private EspecialidadData ed = new EspecialidadData();
-    
+
     public PrestadorData() {
-        
+
         con = Conexion.getConnection();
     }
-    
+
     public void guardarPrestador(Prestador pres) {
-        
+
         String sql = "insert into Prestador(Nombre,Dni,Domicilio,Telefono,Activo,IdEspecialidad)"
                 + "values (?,?,?,?,?,?)";
         try {
@@ -36,15 +36,15 @@ public class PrestadorData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 pres.setIdPrestador(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Se ha agregado un nuevo Prestador exitosamente");                
+                JOptionPane.showMessageDialog(null, "Se ha agregado un nuevo Prestador exitosamente");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al ingresar al nuevo Prestador");
         }
     }
-    
+
     public void modificarPrestador(Prestador pres) {
-        
+
         String sql = "Update prestador set Nombre=?,Dni=?,Domicilio=?,Telefono=?,IdEspecialidad=?"
                 + "Where IdPrestador=?";
         try {
@@ -63,13 +63,13 @@ public class PrestadorData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de Prestadores");
         }
     }
-    
-    public void eliminarPrestador(int id) {
-        
-        String sql = "Update Prestador set Activo=0 where IdPrestador=?";
+
+    public void eliminarPrestador(int dni) {
+
+        String sql = "Update Prestador set Activo=0 where dni=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, dni);
             int ex = ps.executeUpdate();
             if (ex == 1) {
                 JOptionPane.showMessageDialog(null, "Prestador eliminado");
@@ -78,9 +78,9 @@ public class PrestadorData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de Prestadores");
         }
     }
-    
+
     public Prestador buscarPrestador(int id) {
-        
+
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=?";
         Prestador pres = null;
         try {
@@ -107,15 +107,15 @@ public class PrestadorData {
         }
         return pres;
     }
-    
+
     public Prestador buscarIdEspecialidad(int IdE) {
-        
+
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, IdE);
-            
+
             ResultSet rs = ps.executeQuery();
             EspecialidadData ed = new EspecialidadData();
             if (rs.next()) {
@@ -137,9 +137,9 @@ public class PrestadorData {
         }
         return pres;
     }
-    
+
     public ArrayList<Prestador> listarPrestador() {
-        
+
         String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE Activo=1";
         ArrayList<Prestador> prestadores = new ArrayList<>();
         try {
@@ -164,7 +164,7 @@ public class PrestadorData {
         }
         return prestadores;
     }
-    
+
     public ArrayList<Prestador> listarPrestadorPorEspecialidad(int id) {
         String sql = "SELECT Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
         ArrayList<Prestador> prestadores = new ArrayList<>();
@@ -191,9 +191,9 @@ public class PrestadorData {
     }
 
     public void reinstituirPrestador(int Dni) {
-        
+
         String sql = "UPDATE prestador SET Activo=1 WHERE Dni=?";
-        
+
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, Dni);
@@ -205,9 +205,9 @@ public class PrestadorData {
             JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos");
         }
     }
-    
+
     public Prestador buscarPrestadorActivo(int Dni) {
-        
+
         String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni , Telefono ,Activo  FROM prestador WHERE Dni=? AND Activo=1";
         Prestador pres = new Prestador();
         try {
@@ -229,7 +229,7 @@ public class PrestadorData {
         }
         return pres;
     }
-    
+
     public Prestador buscarPrestadorDni(int Dni) {
         String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni, Telefono,idEspecialidad, Activo  FROM prestador WHERE dni=?";
         Prestador pres = new Prestador();
