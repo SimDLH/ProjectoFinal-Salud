@@ -11,7 +11,9 @@ public class Secuencia {
     static int contador = 0;
     
     public static void main(String[] args) {
-
+        
+        Inicio reprod = Inicio();
+        reprod.setVisible(true);
         int velocidad = 2;
        
         Timer timer;
@@ -55,5 +57,10 @@ public class Secuencia {
         };
         timer = new Timer();
         timer.scheduleAtFixedRate(tarea, velo1, velo1);
+    }
+
+    private static Inicio Inicio() {
+        
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

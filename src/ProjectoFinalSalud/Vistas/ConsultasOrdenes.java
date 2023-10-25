@@ -24,6 +24,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
     };
 
     public ConsultasOrdenes() {
+        
         initComponents();
         armarCabecera();
         cargarTabla();

@@ -1,6 +1,7 @@
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
+import java.applet.AudioClip;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.io.IOException;
@@ -51,7 +52,7 @@ public class Inicio extends javax.swing.JFrame {
             botonIniSes.setVisible(false);
         }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,6 +91,7 @@ public class Inicio extends javax.swing.JFrame {
         botonX = new javax.swing.JButton();
         botonInstagram = new javax.swing.JButton();
         etiquetaAmbulancia = new javax.swing.JLabel();
+        botonMusica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -476,6 +478,24 @@ public class Inicio extends javax.swing.JFrame {
         etiquetaAmbulancia.setText("<html>\nPara Urgencias Y Emergencias\n<br>\n0800-777-0011\n</html>");
         etiquetaAmbulancia.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
+        botonMusica.setBackground(new java.awt.Color(255, 255, 255));
+        botonMusica.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonMusica.setForeground(new java.awt.Color(255, 255, 255));
+        botonMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/ParlanteOn.png"))); // NOI18N
+        botonMusica.setBorderPainted(false);
+        botonMusica.setContentAreaFilled(false);
+        botonMusica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonMusicaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonMusicaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMusicaMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelGradPrincipalLayout = new javax.swing.GroupLayout(panelGradPrincipal);
         panelGradPrincipal.setLayout(panelGradPrincipalLayout);
         panelGradPrincipalLayout.setHorizontalGroup(
@@ -490,7 +510,7 @@ public class Inicio extends javax.swing.JFrame {
                         .addComponent(etiquetaBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(127, 127, 127)
                         .addComponent(etiquetaAmbulancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                         .addComponent(botonCerrSes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonRegistro)
@@ -502,20 +522,24 @@ public class Inicio extends javax.swing.JFrame {
                             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
                                 .addComponent(etiquetaChat)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                                .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47)
-                                .addComponent(etiquetaPropaganda))
-                            .addGroup(panelGradPrincipalLayout.createSequentialGroup()
-                                .addComponent(etiquetaSeguinos)
-                                .addGap(6, 6, 6)
-                                .addComponent(botonFacebook)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonX)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonInstagram)))
-                        .addGap(0, 186, Short.MAX_VALUE)))
+                                .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                        .addComponent(etiquetaSeguinos)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(botonFacebook)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botonX)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botonInstagram))
+                                    .addGroup(panelGradPrincipalLayout.createSequentialGroup()
+                                        .addComponent(panelGradBotPrincipales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(47, 47, 47)
+                                        .addComponent(etiquetaPropaganda)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonMusica)))))
                 .addContainerGap())
         );
         panelGradPrincipalLayout.setVerticalGroup(
@@ -555,7 +579,10 @@ public class Inicio extends javax.swing.JFrame {
                                 .addGroup(panelGradPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(botonX)
                                     .addComponent(botonFacebook)
-                                    .addComponent(botonInstagram))))))
+                                    .addComponent(botonInstagram)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradPrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonMusica)))
                 .addGap(56, 56, 56))
         );
 
@@ -803,6 +830,20 @@ public class Inicio extends javax.swing.JFrame {
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_botonInstagramMouseExited
 
+    private void botonMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMusicaMouseClicked
+            AudioClip sonido;
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/SonidoDelProyecto/MoodSlowetBeats.wav"));
+            sonido.play();
+    }//GEN-LAST:event_botonMusicaMouseClicked
+
+    private void botonMusicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMusicaMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_botonMusicaMouseEntered
+
+    private void botonMusicaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMusicaMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_botonMusicaMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -836,6 +877,14 @@ public class Inicio extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -856,6 +905,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton botonMenuDesplegable4;
     private javax.swing.JButton botonMenuDesplegable5;
     private javax.swing.JButton botonMenuDesplegable6;
+    private javax.swing.JButton botonMusica;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonX;
     private javax.swing.JLabel etiquetaAmbulancia;

@@ -59,7 +59,7 @@ public class MasInformacion extends javax.swing.JInternalFrame {
         etiquetaMsInfo.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaMsInfo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaMsInfo.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaMsInfo.setText("Escontrá Lo Que Estás Buscas");
+        etiquetaMsInfo.setText("Escontrá Lo Que Estás Buscando");
 
         etiquetaMsInfo0.setBackground(new java.awt.Color(255, 255, 255));
         etiquetaMsInfo0.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -245,27 +245,24 @@ public class MasInformacion extends javax.swing.JInternalFrame {
             panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradMsInfoLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(etiquetaMsInfo)
-                    .addGroup(panelGradMsInfoLayout.createSequentialGroup()
-                        .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(etiquetaMsInfo0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panelGradPropa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(52, 52, 52)
-                        .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(etiquetaMsInfo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panelGradPropa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGradMsInfoLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(etiquetaMsInfo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panelGradPropa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelGradMsInfoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
-                        .addComponent(botonAtrasMsInfo)
-                        .addContainerGap())))
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(etiquetaMsInfo0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelGradPropa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(etiquetaMsInfo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelGradPropa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(etiquetaMsInfo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelGradPropa3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(panelGradMsInfoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiquetaMsInfo)
+                .addGap(169, 169, 169)
+                .addComponent(botonAtrasMsInfo)
+                .addContainerGap())
         );
         panelGradMsInfoLayout.setVerticalGroup(
             panelGradMsInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
