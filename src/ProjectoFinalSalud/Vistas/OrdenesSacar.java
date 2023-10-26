@@ -25,7 +25,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
 
         initComponents();
         cargarComboPrestador();
-        jComboBoxPago.setModel(new DefaultComboBoxModel(FormaDePago.values()));
+        comboBoxSacarOrdenPago.setModel(new DefaultComboBoxModel(FormaDePago.values()));
 
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
@@ -50,7 +50,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
         botonSacarOrdenBuscar = new javax.swing.JButton();
         botonSacarOrdenGuardar = new javax.swing.JButton();
         botonAtrasOrdenSacar = new javax.swing.JButton();
-        jComboBoxPago = new javax.swing.JComboBox<>();
+        comboBoxSacarOrdenPago = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -165,7 +165,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
             }
         });
 
-        jComboBoxPago.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        comboBoxSacarOrdenPago.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout panelGradSacarOrdenLayout = new javax.swing.GroupLayout(panelGradSacarOrden);
         panelGradSacarOrden.setLayout(panelGradSacarOrdenLayout);
@@ -182,11 +182,10 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(textoSacarOrdenImp, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                    .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jComboBoxPago, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(comboBoxSacarOrdenPres, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textoSacarOrdenDoc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                        .addComponent(calendarioSacarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(comboBoxSacarOrdenPago, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboBoxSacarOrdenPres, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textoSacarOrdenDoc, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                    .addComponent(calendarioSacarOrden, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGradSacarOrdenLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -226,7 +225,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
                 .addGap(30, 30, 30)
                 .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiquetaSacarOrdenForPag)
-                    .addComponent(jComboBoxPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxSacarOrdenPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelGradSacarOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoSacarOrdenImp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,7 +291,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "No se pueden crear ordenes para afiliados INACTIVOS ");
                 return;
             }
-            Orden orden = new Orden(fecha, jComboBoxPago.getSelectedItem().toString(), importe,
+            Orden orden = new Orden(fecha, comboBoxSacarOrdenPago.getSelectedItem().toString(), importe,
                     af,
                     pSeleccionado);// arreglado
             od.guardarOrden(orden);
@@ -357,6 +356,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
     private javax.swing.JButton botonSacarOrdenBuscar;
     private javax.swing.JButton botonSacarOrdenGuardar;
     private com.toedter.calendar.JDateChooser calendarioSacarOrden;
+    private javax.swing.JComboBox<FormaDePago> comboBoxSacarOrdenPago;
     private javax.swing.JComboBox<Prestador> comboBoxSacarOrdenPres;
     private javax.swing.JLabel etiquetaSacarOrden;
     private javax.swing.JLabel etiquetaSacarOrdenDoc;
@@ -364,7 +364,6 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel etiquetaSacarOrdenForPag;
     private javax.swing.JLabel etiquetaSacarOrdenImp;
     private javax.swing.JLabel etiquetaSacarOrdenPres;
-    private javax.swing.JComboBox<FormaDePago> jComboBoxPago;
     private keeptoo.KGradientPanel panelGradSacarOrden;
     private javax.swing.JTextField textoSacarOrdenDoc;
     private javax.swing.JTextField textoSacarOrdenImp;

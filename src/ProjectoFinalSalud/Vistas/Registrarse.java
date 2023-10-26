@@ -42,7 +42,6 @@ public class Registrarse extends javax.swing.JInternalFrame {
         etiquetaFechaNacRegis = new javax.swing.JLabel();
         etiquetaNacionRegis = new javax.swing.JLabel();
         etiquetaContraRegis = new javax.swing.JLabel();
-        botonRegistrateRegis = new javax.swing.JButton();
         textoNombreRegis = new javax.swing.JTextField();
         textoApellidoRegis = new javax.swing.JTextField();
         textoDniRegis = new javax.swing.JTextField();
@@ -50,6 +49,7 @@ public class Registrarse extends javax.swing.JInternalFrame {
         textoContraRegis = new javax.swing.JPasswordField();
         calendarioFechaNacRegis = new com.toedter.calendar.JDateChooser();
         comboBoxNacRegis = new javax.swing.JComboBox<>();
+        botonRegistrateRegis = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -164,24 +164,6 @@ public class Registrarse extends javax.swing.JInternalFrame {
         etiquetaContraRegis.setMinimumSize(new java.awt.Dimension(250, 15));
         etiquetaContraRegis.setPreferredSize(new java.awt.Dimension(250, 15));
 
-        botonRegistrateRegis.setBackground(panelGradRegis.getkStartColor());
-        botonRegistrateRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonRegistrateRegis.setForeground(new java.awt.Color(255, 255, 255));
-        botonRegistrateRegis.setText("¡REGISTRATE!");
-        botonRegistrateRegis.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonRegistrateRegisMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonRegistrateRegisMouseExited(evt);
-            }
-        });
-        botonRegistrateRegis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegistrateRegisActionPerformed(evt);
-            }
-        });
-
         textoNombreRegis.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         textoNombreRegis.setForeground(new java.awt.Color(204, 204, 204));
         textoNombreRegis.setText("Ej: Juan");
@@ -245,6 +227,24 @@ public class Registrarse extends javax.swing.JInternalFrame {
         comboBoxNacRegis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxNacRegisActionPerformed(evt);
+            }
+        });
+
+        botonRegistrateRegis.setBackground(panelGradRegis.getkStartColor());
+        botonRegistrateRegis.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonRegistrateRegis.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegistrateRegis.setText("¡REGISTRATE!");
+        botonRegistrateRegis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonRegistrateRegisMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonRegistrateRegisMouseExited(evt);
+            }
+        });
+        botonRegistrateRegis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrateRegisActionPerformed(evt);
             }
         });
 

@@ -65,14 +65,14 @@
                   <Component id="etiquetaEspAgreNomEsp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ButtonAgregar" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonEspAgregarEsp" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="textoEspAgre" min="-2" pref="275" max="-2" attributes="0"/>
                               <Component id="etiquetaEspAgreIngr" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
-                          <Component id="botonAtrasEspAgre" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonAtrasEspAgreEsp" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -84,7 +84,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="botonAtrasEspAgre" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonAtrasEspAgreEsp" min="-2" max="-2" attributes="0"/>
                       <Component id="etiquetaEspAgreIngr" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
@@ -93,7 +93,7 @@
                       <Component id="etiquetaEspAgreNomEsp" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="ButtonAgregar" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonEspAgregarEsp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="323" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -130,7 +130,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="textoEspAgre">
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonAgregar">
+        <Component class="javax.swing.JButton" name="botonEspAgregarEsp">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -150,12 +150,12 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonAgregarMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtonAgregarMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonAgregarActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonEspAgregarEspMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonEspAgregarEspMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEspAgregarEspActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonAtrasEspAgre">
+        <Component class="javax.swing.JButton" name="botonAtrasEspAgreEsp">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -175,9 +175,9 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasEspAgreMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasEspAgreMouseExited"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasEspAgreActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasEspAgreEspMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAtrasEspAgreEspMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasEspAgreEspActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

@@ -47,9 +47,9 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
 
         panelGradConsulEsp = new keeptoo.KGradientPanel();
         etiquetaConsulEsp = new javax.swing.JLabel();
+        botonAtrasConsulEsp = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaConsulEsp = new javax.swing.JTable();
-        botonAtrasConsulEsp = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -64,22 +64,6 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
         etiquetaConsulEsp.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaConsulEsp.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaConsulEsp.setText("Consultar Especialidades ");
-
-        tablaConsulEsp.setBackground(panelGradConsulEsp.getkStartColor());
-        tablaConsulEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        tablaConsulEsp.setForeground(new java.awt.Color(255, 255, 255));
-        tablaConsulEsp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tablaConsulEsp);
 
         botonAtrasConsulEsp.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasConsulEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -102,6 +86,22 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
                 botonAtrasConsulEspActionPerformed(evt);
             }
         });
+
+        tablaConsulEsp.setBackground(panelGradConsulEsp.getkStartColor());
+        tablaConsulEsp.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        tablaConsulEsp.setForeground(new java.awt.Color(255, 255, 255));
+        tablaConsulEsp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaConsulEsp);
 
         javax.swing.GroupLayout panelGradConsulEspLayout = new javax.swing.GroupLayout(panelGradConsulEsp);
         panelGradConsulEsp.setLayout(panelGradConsulEspLayout);

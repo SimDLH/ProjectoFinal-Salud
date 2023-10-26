@@ -45,10 +45,10 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         panelGradConsConsAfi = new keeptoo.KGradientPanel();
-        jLabel1 = new javax.swing.JLabel();
+        etiquetaConsConsAfi = new javax.swing.JLabel();
+        botonAtrasConsConsAfi = new javax.swing.JButton();
         panelScrollTablaListaAfi = new javax.swing.JScrollPane();
         tablaListaAfi = new javax.swing.JTable();
-        botonAtrasProfConsul = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -58,10 +58,32 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         panelGradConsConsAfi.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradConsConsAfi.setPreferredSize(new java.awt.Dimension(975, 575));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Consultar Afiliados");
+        etiquetaConsConsAfi.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaConsConsAfi.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaConsConsAfi.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaConsConsAfi.setText("Consultar Afiliados");
+
+        botonAtrasConsConsAfi.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasConsConsAfi.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasConsConsAfi.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasConsConsAfi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasConsConsAfi.setText("Atrás");
+        botonAtrasConsConsAfi.setBorderPainted(false);
+        botonAtrasConsConsAfi.setContentAreaFilled(false);
+        botonAtrasConsConsAfi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasConsConsAfi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasConsConsAfiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasConsConsAfiMouseExited(evt);
+            }
+        });
+        botonAtrasConsConsAfi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasConsConsAfiActionPerformed(evt);
+            }
+        });
 
         tablaListaAfi.setBackground(panelGradConsConsAfi.getkStartColor());
         tablaListaAfi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -94,28 +116,6 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
             tablaListaAfi.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        botonAtrasProfConsul.setBackground(new java.awt.Color(255, 255, 255));
-        botonAtrasProfConsul.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasProfConsul.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasProfConsul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
-        botonAtrasProfConsul.setText("Atrás");
-        botonAtrasProfConsul.setBorderPainted(false);
-        botonAtrasProfConsul.setContentAreaFilled(false);
-        botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonAtrasProfConsul.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonAtrasProfConsulMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonAtrasProfConsulMouseExited(evt);
-            }
-        });
-        botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasProfConsulActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelGradConsConsAfiLayout = new javax.swing.GroupLayout(panelGradConsConsAfi);
         panelGradConsConsAfi.setLayout(panelGradConsConsAfiLayout);
         panelGradConsConsAfiLayout.setHorizontalGroup(
@@ -124,9 +124,9 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
                 .addContainerGap(75, Short.MAX_VALUE)
                 .addGroup(panelGradConsConsAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradConsConsAfiLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(etiquetaConsConsAfi)
                         .addGap(245, 245, 245)
-                        .addComponent(botonAtrasProfConsul)
+                        .addComponent(botonAtrasConsConsAfi)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradConsConsAfiLayout.createSequentialGroup()
                         .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,8 +137,8 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
             .addGroup(panelGradConsConsAfiLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelGradConsConsAfiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAtrasProfConsul)
-                    .addComponent(jLabel1))
+                    .addComponent(botonAtrasConsConsAfi)
+                    .addComponent(etiquetaConsConsAfi))
                 .addGap(112, 112, 112)
                 .addComponent(panelScrollTablaListaAfi, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(199, Short.MAX_VALUE))
@@ -158,22 +158,22 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAtrasProfConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulActionPerformed
+    private void botonAtrasConsConsAfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasConsConsAfiActionPerformed
         dispose();
-    }//GEN-LAST:event_botonAtrasProfConsulActionPerformed
+    }//GEN-LAST:event_botonAtrasConsConsAfiActionPerformed
 
-    private void botonAtrasProfConsulMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulMouseEntered
+    private void botonAtrasConsConsAfiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsConsAfiMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_botonAtrasProfConsulMouseEntered
+    }//GEN-LAST:event_botonAtrasConsConsAfiMouseEntered
 
-    private void botonAtrasProfConsulMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulMouseExited
+    private void botonAtrasConsConsAfiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsConsAfiMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_botonAtrasProfConsulMouseExited
+    }//GEN-LAST:event_botonAtrasConsConsAfiMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAtrasProfConsul;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton botonAtrasConsConsAfi;
+    private javax.swing.JLabel etiquetaConsConsAfi;
     private keeptoo.KGradientPanel panelGradConsConsAfi;
     private javax.swing.JScrollPane panelScrollTablaListaAfi;
     private javax.swing.JTable tablaListaAfi;

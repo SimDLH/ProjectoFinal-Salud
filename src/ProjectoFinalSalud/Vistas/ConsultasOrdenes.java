@@ -53,9 +53,9 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
 
         panelConsulConsulOrden = new keeptoo.KGradientPanel();
         etiquetaConsulOrden = new javax.swing.JLabel();
+        botonAtrasConsulOrden = new javax.swing.JButton();
         panelScrollConsulOrden = new javax.swing.JScrollPane();
         tablaConsulOrden = new javax.swing.JTable();
-        botonAtrasAfiLista = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -68,6 +68,28 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         etiquetaConsulOrden.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaConsulOrden.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaConsulOrden.setText("Consultar Ordenes");
+
+        botonAtrasConsulOrden.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasConsulOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasConsulOrden.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasConsulOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasConsulOrden.setText("Atrás");
+        botonAtrasConsulOrden.setBorderPainted(false);
+        botonAtrasConsulOrden.setContentAreaFilled(false);
+        botonAtrasConsulOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasConsulOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasConsulOrdenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasConsulOrdenMouseExited(evt);
+            }
+        });
+        botonAtrasConsulOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasConsulOrdenActionPerformed(evt);
+            }
+        });
 
         tablaConsulOrden.setBackground(panelConsulConsulOrden.getkStartColor());
         tablaConsulOrden.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -100,28 +122,6 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
             tablaConsulOrden.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        botonAtrasAfiLista.setBackground(new java.awt.Color(255, 255, 255));
-        botonAtrasAfiLista.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasAfiLista.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasAfiLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
-        botonAtrasAfiLista.setText("Atrás");
-        botonAtrasAfiLista.setBorderPainted(false);
-        botonAtrasAfiLista.setContentAreaFilled(false);
-        botonAtrasAfiLista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonAtrasAfiLista.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonAtrasAfiListaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonAtrasAfiListaMouseExited(evt);
-            }
-        });
-        botonAtrasAfiLista.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasAfiListaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelConsulConsulOrdenLayout = new javax.swing.GroupLayout(panelConsulConsulOrden);
         panelConsulConsulOrden.setLayout(panelConsulConsulOrdenLayout);
         panelConsulConsulOrdenLayout.setHorizontalGroup(
@@ -132,7 +132,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsulConsulOrdenLayout.createSequentialGroup()
                         .addComponent(etiquetaConsulOrden)
                         .addGap(218, 218, 218)
-                        .addComponent(botonAtrasAfiLista)
+                        .addComponent(botonAtrasConsulOrden)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsulConsulOrdenLayout.createSequentialGroup()
                         .addComponent(panelScrollConsulOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,7 +143,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsulConsulOrdenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelConsulConsulOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAtrasAfiLista)
+                    .addComponent(botonAtrasConsulOrden)
                     .addComponent(etiquetaConsulOrden))
                 .addGap(116, 116, 116)
                 .addComponent(panelScrollConsulOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,20 +164,20 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAtrasAfiListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasAfiListaActionPerformed
+    private void botonAtrasConsulOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasConsulOrdenActionPerformed
         dispose();
-    }//GEN-LAST:event_botonAtrasAfiListaActionPerformed
+    }//GEN-LAST:event_botonAtrasConsulOrdenActionPerformed
 
-    private void botonAtrasAfiListaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiListaMouseEntered
+    private void botonAtrasConsulOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsulOrdenMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_botonAtrasAfiListaMouseEntered
+    }//GEN-LAST:event_botonAtrasConsulOrdenMouseEntered
 
-    private void botonAtrasAfiListaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasAfiListaMouseExited
+    private void botonAtrasConsulOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasConsulOrdenMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_botonAtrasAfiListaMouseExited
+    }//GEN-LAST:event_botonAtrasConsulOrdenMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAtrasAfiLista;
+    private javax.swing.JButton botonAtrasConsulOrden;
     private javax.swing.JLabel etiquetaConsulOrden;
     private keeptoo.KGradientPanel panelConsulConsulOrden;
     private javax.swing.JScrollPane panelScrollConsulOrden;

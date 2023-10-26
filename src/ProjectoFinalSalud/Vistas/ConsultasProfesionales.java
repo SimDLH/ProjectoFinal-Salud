@@ -77,8 +77,8 @@ public class ConsultasProfesionales extends javax.swing.JInternalFrame {
 
         jButton1 = new javax.swing.JButton();
         panelGradConsulProf = new keeptoo.KGradientPanel();
-        botonAtrasConsulProf = new javax.swing.JButton();
         etiquetaConsulProf = new javax.swing.JLabel();
+        botonAtrasConsulProf = new javax.swing.JButton();
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaConsulProf = new javax.swing.JTable();
 
@@ -91,6 +91,11 @@ public class ConsultasProfesionales extends javax.swing.JInternalFrame {
         panelGradConsulProf.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradConsulProf.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradConsulProf.setPreferredSize(new java.awt.Dimension(975, 575));
+
+        etiquetaConsulProf.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaConsulProf.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaConsulProf.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaConsulProf.setText("Consultar Profesionales");
 
         botonAtrasConsulProf.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasConsulProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -113,11 +118,6 @@ public class ConsultasProfesionales extends javax.swing.JInternalFrame {
                 botonAtrasConsulProfActionPerformed(evt);
             }
         });
-
-        etiquetaConsulProf.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaConsulProf.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        etiquetaConsulProf.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaConsulProf.setText("Consultar Profesionales");
 
         tablaConsulProf.setBackground(panelGradConsulProf.getkStartColor());
         tablaConsulProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N

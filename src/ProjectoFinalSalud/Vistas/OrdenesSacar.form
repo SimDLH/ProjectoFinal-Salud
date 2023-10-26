@@ -72,12 +72,10 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="textoSacarOrdenImp" pref="245" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jComboBoxPago" alignment="0" max="32767" attributes="0"/>
-                          <Component id="comboBoxSacarOrdenPres" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textoSacarOrdenDoc" alignment="0" pref="245" max="32767" attributes="0"/>
-                          <Component id="calendarioSacarOrden" alignment="1" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="comboBoxSacarOrdenPago" alignment="0" max="32767" attributes="0"/>
+                      <Component id="comboBoxSacarOrdenPres" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textoSacarOrdenDoc" alignment="0" pref="245" max="32767" attributes="0"/>
+                      <Component id="calendarioSacarOrden" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -129,7 +127,7 @@
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="etiquetaSacarOrdenForPag" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBoxPago" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboBoxSacarOrdenPago" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -337,7 +335,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAtrasOrdenSacarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBoxPago">
+        <Component class="javax.swing.JComboBox" name="comboBoxSacarOrdenPago">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="14" style="0"/>

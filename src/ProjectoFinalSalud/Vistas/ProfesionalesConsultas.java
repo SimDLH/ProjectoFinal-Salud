@@ -78,10 +78,10 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
 
         panelGradProfConsul = new keeptoo.KGradientPanel();
         etiquetaProfCartilla = new javax.swing.JLabel();
+        botonProfPedirOrden = new javax.swing.JButton();
+        botonAtrasProfConsul = new javax.swing.JButton();
         panelScrollTabla = new javax.swing.JScrollPane();
         tablaProf = new javax.swing.JTable();
-        botonAtrasProfConsul = new javax.swing.JButton();
-        botonProfPedirOrden = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -95,6 +95,50 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         etiquetaProfCartilla.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         etiquetaProfCartilla.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaProfCartilla.setText("Consulta Nuestra Cartilla Médica");
+
+        botonProfPedirOrden.setBackground(new java.awt.Color(255, 255, 255));
+        botonProfPedirOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonProfPedirOrden.setForeground(new java.awt.Color(255, 255, 255));
+        botonProfPedirOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonProfPedirOrden.setText("¡Pedir Orden!");
+        botonProfPedirOrden.setBorderPainted(false);
+        botonProfPedirOrden.setContentAreaFilled(false);
+        botonProfPedirOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonProfPedirOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonProfPedirOrdenMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonProfPedirOrdenMouseExited(evt);
+            }
+        });
+        botonProfPedirOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonProfPedirOrdenActionPerformed(evt);
+            }
+        });
+
+        botonAtrasProfConsul.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasProfConsul.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasProfConsul.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasProfConsul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasProfConsul.setText("Atrás");
+        botonAtrasProfConsul.setBorderPainted(false);
+        botonAtrasProfConsul.setContentAreaFilled(false);
+        botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasProfConsul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonAtrasProfConsulMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAtrasProfConsulMouseExited(evt);
+            }
+        });
+        botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAtrasProfConsulActionPerformed(evt);
+            }
+        });
 
         tablaProf.setBackground(panelGradProfConsul.getkStartColor());
         tablaProf.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -126,50 +170,6 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
             tablaProf.getColumnModel().getColumn(2).setResizable(false);
             tablaProf.getColumnModel().getColumn(3).setResizable(false);
         }
-
-        botonAtrasProfConsul.setBackground(new java.awt.Color(255, 255, 255));
-        botonAtrasProfConsul.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasProfConsul.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasProfConsul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
-        botonAtrasProfConsul.setText("Atrás");
-        botonAtrasProfConsul.setBorderPainted(false);
-        botonAtrasProfConsul.setContentAreaFilled(false);
-        botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonAtrasProfConsul.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonAtrasProfConsulMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonAtrasProfConsulMouseExited(evt);
-            }
-        });
-        botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasProfConsulActionPerformed(evt);
-            }
-        });
-
-        botonProfPedirOrden.setBackground(new java.awt.Color(255, 255, 255));
-        botonProfPedirOrden.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonProfPedirOrden.setForeground(new java.awt.Color(255, 255, 255));
-        botonProfPedirOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
-        botonProfPedirOrden.setText("¡Pedir Orden!");
-        botonProfPedirOrden.setBorderPainted(false);
-        botonProfPedirOrden.setContentAreaFilled(false);
-        botonProfPedirOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonProfPedirOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonProfPedirOrdenMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonProfPedirOrdenMouseExited(evt);
-            }
-        });
-        botonProfPedirOrden.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonProfPedirOrdenActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panelGradProfConsulLayout = new javax.swing.GroupLayout(panelGradProfConsul);
         panelGradProfConsul.setLayout(panelGradProfConsulLayout);

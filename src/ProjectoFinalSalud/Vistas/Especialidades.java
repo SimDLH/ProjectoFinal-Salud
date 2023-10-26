@@ -25,7 +25,7 @@ public class Especialidades extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelGradEspecialidades = new keeptoo.KGradientPanel();
+        panelGradEsp = new keeptoo.KGradientPanel();
         botonAtrasEsp = new javax.swing.JButton();
         menuEsp = new javax.swing.JMenuBar();
         menuEspListaEsp = new javax.swing.JMenu();
@@ -36,10 +36,10 @@ public class Especialidades extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
 
-        panelGradEspecialidades.setBackground(new java.awt.Color(255, 255, 255));
-        panelGradEspecialidades.setkEndColor(new java.awt.Color(0, 153, 255));
-        panelGradEspecialidades.setkStartColor(new java.awt.Color(0, 153, 0));
-        panelGradEspecialidades.setPreferredSize(new java.awt.Dimension(975, 575));
+        panelGradEsp.setBackground(new java.awt.Color(255, 255, 255));
+        panelGradEsp.setkEndColor(new java.awt.Color(0, 153, 255));
+        panelGradEsp.setkStartColor(new java.awt.Color(0, 153, 0));
+        panelGradEsp.setPreferredSize(new java.awt.Dimension(975, 575));
 
         botonAtrasEsp.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -63,18 +63,18 @@ public class Especialidades extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout panelGradEspecialidadesLayout = new javax.swing.GroupLayout(panelGradEspecialidades);
-        panelGradEspecialidades.setLayout(panelGradEspecialidadesLayout);
-        panelGradEspecialidadesLayout.setHorizontalGroup(
-            panelGradEspecialidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspecialidadesLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelGradEspLayout = new javax.swing.GroupLayout(panelGradEsp);
+        panelGradEsp.setLayout(panelGradEspLayout);
+        panelGradEspLayout.setHorizontalGroup(
+            panelGradEspLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspLayout.createSequentialGroup()
                 .addContainerGap(796, Short.MAX_VALUE)
                 .addComponent(botonAtrasEsp)
                 .addContainerGap())
         );
-        panelGradEspecialidadesLayout.setVerticalGroup(
-            panelGradEspecialidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGradEspecialidadesLayout.createSequentialGroup()
+        panelGradEspLayout.setVerticalGroup(
+            panelGradEspLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradEspLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonAtrasEsp)
                 .addContainerGap(460, Short.MAX_VALUE))
@@ -134,11 +134,11 @@ public class Especialidades extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradEspecialidades, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(panelGradEsp, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradEspecialidades, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+            .addComponent(panelGradEsp, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
         );
 
         setBounds(300, 140, 975, 575);
@@ -155,7 +155,7 @@ public class Especialidades extends javax.swing.JInternalFrame {
         EspecialidadesAgregar ea = new EspecialidadesAgregar();
         limpiar(o);
         o = ea;
-        panelGradEspecialidades.add(ea);
+        panelGradEsp.add(ea);
         ea.setVisible(true);
     }//GEN-LAST:event_menuItemEspAgreEspActionPerformed
 
@@ -167,7 +167,7 @@ public class Especialidades extends javax.swing.JInternalFrame {
         EspecialidadesLista ed = new EspecialidadesLista();
         limpiar(o);
         o = ed;
-        panelGradEspecialidades.add(ed);
+        panelGradEsp.add(ed);
         ed.setVisible(true);
     }//GEN-LAST:event_menuItemEspListaProfXEspActionPerformed
 
@@ -202,6 +202,6 @@ public class Especialidades extends javax.swing.JInternalFrame {
     private javax.swing.JMenu menuEspListaEsp;
     private javax.swing.JMenuItem menuItemEspAgreEsp;
     private javax.swing.JMenuItem menuItemEspListaProfXEsp;
-    private keeptoo.KGradientPanel panelGradEspecialidades;
+    private keeptoo.KGradientPanel panelGradEsp;
     // End of variables declaration//GEN-END:variables
 }

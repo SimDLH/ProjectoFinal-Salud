@@ -49,9 +49,9 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
 
         panelGradEspLista = new keeptoo.KGradientPanel();
         etiquetaEspListaProfXEsp = new javax.swing.JLabel();
-        botonAtrasProfConsul = new javax.swing.JButton();
+        botonAtrasEspListaProfXesp = new javax.swing.JButton();
         comboBoxEspEsp = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        panelScrollTablaEspListaProf = new javax.swing.JScrollPane();
         tablaEspListaProf = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -67,17 +67,17 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         etiquetaEspListaProfXEsp.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaEspListaProfXEsp.setText("Lista De Profecionales Por Especialidad");
 
-        botonAtrasProfConsul.setBackground(new java.awt.Color(255, 255, 255));
-        botonAtrasProfConsul.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasProfConsul.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasProfConsul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
-        botonAtrasProfConsul.setText("Atrás");
-        botonAtrasProfConsul.setBorderPainted(false);
-        botonAtrasProfConsul.setContentAreaFilled(false);
-        botonAtrasProfConsul.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonAtrasProfConsul.addActionListener(new java.awt.event.ActionListener() {
+        botonAtrasEspListaProfXesp.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasEspListaProfXesp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasEspListaProfXesp.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasEspListaProfXesp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasEspListaProfXesp.setText("Atrás");
+        botonAtrasEspListaProfXesp.setBorderPainted(false);
+        botonAtrasEspListaProfXesp.setContentAreaFilled(false);
+        botonAtrasEspListaProfXesp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasEspListaProfXesp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasProfConsulActionPerformed(evt);
+                botonAtrasEspListaProfXespActionPerformed(evt);
             }
         });
 
@@ -103,7 +103,7 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tablaEspListaProf);
+        panelScrollTablaEspListaProf.setViewportView(tablaEspListaProf);
 
         javax.swing.GroupLayout panelGradEspListaLayout = new javax.swing.GroupLayout(panelGradEspLista);
         panelGradEspLista.setLayout(panelGradEspListaLayout);
@@ -115,12 +115,12 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspListaLayout.createSequentialGroup()
                         .addComponent(etiquetaEspListaProfXEsp)
                         .addGap(135, 135, 135)
-                        .addComponent(botonAtrasProfConsul)
+                        .addComponent(botonAtrasEspListaProfXesp)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradEspListaLayout.createSequentialGroup()
                         .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(comboBoxEspEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(panelScrollTablaEspListaProf, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(152, 152, 152))))
         );
         panelGradEspListaLayout.setVerticalGroup(
@@ -129,11 +129,11 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(panelGradEspListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(etiquetaEspListaProfXEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonAtrasProfConsul))
+                    .addComponent(botonAtrasEspListaProfXesp))
                 .addGap(44, 44, 44)
                 .addComponent(comboBoxEspEsp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelScrollTablaEspListaProf, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(226, Short.MAX_VALUE))
         );
 
@@ -157,16 +157,16 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         cargarTabla(pd.listarPrestadorPorEspecialidad(es.getIdEspecialidad()));
     }//GEN-LAST:event_comboBoxEspEspActionPerformed
 
-    private void botonAtrasProfConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasProfConsulActionPerformed
+    private void botonAtrasEspListaProfXespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspListaProfXespActionPerformed
         dispose();
-    }//GEN-LAST:event_botonAtrasProfConsulActionPerformed
+    }//GEN-LAST:event_botonAtrasEspListaProfXespActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAtrasProfConsul;
+    private javax.swing.JButton botonAtrasEspListaProfXesp;
     private javax.swing.JComboBox<Especialidad> comboBoxEspEsp;
     private javax.swing.JLabel etiquetaEspListaProfXEsp;
-    private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel panelGradEspLista;
+    private javax.swing.JScrollPane panelScrollTablaEspListaProf;
     private javax.swing.JTable tablaEspListaProf;
     // End of variables declaration//GEN-END:variables
 

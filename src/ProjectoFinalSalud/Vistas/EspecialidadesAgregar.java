@@ -33,8 +33,8 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         etiquetaEspAgreIngr = new javax.swing.JLabel();
         etiquetaEspAgreNomEsp = new javax.swing.JLabel();
         textoEspAgre = new javax.swing.JTextField();
-        ButtonAgregar = new javax.swing.JButton();
-        botonAtrasEspAgre = new javax.swing.JButton();
+        botonEspAgregarEsp = new javax.swing.JButton();
+        botonAtrasEspAgreEsp = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -54,47 +54,47 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         etiquetaEspAgreNomEsp.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaEspAgreNomEsp.setText("Nombre de la Especialidad:");
 
-        ButtonAgregar.setBackground(new java.awt.Color(255, 255, 255));
-        ButtonAgregar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        ButtonAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
-        ButtonAgregar.setText("Agregar");
-        ButtonAgregar.setBorderPainted(false);
-        ButtonAgregar.setContentAreaFilled(false);
-        ButtonAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ButtonAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonEspAgregarEsp.setBackground(new java.awt.Color(255, 255, 255));
+        botonEspAgregarEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonEspAgregarEsp.setForeground(new java.awt.Color(255, 255, 255));
+        botonEspAgregarEsp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/Boton.png"))); // NOI18N
+        botonEspAgregarEsp.setText("Agregar");
+        botonEspAgregarEsp.setBorderPainted(false);
+        botonEspAgregarEsp.setContentAreaFilled(false);
+        botonEspAgregarEsp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonEspAgregarEsp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ButtonAgregarMouseEntered(evt);
+                botonEspAgregarEspMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ButtonAgregarMouseExited(evt);
+                botonEspAgregarEspMouseExited(evt);
             }
         });
-        ButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
+        botonEspAgregarEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonAgregarActionPerformed(evt);
+                botonEspAgregarEspActionPerformed(evt);
             }
         });
 
-        botonAtrasEspAgre.setBackground(new java.awt.Color(255, 255, 255));
-        botonAtrasEspAgre.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        botonAtrasEspAgre.setForeground(new java.awt.Color(255, 255, 255));
-        botonAtrasEspAgre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
-        botonAtrasEspAgre.setText("Atrás");
-        botonAtrasEspAgre.setBorderPainted(false);
-        botonAtrasEspAgre.setContentAreaFilled(false);
-        botonAtrasEspAgre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonAtrasEspAgre.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonAtrasEspAgreEsp.setBackground(new java.awt.Color(255, 255, 255));
+        botonAtrasEspAgreEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        botonAtrasEspAgreEsp.setForeground(new java.awt.Color(255, 255, 255));
+        botonAtrasEspAgreEsp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesDelProyecto/BotonRetroceso.png"))); // NOI18N
+        botonAtrasEspAgreEsp.setText("Atrás");
+        botonAtrasEspAgreEsp.setBorderPainted(false);
+        botonAtrasEspAgreEsp.setContentAreaFilled(false);
+        botonAtrasEspAgreEsp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAtrasEspAgreEsp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonAtrasEspAgreMouseEntered(evt);
+                botonAtrasEspAgreEspMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonAtrasEspAgreMouseExited(evt);
+                botonAtrasEspAgreEspMouseExited(evt);
             }
         });
-        botonAtrasEspAgre.addActionListener(new java.awt.event.ActionListener() {
+        botonAtrasEspAgreEsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAtrasEspAgreActionPerformed(evt);
+                botonAtrasEspAgreEspActionPerformed(evt);
             }
         });
 
@@ -107,13 +107,13 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
                 .addComponent(etiquetaEspAgreNomEsp)
                 .addGap(18, 18, 18)
                 .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonAgregar)
+                    .addComponent(botonEspAgregarEsp)
                     .addGroup(panelGradEspAgreLayout.createSequentialGroup()
                         .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(etiquetaEspAgreIngr))
                         .addGap(190, 190, 190)
-                        .addComponent(botonAtrasEspAgre)))
+                        .addComponent(botonAtrasEspAgreEsp)))
                 .addContainerGap())
         );
         panelGradEspAgreLayout.setVerticalGroup(
@@ -121,14 +121,14 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
             .addGroup(panelGradEspAgreLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAtrasEspAgre)
+                    .addComponent(botonAtrasEspAgreEsp)
                     .addComponent(etiquetaEspAgreIngr, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(panelGradEspAgreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoEspAgre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiquetaEspAgreNomEsp))
                 .addGap(31, 31, 31)
-                .addComponent(ButtonAgregar)
+                .addComponent(botonEspAgregarEsp)
                 .addContainerGap(323, Short.MAX_VALUE))
         );
 
@@ -146,38 +146,38 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
         setBounds(0, 0, 975, 575);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarActionPerformed
+    private void botonEspAgregarEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEspAgregarEspActionPerformed
         if(textoEspAgre.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingrese el nombre de una Especialidad");
         }else{
         Especialidad especialidad=new Especialidad(textoEspAgre.getText());
         ed.guardarEspecialidad(especialidad);
         }
-    }//GEN-LAST:event_ButtonAgregarActionPerformed
+    }//GEN-LAST:event_botonEspAgregarEspActionPerformed
 
-    private void botonAtrasEspAgreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreActionPerformed
+    private void botonAtrasEspAgreEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreEspActionPerformed
         dispose();
-    }//GEN-LAST:event_botonAtrasEspAgreActionPerformed
+    }//GEN-LAST:event_botonAtrasEspAgreEspActionPerformed
 
-    private void botonAtrasEspAgreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreMouseEntered
+    private void botonAtrasEspAgreEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreEspMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_botonAtrasEspAgreMouseEntered
+    }//GEN-LAST:event_botonAtrasEspAgreEspMouseEntered
 
-    private void botonAtrasEspAgreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreMouseExited
+    private void botonAtrasEspAgreEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreEspMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_botonAtrasEspAgreMouseExited
+    }//GEN-LAST:event_botonAtrasEspAgreEspMouseExited
 
-    private void ButtonAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAgregarMouseEntered
+    private void botonEspAgregarEspMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEspAgregarEspMouseEntered
         setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_ButtonAgregarMouseEntered
+    }//GEN-LAST:event_botonEspAgregarEspMouseEntered
 
-    private void ButtonAgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAgregarMouseExited
+    private void botonEspAgregarEspMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEspAgregarEspMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-    }//GEN-LAST:event_ButtonAgregarMouseExited
+    }//GEN-LAST:event_botonEspAgregarEspMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonAgregar;
-    private javax.swing.JButton botonAtrasEspAgre;
+    private javax.swing.JButton botonAtrasEspAgreEsp;
+    private javax.swing.JButton botonEspAgregarEsp;
     private javax.swing.JLabel etiquetaEspAgreIngr;
     private javax.swing.JLabel etiquetaEspAgreNomEsp;
     private keeptoo.KGradientPanel panelGradEspAgre;

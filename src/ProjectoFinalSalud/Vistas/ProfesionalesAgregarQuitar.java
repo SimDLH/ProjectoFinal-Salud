@@ -34,25 +34,25 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         panelGradProfAgreQuit = new keeptoo.KGradientPanel();
-        botonAtrasProfAgreQuit = new javax.swing.JButton();
         etiquetaProfAgreQuit = new javax.swing.JLabel();
         etiquetaProfAgreQuitDNI = new javax.swing.JLabel();
-        textoProfAgreQuitDNI = new javax.swing.JTextField();
-        botonProfAgreQuitBuscar = new javax.swing.JButton();
-        separadorProfAgreQuit = new javax.swing.JSeparator();
         etiquetaProfAgreQuitNomYApe = new javax.swing.JLabel();
-        textoProfAgreQuitNomYApe = new javax.swing.JTextField();
         etiquetaProfAgreQuitNumTel = new javax.swing.JLabel();
-        textoProfAgreQuitNumTel = new javax.swing.JTextField();
         etiquetaProfAgreQuitDom = new javax.swing.JLabel();
-        textoProfAgreQuitDom = new javax.swing.JTextField();
         etiquetaProfAgreQuitEstado = new javax.swing.JLabel();
         etiquetaProfAgreQuitAcONoac = new javax.swing.JLabel();
+        etiquetaProfAgreQuitEsp = new javax.swing.JLabel();
+        textoProfAgreQuitDNI = new javax.swing.JTextField();
+        textoProfAgreQuitNomYApe = new javax.swing.JTextField();
+        textoProfAgreQuitNumTel = new javax.swing.JTextField();
+        textoProfAgreQuitDom = new javax.swing.JTextField();
+        comboBoxProfAgreQuitEsp = new javax.swing.JComboBox<>();
+        botonAtrasProfAgreQuit = new javax.swing.JButton();
+        botonProfAgreQuitBuscar = new javax.swing.JButton();
         botonProfAgreQuitRein = new javax.swing.JButton();
         botonProfAgreQuitGuardar = new javax.swing.JButton();
         botonProfAgreQuitAnular = new javax.swing.JButton();
-        etiquetaProfAgreQuitEsp = new javax.swing.JLabel();
-        comboBoxProfAgreQuitEsp = new javax.swing.JComboBox<>();
+        separadorProfAgreQuit = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(975, 575));
@@ -61,6 +61,53 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         panelGradProfAgreQuit.setkEndColor(new java.awt.Color(0, 153, 255));
         panelGradProfAgreQuit.setkStartColor(new java.awt.Color(0, 153, 0));
         panelGradProfAgreQuit.setPreferredSize(new java.awt.Dimension(975, 575));
+
+        etiquetaProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuit.setText("Agregar Y Anular Profesionales");
+
+        etiquetaProfAgreQuitDNI.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDNI.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitDNI.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDNI.setText("Ingrese El DNI Del Profesional");
+
+        etiquetaProfAgreQuitNomYApe.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitNomYApe.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNomYApe.setText("Nombre y Apellido:");
+
+        etiquetaProfAgreQuitNumTel.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitNumTel.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitNumTel.setText("Número de Teléfono:");
+
+        etiquetaProfAgreQuitDom.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitDom.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitDom.setText("Domicilio:");
+
+        etiquetaProfAgreQuitEstado.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitEstado.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitEstado.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitEstado.setText("Estado:");
+
+        etiquetaProfAgreQuitAcONoac.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitAcONoac.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        etiquetaProfAgreQuitAcONoac.setForeground(new java.awt.Color(255, 255, 255));
+
+        etiquetaProfAgreQuitEsp.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaProfAgreQuitEsp.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaProfAgreQuitEsp.setText("Especialidad:");
+
+        textoProfAgreQuitDNI.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        textoProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        textoProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        textoProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         botonAtrasProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
         botonAtrasProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -84,18 +131,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
             }
         });
 
-        etiquetaProfAgreQuit.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuit.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        etiquetaProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuit.setText("Agregar Y Anular Profesionales");
-
-        etiquetaProfAgreQuitDNI.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDNI.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitDNI.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDNI.setText("Ingrese El DNI Del Profesional");
-
-        textoProfAgreQuitDNI.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
         botonProfAgreQuitBuscar.setBackground(new java.awt.Color(255, 255, 255));
         botonProfAgreQuitBuscar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonProfAgreQuitBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,39 +152,6 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
                 botonProfAgreQuitBuscarActionPerformed(evt);
             }
         });
-
-        separadorProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
-        separadorProfAgreQuit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        etiquetaProfAgreQuitNomYApe.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitNomYApe.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNomYApe.setText("Nombre y Apellido:");
-
-        textoProfAgreQuitNomYApe.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        etiquetaProfAgreQuitNumTel.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitNumTel.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitNumTel.setText("Número de Teléfono:");
-
-        textoProfAgreQuitNumTel.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        etiquetaProfAgreQuitDom.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitDom.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitDom.setText("Domicilio:");
-
-        textoProfAgreQuitDom.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        etiquetaProfAgreQuitEstado.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitEstado.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitEstado.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitEstado.setText("Estado:");
-
-        etiquetaProfAgreQuitAcONoac.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitAcONoac.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        etiquetaProfAgreQuitAcONoac.setForeground(new java.awt.Color(255, 255, 255));
 
         botonProfAgreQuitRein.setBackground(new java.awt.Color(255, 255, 255));
         botonProfAgreQuitRein.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -218,10 +220,8 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
             }
         });
 
-        etiquetaProfAgreQuitEsp.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitEsp.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaProfAgreQuitEsp.setForeground(new java.awt.Color(255, 255, 255));
-        etiquetaProfAgreQuitEsp.setText("Especialidad:");
+        separadorProfAgreQuit.setForeground(new java.awt.Color(255, 255, 255));
+        separadorProfAgreQuit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout panelGradProfAgreQuitLayout = new javax.swing.GroupLayout(panelGradProfAgreQuit);
         panelGradProfAgreQuit.setLayout(panelGradProfAgreQuitLayout);
@@ -322,11 +322,11 @@ public class ProfesionalesAgregarQuitar extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
+            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+            .addComponent(panelGradProfAgreQuit, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 975, 575);

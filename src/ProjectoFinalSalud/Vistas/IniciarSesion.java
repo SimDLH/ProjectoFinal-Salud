@@ -32,16 +32,16 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gradienteIniSes = new keeptoo.KGradientPanel();
+        panelGradIniSes = new keeptoo.KGradientPanel();
         panelIniSes = new javax.swing.JPanel();
         etiquetaCuadroIniSes = new javax.swing.JLabel();
-        textoNombreIniSes = new javax.swing.JTextField();
-        textoApellidoIniSes = new javax.swing.JTextField();
-        textoDireEmailIniSes = new javax.swing.JTextField();
         etiquetaNombreIniSes = new javax.swing.JLabel();
         etiquetaApellidoIniSes = new javax.swing.JLabel();
         etiquetaDireccionEmailIniSes = new javax.swing.JLabel();
         etiquetaContraseñaIniSes = new javax.swing.JLabel();
+        textoNombreIniSes = new javax.swing.JTextField();
+        textoApellidoIniSes = new javax.swing.JTextField();
+        textoDireEmailIniSes = new javax.swing.JTextField();
         textoContraIniSes = new javax.swing.JPasswordField();
         botonContinuarIniSes = new javax.swing.JButton();
         etiquetaTituloIniSes = new javax.swing.JLabel();
@@ -52,9 +52,9 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        gradienteIniSes.setkEndColor(new java.awt.Color(51, 153, 255));
-        gradienteIniSes.setkStartColor(new java.awt.Color(153, 0, 153));
-        gradienteIniSes.setPreferredSize(new java.awt.Dimension(1280, 720));
+        panelGradIniSes.setkEndColor(new java.awt.Color(51, 153, 255));
+        panelGradIniSes.setkStartColor(new java.awt.Color(153, 0, 153));
+        panelGradIniSes.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         panelIniSes.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -64,6 +64,38 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         etiquetaCuadroIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
         etiquetaCuadroIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
         etiquetaCuadroIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
+
+        etiquetaNombreIniSes.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaNombreIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaNombreIniSes.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaNombreIniSes.setText("Nombre:");
+        etiquetaNombreIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
+        etiquetaNombreIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
+        etiquetaNombreIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
+
+        etiquetaApellidoIniSes.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaApellidoIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaApellidoIniSes.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaApellidoIniSes.setText("Apellido:");
+        etiquetaApellidoIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
+        etiquetaApellidoIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
+        etiquetaApellidoIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
+
+        etiquetaDireccionEmailIniSes.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaDireccionEmailIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaDireccionEmailIniSes.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaDireccionEmailIniSes.setText("Dirección email:");
+        etiquetaDireccionEmailIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
+        etiquetaDireccionEmailIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
+        etiquetaDireccionEmailIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
+
+        etiquetaContraseñaIniSes.setBackground(new java.awt.Color(255, 255, 255));
+        etiquetaContraseñaIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        etiquetaContraseñaIniSes.setForeground(new java.awt.Color(102, 102, 102));
+        etiquetaContraseñaIniSes.setText("Contraseña:");
+        etiquetaContraseñaIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
+        etiquetaContraseñaIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
+        etiquetaContraseñaIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
 
         textoNombreIniSes.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         textoNombreIniSes.setForeground(new java.awt.Color(204, 204, 204));
@@ -98,38 +130,6 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             }
         });
 
-        etiquetaNombreIniSes.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaNombreIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaNombreIniSes.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaNombreIniSes.setText("Nombre:");
-        etiquetaNombreIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
-        etiquetaNombreIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
-        etiquetaNombreIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
-
-        etiquetaApellidoIniSes.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaApellidoIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaApellidoIniSes.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaApellidoIniSes.setText("Apellido:");
-        etiquetaApellidoIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
-        etiquetaApellidoIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
-        etiquetaApellidoIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
-
-        etiquetaDireccionEmailIniSes.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaDireccionEmailIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaDireccionEmailIniSes.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaDireccionEmailIniSes.setText("Dirección email:");
-        etiquetaDireccionEmailIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
-        etiquetaDireccionEmailIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
-        etiquetaDireccionEmailIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
-
-        etiquetaContraseñaIniSes.setBackground(new java.awt.Color(255, 255, 255));
-        etiquetaContraseñaIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        etiquetaContraseñaIniSes.setForeground(new java.awt.Color(102, 102, 102));
-        etiquetaContraseñaIniSes.setText("Contraseña:");
-        etiquetaContraseñaIniSes.setMaximumSize(new java.awt.Dimension(250, 15));
-        etiquetaContraseñaIniSes.setMinimumSize(new java.awt.Dimension(250, 15));
-        etiquetaContraseñaIniSes.setPreferredSize(new java.awt.Dimension(250, 15));
-
         textoContraIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         textoContraIniSes.setForeground(new java.awt.Color(204, 204, 204));
         textoContraIniSes.setText("***********");
@@ -141,7 +141,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             }
         });
 
-        botonContinuarIniSes.setBackground(gradienteIniSes.getkStartColor());
+        botonContinuarIniSes.setBackground(panelGradIniSes.getkStartColor());
         botonContinuarIniSes.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         botonContinuarIniSes.setForeground(new java.awt.Color(255, 255, 255));
         botonContinuarIniSes.setText("¡CONTINUAR!");
@@ -250,22 +250,22 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout gradienteIniSesLayout = new javax.swing.GroupLayout(gradienteIniSes);
-        gradienteIniSes.setLayout(gradienteIniSesLayout);
-        gradienteIniSesLayout.setHorizontalGroup(
-            gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gradienteIniSesLayout.createSequentialGroup()
-                .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(gradienteIniSesLayout.createSequentialGroup()
-                        .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(gradienteIniSesLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelGradIniSesLayout = new javax.swing.GroupLayout(panelGradIniSes);
+        panelGradIniSes.setLayout(panelGradIniSesLayout);
+        panelGradIniSesLayout.setHorizontalGroup(
+            panelGradIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradIniSesLayout.createSequentialGroup()
+                .addGroup(panelGradIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradIniSesLayout.createSequentialGroup()
+                        .addGroup(panelGradIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGradIniSesLayout.createSequentialGroup()
                                 .addGap(152, 152, 152)
                                 .addComponent(etiquetaTituloIniSes))
-                            .addGroup(gradienteIniSesLayout.createSequentialGroup()
+                            .addGroup(panelGradIniSesLayout.createSequentialGroup()
                                 .addGap(49, 49, 49)
                                 .addComponent(etiquetaImagenIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 107, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradIniSesLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(45, 45, 45)
@@ -274,17 +274,17 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
                 .addComponent(botonAtrasIniSes)
                 .addContainerGap())
         );
-        gradienteIniSesLayout.setVerticalGroup(
-            gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gradienteIniSesLayout.createSequentialGroup()
+        panelGradIniSesLayout.setVerticalGroup(
+            panelGradIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradIniSesLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(panelIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gradienteIniSesLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradIniSesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(gradienteIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelGradIniSesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonAtrasIniSes)
-                    .addGroup(gradienteIniSesLayout.createSequentialGroup()
+                    .addGroup(panelGradIniSesLayout.createSequentialGroup()
                         .addComponent(etiquetaTituloIniSes)
                         .addGap(28, 28, 28)
                         .addComponent(etiquetaEsloganIniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,11 +297,11 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1264, Short.MAX_VALUE)
+            .addComponent(panelGradIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 1264, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gradienteIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
+            .addComponent(panelGradIniSes, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
         );
 
         setBounds(0, 0, 1280, 720);
@@ -371,7 +371,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel etiquetaImagenIniSes;
     private javax.swing.JLabel etiquetaNombreIniSes;
     private javax.swing.JLabel etiquetaTituloIniSes;
-    private keeptoo.KGradientPanel gradienteIniSes;
+    private keeptoo.KGradientPanel panelGradIniSes;
     private javax.swing.JPanel panelIniSes;
     private javax.swing.JTextField textoApellidoIniSes;
     private javax.swing.JPasswordField textoContraIniSes;
