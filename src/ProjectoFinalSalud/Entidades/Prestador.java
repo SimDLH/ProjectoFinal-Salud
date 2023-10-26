@@ -1,4 +1,3 @@
-
 package ProjectoFinalSalud.Entidades;
 
 public class Prestador {
@@ -91,6 +90,6 @@ public class Prestador {
 
     @Override
     public String toString() {
-        return " Nombre:" + Nombre + " " + Especialidad.toString();
+        return " Nombre: " + Nombre + " " + Especialidad.toString();
     }
 }

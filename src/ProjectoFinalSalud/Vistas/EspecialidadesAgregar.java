@@ -1,20 +1,20 @@
-
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
 import ProjectoFinalSalud.Entidades.Especialidad;
 import java.awt.Cursor;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
 
-    EspecialidadData ed=new EspecialidadData();
-    
+    EspecialidadData ed = new EspecialidadData();
+
     public EspecialidadesAgregar() {
-        
+
         initComponents();
-        
+
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
@@ -147,12 +147,13 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonEspAgregarEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEspAgregarEspActionPerformed
-        if(textoEspAgre.getText().isEmpty()){
+        if (textoEspAgre.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese el nombre de una Especialidad");
-        }else{
-        Especialidad especialidad=new Especialidad(textoEspAgre.getText());
-        ed.guardarEspecialidad(especialidad);
+        } else {
+            buscarEspecialidad();
+
         }
+        textoEspAgre.setText("");
     }//GEN-LAST:event_botonEspAgregarEspActionPerformed
 
     private void botonAtrasEspAgreEspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasEspAgreEspActionPerformed
@@ -183,4 +184,17 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
     private keeptoo.KGradientPanel panelGradEspAgre;
     private javax.swing.JTextField textoEspAgre;
     // End of variables declaration//GEN-END:variables
+
+    private void buscarEspecialidad() {
+        ArrayList<Especialidad> listarEspecialidades = ed.listarEspecialidad();
+        for (Especialidad esp : listarEspecialidades) {
+            if (esp.getEspecialidad().equals(textoEspAgre.getText())) {
+                JOptionPane.showMessageDialog(null, "Esta especialidad ya existe en la base");
+                return;
+            }
+
+        }
+        Especialidad especialidad = new Especialidad(textoEspAgre.getText());
+        ed.guardarEspecialidad(especialidad);
+    }
 }
