@@ -420,13 +420,17 @@ public class Registrarse extends javax.swing.JInternalFrame {
 
     private void botonRegistrateRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrateRegisActionPerformed
         try{
+            String pass = String.valueOf(textoContraRegis.getPassword());
             if(textoDniRegis.getText().isEmpty() || comboBoxNacRegis.getItemAt(comboBoxNacRegis.getSelectedIndex()).isEmpty()){
                JOptionPane.showMessageDialog(null, "Tiene que llenar la planilla para registrar un Usuario");
             }else if(buscarDni(Integer.parseInt(textoDniRegis.getText()))){
                JOptionPane.showMessageDialog(null, "El DNI ingresado ya le pertenece a un Usuario registrado");
-            }else{
+            }else if(email(textoDireEmailRegis.getText())){
+                JOptionPane.showMessageDialog(null, "El Email ingresado ya le corresponde a un Usuario");
+            }else if(password(pass)){
+                JOptionPane.showMessageDialog(null, "La Contraseña ingresada ya le corresponde a un Usuario");
+            }else {
                 int Dni = Integer.parseInt(textoDniRegis.getText());
-                String pass = String.valueOf(textoContraRegis.getPassword());
                 LocalDate fecha = calendarioFechaNacRegis.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 Usuario usua = new Usuario();
                 usua.setNombre(textoNombreRegis.getText());
@@ -516,5 +520,31 @@ public class Registrarse extends javax.swing.JInternalFrame {
             }
         }
         return us;
+    }
+    
+    private boolean email(String email) {
+        
+        ArrayList<Usuario> veremail = usuData.listarUsuario();
+        boolean em = false;
+        for(Usuario usua:veremail){
+            if(usua.getEmail().equals(email)) {
+                em = true;
+                return em;
+            }
+        }
+        return em;
+    }
+    
+    private boolean password(String pass) {
+        
+        ArrayList<Usuario> verpass = usuData.listarUsuario();
+        boolean pss = false;
+        for(Usuario usua:verpass){
+            if(usua.getPassword().equals(pass)) {
+                pss = true;
+                return pss;
+            }
+        }
+        return pss;
     }
 }

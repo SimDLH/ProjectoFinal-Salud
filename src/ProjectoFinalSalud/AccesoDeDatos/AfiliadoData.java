@@ -21,9 +21,7 @@ public class AfiliadoData {
 
     public void guardarAfiliado(Afiliado a){
         
-        String sql = "INSERT INTO afiliado(nombre, dni ,domicilio, telefono, Activo)"
-
-                + "values (?,?,?,?,?)";
+        String sql = "INSERT INTO afiliado(nombre, dni ,domicilio, telefono, Activo)" + "VALUES (?,?,?,?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, a.getNombre());
@@ -43,12 +41,12 @@ public class AfiliadoData {
     }
     
     public ArrayList<Afiliado> listarAfiliados(){
-        String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono FROM afiliado WHERE Activo=1";
+        
+        String sql="SELECT idAfiliado ,nombre ,dni ,domicilio ,telefono FROM afiliado WHERE Activo=1";
         ArrayList<Afiliado> afiliados=new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-
             while (rs.next()) {
                 Afiliado af = new Afiliado();
                 af.setIdAfiliado(rs.getInt("idAfiliado"));
@@ -66,6 +64,7 @@ public class AfiliadoData {
     }
 
     public void borrarAfiliado(int dni){
+        
         String sql="UPDATE afiliado SET Activo=0 WHERE dni=? AND Activo=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -82,7 +81,8 @@ public class AfiliadoData {
     }
 
     public Afiliado buscarAfiliados(int dni) {
-        String sql = "Select idAfiliado ,nombre ,dni ,domicilio ,telefono ,Activo  FROM afiliado WHERE dni=?";
+        
+        String sql = "SELECT idAfiliado ,nombre ,dni ,domicilio ,telefono ,Activo  FROM afiliado WHERE dni=?";
         Afiliado afiliado = new Afiliado();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -95,7 +95,6 @@ public class AfiliadoData {
                 afiliado.setDomicilio(rs.getString("domicilio"));
                 afiliado.setTelefono(rs.getInt("telefono"));
                 afiliado.setActivo(rs.getBoolean("Activo"));
- 
             }else{
                 JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
             }
@@ -126,7 +125,6 @@ public class AfiliadoData {
     public void reinstituirAfliliado(int dni){
         
         String sql="UPDATE afiliado SET Activo=1 WHERE dni=?";
-
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, dni);
@@ -140,8 +138,9 @@ public class AfiliadoData {
     }
 
     public Afiliado buscarAfiliadoID(int id) {
+        
         Afiliado afiliado = new Afiliado();
-        String sql = "SELECT nombre ,dni ,domicilio ,telefono FROM afiliado WHERE idAfiliado=? and Activo=1";
+        String sql = "SELECT nombre, dni, domicilio, telefono FROM afiliado WHERE idAfiliado=? AND Activo=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
@@ -160,7 +159,8 @@ public class AfiliadoData {
     }
 
     public Afiliado buscarAfiliadosActivos(int dni){
-        String sql="Select idAfiliado ,nombre ,dni ,domicilio ,telefono ,Activo  FROM afiliado WHERE dni=? AND Activo=1";
+        
+        String sql="SELECT idAfiliado ,nombre ,dni ,domicilio ,telefono ,Activo  FROM afiliado WHERE dni=? AND Activo=1";
         Afiliado afiliado=new Afiliado();
         try {
             PreparedStatement ps=con.prepareStatement(sql);
@@ -173,7 +173,6 @@ public class AfiliadoData {
                 afiliado.setDomicilio(rs.getString("domicilio"));
                 afiliado.setTelefono(rs.getInt("telefono"));
                 afiliado.setActivo(rs.getBoolean("Activo"));
-                
             }else{
                 JOptionPane.showMessageDialog(null, "El DNI ingresado no existe en la base de datos");
             }

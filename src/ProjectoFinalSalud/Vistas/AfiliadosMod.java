@@ -247,8 +247,8 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
 
     private void botonAfiModBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAfiModBuscarActionPerformed
         try{
-            int dni=Integer.parseInt(textoAfiModDNI.getText());
-            Afiliado af=ad.buscarAfiliadosActivos(dni);
+            int dni = Integer.parseInt(textoAfiModDNI.getText());
+            Afiliado af = ad.buscarAfiliadosActivos(dni);
             if (af.getTelefono()==0){
                 limpiar();
             }else{
@@ -326,10 +326,10 @@ public class AfiliadosMod extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
   private void limpiar(){
-        textoAfiModDNI.setText("");
-        textoAfiModDom.setText("");
-        textoAfiModNomYApe.setText("");
-        textoAfiModNumTel.setText("");
-        
+    
+    textoAfiModDNI.setText("");
+    textoAfiModDom.setText("");
+    textoAfiModNomYApe.setText("");
+    textoAfiModNumTel.setText("");  
     }
 }

@@ -28,6 +28,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
         initComponents();
         armarCabecera();
         cargarTabla();
+        
         resizeColumnWidth(tablaConsulOrden);
         tablaConsulOrden.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
@@ -185,6 +186,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
+        
         modelo.addColumn("Código");
         modelo.addColumn("Afiliado");
         modelo.addColumn("Prestador");
@@ -195,6 +197,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
     }
 
     private void limpiarTabla() {
+        
         int fila = modelo.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
@@ -202,6 +205,7 @@ public class ConsultasOrdenes extends javax.swing.JInternalFrame {
     }
 
     private void cargarTabla() {
+        
         ArrayList<Orden> listarOrdenes = od.ListarOrdenes();
         for (Orden orden : listarOrdenes) {
             modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),

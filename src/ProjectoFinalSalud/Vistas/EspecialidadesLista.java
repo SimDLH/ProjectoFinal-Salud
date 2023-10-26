@@ -30,6 +30,7 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
         initComponents();
         armarCabesera();
         cargarComboBox();
+        
         resizeColumnWidth(tablaEspListaProf);
         tablaEspListaProf.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
@@ -171,6 +172,7 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabesera() {
+        
         modelo.addColumn("Nombre");
         modelo.addColumn("DNI");
         modelo.addColumn("Domicilio");
@@ -179,12 +181,14 @@ public class EspecialidadesLista extends javax.swing.JInternalFrame {
     }
     
     private void cargarComboBox() {
+        
         for(Especialidad es:ed.listarEspecialidad()){
             comboBoxEspEsp.addItem(es);
         }
     }
     
     private void limpiarTabla() {
+        
         int fila = modelo.getRowCount();
         for(int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);

@@ -21,8 +21,7 @@ public class EspecialidadData {
     
     public void guardarEspecialidad(Especialidad esp){
         
-        String sql = "insert into Especialidad(IdEspecialidad,Especialidad)"
-                + "values (?,?)";
+        String sql = "INSERT INTO Especialidad(IdEspecialidad,Especialidad)" + "VALUES (?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, esp.getIdEspecialidad());
@@ -37,41 +36,7 @@ public class EspecialidadData {
             JOptionPane.showMessageDialog(null, "Error al ingresar una Especialidad nueva");
         }
     }
-    
-    public void modificarEspecialidad(Especialidad esp) {
-        
-        String sql = "Update Especialidad set IdEspecialidad=?,Especialidad=?"
-                + "Where IdEspecialidad=?";
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, esp.getIdEspecialidad());
-            ps.setString(2, esp.getEspecialidad());
-            int ex = ps.executeUpdate();
-            if (ex == 1) {
-                JOptionPane.showMessageDialog(null, "Especialidad modificada");
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla de Especialidades");
-        }
-    }
-    
-    public void eliminarEspecialidad(int id) {
-        
-        String sql = "Delete from Especialidad WHERE IdEspecialidad=?";
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
-            int exito = ps.executeUpdate();
-            if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "Especialidad eliminada");
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe Especialidad para ese IdE");
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la Especialidad");
-        }
-    }
-    
+            
     public Especialidad buscarEspecialidad(int IdE) {
 
         String sql = "SELECT IdEspecialidad,Especialidad FROM Especialidad WHERE IdEspecialidad=?";

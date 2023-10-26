@@ -27,6 +27,7 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         initComponents();
         armarTablaProfesionales();
         cargarTablaProfesionales();
+        
         resizeColumnWidth(tablaProf);
         tablaProf.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
@@ -45,6 +46,7 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         }
         
     private void cargarTablaProfesionales(){
+        
         for(Prestador pres:presData.listarPrestador()){
             modelo.addRow(new Object[]{pres.getNombre(),pres.getDomicilio(),pres.getTelefono(),pres.getEspecialidad().getEspecialidad()});
         }

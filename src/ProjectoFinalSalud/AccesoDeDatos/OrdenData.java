@@ -19,12 +19,13 @@ public class OrdenData {
     private Connection con = null;
 
     public OrdenData() {
+        
         con = Conexion.getConnection();
     }
 
     public void guardarOrden(Orden orden) {
-        String sql = " INSERT INTO orden(idAfiliado, idPrestador, fecha, formaPago, importe)"
-                + "VALUES(?,?,?,?,?)";
+        
+        String sql = "INSERT INTO orden(idAfiliado, idPrestador, fecha, formaPago, importe)" + "VALUES(?,?,?,?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, orden.getAfiliado().getIdAfiliado());
@@ -45,6 +46,7 @@ public class OrdenData {
     }
 
     public ArrayList<Orden> listarOrdenesPorFecha(LocalDate fecha) {
+        
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
         String sql = "SELECT idOrden,idAfiliado, idPrestador, formaPago,importe FROM orden WHERE fecha=?";
         try {
@@ -63,7 +65,6 @@ public class OrdenData {
                 Afiliado a = ad.buscarAfiliadoID(rs.getInt("idAfiliado"));
                 orden.setAfiliado(a);
                 orden.setPrestador(p);
-
                 ordenes.add(orden);
             }
             ps.close();
@@ -74,14 +75,9 @@ public class OrdenData {
     }
 
     public ArrayList<Orden> OrdenesPorAfiliado(int dni) {
+        
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
-
-        /*  String sql = "SELECT idOrden ,formaPago ,importe,fecha,orden.idPrestador "
-                + " FROM orden JOIN afiliado WHERE orden.idAfiliado=afiliado.idAfiliado"
-                + " AND afiliado.dni=? AND afiliado.Activo=1";*/
-        String sql = "SELECT idOrden ,idPrestador,fecha,formaPago,importe, orden.idAfiliado\n"
-                + "FROM orden JOIN afiliado\n"
-                + "WHERE orden.idAfiliado=afiliado.idAfiliado AND afiliado.dni=? AND afiliado.Activo=1;";
+        String sql = "SELECT idOrden ,idPrestador,fecha,formaPago,importe, orden.idAfiliado\n" + "FROM orden JOIN afiliado\n" + "WHERE orden.idAfiliado=afiliado.idAfiliado AND afiliado.dni=? AND afiliado.Activo=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, dni);
@@ -110,10 +106,9 @@ public class OrdenData {
     }
 
     public ArrayList<Orden> OrdenesPorPrestador(int id) {
+        
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
-        String sql = "SELECT orden.idOrden ,fecha,formaPago ,importe, orden.idPrestador,orden.idAfiliado"
-                + " FROM orden JOIN prestador WHERE orden.idPrestador=prestador.Idprestador"
-                + " AND prestador.IdPrestador=? AND prestador.Activo=1";
+        String sql = "SELECT orden.idOrden ,fecha,formaPago ,importe, orden.idPrestador,orden.idAfiliado" + " FROM orden JOIN prestador WHERE orden.idPrestador=prestador.Idprestador" + " AND prestador.IdPrestador=? AND prestador.Activo=1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
@@ -141,6 +136,7 @@ public class OrdenData {
     }
 
     public ArrayList<Orden> ListarOrdenes() {
+        
         ArrayList<Orden> ordenes = new ArrayList<Orden>();
         String sql = "SELECT idOrden, idAfiliado,idPrestador, fecha,formaPago,importe FROM orden";
         try {
@@ -149,7 +145,6 @@ public class OrdenData {
             Orden orden;
             AfiliadoData ad = new AfiliadoData();
             PrestadorData pd = new PrestadorData();
-
             while (rs.next()) {
                 orden = new Orden();
                 orden.setIdOrden(rs.getInt("idOrden"));
@@ -163,7 +158,6 @@ public class OrdenData {
                 ordenes.add(orden);
             }
             ps.close();
-
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al conectarse a la tabla orden");
         }

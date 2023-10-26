@@ -1,12 +1,10 @@
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
 import ProjectoFinalSalud.Entidades.Orden;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -30,6 +28,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
 
         initComponents();
         armarCabecera();
+        
         resizeColumnWidth(tablaOrdenXAfi);
         tablaOrdenXAfi.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
@@ -224,7 +223,6 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
         } catch (NumberFormatException nf) {
             JOptionPane.showMessageDialog(null, "Debe ingresar un numero de DNI");
         }
-
     }//GEN-LAST:event_botonOrdenXAfiBuscarActionPerformed
 
     private void botonAtrasOrdenXAfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasOrdenXAfiActionPerformed
@@ -259,6 +257,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
+        
         modelo.addColumn("Código");
         modelo.addColumn("Prestador");
         modelo.addColumn("Fecha");
@@ -268,6 +267,7 @@ public class OrdenesPorAfiliado extends javax.swing.JInternalFrame {
     }
 
     private void limpiarTabla() {
+        
         int fila = modelo.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);

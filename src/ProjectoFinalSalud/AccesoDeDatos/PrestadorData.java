@@ -1,3 +1,4 @@
+
 package ProjectoFinalSalud.AccesoDeDatos;
 
 import ProjectoFinalSalud.Entidades.Especialidad;
@@ -22,8 +23,7 @@ public class PrestadorData {
 
     public void guardarPrestador(Prestador pres) {
 
-        String sql = "insert into Prestador(Nombre,Dni,Domicilio,Telefono,Activo,IdEspecialidad)"
-                + "values (?,?,?,?,?,?)";
+        String sql = "INSERT INTO Prestador(Nombre, Dni, Domicilio, Telefono, Activo, IdEspecialidad)" + "VALUES (?,?,?,?,?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, pres.getNombre());
@@ -45,8 +45,7 @@ public class PrestadorData {
 
     public void modificarPrestador(Prestador pres) {
 
-        String sql = "Update prestador set Nombre=?,Dni=?,Domicilio=?,Telefono=?,IdEspecialidad=?"
-                + "Where IdPrestador=?";
+        String sql = "UPDATE prestador SET Nombre=?, Dni=?, Domicilio=?, Telefono=?, IdEspecialidad=?" + "WHERE IdPrestador=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, pres.getNombre());
@@ -66,7 +65,7 @@ public class PrestadorData {
 
     public void eliminarPrestador(int dni) {
 
-        String sql = "Update Prestador set Activo=0 where dni=?";
+        String sql = "UPDATE Prestador SET Activo=0 WHERE dni=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, dni);
@@ -81,7 +80,7 @@ public class PrestadorData {
 
     public Prestador buscarPrestador(int id) {
 
-        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono,IdEspecialidad FROM Prestador WHERE IdPrestador=?";
+        String sql = "SELECT IdPrestador, Nombre, Dni, Domicilio, Telefono, IdEspecialidad FROM Prestador WHERE IdPrestador=?";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -110,7 +109,7 @@ public class PrestadorData {
 
     public Prestador buscarIdEspecialidad(int IdE) {
 
-        String sql = "SELECT IdPrestador,Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
+        String sql = "SELECT IdPrestador, Nombre, Dni, Domicilio, Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
         Prestador pres = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -166,7 +165,8 @@ public class PrestadorData {
     }
 
     public ArrayList<Prestador> listarPrestadorPorEspecialidad(int id) {
-        String sql = "SELECT Nombre,Dni,Domicilio,Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
+        
+        String sql = "SELECT Nombre, Dni, Domicilio, Telefono FROM Prestador WHERE IdEspecialidad=? AND Activo=1";
         ArrayList<Prestador> prestadores = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -193,7 +193,6 @@ public class PrestadorData {
     public void reinstituirPrestador(int Dni) {
 
         String sql = "UPDATE prestador SET Activo=1 WHERE Dni=?";
-
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, Dni);
@@ -208,7 +207,7 @@ public class PrestadorData {
 
     public Prestador buscarPrestadorActivo(int Dni) {
 
-        String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni , Telefono ,Activo  FROM prestador WHERE Dni=? AND Activo=1";
+        String sql = "SELECT IdPrestador, Nombre, Domicilio, Dni, Telefono, Activo  FROM prestador WHERE Dni=? AND Activo=1";
         Prestador pres = new Prestador();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -231,7 +230,8 @@ public class PrestadorData {
     }
 
     public Prestador buscarPrestadorDni(int Dni) {
-        String sql = "SELECT IdPrestador, Nombre , Domicilio, Dni, Telefono,idEspecialidad, Activo  FROM prestador WHERE dni=?";
+        
+        String sql = "SELECT IdPrestador, Nombre, Domicilio, Dni, Telefono, idEspecialidad, Activo  FROM prestador WHERE dni=?";
         Prestador pres = new Prestador();
         try {
             PreparedStatement ps = con.prepareStatement(sql);

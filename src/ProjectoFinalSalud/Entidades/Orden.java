@@ -16,6 +16,7 @@ public class Orden {
     }
 
     public Orden(LocalDate fecha, String formaPago, double importe, Afiliado afiliado, Prestador prestador) {
+        
         this.fecha = fecha;
         this.formaPago = formaPago;
         this.importe = importe;
@@ -24,50 +25,62 @@ public class Orden {
     }
 
     public int getIdOrden() {
+        
         return IdOrden;
     }
 
     public void setIdOrden(int IdOrden) {
+        
         this.IdOrden = IdOrden;
     }
 
     public LocalDate getFecha() {
+        
         return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
+        
         this.fecha = fecha;
     }
 
     public String getFormaPago() {
+        
         return formaPago;
     }
 
     public void setFormaPago(String formaPago) {
+        
         this.formaPago = formaPago;
     }
 
     public double getImporte() {
+        
         return importe;
     }
 
     public void setImporte(double importe) {
+        
         this.importe = importe;
     }
 
     public Afiliado getAfiliado() {
+        
         return afiliado;
     }
 
     public void setAfiliado(Afiliado afiliado) {
+        
         this.afiliado = afiliado;
     }
 
     public Prestador getPrestador() {
+        
         return prestador;
     }
 
     public void setPrestador(Prestador prestador) {
+        
         this.prestador = prestador;
     }
 }

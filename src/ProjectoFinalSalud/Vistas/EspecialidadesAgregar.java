@@ -1,3 +1,4 @@
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.EspecialidadData;
@@ -186,6 +187,7 @@ public class EspecialidadesAgregar extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void buscarEspecialidad() {
+        
         ArrayList<Especialidad> listarEspecialidades = ed.listarEspecialidad();
         for (Especialidad esp : listarEspecialidades) {
             if (esp.getEspecialidad().equals(textoEspAgre.getText())) {

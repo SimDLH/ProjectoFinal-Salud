@@ -27,6 +27,7 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
         initComponents();
         armarCabesera();
         cargarTabla();
+        
         resizeColumnWidth(tablaListaAfi);
         tablaListaAfi.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
@@ -180,6 +181,7 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabesera(){
+        
         modelo.addColumn("ID");
         modelo.addColumn("Nombre y Apellido");
         modelo.addColumn("Número de Documento");
@@ -189,6 +191,7 @@ public class ConsultasAfiliados extends javax.swing.JInternalFrame {
     }
   
     private void cargarTabla(){
+        
         for(Afiliado afi:ad.listarAfiliados()){
             modelo.addRow(new Object[]{afi.getIdAfiliado(),afi.getNombre(),afi.getDni(),afi.getTelefono(),afi.getDomicilio()});
         }

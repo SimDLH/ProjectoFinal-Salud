@@ -1,3 +1,4 @@
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.AfiliadoData;
@@ -257,7 +258,6 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
             int dni = Integer.parseInt(textoSacarOrdenDoc.getText());
             Afiliado afiliado;
             afiliado = ad.buscarAfiliados(dni);
-
             if (afiliado.isActivo()) {
                 JOptionPane.showMessageDialog(null, "Es un afiliado activo");
             } else {
@@ -293,7 +293,7 @@ public class OrdenesSacar extends javax.swing.JInternalFrame {
             }
             Orden orden = new Orden(fecha, comboBoxSacarOrdenPago.getSelectedItem().toString(), importe,
                     af,
-                    pSeleccionado);// arreglado
+                    pSeleccionado);
             od.guardarOrden(orden);
             limpiarCampos();
         } catch (NullPointerException np) {

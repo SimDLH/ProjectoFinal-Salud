@@ -28,6 +28,7 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
         initComponents();
         armarCabecera();
         cargarTabla();
+        
         resizeColumnWidth(tablaConsulEsp);
         tablaConsulEsp.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
@@ -167,12 +168,14 @@ public class ConsultasEspecialidades extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
+        
         modelo.addColumn("Código");
         modelo.addColumn("Especialidad");
         tablaConsulEsp.setModel(modelo);
     }
 
     private void cargarTabla() {
+        
         ArrayList<Especialidad> listarEspecialidades = ed.listarEspecialidad();
         for (Especialidad esp : listarEspecialidades) {
             modelo.addRow(new Object[]{esp.getIdEspecialidad(), esp.getEspecialidad()});

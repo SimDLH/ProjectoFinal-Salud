@@ -1,6 +1,6 @@
+
 package ProjectoFinalSalud.Vistas;
 
-import java.awt.Component;
 import java.awt.Cursor;
 import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;

@@ -8,7 +8,6 @@ import ProjectoFinalSalud.Entidades.Prestador;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
@@ -32,6 +31,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
         initComponents();
         armarCabecera();
         cargarComboPrestador();
+        
         resizeColumnWidth(tablaOrdenXPres);
         tablaOrdenXPres.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
@@ -225,6 +225,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
     }
 
     private void armarCabecera() {
+        
         modelo.addColumn("Código");
         modelo.addColumn("Afiliado");
         modelo.addColumn("Fecha");
@@ -234,6 +235,7 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
     }
 
     private void limpiarTabla() {
+        
         int fila = modelo.getRowCount();
         for(int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);

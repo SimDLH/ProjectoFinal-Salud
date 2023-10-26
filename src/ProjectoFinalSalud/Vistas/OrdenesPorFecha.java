@@ -1,3 +1,4 @@
+
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.OrdenData;
@@ -30,6 +31,7 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         initComponents();
         armarCabecera();
         cargarDatos();
+        
         resizeColumnWidth(tablaOrdenXFecha);
         tablaOrdenXFecha.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
@@ -255,6 +257,7 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
+        
         modelo.addColumn("Código");
         modelo.addColumn("Afiliado");
         modelo.addColumn("Prestador");
@@ -264,6 +267,7 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
     }
 
     private void cargarDatos() {
+        
         ArrayList<Orden> listaFecha = new ArrayList<>();
         for (Orden orden : listaFecha) {
             modelo.addRow(new Object[]{orden.getIdOrden(), orden.getAfiliado().getNombre(),
@@ -272,6 +276,7 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
     }
 
     private void limpiarTabla() {
+        
         int fila = modelo.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);

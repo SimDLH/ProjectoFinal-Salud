@@ -1,7 +1,6 @@
 package ProjectoFinalSalud.Vistas;
 
 import ProjectoFinalSalud.AccesoDeDatos.UsuarioData;
-import java.applet.AudioClip;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.io.IOException;

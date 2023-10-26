@@ -380,6 +380,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void limpiar(){
+        
         textoNombreIniSes.setText("");
         textoApellidoIniSes.setText("");
         textoDireEmailIniSes.setText("");
@@ -387,6 +388,7 @@ public class IniciarSesion extends javax.swing.JInternalFrame {
     }
     
     private boolean buscarEmail(String Email) {
+        
         ArrayList<Usuario> usuario = usuData.listarUsuario();
         boolean usu = false;
         for (Usuario us : usuario) {

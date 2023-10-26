@@ -459,6 +459,7 @@ public class AfiliadosAgregarOAnular extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void limpiar(){
+        
         textoAfiAgreYAnulDNI.setText("");
         textoAfiAgreYAnulDom.setText("");
         textoAfiAgreYAnulNomYApe.setText("");
@@ -469,6 +470,7 @@ public class AfiliadosAgregarOAnular extends javax.swing.JInternalFrame {
     }
     
     private boolean buscarDni(int dni) {
+        
         ArrayList<Afiliado> afiliado = ad.listarAfiliados();
         boolean a = false;
         for (Afiliado afi : afiliado) {
