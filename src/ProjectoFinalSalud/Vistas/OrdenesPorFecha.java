@@ -154,7 +154,7 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
         panelGradOrdenXFechaLayout.setHorizontalGroup(
             panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradOrdenXFechaLayout.createSequentialGroup()
-                .addContainerGap(110, Short.MAX_VALUE)
+                .addContainerGap(108, Short.MAX_VALUE)
                 .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
                         .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -172,8 +172,8 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
                                 .addComponent(botonOrdenXFechaBuscar)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
-                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))))
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94))))
         );
         panelGradOrdenXFechaLayout.setVerticalGroup(
             panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,13 +188,13 @@ public class OrdenesPorFecha extends javax.swing.JInternalFrame {
                         .addGroup(panelGradOrdenXFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(etiquetaOrdenXFechaFecha)
                             .addComponent(calendarioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(75, 75, 75))
+                        .addGap(77, 77, 77))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXFechaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonOrdenXFechaBuscar)
                         .addGap(62, 62, 62)))
                 .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -61,19 +61,19 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="310" max="32767" attributes="0"/>
                   <Component id="etiquetaProfCartilla" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                   <Component id="botonAtrasProfConsul" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="botonProfPedirOrden" min="-2" max="-2" attributes="0"/>
-                      <Component id="panelScrollTabla" min="-2" pref="667" max="-2" attributes="0"/>
+                      <Component id="panelScrollTabla" min="-2" pref="698" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="149" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -85,11 +85,11 @@
                       <Component id="botonAtrasProfConsul" min="-2" max="-2" attributes="0"/>
                       <Component id="etiquetaProfCartilla" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace pref="67" max="32767" attributes="0"/>
                   <Component id="panelScrollTabla" min="-2" pref="270" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="botonProfPedirOrden" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="69" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

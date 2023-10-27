@@ -155,8 +155,8 @@ public class OrdenesPorPrestador extends javax.swing.JInternalFrame {
                         .addComponent(botonAtrasOrdenXPrest)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradOrdenXPresLayout.createSequentialGroup()
-                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93))))
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94))))
         );
         panelGradOrdenXPresLayout.setVerticalGroup(
             panelGradOrdenXPresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -178,17 +178,17 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
         panelGradProfConsulLayout.setHorizontalGroup(
             panelGradProfConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradProfConsulLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(310, Short.MAX_VALUE)
                 .addComponent(etiquetaProfCartilla)
                 .addGap(157, 157, 157)
                 .addComponent(botonAtrasProfConsul)
                 .addContainerGap())
             .addGroup(panelGradProfConsulLayout.createSequentialGroup()
-                .addGap(143, 143, 143)
+                .addGap(121, 121, 121)
                 .addGroup(panelGradProfConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonProfPedirOrden)
-                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(149, Short.MAX_VALUE))
+                    .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGradProfConsulLayout.setVerticalGroup(
             panelGradProfConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,11 +197,11 @@ public class ProfesionalesConsultas extends javax.swing.JInternalFrame {
                 .addGroup(panelGradProfConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonAtrasProfConsul)
                     .addComponent(etiquetaProfCartilla))
-                .addGap(60, 60, 60)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(42, 42, 42)
                 .addComponent(botonProfPedirOrden)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

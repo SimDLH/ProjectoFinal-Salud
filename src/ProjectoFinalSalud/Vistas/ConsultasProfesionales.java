@@ -157,7 +157,7 @@ public class ConsultasProfesionales extends javax.swing.JInternalFrame {
         panelGradConsulProfLayout.setHorizontalGroup(
             panelGradConsulProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGradConsulProfLayout.createSequentialGroup()
-                .addContainerGap(226, Short.MAX_VALUE)
+                .addContainerGap(215, Short.MAX_VALUE)
                 .addGroup(panelGradConsulProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradConsulProfLayout.createSequentialGroup()
                         .addComponent(etiquetaConsulProf)
@@ -165,8 +165,8 @@ public class ConsultasProfesionales extends javax.swing.JInternalFrame {
                         .addComponent(botonAtrasConsulProf)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradConsulProfLayout.createSequentialGroup()
-                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(223, 223, 223))))
+                        .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(201, 201, 201))))
         );
         panelGradConsulProfLayout.setVerticalGroup(
             panelGradConsulProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,9 +175,9 @@ public class ConsultasProfesionales extends javax.swing.JInternalFrame {
                 .addGroup(panelGradConsulProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(etiquetaConsulProf)
                     .addComponent(botonAtrasConsulProf))
-                .addGap(69, 69, 69)
-                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGap(66, 66, 66)
+                .addComponent(panelScrollTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
